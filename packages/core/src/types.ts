@@ -16,7 +16,9 @@ export interface SituationProvider<T extends SituationData = SituationData> {
 export interface KnowletMeta {
   id: string;
   name: string;
+  names?: Record<string, string>;
   description?: string;
+  descriptions?: Record<string, string>;
   icon?: string;
   requiredProviders: string[];
   supportedLanguages: string[];

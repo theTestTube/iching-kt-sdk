@@ -1,5 +1,4 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { KnowletContext } from '@iching-kt/core';
 import { TimeData, EarthlyBranch } from '@iching-kt/provider-time';
 import { getTranslation } from './data';
@@ -38,41 +37,61 @@ export function HoursView({ context }: Props) {
   const elementColor = ELEMENT_COLORS[info.element] || '#666';
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.chinese}>{info.chinese}</Text>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.header}>
+        <Text style={styles.chinese}>{info.chinese}</Text>
+        <Text style={styles.pinyin}>{info.pinyin} shí</Text>
+      </View>
+
       <Text style={styles.animal}>{info.animal}</Text>
-
-      <View style={styles.infoRow}>
-        <Text style={styles.label}>{t.labels.timeRange}</Text>
-        <Text style={styles.value}>{info.timeRange}</Text>
-      </View>
-
-      <View style={styles.infoRow}>
-        <Text style={styles.label}>{t.labels.element}</Text>
-        <View style={[styles.elementBadge, { backgroundColor: elementColor }]}>
-          <Text style={styles.elementText}>{info.element}</Text>
-        </View>
-      </View>
+      <Text style={styles.timeRange}>{info.timeRange}</Text>
 
       <View style={styles.progressContainer}>
         <View style={styles.progressTrack}>
           <View
             style={[
               styles.progressFill,
-              { width: `${timeData.branchProgress * 100}%` }
+              { width: `${timeData.branchProgress * 100}%`, backgroundColor: elementColor }
             ]}
           />
         </View>
       </View>
 
-      <Text style={styles.yinYang}>
-        {info.yinYang === 'yang' ? '☯ Yang' : '☯ Yin'}
-      </Text>
-    </View>
+      <Text style={styles.description}>{info.description}</Text>
+
+      <View style={styles.badgesRow}>
+        <View style={[styles.badge, { backgroundColor: elementColor }]}>
+          <Text style={styles.badgeText}>{info.element}</Text>
+        </View>
+        <View style={[styles.badge, styles.yinYangBadge]}>
+          <Text style={styles.badgeText}>
+            {info.yinYang === 'yang' ? '☯ Yang' : '☯ Yin'}
+          </Text>
+        </View>
+      </View>
+
+      <View style={styles.infoCard}>
+        <View style={styles.infoRow}>
+          <Text style={styles.label}>{t.labels.organ}</Text>
+          <Text style={styles.value}>{info.organ}</Text>
+        </View>
+        <View style={styles.divider} />
+        <View style={styles.infoRow}>
+          <Text style={styles.label}>{t.labels.activity}</Text>
+          <Text style={styles.value}>{info.activity}</Text>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollContainer: {
+    flexGrow: 1,
+    alignItems: 'center',
+    paddingVertical: 24,
+    paddingHorizontal: 20,
+  },
   container: {
     flex: 1,
     alignItems: 'center',
@@ -83,59 +102,93 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#666',
   },
-  chinese: {
-    fontSize: 72,
-    fontWeight: '300',
+  header: {
+    alignItems: 'center',
     marginBottom: 8,
   },
-  animal: {
-    fontSize: 24,
-    fontWeight: '600',
-    marginBottom: 24,
+  chinese: {
+    fontSize: 96,
+    fontWeight: '200',
   },
-  infoRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  label: {
-    fontSize: 14,
+  pinyin: {
+    fontSize: 18,
     color: '#666',
-    marginRight: 8,
+    fontStyle: 'italic',
   },
-  value: {
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  elementBadge: {
-    paddingHorizontal: 12,
-    paddingVertical: 4,
-    borderRadius: 12,
-  },
-  elementText: {
-    color: '#fff',
+  animal: {
+    fontSize: 28,
     fontWeight: '600',
-    fontSize: 14,
+    marginBottom: 4,
+  },
+  timeRange: {
+    fontSize: 16,
+    color: '#888',
+    marginBottom: 16,
   },
   progressContainer: {
     width: '80%',
-    marginTop: 24,
-    marginBottom: 16,
+    marginBottom: 20,
   },
   progressTrack: {
-    height: 4,
+    height: 6,
     backgroundColor: '#e0e0e0',
-    borderRadius: 2,
+    borderRadius: 3,
     overflow: 'hidden',
   },
   progressFill: {
     height: '100%',
-    backgroundColor: '#333',
-    borderRadius: 2,
+    borderRadius: 3,
   },
-  yinYang: {
-    fontSize: 18,
-    color: '#666',
-    marginTop: 8,
+  description: {
+    fontSize: 16,
+    color: '#444',
+    textAlign: 'center',
+    lineHeight: 24,
+    marginBottom: 20,
+    paddingHorizontal: 16,
+  },
+  badgesRow: {
+    flexDirection: 'row',
+    gap: 12,
+    marginBottom: 24,
+  },
+  badge: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  yinYangBadge: {
+    backgroundColor: '#333',
+  },
+  badgeText: {
+    color: '#fff',
+    fontWeight: '600',
+    fontSize: 14,
+  },
+  infoCard: {
+    width: '100%',
+    backgroundColor: '#f8f8f8',
+    borderRadius: 12,
+    padding: 16,
+  },
+  infoRow: {
+    paddingVertical: 8,
+  },
+  label: {
+    fontSize: 12,
+    color: '#888',
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+    marginBottom: 4,
+  },
+  value: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#333',
+  },
+  divider: {
+    height: 1,
+    backgroundColor: '#e0e0e0',
+    marginVertical: 8,
   },
 });

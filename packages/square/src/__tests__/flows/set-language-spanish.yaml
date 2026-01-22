@@ -1,0 +1,24 @@
+# Set app language to Spanish
+appId: com.ichingkt.app
+
+---
+
+# Navigate to Settings tab
+- tapOn:
+    id: "tab-settings"
+    optional: true
+- tapOn:
+    text: "Settings|Ajustes"
+    optional: true
+
+# Find and tap language selector
+- tapOn:
+    text: "Language|Idioma"
+    optional: true
+
+# Select Spanish
+- tapOn:
+    text: "Español|Spanish"
+
+# Go back to main view
+- back

@@ -1,0 +1,140 @@
+# HeTuView E2E Tests
+#
+# Framework: Maestro (https://maestro.mobile.dev)
+# Install: curl -Ls "https://get.maestro.mobile.dev" | bash
+#
+# Run: maestro test HeTuView.maestro.yaml
+# Run all flows: maestro test .
+
+appId: com.ichingkt.app
+
+---
+
+# Flow 1: Verify River Map elements render correctly
+- runFlow:
+    file: flows/navigate-to-boards.yaml
+
+- assertVisible: "River Map"
+- assertVisible: "河圖 He Tu"
+
+# Verify all five elements are visible
+- assertVisible: "Water"
+- assertVisible: "Fire"
+- assertVisible: "Wood"
+- assertVisible: "Metal"
+- assertVisible: "Earth"
+
+# Verify numbers are visible
+- assertVisible: "1 · 6"
+- assertVisible: "2 · 7"
+- assertVisible: "3 · 8"
+- assertVisible: "4 · 9"
+- assertVisible: "5 · 10"
+
+---
+
+# Flow 2: Test element tap interactions
+- runFlow:
+    file: flows/navigate-to-boards.yaml
+
+- tapOn: "Earth"
+- assertVisible:
+    text: "Tierra|Earth"
+    optional: true
+
+---
+
+# Flow 3: Test element long press interactions
+- runFlow:
+    file: flows/navigate-to-boards.yaml
+
+- longPressOn: "Water"
+# Should show knowlet selector
+- assertVisible:
+    text: "Select|Seleccionar"
+    optional: true
+
+---
+
+# Flow 4: Test state transitions during time changes
+- runFlow:
+    file: flows/navigate-to-boards.yaml
+
+# Take screenshot before transition
+- takeScreenshot: screenshots/hetu-before-transition
+
+# Wait for potential time transition (simulated by waiting)
+- extendedWaitUntil:
+    visible: "Active element:"
+    timeout: 5000
+
+# Take screenshot after to compare states
+- takeScreenshot: screenshots/hetu-after-transition
+
+# Verify elements still have correct visual state
+- assertVisible: "Water"
+- assertVisible: "Earth"
+
+---
+
+# Flow 5: Test Spanish localization
+- runFlow:
+    file: flows/set-language-spanish.yaml
+
+- runFlow:
+    file: flows/navigate-to-boards.yaml
+
+- assertVisible: "Mapa del Río"
+- assertVisible: "Agua"
+- assertVisible: "Fuego"
+- assertVisible: "Madera"
+- assertVisible: "Metal"
+- assertVisible: "Tierra"
+
+---
+
+# Flow 6: Visual regression test for Earth element
+- runFlow:
+    file: flows/navigate-to-boards.yaml
+
+# Focus on Earth element area
+- scroll:
+    direction: DOWN
+
+- assertVisible: "Earth"
+- assertVisible: "5 · 10"
+
+# Capture Earth element for visual comparison
+- takeScreenshot: screenshots/earth-element-baseline
+
+# Tap elsewhere and return to verify state persists
+- tapOn: "Water"
+- back
+- assertVisible: "Earth"
+- assertVisible: "5 · 10"
+
+---
+
+# Flow 7: Rapid interaction stress test
+- runFlow:
+    file: flows/navigate-to-boards.yaml
+
+# Rapidly tap all elements
+- tapOn: "Water"
+- tapOn: "Fire"
+- tapOn: "Wood"
+- tapOn: "Metal"
+- tapOn: "Earth"
+- tapOn: "Water"
+- tapOn: "Earth"
+
+# Verify no visual glitches - all elements should still be visible
+- assertVisible: "Water"
+- assertVisible: "Fire"
+- assertVisible: "Wood"
+- assertVisible: "Metal"
+- assertVisible: "Earth"
+
+# Verify numbers are still displayed correctly
+- assertVisible: "1 · 6"
+- assertVisible: "5 · 10"

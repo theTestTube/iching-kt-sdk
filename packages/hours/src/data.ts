@@ -24,6 +24,7 @@ type Translations = {
       activity: string;
       description: string;
       shichen: string;
+      sovereignHexagram: string;
     };
   };
 };
@@ -39,6 +40,7 @@ export const translations: Translations = {
       activity: 'Auspicious Activity',
       description: 'Description',
       shichen: 'Shichen',
+      sovereignHexagram: 'Sovereign Hexagram',
     },
     branches: {
       zi: {
@@ -185,6 +187,7 @@ export const translations: Translations = {
       activity: 'Actividad Propicia',
       description: 'Descripción',
       shichen: 'Shichen',
+      sovereignHexagram: 'Hexagrama Soberano',
     },
     branches: {
       zi: {

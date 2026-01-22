@@ -1,5 +1,5 @@
 {
-  "name": "@iching-kt/knowlet-hours",
+  "name": "@iching-kt/hexagrams",
   "version": "0.1.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@iching-kt/core": "*",
-    "@iching-kt/provider-time": "*"
+    "@iching-kt/data-hexagrams": "*"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

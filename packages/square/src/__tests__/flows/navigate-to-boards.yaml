@@ -1,0 +1,31 @@
+# Navigate to Boards knowlet with He Tu view
+appId: com.ichingkt.app
+
+---
+
+# Navigate to Browse tab
+- tapOn:
+    id: "tab-browse"
+    optional: true
+- tapOn:
+    text: "Browse|Explorar"
+    optional: true
+
+# Select Boards knowlet
+- tapOn:
+    text: "Boards|Paneles"
+
+# Open settings to select He Tu view
+- tapOn:
+    id: "settings-button"
+    optional: true
+
+# Select He Tu view mode
+- tapOn:
+    text: "He Tu|River Map"
+    optional: true
+
+# Close settings if open
+- tapOn:
+    id: "close-settings"
+    optional: true

@@ -42,15 +42,30 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
   let currentPosition: GeoPosition | null = null;
   let permissionState: LocationPermissionState = 'undetermined';
 
-  // Initialize permission state
-  (async () => {
+  // Refresh permission state from OS
+  async function refreshPermissionState(): Promise<void> {
     try {
       const { status } = await expoLocation.getForegroundPermissionsAsync();
-      permissionState = mapExpoPermissionStatus(status);
+      const newState = mapExpoPermissionStatus(status);
+      if (newState !== permissionState) {
+        permissionState = newState;
+        // If permission just became granted, start watching
+        if (permissionState === 'granted' && listeners.size > 0) {
+          startWatching();
+        }
+        // If permission was revoked, stop watching
+        if (permissionState !== 'granted') {
+          stopWatching();
+          currentPosition = null; // Clear stale position
+        }
+      }
     } catch (error) {
       console.warn('Failed to get GPS permission status:', error);
     }
-  })();
+  }
+
+  // Initialize permission state on startup
+  refreshPermissionState();
 
   function mapExpoPermissionStatus(status: string): LocationPermissionState {
     switch (status) {
@@ -122,7 +137,19 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
     async requestPermission(): Promise<LocationPermissionState> {
       try {
         const { status } = await expoLocation.requestForegroundPermissionsAsync();
-        permissionState = mapExpoPermissionStatus(status);
+        const newState = mapExpoPermissionStatus(status);
+        if (newState !== permissionState) {
+          permissionState = newState;
+          // If permission just became granted, start watching
+          if (permissionState === 'granted' && listeners.size > 0) {
+            startWatching();
+          }
+          // If permission was denied, stop watching
+          if (permissionState !== 'granted') {
+            stopWatching();
+            currentPosition = null;
+          }
+        }
         return permissionState;
       } catch (error) {
         console.warn('Failed to request GPS permission:', error);

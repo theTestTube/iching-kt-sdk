@@ -156,6 +156,63 @@ export interface GeoLocator {
   dispose(): void;
 }
 
+// Translation Metadata Types (for attribution display)
+/** Known translation sources */
+export type TranslationSource =
+  | 'wilhelm'          // Wilhelm-Baynes translation
+  | 'legge'            // James Legge translation (1882)
+  | 'claude'           // Claude (Anthropic) AI translation
+  | 'original-chinese' // Original Zhouyi text
+  | 'project';         // Original project content
+
+/** License classification for translated content */
+export type TranslationLicense =
+  | 'public-domain'    // No copyright restrictions
+  | 'mit'              // MIT licensed (project-owned derivatives)
+  | 'proprietary';     // App-exclusive content
+
+/** Original language of the source text */
+export type SourceLanguage = 'zh' | 'en' | 'de' | 'es';
+
+/**
+ * Metadata attached to translatable content for attribution display.
+ * Per decision: 2026-01-22-ux-pattern-for-translation-source-attribution-display.md
+ */
+export interface TranslationMetadata {
+  /** Primary source of this translation */
+  source: TranslationSource;
+  /** Human-readable translator name (e.g., "Richard Wilhelm", "Claude (Anthropic)") */
+  translator?: string;
+  /** Year of translation */
+  year?: number;
+  /** License classification */
+  license: TranslationLicense;
+  /** Original language the translation was made from */
+  originalLanguage: SourceLanguage;
+  /** Reference translations consulted (for Claude translations) */
+  referenceTranslations?: string[];
+}
+
+/**
+ * Content with attached translation metadata.
+ * Use this interface for any user-facing I-Ching text content.
+ */
+export interface TranslatableContent {
+  /** The actual text content */
+  text: string;
+  /** Translation metadata for attribution */
+  metadata: TranslationMetadata;
+}
+
+/**
+ * Multi-language content with per-language translation metadata.
+ * Each language entry has its own attribution.
+ */
+export interface LocalizedContent {
+  /** Content keyed by language code (e.g., 'en', 'es', 'zh') */
+  [languageCode: string]: TranslatableContent;
+}
+
 // Registry Types
 export interface KnowletRegistry {
   register: (knowlet: Knowlet) => void;

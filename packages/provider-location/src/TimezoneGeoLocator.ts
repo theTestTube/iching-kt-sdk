@@ -107,9 +107,9 @@ export function createTimezoneGeoLocator(): GeoLocator {
 
     dispose(): void {
       listeners.clear();
-      if (intervalId) {
-        clearInterval(intervalId);
-        intervalId = null;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
       }
     },
   };

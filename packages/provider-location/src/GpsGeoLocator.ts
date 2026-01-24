@@ -20,7 +20,7 @@ export interface ExpoLocation {
     };
   }>;
   watchPositionAsync: (
-    options: { accuracy?: number; distanceInterval?: number },
+    options: { accuracy?: number; distanceInterval?: number; timeInterval?: number },
     callback: (location: { coords: { latitude: number; longitude: number; accuracy: number | null } }) => void
   ) => Promise<{ remove: () => void }>;
   Accuracy: {
@@ -129,6 +129,7 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
         {
           accuracy: expoLocation.Accuracy.High,
           distanceInterval: 100, // Update every 100 meters
+          timeInterval: 60000, // Throttle to max once per minute (allows CPU idle periods)
         },
         (location) => {
           const position: GeoPosition = {

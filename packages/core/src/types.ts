@@ -54,13 +54,33 @@ export interface KnowletSettings {
   [key: string]: unknown;
 }
 
+/** Localizable string: either a plain string or language-keyed record */
+export type LocalizableString = string | Record<string, string>;
+
 export interface KnowletSettingsSchema {
   [key: string]: {
     type: 'boolean' | 'string' | 'number' | 'select';
-    label: string;
+    /** Label can be a string or localized { en: '...', es: '...', zh: '...' } */
+    label: LocalizableString;
     default: unknown;
-    options?: { label: string; value: unknown }[];
+    options?: { label: LocalizableString; value: unknown }[];
   };
+}
+
+/** Translation source for English content */
+export type EnglishSource = 'wilhelm' | 'legge';
+/** Translation source for Spanish content (all Claude-translated at build time) */
+export type SpanishSource = 'zh-claude' | 'legge-claude' | 'wilhelm-claude';
+
+/**
+ * User's translation source preferences per language.
+ * - Chinese (zh): Always original 周易 (no preference needed)
+ * - English (en): Wilhelm-Baynes or Legge (untranslated, direct from source)
+ * - Spanish (es): Claude translations from Chinese, Legge, or Wilhelm
+ */
+export interface TranslationPreferences {
+  en: EnglishSource;
+  es: SpanishSource;
 }
 
 export interface KnowletContext {
@@ -69,6 +89,8 @@ export interface KnowletContext {
   language: string;
   /** Current color scheme */
   colorScheme: ColorScheme;
+  /** User's translation source preferences */
+  translationPreferences: TranslationPreferences;
   jumpTo: (knowletId: string) => void;
   /** Navigate to a detail view within the knowlet */
   pushView: (viewId: string, params?: Record<string, unknown>) => void;

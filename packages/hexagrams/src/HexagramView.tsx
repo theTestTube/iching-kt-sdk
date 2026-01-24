@@ -17,8 +17,26 @@ export function HexagramView({ context }: Props) {
     ? (context.inputData.value as number)
     : 1; // Default to hexagram 1
 
-  // Get translation source from settings (defaults to 'wilhelm')
-  const translationSource = (context.settings.translationSource as string) || 'wilhelm';
+  // Determine translation source based on language and user preferences
+  // - Chinese (zh): Always use original 周易 (no source selection)
+  // - English (en): Use translationPreferences.en (wilhelm or legge)
+  // - Spanish (es): Use translationPreferences.es (zh-claude, legge-claude, or wilhelm-claude)
+  const getTranslationSource = (): string => {
+    if (context.language === 'zh') {
+      // Chinese always uses original text (no specific source)
+      return 'wilhelm'; // Fallback for getHexagramTranslationBySource, but will use 'zh' key
+    }
+    if (context.language === 'en') {
+      return context.translationPreferences.en;
+    }
+    if (context.language === 'es') {
+      return context.translationPreferences.es;
+    }
+    // Fallback for any other language
+    return 'wilhelm';
+  };
+
+  const translationSource = getTranslationSource();
 
   const colors = getThemeColors(context.colorScheme);
   const hexagram = getHexagram(hexagramNumber);
@@ -57,7 +75,12 @@ export function HexagramView({ context }: Props) {
       <Text style={[styles.number, { color: colors.textTertiary }]}>#{hexagram.number}</Text>
       <Text style={[styles.name, { color: colors.text }]}>{translation.name}</Text>
       <Text style={[styles.translationSource, { color: colors.textTertiary }]}>
-        {translationSource === 'legge' ? 'James Legge (1882)' : 'Wilhelm-Baynes (1950)'}
+        {context.language === 'en' && translationSource === 'legge' && 'James Legge (1882)'}
+        {context.language === 'en' && translationSource === 'wilhelm' && 'Wilhelm-Baynes (1950)'}
+        {context.language === 'es' && translationSource === 'zh-claude' && 'Desde 周易 (Claude)'}
+        {context.language === 'es' && translationSource === 'legge-claude' && 'Vía Legge (Claude)'}
+        {context.language === 'es' && translationSource === 'wilhelm-claude' && 'Vía Wilhelm (Claude)'}
+        {context.language === 'zh' && '周易 原文'}
       </Text>
       <Text style={[styles.meaning, { color: colors.textSecondary }]}>{translation.meaning}</Text>
 

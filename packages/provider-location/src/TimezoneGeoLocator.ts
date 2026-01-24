@@ -71,6 +71,19 @@ export function createTimezoneGeoLocator(): GeoLocator {
       };
     },
 
+    onStatusChange(callback: (status: GeoLocatorStatus) => void): () => void {
+      // Timezone locator status never changes (always granted, available, low precision)
+      // Just provide the current status immediately
+      callback({
+        permissionState: 'granted',
+        isAvailable: true,
+        currentPrecision: 'low',
+      });
+
+      // Return no-op unsubscribe since status never changes
+      return () => {};
+    },
+
     dispose(): void {
       listeners.clear();
       if (intervalId) {

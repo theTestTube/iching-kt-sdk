@@ -38,9 +38,46 @@ interface GpsGeoLocatorConfig {
 export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
   const { expoLocation } = config;
   const listeners = new Set<(position: GeoPosition) => void>();
+  const statusListeners = new Set<(status: GeoLocatorStatus) => void>();
   let watchSubscription: { remove: () => void } | null = null;
   let currentPosition: GeoPosition | null = null;
   let permissionState: LocationPermissionState = 'undetermined';
+  let lastEmittedStatus: GeoLocatorStatus | null = null;
+
+  // Helper to emit status change events (only if status actually changed)
+  function emitStatusChange(): void {
+    const currentStatus = getStatusInternal();
+
+    // Check if status actually changed
+    if (lastEmittedStatus) {
+      const unchanged =
+        lastEmittedStatus.permissionState === currentStatus.permissionState &&
+        lastEmittedStatus.isAvailable === currentStatus.isAvailable &&
+        lastEmittedStatus.currentPrecision === currentStatus.currentPrecision;
+
+      if (unchanged) {
+        return; // Don't emit duplicate events
+      }
+    }
+
+    lastEmittedStatus = currentStatus;
+    statusListeners.forEach(cb => cb(currentStatus));
+  }
+
+  // Internal status getter (doesn't trigger events)
+  function getStatusInternal(): GeoLocatorStatus {
+    // Precision should reflect ACTUAL position data availability, not just permission
+    // BUG FIX: Don't claim 'high' precision until we have a valid, fresh position
+    const hasValidPosition =
+      currentPosition !== null &&
+      (Date.now() - currentPosition.timestamp.getTime()) < 60000; // Position must be < 60s old
+
+    return {
+      permissionState,
+      isAvailable: true, // GPS is available on all mobile devices
+      currentPrecision: hasValidPosition ? 'high' : 'low',
+    };
+  }
 
   // Refresh permission state from OS
   async function refreshPermissionState(): Promise<void> {
@@ -58,6 +95,8 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
           stopWatching();
           currentPosition = null; // Clear stale position
         }
+        // Emit status change event
+        emitStatusChange();
       }
     } catch (error) {
       console.warn('Failed to get GPS permission status:', error);
@@ -99,8 +138,15 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
             timestamp: new Date(),
             accuracyMeters: location.coords.accuracy ?? undefined,
           };
+          const hadValidPosition = currentPosition !== null &&
+            (Date.now() - currentPosition.timestamp.getTime()) < 60000;
           currentPosition = position;
           listeners.forEach(cb => cb(position));
+
+          // Emit status change if precision changed (no position -> has position)
+          if (!hadValidPosition) {
+            emitStatusChange();
+          }
         }
       );
     } catch (error) {
@@ -121,17 +167,7 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
     maxPrecision: 'high',
 
     getStatus(): GeoLocatorStatus {
-      // Precision should reflect ACTUAL position data availability, not just permission
-      // BUG FIX: Don't claim 'high' precision until we have a valid, fresh position
-      const hasValidPosition =
-        currentPosition !== null &&
-        (Date.now() - currentPosition.timestamp.getTime()) < 60000; // Position must be < 60s old
-
-      return {
-        permissionState,
-        isAvailable: true, // GPS is available on all mobile devices
-        currentPrecision: hasValidPosition ? 'high' : 'low',
-      };
+      return getStatusInternal();
     },
 
     async requestPermission(): Promise<LocationPermissionState> {
@@ -149,6 +185,8 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
             stopWatching();
             currentPosition = null;
           }
+          // Emit status change event
+          emitStatusChange();
         }
         return permissionState;
       } catch (error) {
@@ -204,8 +242,20 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
       };
     },
 
+    onStatusChange(callback: (status: GeoLocatorStatus) => void): () => void {
+      statusListeners.add(callback);
+
+      // Immediately provide current status
+      callback(getStatusInternal());
+
+      return () => {
+        statusListeners.delete(callback);
+      };
+    },
+
     dispose(): void {
       listeners.clear();
+      statusListeners.clear();
       stopWatching();
     },
   };

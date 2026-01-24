@@ -8,7 +8,7 @@
     "@iching-kt/core": "*"
   },
   "peerDependencies": {
-    "expo-location": ">=17.0.0"
+    "expo-location": ">=55.0.0"
   },
   "peerDependenciesMeta": {
     "expo-location": {

@@ -23,13 +23,13 @@ function SquareKnowletView({ context }: { context: KnowletContext }) {
 export const squareSettingsSchema: KnowletSettingsSchema = {
   viewMode: {
     type: 'select',
-    label: 'View Mode',
+    label: { en: 'View Mode', es: 'Modo de Vista', zh: '檢視模式' },
     default: 'loshu',
     options: [
-      { label: 'Lo Shu (3x3 Magic Square)', value: 'loshu' },
-      { label: 'He Tu (River Map)', value: 'hetu' },
-      { label: '12 Branches Circle', value: 'branches' },
-      { label: 'Hexagram Matrix (8x8)', value: 'matrix' },
+      { label: { en: 'Lo Shu (3x3 Magic Square)', es: 'Lo Shu (Cuadrado Mágico 3x3)', zh: '洛書（三三宮格）' }, value: 'loshu' },
+      { label: { en: 'He Tu (River Map)', es: 'He Tu (Mapa del Río)', zh: '河圖' }, value: 'hetu' },
+      { label: { en: '12 Branches Circle', es: 'Círculo de 12 Ramas', zh: '十二支圓環' }, value: 'branches' },
+      { label: { en: 'Hexagram Matrix (8x8)', es: 'Matriz de Hexagramas (8x8)', zh: '六十四卦矩陣' }, value: 'matrix' },
     ],
   },
 };

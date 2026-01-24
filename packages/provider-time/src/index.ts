@@ -59,11 +59,34 @@ function getCurrentTimeData(): TimeData {
 export function createTimeProvider(): SituationProvider<TimeData> {
   let currentData = getCurrentTimeData();
   const listeners = new Set<(data: TimeData) => void>();
-  let intervalId: ReturnType<typeof setInterval> | null = null;
+  let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
   const updateData = () => {
     currentData = getCurrentTimeData();
     listeners.forEach((cb) => cb(currentData));
+  };
+
+  /**
+   * Calculate milliseconds until next minute boundary.
+   * Aligns updates to minute changes for better power efficiency.
+   */
+  const getMillisecondsToNextMinute = (): number => {
+    const now = new Date();
+    const secondsUntilNextMinute = 60 - now.getSeconds();
+    const msUntilNextMinute = secondsUntilNextMinute * 1000 - now.getMilliseconds();
+    return msUntilNextMinute + 100; // Small buffer to ensure past minute boundary
+  };
+
+  const scheduleNextUpdate = () => {
+    if (timeoutId || listeners.size === 0) return;
+
+    const delay = getMillisecondsToNextMinute();
+    timeoutId = setTimeout(() => {
+      timeoutId = null;
+      updateData();
+      // Schedule next update at the next minute boundary
+      scheduleNextUpdate();
+    }, delay);
   };
 
   return {
@@ -72,13 +95,13 @@ export function createTimeProvider(): SituationProvider<TimeData> {
     subscribe(callback) {
       listeners.add(callback);
       if (listeners.size === 1) {
-        intervalId = setInterval(updateData, 60000); // Update every minute
+        scheduleNextUpdate(); // Smart timing aligned to minute boundaries
       }
       return () => {
         listeners.delete(callback);
-        if (listeners.size === 0 && intervalId) {
-          clearInterval(intervalId);
-          intervalId = null;
+        if (listeners.size === 0 && timeoutId) {
+          clearTimeout(timeoutId);
+          timeoutId = null;
         }
       };
     },

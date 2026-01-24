@@ -18,7 +18,7 @@ function getTimezoneBasedLongitude(): number {
 
 export function createTimezoneGeoLocator(): GeoLocator {
   const listeners = new Set<(position: GeoPosition) => void>();
-  let intervalId: ReturnType<typeof setInterval> | null = null;
+  let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
   const getCurrentPosition = (): GeoPosition => ({
     longitude: getTimezoneBasedLongitude(),
@@ -26,6 +26,30 @@ export function createTimezoneGeoLocator(): GeoLocator {
     precision: 'low',
     timestamp: new Date(),
   });
+
+  /**
+   * Calculate milliseconds until next minute boundary.
+   * Aligns timezone checks to minute changes for better power efficiency.
+   */
+  const getMillisecondsToNextMinute = (): number => {
+    const now = new Date();
+    const secondsUntilNextMinute = 60 - now.getSeconds();
+    const msUntilNextMinute = secondsUntilNextMinute * 1000 - now.getMilliseconds();
+    return msUntilNextMinute + 100; // Small buffer to ensure past minute boundary
+  };
+
+  const scheduleNextCheck = () => {
+    if (timeoutId || listeners.size === 0) return;
+
+    const delay = getMillisecondsToNextMinute();
+    timeoutId = setTimeout(() => {
+      timeoutId = null;
+      const position = getCurrentPosition();
+      listeners.forEach(cb => cb(position));
+      // Schedule next check
+      scheduleNextCheck();
+    }, delay);
+  };
 
   return {
     id: 'timezone',
@@ -54,19 +78,16 @@ export function createTimezoneGeoLocator(): GeoLocator {
       // Immediately provide current position
       callback(getCurrentPosition());
 
-      // Start checking for timezone changes (rare but possible)
+      // Start smart timing for timezone changes (rare but possible)
       if (listeners.size === 1) {
-        intervalId = setInterval(() => {
-          const position = getCurrentPosition();
-          listeners.forEach(cb => cb(position));
-        }, 60000); // Check every minute
+        scheduleNextCheck();
       }
 
       return () => {
         listeners.delete(callback);
-        if (listeners.size === 0 && intervalId) {
-          clearInterval(intervalId);
-          intervalId = null;
+        if (listeners.size === 0 && timeoutId) {
+          clearTimeout(timeoutId);
+          timeoutId = null;
         }
       };
     },

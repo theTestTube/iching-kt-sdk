@@ -3084,15 +3084,5 @@ export function getHexagramTranslationBySource(
   // Construct translation key (e.g., 'en-wilhelm', 'es-legge', 'zh-zhouyi')
   const key = `${lang}-${translationSource}`;
 
-  console.log('[getHexagramTranslationBySource]', {
-    number,
-    lang,
-    source,
-    translationSource,
-    key,
-    found: !!hex.translations[key],
-    availableKeys: Object.keys(hex.translations),
-  });
-
   return hex.translations[key];
 }

@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors } from '@iching-kt/core';
-import { getHexagram, getHexagramTranslationBySource } from '@iching-kt/data-hexagrams';
+import { KnowletContext, ActionableElement, getThemeColors, getTranslationSourceForLanguage } from '@iching-kt/core';
+import { getHexagram, getHexagramTranslationBySource, TranslationSource } from '@iching-kt/data-hexagrams';
 
 interface Props {
   context: KnowletContext;
@@ -17,15 +17,18 @@ export function HexagramView({ context }: Props) {
     ? (context.inputData.value as number)
     : 1; // Default to hexagram 1
 
-  // Get translation source from settings (defaults to 'wilhelm')
-  const translationSource = (context.settings.translationSource as string) || 'wilhelm';
+  // Get translation source from user preferences (with defaults)
+  const translationSource = getTranslationSourceForLanguage(
+    context.language,
+    context.translationPreferences
+  ) as TranslationSource;
 
   const colors = getThemeColors(context.colorScheme);
   const hexagram = getHexagram(hexagramNumber);
   const translation = getHexagramTranslationBySource(
     hexagramNumber,
     context.language,
-    translationSource as 'wilhelm' | 'legge'
+    translationSource
   );
 
   if (!hexagram || !translation) {
@@ -57,7 +60,7 @@ export function HexagramView({ context }: Props) {
       <Text style={[styles.number, { color: colors.textTertiary }]}>#{hexagram.number}</Text>
       <Text style={[styles.name, { color: colors.text }]}>{translation.name}</Text>
       <Text style={[styles.translationSource, { color: colors.textTertiary }]}>
-        {translationSource === 'legge' ? 'James Legge (1882)' : 'Wilhelm-Baynes (1950)'}
+        {translationSource === 'zhouyi' ? '周易 Zhouyi' : translationSource === 'legge' ? 'James Legge (1882)' : 'Wilhelm-Baynes (1950)'}
       </Text>
       <Text style={[styles.meaning, { color: colors.textSecondary }]}>{translation.meaning}</Text>
 

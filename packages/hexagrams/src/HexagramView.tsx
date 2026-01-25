@@ -25,6 +25,17 @@ export function HexagramView({ context }: Props) {
 
   const colors = getThemeColors(context.colorScheme);
   const hexagram = getHexagram(hexagramNumber);
+
+  console.log('[HexagramView] Debug:', {
+    hexagramNumber,
+    language: context.language,
+    translationSource,
+    translationPreferences: context.translationPreferences,
+    constructedKey: `${context.language}-${translationSource}`,
+    hexagramExists: !!hexagram,
+    availableKeys: hexagram ? Object.keys(hexagram.translations) : [],
+  });
+
   const translation = getHexagramTranslationBySource(
     hexagramNumber,
     context.language,

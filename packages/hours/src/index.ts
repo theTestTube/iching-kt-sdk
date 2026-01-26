@@ -32,7 +32,7 @@ export const hoursKnowlet: Knowlet = {
       zh: '探索十二時辰及其消息卦',
     },
     requiredProviders: ['solar-time'],
-    supportedLanguages: ['en', 'es'],
+    supportedLanguages: ['en', 'es', 'zh'],
     consumes: ['time'],
     produces: ['hexagram', 'trigram', 'element', 'yinyang'],
     category: 'board',

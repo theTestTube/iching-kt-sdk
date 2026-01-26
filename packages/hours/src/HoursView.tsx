@@ -63,9 +63,10 @@ export function HoursView({ context }: Props) {
   const abstractColors = getAbstractColors(context.colorScheme);
 
   if (!solarTimeData) {
+    const loadingText = context.language === 'zh' ? '載入中...' : context.language === 'es' ? 'Cargando...' : 'Loading...';
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={[styles.loading, { color: colors.textSecondary }]}>Loading...</Text>
+        <Text style={[styles.loading, { color: colors.textSecondary }]}>{loadingText}</Text>
       </View>
     );
   }
@@ -190,8 +191,8 @@ export function HoursView({ context }: Props) {
               <View style={styles.phaseRow}>
                 <Text style={[styles.phaseBadge, { color: colors.text, backgroundColor: colors.border }]}>
                   {sovereignMapping.phase === 'waxing'
-                    ? (context.language === 'es' ? '☀ Creciente' : '☀ Waxing')
-                    : (context.language === 'es' ? '☾ Menguante' : '☾ Waning')}
+                    ? (context.language === 'zh' ? '☀ 息' : context.language === 'es' ? '☀ Creciente' : '☀ Waxing')
+                    : (context.language === 'zh' ? '☾ 消' : context.language === 'es' ? '☾ Menguante' : '☾ Waning')}
                 </Text>
                 <Text style={[styles.yangLines, { color: colors.textTertiary }]}>
                   {sovereignMapping.yangLines}/6 yang

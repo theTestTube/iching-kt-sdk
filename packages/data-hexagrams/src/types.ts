@@ -3,9 +3,10 @@
  * Translations sourced from:
  * - Wilhelm-Baynes (Public Domain since 2020)
  * - James Legge (Public Domain since 1882)
+ * - Zhouyi 周易 (Classical Chinese, Public Domain)
  */
 
-export type TranslationSource = 'wilhelm' | 'legge';
+export type TranslationSource = 'wilhelm' | 'legge' | 'zhouyi';
 
 export interface HexagramTranslation {
   name: string;
@@ -24,7 +25,7 @@ export interface Hexagram {
   binary: string;
   upperTrigram: TrigramId;
   lowerTrigram: TrigramId;
-  /** Translations by language code, with optional source suffix (e.g., 'en', 'en-legge', 'es', 'zh') */
+  /** Translations by language-source key (e.g., 'en-wilhelm', 'en-legge', 'es-wilhelm', 'es-legge', 'zh-zhouyi') */
   translations: Record<string, HexagramTranslation>;
 }
 

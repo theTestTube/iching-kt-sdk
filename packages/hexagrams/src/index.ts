@@ -1,19 +1,14 @@
-import { Knowlet, KnowletSettings, KnowletSettingsSchema } from '@iching-kt/core';
+import { Knowlet } from '@iching-kt/core';
 import { HexagramView } from './HexagramView';
-import { HexagramSettingsView } from './HexagramSettingsView';
 
-const settingsSchema: KnowletSettingsSchema = {
-  translationSource: {
-    type: 'select',
-    label: 'Translation Source',
-    default: 'wilhelm',
-    options: [
-      { label: 'Wilhelm-Baynes (1950)', value: 'wilhelm' },
-      { label: 'James Legge (1882)', value: 'legge' },
-    ],
-  },
-};
-
+/**
+ * Hexagrams Knowlet
+ *
+ * Translation source is controlled globally via Translation Sources in General Settings.
+ * - Chinese (zh): Original 周易 text (untranslated)
+ * - English (en): Wilhelm-Baynes or Legge (untranslated, direct from source)
+ * - Spanish (es): Claude translations at build time from Chinese/Legge/Wilhelm
+ */
 export const hexagramsKnowlet: Knowlet = {
   meta: {
     id: 'hexagrams',
@@ -35,9 +30,8 @@ export const hexagramsKnowlet: Knowlet = {
     produces: ['trigram'],
     category: 'data',
   },
-  settingsSchema,
+  // No settingsSchema - source selection is in General Settings > Translation Sources
   View: HexagramView,
-  SettingsView: HexagramSettingsView,
 };
 
-export { HexagramView, HexagramSettingsView };
+export { HexagramView };

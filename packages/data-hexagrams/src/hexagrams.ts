@@ -58,6 +58,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Qian. Gran progreso y éxito. La ventaja de ser firme y correcto.',
         image: 'El cielo se mueve con vigor. El hombre superior aumenta su virtud y realiza su obra.',
       },
+      'es-zhouyi': {
+        name: 'Lo Creativo',
+        meaning: 'Cielo, principio creador, yang puro',
+        judgment: 'Sublime éxito, propicio mediante la perseverancia.',
+        image: 'El movimiento del Cielo es vigoroso. El hombre superior se fortalece sin cesar.',
+      },
       'zh-zhouyi': {
         name: '乾',
         meaning: '天，創造原則，純陽能量',
@@ -104,6 +110,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El principio receptivo; tierra y energía yin',
         judgment: 'Kun. Lo receptivo produce gran progreso y éxito, cuando el sujeto muestra la firme corrección de una yegua.',
         image: 'La tierra está en su elemento abajo. El hombre superior, con gran virtud, sostiene las cosas.',
+      },
+      'es-zhouyi': {
+        name: 'Lo Receptivo',
+        meaning: 'Tierra, principio receptivo, yin puro',
+        judgment: 'Sublime éxito, propicio mediante la perseverancia de una yegua.',
+        image: 'La condición de la Tierra es receptiva. El hombre superior con amplia virtud sostiene todas las cosas.',
       },
       'zh-zhouyi': {
         name: '坤',
@@ -152,6 +164,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Tai. Lo pequeño parte; lo grande se acerca. Es propicio ser firme y correcto.',
         image: 'Cielo y tierra encontrándose forman Tai. El hombre superior así distribuye sus tesoros para beneficiar al pueblo común.',
       },
+      'es-zhouyi': {
+        name: 'La Paz',
+        meaning: 'La paz, prosperidad, comunicación entre cielo y tierra',
+        judgment: 'Lo pequeño parte, lo grande llega. Buena fortuna. Éxito.',
+        image: 'Cielo y tierra se comunican: la Paz. El gobernante así completa el curso del cielo y la tierra.',
+      },
       'zh-zhouyi': {
         name: '泰',
         meaning: '天地交泰，和諧繁榮',
@@ -198,6 +216,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Estancamiento por falta de unidad entre cielo y tierra',
         judgment: 'Pi. No es propicio para el firme y correcto. Lo grande parte; lo pequeño se acerca.',
         image: 'Cielo y tierra sin contacto forman Pi. El hombre superior administra su virtud y evita la calamidad.',
+      },
+      'es-zhouyi': {
+        name: 'El Estancamiento',
+        meaning: 'El estancamiento, obstrucción, falta de comunicación',
+        judgment: 'Estancamiento de gente indigna. No propicio para la perseverancia del hombre superior. Lo grande parte, lo pequeño llega.',
+        image: 'Cielo y tierra no se comunican: el Estancamiento. El hombre superior modera su virtud para evitar calamidades.',
       },
       'zh-zhouyi': {
         name: '否',
@@ -246,6 +270,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Lin. Es propicio ser firme y correcto, y estar en guardia contra todo mal.',
         image: 'El pantano elevándose sobre la tierra forma Lin. El hombre superior, en su conducta, cultiva la bondad y nunca se fatiga.',
       },
+      'es-zhouyi': {
+        name: 'El Acercamiento',
+        meaning: 'El acercamiento, aproximación, supervisión',
+        judgment: 'Sublime éxito, propicio mediante la perseverancia. Cuando llegue el octavo mes, habrá adversidad.',
+        image: 'Sobre el lago hay tierra: el Acercamiento. El hombre superior enseña y reflexiona sin límite.',
+      },
       'zh-zhouyi': {
         name: '臨',
         meaning: '臨近，變大，前進',
@@ -292,6 +322,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Ver ampliamente; ofrecer con sinceridad',
         judgment: 'Guan. La ablución se ha realizado, pero no las ofrendas sacrificiales. Se muestra fe y reverencia.',
         image: 'El viento se mueve sobre la tierra formando Guan. Los reyes antiguos así contemplaban el mundo y establecían enseñanzas.',
+      },
+      'es-zhouyi': {
+        name: 'La Contemplación',
+        meaning: 'La contemplación, observar, ser modelo',
+        judgment: 'La ablución se ha hecho, pero no la ofrenda. Con sinceridad, solemne reverencia.',
+        image: 'El viento recorre la tierra: la Contemplación. Los antiguos reyes visitaban las regiones, observaban al pueblo y establecían las enseñanzas.',
       },
       'zh-zhouyi': {
         name: '觀',
@@ -340,6 +376,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Bo. No es propicio tener adónde ir.',
         image: 'La montaña adherida a la tierra forma Bo. Los hombres superiores consolidan el estado y fortalecen los lazos entre el pueblo.',
       },
+      'es-zhouyi': {
+        name: 'La Desintegración',
+        meaning: 'La desintegración, desprendimiento, decadencia',
+        judgment: 'No propicio emprender nada.',
+        image: 'La montaña se adhiere a la tierra: la Desintegración. Los de arriba con generosidad hacia abajo aseguran la morada.',
+      },
       'zh-zhouyi': {
         name: '剝',
         meaning: '剝落，剝奪，衰敗',
@@ -386,6 +428,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Regresando; el punto de inflexión del año',
         judgment: 'Fu. Hay salida y entrada sin error. Los amigos vienen sin equivocación. Ir y venir es el camino.',
         image: 'Trueno en la tierra forma Fu. Los reyes antiguos cerraban puertas y pasajes en el solsticio de invierno.',
+      },
+      'es-zhouyi': {
+        name: 'El Retorno',
+        meaning: 'El retorno, renovación, punto de inflexión',
+        judgment: 'Éxito. Salir y entrar sin aflicción. Los amigos vienen sin culpa.',
+        image: 'Trueno en la tierra: el Retorno. Los antiguos reyes en el solsticio cerraban los pasos.',
       },
       'zh-zhouyi': {
         name: '復',
@@ -434,6 +482,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Dun. Progreso próspero. En asuntos pequeños, ser firme y correcto es propicio.',
         image: 'Cielo bajo la montaña forma Dun. El hombre superior mantiene al hombre inferior a distancia con dignidad y reserva.',
       },
+      'es-zhouyi': {
+        name: 'La Retirada',
+        meaning: 'La retirada, retirarse, ocultarse',
+        judgment: 'Éxito. En lo pequeño, propicio mediante la perseverancia.',
+        image: 'Bajo el cielo hay una montaña: la Retirada. El hombre superior se aleja del hombre inferior.',
+      },
       'zh-zhouyi': {
         name: '遯',
         meaning: '退避，讓步，戰略撤退',
@@ -480,6 +534,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El vigor de la gran fuerza en su lugar apropiado',
         judgment: 'Da Zhuang. Ser firme y correcto es propicio.',
         image: 'Trueno en el cielo arriba forma Da Zhuang. El hombre superior no camina por senderos que entran en conflicto con el orden establecido.',
+      },
+      'es-zhouyi': {
+        name: 'El Poder de lo Grande',
+        meaning: 'El poder de lo grande, gran fuerza, vigor',
+        judgment: 'Propicio mediante la perseverancia.',
+        image: 'Trueno en el cielo: el Poder de lo Grande. El hombre superior no pisa lo que no es correcto.',
       },
       'zh-zhouyi': {
         name: '大壯',
@@ -528,6 +588,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Guai. Se debe dar a conocer el asunto en el palacio del rey con perfecta sinceridad. Hay peligro.',
         image: 'El agua del pantano elevándose al cielo forma Guai. El hombre superior dispensa sus favores hacia abajo sin retenerlos.',
       },
+      'es-zhouyi': {
+        name: 'La Resolución',
+        meaning: 'La resolucion, irrupcion, avance decisivo',
+        judgment: 'Proclamar en la corte del rey. Con sinceridad clamar: hay peligro.',
+        image: 'El lago asciende al cielo: la Resolucion. El hombre superior distribuye beneficios hacia abajo.',
+      },
       'zh-zhouyi': {
         name: '夬',
         meaning: '決斷，決心，突破',
@@ -574,6 +640,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Encuentro; una influencia femenina que se vuelve predominante',
         judgment: 'Gou. Hay una joven; no se debe desposarla.',
         image: 'Viento bajo el cielo forma Gou. El príncipe emite sus mandatos y estos llegan a todas las regiones.',
+      },
+      'es-zhouyi': {
+        name: 'El Ir al Encuentro',
+        meaning: 'El encuentro, venir al encuentro, tentacion',
+        judgment: 'La mujer es poderosa. No se debe tomar esposa.',
+        image: 'Bajo el cielo hay viento: el Encuentro. El soberano difunde sus mandatos a los cuatro puntos cardinales.',
       },
       'zh-zhouyi': {
         name: '姤',
@@ -622,6 +694,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Zhun. Es propicio ser firme y correcto, y no tener lugar adónde ir. Es propicio designar príncipes feudales.',
         image: 'Nubes y trueno forman Zhun. El hombre superior así refina el aspecto exterior de su naturaleza.',
       },
+      'es-zhouyi': {
+        name: 'La Dificultad Inicial',
+        meaning: 'Dificultad inicial, brote naciente, comienzo arduo',
+        judgment: 'Sublime éxito, propicio mediante la perseverancia. No emprender nada. Propicio establecer ayudantes.',
+        image: 'Nubes y trueno: la Dificultad Inicial. El hombre superior pone orden en los asuntos.',
+      },
       'zh-zhouyi': {
         name: '屯',
         meaning: '初期困難，分娩陣痛，困難',
@@ -668,6 +746,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Juventud e inexperiencia, buscando orientación',
         judgment: 'Meng. Es propicio que no sea yo quien busque al joven e inexperto, sino que él me busque. En la primera consulta le informo de sus dudas.',
         image: 'El manantial bajo la montaña forma Meng. El hombre superior así cultiva su carácter.',
+      },
+      'es-zhouyi': {
+        name: 'La Insensatez Juvenil',
+        meaning: 'Insensatez juvenil, inexperiencia, oscuridad inicial',
+        judgment: 'Éxito. No soy yo quien busca al joven insensato; el joven insensato me busca. En la primera consulta informo; si pregunta dos o tres veces, es irreverencia. Si es irreverente, no informo. Propicio mediante la perseverancia.',
+        image: 'Bajo la montaña brota un manantial: la Insensatez Juvenil. El hombre superior con acción decidida cultiva la virtud.',
       },
       'zh-zhouyi': {
         name: '蒙',
@@ -716,6 +800,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Xu. Con la sinceridad que seguramente estará allí, habrá luz, decisión y buena fortuna. Ir a cruzar la gran agua trae buena fortuna.',
         image: 'Nubes elevándose hacia el cielo forman Xu. El hombre superior en su ocio come y bebe y está de buen ánimo.',
       },
+      'es-zhouyi': {
+        name: 'La Espera',
+        meaning: 'La espera, aguardar, nutrición',
+        judgment: 'Con sinceridad, brillante éxito. La perseverancia trae buena fortuna. Propicio cruzar la gran agua.',
+        image: 'Nubes ascienden al cielo: la Espera. El hombre superior come, bebe y se regocija.',
+      },
       'zh-zhouyi': {
         name: '需',
         meaning: '滋養，耐心，有利時期',
@@ -762,6 +852,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Contienda y disputa',
         judgment: 'Song. Tenemos sinceridad y confianza en nosotros, pero estamos detenidos por falta de fe en otros. Si en medio de la dificultad permanecemos firmes y correctos, hay buena fortuna al final.',
         image: 'Cielo y agua yendo en direcciones opuestas forman Song. El hombre superior en sus deliberaciones debe sopesar cuidadosamente.',
+      },
+      'es-zhouyi': {
+        name: 'El Conflicto',
+        meaning: 'Conflicto, litigio, contienda',
+        judgment: 'Con sinceridad obstruida, cautela. Buena fortuna en el medio. Adversidad al final. Propicio ver al gran hombre. No propicio cruzar la gran agua.',
+        image: 'Cielo y agua van en direcciones opuestas: el Conflicto. El hombre superior en sus asuntos planea desde el comienzo.',
       },
       'zh-zhouyi': {
         name: '訟',
@@ -810,6 +906,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Shi. El ejército requiere firmeza y buena fortuna llega al líder sin culpa.',
         image: 'Agua en la tierra forma el Ejército. El hombre superior así anima a la multitud.',
       },
+      'es-zhouyi': {
+        name: 'El Ejército',
+        meaning: 'El ejército, las tropas, la multitud',
+        judgment: 'El ejército con perseverancia. Un hombre maduro, buena fortuna. Sin culpa.',
+        image: 'En medio de la tierra hay agua: el Ejército. El hombre superior acoge al pueblo y nutre a la multitud.',
+      },
       'zh-zhouyi': {
         name: '師',
         meaning: '軍隊，軍事紀律，合法性',
@@ -856,6 +958,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Unirse para un propósito común',
         judgment: 'Bi. Trae buena fortuna. Pero examine si la unión está basada en lo verdadero.',
         image: 'Agua sobre la tierra forma Bi. Los reyes antiguos así establecieron a los príncipes como ministros del estado.',
+      },
+      'es-zhouyi': {
+        name: 'La Unión',
+        meaning: 'La unión, solidaridad, alianza',
+        judgment: 'Buena fortuna. Examina el oráculo: sublime, duradera perseverancia. Sin culpa. Los inquietos vienen. Para el rezagado, adversidad.',
+        image: 'Agua sobre la tierra: la Unión. Los antiguos reyes establecieron miríadas de estados y se aliaron con los señores feudales.',
       },
       'zh-zhouyi': {
         name: '比',
@@ -904,6 +1012,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Xiao Chu. Trae buena fortuna. Nubes densas pero sin lluvia vienen del límite de nuestro territorio occidental.',
         image: 'El viento moviéndose por el cielo forma Xiao Chu. El hombre superior así refina el aspecto exterior de su naturaleza.',
       },
+      'es-zhouyi': {
+        name: 'El Poder Domesticador de lo Pequeño',
+        meaning: 'El poder domesticador de lo pequeño, pequeña acumulación',
+        judgment: 'Éxito. Nubes densas sin lluvia desde nuestra región occidental.',
+        image: 'El viento recorre el cielo: el Poder Domesticador de lo Pequeño. El hombre superior cultiva las virtudes de la cultura.',
+      },
       'zh-zhouyi': {
         name: '小畜',
         meaning: '馴服，積累，微妙影響',
@@ -950,6 +1064,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Conducta apropiada y humildad',
         judgment: 'Lu. Cuando uno pisa la cola de un tigre y este no lo muerde, hay buena fortuna.',
         image: 'Cielo y pantano forman Lu. El hombre superior así establece una distinción entre alto y bajo.',
+      },
+      'es-zhouyi': {
+        name: 'El Porte',
+        meaning: 'El porte, la conducta, pisar con cuidado',
+        judgment: 'Pisar la cola del tigre. No muerde al hombre. Éxito.',
+        image: 'Arriba el cielo, abajo el lago: el Porte. El hombre superior distingue entre lo alto y lo bajo, y establece la voluntad del pueblo.',
       },
       'zh-zhouyi': {
         name: '履',
@@ -998,6 +1118,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Tong Ren. En lo abierto trae buena fortuna. Es propicio cruzar la gran agua.',
         image: 'Cielo y fuego forman Tong Ren. El hombre superior así divide las cosas en categorías.',
       },
+      'es-zhouyi': {
+        name: 'La Comunidad con los Hombres',
+        meaning: 'Comunidad con los hombres, hermandad, unión',
+        judgment: 'Comunidad con los hombres en lo abierto. Éxito. Propicio cruzar la gran agua. Propicio mediante la perseverancia.',
+        image: 'Cielo y fuego: la Comunidad con los Hombres. El hombre superior organiza los clanes y distingue las cosas.',
+      },
       'zh-zhouyi': {
         name: '同人',
         meaning: '社區，統一，兄弟情誼',
@@ -1044,6 +1170,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Grandes posesiones y alta posición',
         judgment: 'Da You. Suprema buena fortuna.',
         image: 'Fuego elevándose hacia el cielo forma Da You. El hombre superior así frena el mal y manifiesta el bien.',
+      },
+      'es-zhouyi': {
+        name: 'La Gran Posesión',
+        meaning: 'La gran posesión, abundancia, prosperidad',
+        judgment: 'Sublime éxito.',
+        image: 'Fuego en lo alto del cielo: la Gran Posesión. El hombre superior reprime el mal y promueve el bien.',
       },
       'zh-zhouyi': {
         name: '大有',
@@ -1092,6 +1224,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Qian. La modestia trae buena fortuna. El hombre superior lleva su obra a conclusión.',
         image: 'Una montaña dentro de la tierra forma Qian. El hombre superior disminuye lo mucho y aumenta lo poco.',
       },
+      'es-zhouyi': {
+        name: 'La Modestia',
+        meaning: 'La modestia, humildad, contención',
+        judgment: 'Éxito. El hombre superior tiene buen final.',
+        image: 'En medio de la tierra hay una montaña: la Modestia. El hombre superior reduce lo excesivo y aumenta lo escaso.',
+      },
       'zh-zhouyi': {
         name: '謙',
         meaning: '謙虛，節制，讓步',
@@ -1138,6 +1276,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Armonía y placer en acuerdo',
         judgment: 'Yu. Es propicio establecer príncipes feudales y poner el ejército en movimiento.',
         image: 'Trueno en la tierra forma Yu. Los reyes antiguos usaban la música para celebrar sus logros y los ofrecían a lo divino.',
+      },
+      'es-zhouyi': {
+        name: 'El Entusiasmo',
+        meaning: 'El entusiasmo, alegría, preparación',
+        judgment: 'Propicio establecer feudatarios y mover el ejército.',
+        image: 'Trueno surge de la tierra: el Entusiasmo. Los antiguos reyes hacían música para honrar la virtud.',
       },
       'zh-zhouyi': {
         name: '豫',
@@ -1186,6 +1330,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Sui. Suprema buena fortuna. No hay culpa en ser firme y correcto. Hay ventaja en ceder al tiempo.',
         image: 'Trueno sobre el lago forma Sui. El hombre superior se retira del mundo al anochecer para descansar.',
       },
+      'es-zhouyi': {
+        name: 'El Seguimiento',
+        meaning: 'El seguimiento, adaptarse, ir con la corriente',
+        judgment: 'Sublime éxito. Propicio mediante la perseverancia. Sin culpa.',
+        image: 'Trueno dentro del lago: el Seguimiento. El hombre superior al anochecer entra a descansar.',
+      },
       'zh-zhouyi': {
         name: '隨',
         meaning: '跟隨，順從，靈活',
@@ -1232,6 +1382,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Decadencia y remedio; enderezar lo arruinado',
         judgment: 'Gu. Hay gran buena fortuna en enderezar las cosas. Es propicio cruzar la gran agua.',
         image: 'Viento soplando bajo la montaña forma Gu. El hombre superior así incita al pueblo y fortalece su virtud.',
+      },
+      'es-zhouyi': {
+        name: 'La Corrupción',
+        meaning: 'La corrupción, reparar lo echado a perder, renovación',
+        judgment: 'Sublime éxito. Propicio cruzar la gran agua. Tres días antes del comienzo, tres días después del comienzo.',
+        image: 'Viento bajo la montaña: la Corrupción. El hombre superior estimula al pueblo y nutre la virtud.',
       },
       'zh-zhouyi': {
         name: '蠱',
@@ -1280,6 +1436,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Yao He. Masticar y morder a través trae buena fortuna. Es propicio procesar al criminal.',
         image: 'Relámpago sobre trueno forma Yao He. Los reyes antiguos así hacían las penas claras y severas.',
       },
+      'es-zhouyi': {
+        name: 'La Mordedura a Través',
+        meaning: 'La mordedura, morder a través, justicia',
+        judgment: 'Éxito. Propicio aplicar castigos.',
+        image: 'Trueno y fuego: la Mordedura a Través. Los antiguos reyes clarificaban los castigos y establecían las leyes.',
+      },
       'zh-zhouyi': {
         name: '咬嗑',
         meaning: '決心，消除障礙，果斷',
@@ -1326,6 +1488,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Elegancia y embellecimiento',
         judgment: 'Bi. Hay buena fortuna en asuntos pequeños. Es bueno tener algún destino adónde ir.',
         image: 'Fuego al pie de la montaña forma Bi. El hombre superior así ilumina su cultura y no se atreve a cortar el litigio.',
+      },
+      'es-zhouyi': {
+        name: 'La Gracia',
+        meaning: 'La gracia, ornamento, belleza formal',
+        judgment: 'Éxito. En lo pequeño, propicio emprender algo.',
+        image: 'Fuego bajo la montaña: la Gracia. El hombre superior aclara los asuntos del gobierno.',
       },
       'zh-zhouyi': {
         name: '賁',
@@ -1374,6 +1542,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Wu Wang. Hay suprema buena fortuna. Es propicio ser correcto y firme.',
         image: 'Trueno bajo el cielo forma Wu Wang. Los reyes antiguos así fomentaban la virtud abundantemente.',
       },
+      'es-zhouyi': {
+        name: 'La Inocencia',
+        meaning: 'La inocencia, sin falsedad, lo inesperado',
+        judgment: 'Sublime éxito, propicio mediante la perseverancia. Si no es correcto, hay calamidad; no propicio emprender nada.',
+        image: 'Bajo el cielo el trueno avanza: la Inocencia. Los antiguos reyes con abundancia correspondían a las estaciones y nutrían todas las cosas.',
+      },
       'zh-zhouyi': {
         name: '無妄',
         meaning: '無欺，正直，自發性',
@@ -1420,6 +1594,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Acumular la fuerza para contener',
         judgment: 'Da Chu. Es propicio ser firme y correcto. Si no fuera por su hogar, hay buena fortuna. Es propicio cruzar la gran agua.',
         image: 'Cielo bajo la montaña forma Da Chu. El hombre superior acumula virtud para beneficiar al mundo.',
+      },
+      'es-zhouyi': {
+        name: 'El Poder Domesticador de lo Grande',
+        meaning: 'El poder domesticador de lo grande, gran acumulación',
+        judgment: 'Propicio mediante la perseverancia. No comer en casa es buena fortuna. Propicio cruzar la gran agua.',
+        image: 'El cielo dentro de la montaña: el Poder Domesticador de lo Grande. El hombre superior conoce muchos dichos y hechos del pasado.',
       },
       'zh-zhouyi': {
         name: '大畜',
@@ -1468,6 +1648,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Yi. La corrección firme trae buena fortuna. Presta atención a proporcionar nutrición.',
         image: 'Trueno bajo la montaña forma Yi. El hombre superior es cuidadoso en sus palabras y moderado en el comer y beber.',
       },
+      'es-zhouyi': {
+        name: 'La Nutrición',
+        meaning: 'Las comisuras de la boca, nutrición, sustento',
+        judgment: 'La perseverancia trae buena fortuna. Observa la nutrición y cómo uno busca llenar su boca.',
+        image: 'Trueno bajo la montaña: la Nutrición. El hombre superior es cuidadoso con sus palabras.',
+      },
       'zh-zhouyi': {
         name: '頤',
         meaning: '營養，供應，維持',
@@ -1514,6 +1700,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Ir demasiado lejos; exceder el medio',
         judgment: 'Da Guo. La viga se cede peligrosamente. Es propicio tener adónde ir. Pequeña buena fortuna.',
         image: 'El viento gira sobre el lago formando Da Guo. El hombre superior se mantiene solo sin temor.',
+      },
+      'es-zhouyi': {
+        name: 'El Exceso de lo Grande',
+        meaning: 'El exceso de lo grande, preponderancia, extremo',
+        judgment: 'La viga maestra se dobla. Propicio emprender algo. Éxito.',
+        image: 'El lago sobre el viento: el Exceso de lo Grande. El hombre superior permanece solo sin temor.',
       },
       'zh-zhouyi': {
         name: '大過',
@@ -1562,6 +1754,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Kan repetido. Si tienes verdad y sinceridad, y las muestras a otros, tendrás buena fortuna.',
         image: 'El agua sigue fluyendo y también llena; la doble repetición del trigrama del agua indica la idea de fluir. El hombre superior aplica esto a la práctica perpetua de la virtud.',
       },
+      'es-zhouyi': {
+        name: 'Lo Abismal',
+        meaning: 'Lo abismal, el agua, peligro repetido',
+        judgment: 'El Abismo repetido. Con sinceridad, solo el corazón tiene éxito. La acción es estimada.',
+        image: 'El agua fluye sin cesar: lo Abismal. El hombre superior actúa con virtud constante.',
+      },
       'zh-zhouyi': {
         name: '坎',
         meaning: '危險，水流，深度',
@@ -1608,6 +1806,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Brillo e iluminación',
         judgment: 'Li. Es propicio ser firme y correcto. Hay buena fortuna en cuidar de la vaca.',
         image: 'Fuego repetido, la imagen del Fuego. El hombre superior así se vuelve perpetuamente resplandeciente con luz y amor.',
+      },
+      'es-zhouyi': {
+        name: 'Lo Adherente',
+        meaning: 'Lo adherente, el fuego, claridad',
+        judgment: 'Propicio mediante la perseverancia. Éxito. Criar una vaca trae buena fortuna.',
+        image: 'La claridad surge dos veces: lo Adherente. El gran hombre perpetuando la luz ilumina los cuatro puntos cardinales.',
       },
       'zh-zhouyi': {
         name: '離',
@@ -1657,6 +1861,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Xian. Hay buena fortuna en ser firme y correcto. Es propicio tener una doncella.',
         image: 'Un pantano en la montaña forma Xian. El hombre superior así busca popularidad estando listo para recibir.',
       },
+      'es-zhouyi': {
+        name: 'La Influencia',
+        meaning: 'La influencia, atracción mutua, cortejo',
+        judgment: 'Éxito. Propicio mediante la perseverancia. Tomar esposa trae buena fortuna.',
+        image: 'Lago sobre la montaña: la Influencia. El hombre superior con humildad recibe a las personas.',
+      },
       'zh-zhouyi': {
         name: '咸',
         meaning: '吸引，求婚，相互作用',
@@ -1703,6 +1913,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Perdurar sin cambio con buen resultado',
         judgment: 'Heng. Hay buena fortuna, no hay culpa. Es propicio ser firme y correcto.',
         image: 'Trueno y viento forman Heng. El hombre superior permanece resuelto e inmutable.',
+      },
+      'es-zhouyi': {
+        name: 'La Duración',
+        meaning: 'La duración, constancia, perseverancia',
+        judgment: 'Éxito. Sin culpa. Propicio mediante la perseverancia. Propicio emprender algo.',
+        image: 'Trueno y viento: la Duración. El hombre superior permanece firme y no cambia de dirección.',
       },
       'zh-zhouyi': {
         name: '恆',
@@ -1751,6 +1967,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Jin. Progreso. Se presenta un buen caballo. En un día hay progreso muchas veces.',
         image: 'Fuego sobre la tierra forma Jin. El hombre superior así reconoce la excelencia luminosa y honra la virtud.',
       },
+      'es-zhouyi': {
+        name: 'El Progreso',
+        meaning: 'El progreso, avance, ascenso',
+        judgment: 'El marqués pacífico recibe caballos en abundancia y es recibido tres veces en un día.',
+        image: 'El fuego surge de la tierra: el Progreso. El hombre superior ilumina su virtud luminosa.',
+      },
       'zh-zhouyi': {
         name: '晉',
         meaning: '進步，提升，向上運動',
@@ -1797,6 +2019,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Brillo oculto; perdurar en la oscuridad',
         judgment: 'Ming Yi. En la adversidad, es propicio ser firme y correcto.',
         image: 'Luz entrando en la tierra forma Ming Yi. El hombre superior oculta su luz, pero aún brilla.',
+      },
+      'es-zhouyi': {
+        name: 'El Oscurecimiento de la Luz',
+        meaning: 'El oscurecimiento de la luz, luz herida, adversidad',
+        judgment: 'Propicio en la dificultad mediante la perseverancia.',
+        image: 'La luz entra en la tierra: el Oscurecimiento de la Luz. El hombre superior vela su claridad ante las dificultades.',
       },
       'zh-zhouyi': {
         name: '明夷',
@@ -1845,6 +2073,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Jia Ren. Es propicio que la mujer sea firme y correcta.',
         image: 'El viento surge del fuego: la imagen de la Familia. El hombre superior tiene sustancia en sus palabras y unidad en sus acciones.',
       },
+      'es-zhouyi': {
+        name: 'La Familia',
+        meaning: 'La familia, el clan, el hogar',
+        judgment: 'Propicio para la perseverancia de la mujer.',
+        image: 'El viento surge del fuego: la Familia. El hombre superior tiene sustancia en sus palabras y constancia en su conducta.',
+      },
       'zh-zhouyi': {
         name: '家人',
         meaning: '家庭，關係，基礎',
@@ -1891,6 +2125,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Estar opuesto, distanciamiento',
         judgment: 'Kui. En asuntos pequeños hay buena fortuna.',
         image: 'Fuego sobre el lago forma Kui. El hombre superior a pesar de su diferencia retiene su unidad con otros.',
+      },
+      'es-zhouyi': {
+        name: 'La Oposición',
+        meaning: 'La oposicion, divergencia, miradas opuestas',
+        judgment: 'En asuntos pequeños, buena fortuna.',
+        image: 'Fuego sobre el lago: la Oposicion. El hombre superior siendo igual mantiene su diferencia.',
       },
       'zh-zhouyi': {
         name: '睽',
@@ -1939,6 +2179,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Jian. Es favorable ir al suroeste, y no favorable ir al noreste. Es propicio ver al gran hombre.',
         image: 'Agua en la montaña forma Jian. El hombre superior vuelve su atención hacia dentro y cultiva su carácter.',
       },
+      'es-zhouyi': {
+        name: 'La Obstrucción',
+        meaning: 'La obstruccion, dificultad, impedimento',
+        judgment: 'Propicio el suroeste. No propicio el noreste. Propicio ver al gran hombre. La perseverancia trae buena fortuna.',
+        image: 'Agua sobre la montana: la Obstruccion. El hombre superior se vuelve hacia si mismo y cultiva su virtud.',
+      },
       'zh-zhouyi': {
         name: '蹇',
         meaning: '障礙，停頓，靜止',
@@ -1985,6 +2231,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Liberación de la restricción y la dificultad',
         judgment: 'Jie. Es favorable ir al suroeste. No hay destino y volver es buena fortuna.',
         image: 'Trueno y lluvia se juntan formando Jie. El hombre superior así perdona los errores de otros.',
+      },
+      'es-zhouyi': {
+        name: 'La Liberación',
+        meaning: 'La liberacion, solucion, alivio',
+        judgment: 'Propicio el suroeste. Si no hay donde ir, el retorno trae buena fortuna. Si hay donde ir, actuar pronto trae buena fortuna.',
+        image: 'Trueno y lluvia actuan: la Liberacion. El hombre superior perdona las faltas y absuelve los crimenes.',
       },
       'zh-zhouyi': {
         name: '解',
@@ -2033,6 +2285,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Sun. Con sinceridad, hay suprema buena fortuna sin culpa. Es propicio ser firme y correcto.',
         image: 'Bajo la montaña hay un lago formando Sun. El hombre superior así frena su ira y restringe sus deseos.',
       },
+      'es-zhouyi': {
+        name: 'La Disminución',
+        meaning: 'La disminucion, reduccion, sacrificio',
+        judgment: 'Con sinceridad, sublime buena fortuna. Sin culpa. Se puede perseverar. Propicio emprender algo.',
+        image: 'Bajo la montana hay un lago: la Disminucion. El hombre superior frena la ira y reprime los deseos.',
+      },
       'zh-zhouyi': {
         name: '損',
         meaning: '減少，犧牲，消除',
@@ -2079,6 +2337,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Multiplicación y avance',
         judgment: 'Yi. Es propicio tener un destino. Es propicio cruzar la gran agua.',
         image: 'Viento y trueno forman Yi. El hombre superior así elimina lo malo y fortalece lo bueno.',
+      },
+      'es-zhouyi': {
+        name: 'El Aumento',
+        meaning: 'El aumento, beneficio, incremento',
+        judgment: 'Propicio emprender algo. Propicio cruzar la gran agua.',
+        image: 'Viento y trueno: el Aumento. El hombre superior al ver el bien se mueve hacia el.',
       },
       'zh-zhouyi': {
         name: '益',
@@ -2127,6 +2391,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Cui. El rey se acerca a su templo. Es propicio ver al gran hombre. Hay buena fortuna.',
         image: 'El lago se eleva sobre la tierra formando Cui. El hombre superior así ordena a sus oficiales.',
       },
+      'es-zhouyi': {
+        name: 'La Reunión',
+        meaning: 'La reunion, congregacion, asamblea',
+        judgment: 'Exito. El rey se acerca al templo. Propicio ver al gran hombre. Exito. Propicio mediante la perseverancia. Usar grandes ofrendas trae buena fortuna.',
+        image: 'El lago sobre la tierra: la Reunion. El hombre superior prepara las armas para lo imprevisto.',
+      },
       'zh-zhouyi': {
         name: '萃',
         meaning: '聚集，集會，收集',
@@ -2173,6 +2443,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Avanzar sin obstáculo',
         judgment: 'Sheng. Hay gran buena fortuna. No es impropio ver al gran hombre. No albergues tristeza por perderlo. Ir al sur trae buena fortuna.',
         image: 'Madera dentro de la tierra forma Sheng. El hombre superior a través de su respeto y perseverancia expande su virtud.',
+      },
+      'es-zhouyi': {
+        name: 'El Ascenso',
+        meaning: 'El ascenso, empuje hacia arriba, promocion',
+        judgment: 'Sublime exito. Es propicio ver al gran hombre. No te preocupes. Una expedicion al sur trae buena fortuna.',
+        image: 'En la tierra crece la madera: el Ascenso. El hombre superior con docilidad acumula lo pequeno para alcanzar lo alto y grande.',
       },
       'zh-zhouyi': {
         name: '升',
@@ -2221,6 +2497,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Kun. Hay buena fortuna. No hay culpa. El hombre superior trae buena fortuna. Pero si tiene algo que decir, no será creído.',
         image: 'El lago sin agua forma Kun. El hombre superior así arriesga su vida persiguiendo su voluntad.',
       },
+      'es-zhouyi': {
+        name: 'La Opresión',
+        meaning: 'La opresion, agotamiento, dificultad extrema',
+        judgment: 'Exito. La perseverancia. El gran hombre tiene buena fortuna. Sin culpa. Si tiene palabras, no seran creidas.',
+        image: 'El lago sin agua: la Opresion. El hombre superior arriesga su vida para cumplir su voluntad.',
+      },
       'zh-zhouyi': {
         name: '困',
         meaning: '壓迫，耗盡，困難',
@@ -2267,6 +2549,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Agua pura y provisión constante',
         judgment: 'Jing. La ciudad puede cambiar pero no el pozo. No disminuye ni aumenta. Yendo y viniendo, sacando agua, todos se benefician del pozo.',
         image: 'El agua pasa sobre la madera formando Jing. El hombre superior anima al pueblo común a apoyarse mutuamente.',
+      },
+      'es-zhouyi': {
+        name: 'El Pozo',
+        meaning: 'El pozo, fuente inagotable, renovacion',
+        judgment: 'La ciudad puede cambiar, pero el pozo no cambia. No pierde ni gana. Van y vienen al pozo. Casi llegar y no sacar el agua, o romper el cantaro, trae adversidad.',
+        image: 'Agua sobre madera: el Pozo. El hombre superior estimula al pueblo y los exhorta a ayudarse.',
       },
       'zh-zhouyi': {
         name: '井',
@@ -2315,6 +2603,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Ge. En su propio día es creído. Hay suprema buena fortuna, y es propicio ser firme y correcto.',
         image: 'Fuego en el lago forma Ge. El hombre superior fija el calendario y aclara las estaciones.',
       },
+      'es-zhouyi': {
+        name: 'La Revolución',
+        meaning: 'La revolucion, transformacion, muda',
+        judgment: 'En el dia propio se es creido. Sublime exito. Propicio mediante la perseverancia. El arrepentimiento desaparece.',
+        image: 'Fuego en medio del lago: la Revolucion. El hombre superior ordena el calendario y aclara las estaciones.',
+      },
       'zh-zhouyi': {
         name: '革',
         meaning: '革命，轉變，激進變化',
@@ -2361,6 +2655,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Símbolo de transformación y sustento',
         judgment: 'Ding. Hay gran buena fortuna. Hay éxito.',
         image: 'Fuego sobre madera forma Ding. El hombre superior pone en orden lo desordenado.',
+      },
+      'es-zhouyi': {
+        name: 'El Caldero',
+        meaning: 'El caldero, transformacion, nutricion sagrada',
+        judgment: 'Sublime buena fortuna. Exito.',
+        image: 'Fuego sobre madera: el Caldero. El hombre superior rectifica su posicion y consolida su destino.',
       },
       'zh-zhouyi': {
         name: '鼎',
@@ -2409,6 +2709,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Zhen. Hay buena fortuna. El choque viene como advertencia. El temblor y el miedo son seguidos por alegría y risa.',
         image: 'Trueno repetido forma la imagen del Despertar. El hombre superior prepara ordenadamente su sustento.',
       },
+      'es-zhouyi': {
+        name: 'Lo Suscitativo',
+        meaning: 'Lo suscitativo, el trueno, conmocion',
+        judgment: 'Exito. El trueno llega causando temor, despues palabras y risas. El trueno aterroriza a cien millas, pero no deja caer el caliz del sacrificio.',
+        image: 'Trueno repetido: lo Suscitativo. El hombre superior con temor y temblor cultiva su persona.',
+      },
       'zh-zhouyi': {
         name: '震',
         meaning: '雷，喚醒，震驚',
@@ -2455,6 +2761,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Inmovilidad y permanecer quieto en su lugar',
         judgment: 'Gen. Cuando es tiempo de permanecer quieto, permanece quieto; cuando es tiempo de avanzar, avanza. Así avanzar y retroceder en el momento apropiado trae buena fortuna.',
         image: 'Montañas juntas forman Gen. El hombre superior no va más allá de los límites de su posición.',
+      },
+      'es-zhouyi': {
+        name: 'El Aquietamiento',
+        meaning: 'El aquietamiento, la montana, detenerse',
+        judgment: 'Aquietar la espalda de modo que ya no siente el cuerpo. Camina por el patio y no ve a las personas. Sin culpa.',
+        image: 'Montanas sucesivas: el Aquietamiento. El hombre superior no permite que sus pensamientos vayan mas alla de su posicion.',
       },
       'zh-zhouyi': {
         name: '艮',
@@ -2503,6 +2815,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Jian. La doncella es entregada en matrimonio. Buena fortuna. Es propicio tener un destino adónde ir.',
         image: 'Viento sobre la montaña forma Jian. El hombre superior mora en excelencia y mejora las costumbres.',
       },
+      'es-zhouyi': {
+        name: 'El Desarrollo Gradual',
+        meaning: 'El desarrollo gradual, progreso paulatino',
+        judgment: 'La doncella es dada en matrimonio. Buena fortuna. Propicio mediante la perseverancia.',
+        image: 'Sobre la montana hay viento: el Desarrollo Gradual. El hombre superior mora en virtud digna y mejora las costumbres.',
+      },
       'zh-zhouyi': {
         name: '漸',
         meaning: '逐漸進步，階段，前進',
@@ -2549,6 +2867,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Sumisión femenina y la completación de las cosas',
         judgment: 'Gui Mei. Las empresas traen desgracia. No hay nada que sea propicio.',
         image: 'Trueno sobre el lago forma Gui Mei. El hombre superior entiende las cosas que llegan a su fin.',
+      },
+      'es-zhouyi': {
+        name: 'La Doncella Desposada',
+        meaning: 'La doncella desposada, matrimonio, subordinacion',
+        judgment: 'Emprender trae adversidad. Nada propicio.',
+        image: 'Trueno sobre el lago: la Doncella Desposada. El hombre superior reconoce lo transitorio y comprende el deterioro.',
       },
       'zh-zhouyi': {
         name: '歸妹',
@@ -2597,6 +2921,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Feng. El rey alcanza plenitud. No llores. Sé como el sol al mediodía.',
         image: 'Relámpago y trueno se juntan formando Feng. El hombre superior juzga a los que causan desorden.',
       },
+      'es-zhouyi': {
+        name: 'La Abundancia',
+        meaning: 'La abundancia, plenitud, grandeza',
+        judgment: 'Exito. El rey la alcanza. No te preocupes. Es apropiado ser como el sol al mediodia.',
+        image: 'Trueno y relampago llegan juntos: la Abundancia. El hombre superior decide los litigios y ejecuta los castigos.',
+      },
       'zh-zhouyi': {
         name: '豐',
         meaning: '豐富，高峰，最大',
@@ -2643,6 +2973,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Uno que viaja y está lejos de casa',
         judgment: 'Lu. Es propicio que el viajero sea firme y correcto; trae buena fortuna en su viaje.',
         image: 'Fuego en la montaña forma Lu. El hombre superior así se vuelve reflexivo y cuidadoso.',
+      },
+      'es-zhouyi': {
+        name: 'El Viajero',
+        meaning: 'El viajero, el forastero, transito',
+        judgment: 'Propicio mediante la perseverancia. Exito. Para el viajero, la perseverancia trae buena fortuna.',
+        image: 'Fuego sobre la montana: el Viajero. El hombre superior con claridad y cautela aplica los castigos.',
       },
       'zh-zhouyi': {
         name: '旅',
@@ -2691,6 +3027,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Xun. Hay buena fortuna. Es propicio tener un destino adónde ir. Es propicio ver al gran hombre.',
         image: 'Viento siguiendo viento forma Xun. El hombre superior así actúa como cuando despacha sus órdenes.',
       },
+      'es-zhouyi': {
+        name: 'Lo Suave',
+        meaning: 'Lo suave, el viento, penetracion gentil',
+        judgment: 'Pequeno exito. Propicio emprender algo. Propicio ver al gran hombre.',
+        image: 'Viento sigue al viento: lo Suave. El hombre superior reitera sus mandatos al ejecutar los asuntos.',
+      },
       'zh-zhouyi': {
         name: '巽',
         meaning: '風，溫柔，靈活',
@@ -2737,6 +3079,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Alegría, satisfacción, apoyo mutuo',
         judgment: 'Dui. Hay buena fortuna. La corrección firme es propicia.',
         image: 'Dos lagos unidos forman Dui. El hombre superior así discute y conversa.',
+      },
+      'es-zhouyi': {
+        name: 'Lo Sereno',
+        meaning: 'Lo sereno, el lago, alegria',
+        judgment: 'Exito. Propicio mediante la perseverancia.',
+        image: 'Lagos conectados: lo Sereno. El hombre superior con amigos discute y practica.',
       },
       'zh-zhouyi': {
         name: '兌',
@@ -2785,6 +3133,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Huan. Hay buena fortuna. El rey se acerca a su lugar de culto. Es propicio cruzar la gran agua.',
         image: 'Viento moviéndose sobre agua forma Huan. Los reyes antiguos erigían templos para honrar lo divino.',
       },
+      'es-zhouyi': {
+        name: 'La Dispersión',
+        meaning: 'La dispersion, disolucion, disipacion',
+        judgment: 'Exito. El rey se acerca a tener un templo. Propicio cruzar la gran agua. Propicio mediante la perseverancia.',
+        image: 'El viento recorre el agua: la Dispersion. Los antiguos reyes hacian ofrendas a lo supremo y erigian templos.',
+      },
       'zh-zhouyi': {
         name: '渙',
         meaning: '分離，溶解，分散',
@@ -2831,6 +3185,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Restricción y regulación dentro de límites',
         judgment: 'Jie. Hay buena fortuna. Las restricciones dolorosas no deben persistir.',
         image: 'Agua sobre el lago forma Jie. El hombre superior establece sus pensamientos e investiga la naturaleza de las cosas.',
+      },
+      'es-zhouyi': {
+        name: 'La Limitación',
+        meaning: 'La limitacion, moderacion, medida',
+        judgment: 'Exito. La limitacion amarga no puede persistir.',
+        image: 'Sobre el lago hay agua: la Limitacion. El hombre superior establece numeros y medidas.',
       },
       'zh-zhouyi': {
         name: '節',
@@ -2879,6 +3239,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Zhong Fu. Hay buena fortuna. Es propicio cruzar la gran agua.',
         image: 'Viento soplando sobre el lago forma Zhong Fu. El hombre superior determina demandas y pospone ejecuciones.',
       },
+      'es-zhouyi': {
+        name: 'La Verdad Interior',
+        meaning: 'La verdad interior, sinceridad central, confianza',
+        judgment: 'Cerdos y peces. Buena fortuna. Propicio cruzar la gran agua. Propicio mediante la perseverancia.',
+        image: 'Viento sobre el lago: la Verdad Interior. El hombre superior delibera sobre los procesos y pospone las ejecuciones.',
+      },
       'zh-zhouyi': {
         name: '中孚',
         meaning: '誠意，可信，誠正',
@@ -2925,6 +3291,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Exceder en asuntos pequeños',
         judgment: 'Xiao Guo. Hay buena fortuna en asuntos pequeños. No es propicio emprender grandes asuntos.',
         image: 'Trueno sobre la montaña forma Xiao Guo. El hombre superior así enfatiza lo pequeño y lo toma con ligereza.',
+      },
+      'es-zhouyi': {
+        name: 'El Exceso de lo Pequeño',
+        meaning: 'El exceso de lo pequeno, preponderancia de lo pequeno',
+        judgment: 'Exito. Propicio mediante la perseverancia. Se pueden hacer cosas pequenas, no se deben hacer cosas grandes. El pajaro volando deja su canto: no conviene ascender, conviene descender. Gran buena fortuna.',
+        image: 'Trueno sobre la montana: el Exceso de lo Pequeno. El hombre superior en su conducta excede en respeto.',
       },
       'zh-zhouyi': {
         name: '小過',
@@ -2973,6 +3345,12 @@ export const hexagrams: Record<number, Hexagram> = {
         judgment: 'Ji Ji. Hay buena fortuna en asuntos pequeños. Es propicio perseverar. Al principio hay buena fortuna, al final desorden.',
         image: 'Fuego sobre agua forma Ji Ji. El hombre superior piensa de antemano en las dificultades y se previene contra ellas.',
       },
+      'es-zhouyi': {
+        name: 'Después de la Consumación',
+        meaning: 'Despues de la consumacion, ya cruzado, completado',
+        judgment: 'Exito en lo pequeno. Propicio mediante la perseverancia. Al principio buena fortuna, al final desorden.',
+        image: 'Agua sobre fuego: Despues de la Consumacion. El hombre superior reflexiona sobre las calamidades y se previene contra ellas.',
+      },
       'zh-zhouyi': {
         name: '既濟',
         meaning: '完成，成就，渡過危機',
@@ -3019,6 +3397,12 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Trabajo aún en progreso y acercándose a la completación',
         judgment: 'Wei Ji. Hay buena fortuna. El pequeño zorro casi completa el cruce pero se moja la cola. No hay nada propicio.',
         image: 'Agua sobre fuego forma Wei Ji. El hombre superior distingue cuidadosamente entre las cosas.',
+      },
+      'es-zhouyi': {
+        name: 'Antes de la Consumación',
+        meaning: 'Antes de la consumacion, aun no cruzado, incompleto',
+        judgment: 'Exito. El pequeno zorro casi cruza, se moja la cola. Nada propicio.',
+        image: 'Fuego sobre agua: Antes de la Consumacion. El hombre superior con cautela distingue las cosas y las ubica en su lugar.',
       },
       'zh-zhouyi': {
         name: '未濟',

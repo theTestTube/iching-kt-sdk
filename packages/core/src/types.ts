@@ -70,7 +70,7 @@ export interface KnowletSettingsSchema {
 /** Translation source for English content */
 export type EnglishSource = 'wilhelm' | 'legge';
 /** Translation source for Spanish content */
-export type SpanishSource = 'wilhelm' | 'legge';
+export type SpanishSource = 'wilhelm' | 'legge' | 'zhouyi';
 /** Translation source for Chinese content */
 export type ChineseSource = 'zhouyi';
 
@@ -78,7 +78,7 @@ export type ChineseSource = 'zhouyi';
  * User's translation source preferences per language.
  * - Chinese (zh): Always Zhouyi 周易 classical text (default: 'zhouyi')
  * - English (en): Wilhelm-Baynes or Legge (default: 'wilhelm')
- * - Spanish (es): Wilhelm-Baynes or Legge translated to Spanish (default: 'wilhelm')
+ * - Spanish (es): Wilhelm-Baynes, Legge, or Zhouyi translated to Spanish (default: 'wilhelm')
  */
 export interface TranslationPreferences {
   en: EnglishSource;

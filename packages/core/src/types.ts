@@ -69,18 +69,21 @@ export interface KnowletSettingsSchema {
 
 /** Translation source for English content */
 export type EnglishSource = 'wilhelm' | 'legge';
-/** Translation source for Spanish content (all Claude-translated at build time) */
-export type SpanishSource = 'zh-claude' | 'legge-claude' | 'wilhelm-claude';
+/** Translation source for Spanish content */
+export type SpanishSource = 'wilhelm' | 'legge' | 'zhouyi';
+/** Translation source for Chinese content */
+export type ChineseSource = 'zhouyi';
 
 /**
  * User's translation source preferences per language.
- * - Chinese (zh): Always original 周易 (no preference needed)
- * - English (en): Wilhelm-Baynes or Legge (untranslated, direct from source)
- * - Spanish (es): Claude translations from Chinese, Legge, or Wilhelm
+ * - Chinese (zh): Always Zhouyi 周易 classical text (default: 'zhouyi')
+ * - English (en): Wilhelm-Baynes or Legge (default: 'wilhelm')
+ * - Spanish (es): Wilhelm-Baynes, Legge, or Zhouyi translated to Spanish (default: 'wilhelm')
  */
 export interface TranslationPreferences {
   en: EnglishSource;
   es: SpanishSource;
+  zh: ChineseSource;
 }
 
 export interface KnowletContext {

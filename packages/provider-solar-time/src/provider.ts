@@ -71,7 +71,7 @@ export function createSolarTimeProvider(
 
   let currentData = getCurrentSolarTimeData(geoLocator, new Date());
   const listeners = new Set<(data: SolarTimeData) => void>();
-  let timeIntervalId: ReturnType<typeof setInterval> | null = null;
+  let timeTimeoutId: ReturnType<typeof setTimeout> | null = null;
   let geoUnsubscribe: (() => void) | null = null;
 
   const updateData = () => {
@@ -79,8 +79,33 @@ export function createSolarTimeProvider(
     listeners.forEach((cb) => cb(currentData));
   };
 
+  /**
+   * Calculate milliseconds until next minute boundary.
+   * This creates idle periods by aligning updates to minute changes,
+   * allowing Android to enter low-power states between updates.
+   */
+  const getMillisecondsToNextMinute = (): number => {
+    const now = new Date();
+    const secondsUntilNextMinute = 60 - now.getSeconds();
+    const msUntilNextMinute = secondsUntilNextMinute * 1000 - now.getMilliseconds();
+    // Add small buffer (100ms) to ensure we're past the minute boundary
+    return msUntilNextMinute + 100;
+  };
+
+  const scheduleNextUpdate = () => {
+    if (timeTimeoutId) return; // Already scheduled
+
+    const delay = getMillisecondsToNextMinute();
+    timeTimeoutId = setTimeout(() => {
+      timeTimeoutId = null;
+      updateData();
+      // Schedule next update at the next minute boundary
+      scheduleNextUpdate();
+    }, delay);
+  };
+
   const startUpdates = () => {
-    if (timeIntervalId || geoUnsubscribe) {
+    if (timeTimeoutId || geoUnsubscribe) {
       return; // Already started
     }
 
@@ -90,8 +115,8 @@ export function createSolarTimeProvider(
       updateData();
     });
 
-    // Start time interval
-    timeIntervalId = setInterval(updateData, updateIntervalMs);
+    // Start smart timing (aligns to minute boundaries)
+    scheduleNextUpdate();
   };
 
   const stopUpdates = () => {
@@ -100,9 +125,9 @@ export function createSolarTimeProvider(
       geoUnsubscribe = null;
     }
 
-    if (timeIntervalId) {
-      clearInterval(timeIntervalId);
-      timeIntervalId = null;
+    if (timeTimeoutId) {
+      clearTimeout(timeTimeoutId);
+      timeTimeoutId = null;
     }
   };
 

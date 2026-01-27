@@ -14,10 +14,49 @@ export interface CompositeGeoLocatorConfig {
 export function createCompositeGeoLocator(config: CompositeGeoLocatorConfig): GeoLocator {
   const { locators } = config;
   const listeners = new Set<(position: GeoPosition) => void>();
+  const statusListeners = new Set<(status: GeoLocatorStatus) => void>();
   const unsubscribers = new Map<string, () => void>();
+  const statusUnsubscribers = new Map<string, () => void>();
   let currentPosition: GeoPosition | null = null;
   let currentBestLocatorId: string | null = null;
-  let reevaluationInterval: ReturnType<typeof setInterval> | null = null;
+  let lastEmittedStatus: GeoLocatorStatus | null = null;
+
+  // Helper to emit status change events (only if status actually changed)
+  function emitStatusChange(): void {
+    const currentStatus = getStatusInternal();
+
+    // Check if status actually changed
+    if (lastEmittedStatus) {
+      const unchanged =
+        lastEmittedStatus.permissionState === currentStatus.permissionState &&
+        lastEmittedStatus.isAvailable === currentStatus.isAvailable &&
+        lastEmittedStatus.currentPrecision === currentStatus.currentPrecision;
+
+      if (unchanged) {
+        return; // Don't emit duplicate events
+      }
+    }
+
+    lastEmittedStatus = currentStatus;
+    statusListeners.forEach(cb => cb(currentStatus));
+  }
+
+  // Internal status getter (doesn't trigger events)
+  function getStatusInternal(): GeoLocatorStatus {
+    const bestLocator = getBestLocator();
+    const bestStatus = bestLocator.getStatus();
+
+    // Return the permission state of the HIGHEST precision locator (GPS)
+    // so the UI knows if we can request better precision
+    const highestPrecisionLocator = getHighestPrecisionLocator();
+    const highestStatus = highestPrecisionLocator.getStatus();
+
+    return {
+      permissionState: highestStatus.permissionState,
+      isAvailable: highestStatus.isAvailable,
+      currentPrecision: bestStatus.currentPrecision,
+    };
+  }
 
   function getBestLocator(): GeoLocator {
     // Try to find a locator with granted permission, highest precision first
@@ -73,26 +112,34 @@ export function createCompositeGeoLocator(config: CompositeGeoLocatorConfig): Ge
       // Subscribe to the best locator
       subscribeToLocator(bestLocator);
       currentBestLocatorId = bestLocator.id;
+
+      // Emit status change when best locator changes
+      emitStatusChange();
     }
   }
 
-  function startReevaluationInterval(): void {
-    if (reevaluationInterval) return;
-
-    // Re-evaluate best locator every 500ms
-    // This handles async permission checks completing after initial subscription
-    reevaluationInterval = setInterval(() => {
-      if (listeners.size > 0) {
-        updateSubscriptions();
+  function subscribeToStatusChanges(): void {
+    // Subscribe to status changes from all child locators
+    for (const locator of locators) {
+      if (!statusUnsubscribers.has(locator.id)) {
+        const unsubscribe = locator.onStatusChange(() => {
+          // When any child locator's status changes, re-evaluate subscriptions
+          if (listeners.size > 0) {
+            updateSubscriptions();
+          }
+          // Emit status change (will be no-op if status didn't actually change)
+          emitStatusChange();
+        });
+        statusUnsubscribers.set(locator.id, unsubscribe);
       }
-    }, 500);
+    }
   }
 
-  function stopReevaluationInterval(): void {
-    if (reevaluationInterval) {
-      clearInterval(reevaluationInterval);
-      reevaluationInterval = null;
+  function unsubscribeFromStatusChanges(): void {
+    for (const unsubscribe of statusUnsubscribers.values()) {
+      unsubscribe();
     }
+    statusUnsubscribers.clear();
   }
 
   // Get the highest precision locator (for permission requests)
@@ -116,19 +163,7 @@ export function createCompositeGeoLocator(config: CompositeGeoLocatorConfig): Ge
     },
 
     getStatus(): GeoLocatorStatus {
-      const bestLocator = getBestLocator();
-      const bestStatus = bestLocator.getStatus();
-
-      // Return the permission state of the HIGHEST precision locator (GPS)
-      // so the UI knows if we can request better precision
-      const highestPrecisionLocator = getHighestPrecisionLocator();
-      const highestStatus = highestPrecisionLocator.getStatus();
-
-      return {
-        permissionState: highestStatus.permissionState,
-        isAvailable: highestStatus.isAvailable,
-        currentPrecision: bestStatus.currentPrecision,
-      };
+      return getStatusInternal();
     },
 
     async requestPermission(): Promise<LocationPermissionState> {
@@ -159,8 +194,8 @@ export function createCompositeGeoLocator(config: CompositeGeoLocatorConfig): Ge
 
       // Update subscriptions when first listener is added
       if (listeners.size === 1) {
+        subscribeToStatusChanges();
         updateSubscriptions();
-        startReevaluationInterval();
       }
 
       return () => {
@@ -170,15 +205,36 @@ export function createCompositeGeoLocator(config: CompositeGeoLocatorConfig): Ge
           for (const locator of locators) {
             unsubscribeFromLocator(locator);
           }
-          stopReevaluationInterval();
+          unsubscribeFromStatusChanges();
           currentBestLocatorId = null;
+        }
+      };
+    },
+
+    onStatusChange(callback: (status: GeoLocatorStatus) => void): () => void {
+      statusListeners.add(callback);
+
+      // Subscribe to child status changes if this is the first status listener
+      if (statusListeners.size === 1 && listeners.size === 0) {
+        subscribeToStatusChanges();
+      }
+
+      // Immediately provide current status
+      callback(getStatusInternal());
+
+      return () => {
+        statusListeners.delete(callback);
+        // Unsubscribe from child status changes if no more status listeners and no position listeners
+        if (statusListeners.size === 0 && listeners.size === 0) {
+          unsubscribeFromStatusChanges();
         }
       };
     },
 
     dispose(): void {
       listeners.clear();
-      stopReevaluationInterval();
+      statusListeners.clear();
+      unsubscribeFromStatusChanges();
       currentBestLocatorId = null;
       for (const locator of locators) {
         unsubscribeFromLocator(locator);

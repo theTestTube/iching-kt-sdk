@@ -177,6 +177,14 @@ export interface GeoLocator {
   /** Subscribe to position updates (continuous tracking) */
   subscribe(callback: (position: GeoPosition) => void): () => void;
 
+  /**
+   * Subscribe to status change events.
+   * The callback will be invoked immediately with the current status,
+   * and then whenever the status changes (permission, precision, availability).
+   * Returns an unsubscribe function.
+   */
+  onStatusChange(callback: (status: GeoLocatorStatus) => void): () => void;
+
   /** Stop all tracking and release resources */
   dispose(): void;
 }

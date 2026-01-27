@@ -2,8 +2,9 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
 import type { SolarTimeData } from '@iching-kt/provider-solar-time';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
-import { getSovereignHexagram, getHexagram, getHexagramTranslation } from '@iching-kt/data-hexagrams';
+import { getSovereignHexagram } from '@iching-kt/data-hexagrams';
 import { getTranslation } from './data';
+import { HexagramCard } from './HexagramCard';
 
 interface Props {
   context: KnowletContext;
@@ -78,8 +79,6 @@ export function HoursView({ context }: Props) {
   const elementColor = elementColors.activeColor;
 
   const sovereignMapping = getSovereignHexagram(branch);
-  const hexagram = getHexagram(sovereignMapping.hexagramNumber);
-  const hexTranslation = getHexagramTranslation(sovereignMapping.hexagramNumber, context.language);
 
   const handleHexagramPress = () => {    
     context.emitOutput('hexagram', sovereignMapping.hexagramNumber);
@@ -166,42 +165,14 @@ export function HoursView({ context }: Props) {
       </View>
 
       {/* Sovereign Hexagram Section */}
-      {hexagram && hexTranslation && (
-        <ActionableElement
-          outputType="hexagram"
-          value={sovereignMapping.hexagramNumber}
-          label={`Hexagram ${hexagram.number}: ${hexTranslation.name}`}
-          onPress={handleHexagramPress}
-          onLongPress={handleHexagramLongPress}
-          isActive={false}
-          defaultColor={colors.surfaceSecondary}
-          style={styles.hexagramCard}
-        >
-          <View style={styles.hexagramHeader}>
-            <Text style={[styles.hexagramLabel, { color: colors.textSecondary }]}>{t.labels.sovereignHexagram}</Text>
-          </View>
-          <View style={styles.hexagramContent}>
-            <Text style={[styles.hexagramUnicode, { color: colors.text }]}>{hexagram.unicode}</Text>
-            <View style={styles.hexagramInfo}>
-              <Text style={[styles.hexagramNumber, { color: colors.textTertiary }]}>#{hexagram.number}</Text>
-              <Text style={[styles.hexagramName, { color: colors.text }]}>{hexTranslation.name}</Text>
-              <Text style={[styles.hexagramChinese, { color: colors.textSecondary }]}>
-                {hexagram.chinese} ({hexagram.pinyin})
-              </Text>
-              <View style={styles.phaseRow}>
-                <Text style={[styles.phaseBadge, { color: colors.text, backgroundColor: colors.border }]}>
-                  {sovereignMapping.phase === 'waxing'
-                    ? (context.language === 'zh' ? '☀ 息' : context.language === 'es' ? '☀ Creciente' : '☀ Waxing')
-                    : (context.language === 'zh' ? '☾ 消' : context.language === 'es' ? '☾ Menguante' : '☾ Waning')}
-                </Text>
-                <Text style={[styles.yangLines, { color: colors.textTertiary }]}>
-                  {sovereignMapping.yangLines}/6 yang
-                </Text>
-              </View>
-            </View>
-          </View>
-        </ActionableElement>
-      )}
+      <HexagramCard
+        context={context}
+        hexagramNumber={sovereignMapping.hexagramNumber}
+        label={t.labels.sovereignHexagram}
+        onPress={handleHexagramPress}
+        onLongPress={handleHexagramLongPress}
+        style={styles.hexagramCard}
+      />
 
       <View style={[styles.infoCard, { backgroundColor: colors.surfaceSecondary }]}>
         <View style={styles.infoRow}>
@@ -292,58 +263,7 @@ const styles = StyleSheet.create({
   },
   hexagramCard: {
     width: '100%',
-    padding: 16,
     marginBottom: 16,
-  },
-  hexagramHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  hexagramLabel: {
-    fontSize: 12,
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-    fontWeight: '600',
-  },
-  hexagramContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  hexagramUnicode: {
-    fontSize: 64,
-    marginRight: 16,
-  },
-  hexagramInfo: {
-    flex: 1,
-  },
-  hexagramNumber: {
-    fontSize: 12,
-    marginBottom: 2,
-  },
-  hexagramName: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginBottom: 2,
-  },
-  hexagramChinese: {
-    fontSize: 14,
-    marginBottom: 8,
-  },
-  phaseRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-  },
-  phaseBadge: {
-    fontSize: 12,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 4,
-  },
-  yangLines: {
-    fontSize: 12,
   },
   infoCard: {
     width: '100%',

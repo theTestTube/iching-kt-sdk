@@ -1,6 +1,7 @@
 import { Knowlet, KnowletContext } from '@iching-kt/core';
 import { HoursView } from './HoursView';
 import { HexagramDetailView } from './HexagramDetailView';
+import { HexagramCard } from './HexagramCard';
 
 /**
  * Main view component that handles internal navigation
@@ -40,4 +41,4 @@ export const hoursKnowlet: Knowlet = {
   View: HoursKnowletView,
 };
 
-export { HoursView, HexagramDetailView };
+export { HoursView, HexagramDetailView, HexagramCard };

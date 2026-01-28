@@ -766,7 +766,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '需',
     pinyin: 'xū',
     unicode: '䷄',
-    binary: '010010',
+    binary: '010111',
     upperTrigram: 'water',
     lowerTrigram: 'heaven',
     translations: {
@@ -819,9 +819,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '訟',
     pinyin: 'sòng',
     unicode: '䷅',
-    binary: '010100',
-    upperTrigram: 'water',
-    lowerTrigram: 'heaven',
+    binary: '111010',
+    upperTrigram: 'heaven',
+    lowerTrigram: 'water',
     translations: {
       en: {
         name: 'Conflict',
@@ -872,9 +872,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '師',
     pinyin: 'shī',
     unicode: '䷆',
-    binary: '010000',
-    upperTrigram: 'water',
-    lowerTrigram: 'earth',
+    binary: '000010',
+    upperTrigram: 'earth',
+    lowerTrigram: 'water',
     translations: {
       en: {
         name: 'The Army',
@@ -925,9 +925,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '比',
     pinyin: 'bǐ',
     unicode: '䷇',
-    binary: '000001',
-    upperTrigram: 'earth',
-    lowerTrigram: 'water',
+    binary: '010000',
+    upperTrigram: 'water',
+    lowerTrigram: 'earth',
     translations: {
       en: {
         name: 'Holding Together',
@@ -978,7 +978,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '小畜',
     pinyin: 'xiǎo chù',
     unicode: '䷈',
-    binary: '110010',
+    binary: '110111',
     upperTrigram: 'wind',
     lowerTrigram: 'heaven',
     translations: {
@@ -1031,7 +1031,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '履',
     pinyin: 'lǚ',
     unicode: '䷉',
-    binary: '110111',
+    binary: '111011',
     upperTrigram: 'heaven',
     lowerTrigram: 'lake',
     translations: {
@@ -1084,7 +1084,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '同人',
     pinyin: 'tóng rén',
     unicode: '䷌',
-    binary: '110111',
+    binary: '111101',
     upperTrigram: 'heaven',
     lowerTrigram: 'fire',
     translations: {
@@ -1137,7 +1137,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '大有',
     pinyin: 'dà yǒu',
     unicode: '䷍',
-    binary: '111001',
+    binary: '101111',
     upperTrigram: 'fire',
     lowerTrigram: 'heaven',
     translations: {
@@ -1243,9 +1243,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '豫',
     pinyin: 'yù',
     unicode: '䷏',
-    binary: '100000',
-    upperTrigram: 'earth',
-    lowerTrigram: 'thunder',
+    binary: '001000',
+    upperTrigram: 'thunder',
+    lowerTrigram: 'earth',
     translations: {
       en: {
         name: 'Enthusiasm',
@@ -1296,7 +1296,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '隨',
     pinyin: 'suí',
     unicode: '䷐',
-    binary: '011000',
+    binary: '011001',
     upperTrigram: 'lake',
     lowerTrigram: 'thunder',
     translations: {
@@ -1349,9 +1349,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '蠱',
     pinyin: 'gǔ',
     unicode: '䷑',
-    binary: '000110',
-    upperTrigram: 'wind',
-    lowerTrigram: 'mountain',
+    binary: '100110',
+    upperTrigram: 'mountain',
+    lowerTrigram: 'wind',
     translations: {
       en: {
         name: 'Work on What Has Been Spoiled',
@@ -1455,9 +1455,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '賁',
     pinyin: 'bì',
     unicode: '䷕',
-    binary: '010101',
-    upperTrigram: 'fire',
-    lowerTrigram: 'mountain',
+    binary: '100101',
+    upperTrigram: 'mountain',
+    lowerTrigram: 'fire',
     translations: {
       en: {
         name: 'Grace',
@@ -1508,7 +1508,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '無妄',
     pinyin: 'wú wàng',
     unicode: '䷘',
-    binary: '100100',
+    binary: '111001',
     upperTrigram: 'heaven',
     lowerTrigram: 'thunder',
     translations: {
@@ -1561,9 +1561,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '大畜',
     pinyin: 'dà chù',
     unicode: '䷙',
-    binary: '100001',
-    upperTrigram: 'heaven',
-    lowerTrigram: 'mountain',
+    binary: '100111',
+    upperTrigram: 'mountain',
+    lowerTrigram: 'heaven',
     translations: {
       en: {
         name: 'The Taming Power of the Great',
@@ -1826,7 +1826,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '咸',
     pinyin: 'xián',
     unicode: '䷞',
-    binary: '110100',
+    binary: '011100',
     upperTrigram: 'lake',
     lowerTrigram: 'mountain',
     translations: {
@@ -2039,9 +2039,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '家人',
     pinyin: 'jiā rén',
     unicode: '䷤',
-    binary: '101001',
-    upperTrigram: 'fire',
-    lowerTrigram: 'wind',
+    binary: '110101',
+    upperTrigram: 'wind',
+    lowerTrigram: 'fire',
     translations: {
       en: {
         name: 'The Family',
@@ -2092,7 +2092,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '睽',
     pinyin: 'kuí',
     unicode: '䷥',
-    binary: '101010',
+    binary: '101011',
     upperTrigram: 'fire',
     lowerTrigram: 'lake',
     translations: {
@@ -2145,7 +2145,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '蹇',
     pinyin: 'jiǎn',
     unicode: '䷦',
-    binary: '010110',
+    binary: '010100',
     upperTrigram: 'water',
     lowerTrigram: 'mountain',
     translations: {
@@ -2198,7 +2198,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '解',
     pinyin: 'jiě',
     unicode: '䷧',
-    binary: '011010',
+    binary: '001010',
     upperTrigram: 'thunder',
     lowerTrigram: 'water',
     translations: {
@@ -2304,7 +2304,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '益',
     pinyin: 'yì',
     unicode: '䷩',
-    binary: '011001',
+    binary: '110001',
     upperTrigram: 'wind',
     lowerTrigram: 'thunder',
     translations: {
@@ -2411,8 +2411,8 @@ export const hexagrams: Record<number, Hexagram> = {
     pinyin: 'shēng',
     unicode: '䷭',
     binary: '000110',
-    upperTrigram: 'wind',
-    lowerTrigram: 'earth',
+    upperTrigram: 'earth',
+    lowerTrigram: 'wind',
     translations: {
       en: {
         name: 'Pushing Upward',
@@ -2463,9 +2463,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '困',
     pinyin: 'kùn',
     unicode: '䷮',
-    binary: '010011',
-    upperTrigram: 'water',
-    lowerTrigram: 'lake',
+    binary: '011010',
+    upperTrigram: 'lake',
+    lowerTrigram: 'water',
     translations: {
       en: {
         name: 'Oppression',
@@ -2516,7 +2516,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '井',
     pinyin: 'jǐng',
     unicode: '䷯',
-    binary: '110010',
+    binary: '010110',
     upperTrigram: 'water',
     lowerTrigram: 'wind',
     translations: {
@@ -2569,7 +2569,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '革',
     pinyin: 'gé',
     unicode: '䷰',
-    binary: '101011',
+    binary: '011101',
     upperTrigram: 'lake',
     lowerTrigram: 'fire',
     translations: {
@@ -2834,7 +2834,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '歸妹',
     pinyin: 'guī mèi',
     unicode: '䷵',
-    binary: '011110',
+    binary: '001011',
     upperTrigram: 'thunder',
     lowerTrigram: 'lake',
     translations: {
@@ -2887,9 +2887,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '豐',
     pinyin: 'fēng',
     unicode: '䷶',
-    binary: '101001',
-    upperTrigram: 'fire',
-    lowerTrigram: 'thunder',
+    binary: '001101',
+    upperTrigram: 'thunder',
+    lowerTrigram: 'fire',
     translations: {
       en: {
         name: 'Abundance',
@@ -2940,7 +2940,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '旅',
     pinyin: 'lǚ',
     unicode: '䷷',
-    binary: '101010',
+    binary: '101100',
     upperTrigram: 'fire',
     lowerTrigram: 'mountain',
     translations: {
@@ -3046,7 +3046,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '兌',
     pinyin: 'duì',
     unicode: '䷹',
-    binary: '011101',
+    binary: '011011',
     upperTrigram: 'lake',
     lowerTrigram: 'lake',
     translations: {
@@ -3258,7 +3258,7 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '小過',
     pinyin: 'xiǎo guò',
     unicode: '䷽',
-    binary: '001110',
+    binary: '001100',
     upperTrigram: 'thunder',
     lowerTrigram: 'mountain',
     translations: {
@@ -3311,9 +3311,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '既濟',
     pinyin: 'jì jì',
     unicode: '䷾',
-    binary: '101010',
-    upperTrigram: 'fire',
-    lowerTrigram: 'water',
+    binary: '010101',
+    upperTrigram: 'water',
+    lowerTrigram: 'fire',
     translations: {
       en: {
         name: 'After Completion',
@@ -3364,9 +3364,9 @@ export const hexagrams: Record<number, Hexagram> = {
     chinese: '未濟',
     pinyin: 'wèi jì',
     unicode: '䷿',
-    binary: '010101',
-    upperTrigram: 'water',
-    lowerTrigram: 'fire',
+    binary: '101010',
+    upperTrigram: 'fire',
+    lowerTrigram: 'water',
     translations: {
       en: {
         name: 'Before Completion',

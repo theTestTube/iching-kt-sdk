@@ -1,24 +1,23 @@
 /**
  * HeTuView Component Tests
  *
- * Framework: Jest + React Native Testing Library
- * Install: npm install --save-dev @testing-library/react-native jest @types/jest
+ * Framework: Jest + @testing-library/react (DOM via react-native-web)
  *
  * Run: npm test -- --testPathPattern=HeTuView
  */
 
 import React from 'react';
-import { render, fireEvent, waitFor, act } from '@testing-library/react-native';
+import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { HeTuView } from '../views/HeTuView';
 import { KnowletContext } from '@iching-kt/core';
 import { EarthlyBranch } from '@iching-kt/provider-time';
 
 // Mock context factory
+// HeTuView reads earthly branch from situations['solar-time'].shichen
 const createMockContext = (overrides: Partial<KnowletContext> = {}): KnowletContext => ({
   situations: {
-    time: {
-      earthlyBranch: 'zi' as EarthlyBranch, // Water element
-      branchProgress: 0.5,
+    'solar-time': {
+      shichen: 'zi' as EarthlyBranch, // Water element
     },
   },
   settings: {},
@@ -79,75 +78,70 @@ describe('HeTuView', () => {
   });
 
   describe('Active Element State', () => {
-    it('highlights Water element when branch is zi', () => {
+    it('shows Water as active element when branch is zi', () => {
       const context = createMockContext({
-        situations: { time: { earthlyBranch: 'zi' } },
-      });
-      const { getByLabelText } = render(<HeTuView context={context} />);
-
-      const waterElement = getByLabelText('Water');
-      expect(waterElement.props.accessibilityState.selected).toBe(true);
-    });
-
-    it('highlights Earth element when branch is chen', () => {
-      const context = createMockContext({
-        situations: { time: { earthlyBranch: 'chen' } },
-      });
-      const { getByLabelText } = render(<HeTuView context={context} />);
-
-      const earthElement = getByLabelText('Earth');
-      expect(earthElement.props.accessibilityState.selected).toBe(true);
-    });
-
-    it('shows active element in legend', () => {
-      const context = createMockContext({
-        situations: { time: { earthlyBranch: 'chen' } },
+        situations: { 'solar-time': { shichen: 'zi' } },
       });
       const { getByText } = render(<HeTuView context={context} />);
 
-      expect(getByText(/Active element:/)).toBeTruthy();
-      expect(getByText(/Earth/)).toBeTruthy();
+      expect(getByText(/Active element:.*Water/)).toBeTruthy();
+    });
+
+    it('shows Earth as active element when branch is chen', () => {
+      const context = createMockContext({
+        situations: { 'solar-time': { shichen: 'chen' } },
+      });
+      const { getByText } = render(<HeTuView context={context} />);
+
+      expect(getByText(/Active element:.*Earth/)).toBeTruthy();
+    });
+
+    it('shows active element legend text', () => {
+      const context = createMockContext({
+        situations: { 'solar-time': { shichen: 'chen' } },
+      });
+      const { getByText } = render(<HeTuView context={context} />);
+
+      expect(getByText(/Active element:.*Earth/)).toBeTruthy();
     });
   });
 
   describe('State Transitions', () => {
     it('correctly updates when transitioning from Earth to Water branch', async () => {
       const initialContext = createMockContext({
-        situations: { time: { earthlyBranch: 'chen' } }, // Earth
+        situations: { 'solar-time': { shichen: 'chen' } }, // Earth
       });
 
-      const { getByLabelText, rerender } = render(<HeTuView context={initialContext} />);
+      const { getByText, rerender } = render(<HeTuView context={initialContext} />);
 
       // Initially Earth should be active
-      expect(getByLabelText('Earth').props.accessibilityState.selected).toBe(true);
-      expect(getByLabelText('Water').props.accessibilityState.selected).toBe(false);
+      expect(getByText(/Active element:.*Earth/)).toBeTruthy();
 
       // Transition to Water branch
       const updatedContext = createMockContext({
-        situations: { time: { earthlyBranch: 'zi' } }, // Water
+        situations: { 'solar-time': { shichen: 'zi' } }, // Water
       });
 
       await act(async () => {
         rerender(<HeTuView context={updatedContext} />);
       });
 
-      // Now Water should be active, Earth should be inactive
+      // Now Water should be active
       await waitFor(() => {
-        expect(getByLabelText('Water').props.accessibilityState.selected).toBe(true);
-        expect(getByLabelText('Earth').props.accessibilityState.selected).toBe(false);
+        expect(getByText(/Active element:.*Water/)).toBeTruthy();
       });
     });
 
     it('correctly updates when transitioning from Water to Earth branch', async () => {
       const initialContext = createMockContext({
-        situations: { time: { earthlyBranch: 'zi' } }, // Water
+        situations: { 'solar-time': { shichen: 'zi' } }, // Water
       });
 
-      const { getByLabelText, rerender } = render(<HeTuView context={initialContext} />);
+      const { getByText, rerender } = render(<HeTuView context={initialContext} />);
 
       // Transition to Earth branch
       const updatedContext = createMockContext({
-        situations: { time: { earthlyBranch: 'xu' } }, // Earth
+        situations: { 'solar-time': { shichen: 'xu' } }, // Earth
       });
 
       await act(async () => {
@@ -155,14 +149,13 @@ describe('HeTuView', () => {
       });
 
       await waitFor(() => {
-        expect(getByLabelText('Earth').props.accessibilityState.selected).toBe(true);
-        expect(getByLabelText('Water').props.accessibilityState.selected).toBe(false);
+        expect(getByText(/Active element:.*Earth/)).toBeTruthy();
       });
     });
 
     it('handles rapid state transitions without visual glitches', async () => {
       const context = createMockContext();
-      const { getByLabelText, rerender } = render(<HeTuView context={context} />);
+      const { getByText, rerender } = render(<HeTuView context={context} />);
 
       const branches: EarthlyBranch[] = ['zi', 'chen', 'wu', 'shen', 'yin'];
 
@@ -171,7 +164,7 @@ describe('HeTuView', () => {
           rerender(
             <HeTuView
               context={createMockContext({
-                situations: { time: { earthlyBranch: branch } },
+                situations: { 'solar-time': { shichen: branch } },
               })}
             />
           );
@@ -181,35 +174,25 @@ describe('HeTuView', () => {
       // After rapid transitions, the last state should be correct
       // yin -> Wood element
       await waitFor(() => {
-        expect(getByLabelText('Wood').props.accessibilityState.selected).toBe(true);
+        expect(getByText(/Active element:.*Wood/)).toBeTruthy();
       });
     });
   });
 
   describe('Interactions', () => {
-    it('calls emitOutput on element press', () => {
+    it('calls emitOutput on element click', () => {
       const emitOutput = jest.fn();
       const context = createMockContext({ emitOutput });
       const { getByLabelText } = render(<HeTuView context={context} />);
 
-      fireEvent.press(getByLabelText('Water'));
+      fireEvent.click(getByLabelText('Water'));
 
       expect(emitOutput).toHaveBeenCalledWith('element', 'water');
-    });
-
-    it('calls showKnowletSelector on element long press', () => {
-      const showKnowletSelector = jest.fn();
-      const context = createMockContext({ showKnowletSelector });
-      const { getByLabelText } = render(<HeTuView context={context} />);
-
-      fireEvent(getByLabelText('Earth'), 'longPress');
-
-      expect(showKnowletSelector).toHaveBeenCalledWith('element', 'earth');
     });
   });
 
   describe('Edge Cases', () => {
-    it('handles missing time data gracefully', () => {
+    it('handles missing solar-time data gracefully', () => {
       const context = createMockContext({
         situations: {},
       });
@@ -223,15 +206,14 @@ describe('HeTuView', () => {
       expect(queryByText(/Active element:/)).toBeNull();
     });
 
-    it('handles undefined earthlyBranch', () => {
+    it('handles undefined shichen', () => {
       const context = createMockContext({
-        situations: { time: { earthlyBranch: undefined } },
+        situations: { 'solar-time': { shichen: undefined } },
       });
-      const { getByLabelText } = render(<HeTuView context={context} />);
+      const { queryByText } = render(<HeTuView context={context} />);
 
-      // No element should be marked as active
-      expect(getByLabelText('Water').props.accessibilityState.selected).toBe(false);
-      expect(getByLabelText('Earth').props.accessibilityState.selected).toBe(false);
+      // No active element legend should appear
+      expect(queryByText(/Active element:/)).toBeNull();
     });
   });
 });

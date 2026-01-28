@@ -172,9 +172,8 @@ export function ActionableElement({
         <Animated.View
           style={[
             styles.shineOverlay,
-            { opacity: opacityAnim, backgroundColor: shineOverlayColor },
+            { opacity: opacityAnim, backgroundColor: shineOverlayColor, pointerEvents: 'none' },
           ]}
-          pointerEvents="none"
         />
 
         {/* Actionable indicator dot */}

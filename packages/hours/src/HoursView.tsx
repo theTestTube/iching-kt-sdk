@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, TemporalNavigator, AnimatedProgressBar } from '@iching-kt/core';
 import type { SolarTimeData } from '@iching-kt/provider-solar-time';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
 import { getSovereignHexagram } from '@iching-kt/data-hexagrams';
@@ -57,7 +58,32 @@ function getCivilTimeRange(branch: EarthlyBranch, solarOffsetMinutes: number): s
   return `${formatTime(civilStart)}-${formatTime(civilEnd)}`;
 }
 
+// Order of earthly branches in the 12-hour cycle
+const BRANCH_ORDER: EarthlyBranch[] = [
+  'zi', 'chou', 'yin', 'mao', 'chen', 'si',
+  'wu', 'wei', 'shen', 'you', 'xu', 'hai'
+];
+
+/**
+ * Get the branch that comes N positions after/before the given branch
+ * offset: positive = future, negative = past
+ */
+function getOffsetBranch(currentBranch: EarthlyBranch, offset: number): EarthlyBranch {
+  const currentIndex = BRANCH_ORDER.indexOf(currentBranch);
+  const targetIndex = (currentIndex + offset + 12) % 12; // +12 to handle negatives
+  return BRANCH_ORDER[targetIndex];
+}
+
+/**
+ * Calculate the progress within a given branch based on the offset from current time
+ * For non-current hours, we show 0.5 (middle of the hour) as a placeholder
+ */
+function getBranchProgress(offset: number, currentProgress: number): number {
+  return offset === 0 ? currentProgress : 0.5;
+}
+
 export function HoursView({ context }: Props) {
+  const [viewingOffset, setViewingOffset] = useState(0);
   const solarTimeData = context.situations['solar-time'] as SolarTimeData | undefined;
   const t = getTranslation(context.language);
   const colors = getThemeColors(context.colorScheme);
@@ -72,42 +98,55 @@ export function HoursView({ context }: Props) {
     );
   }
 
-  const branch = solarTimeData.earthlyBranch as EarthlyBranch;
-  const info = t.branches[branch];
-  const elementKey = ELEMENT_KEYS[info.element] || 'earth';
-  const elementColors = abstractColors.elements[elementKey as keyof typeof abstractColors.elements];
-  const elementColor = elementColors.activeColor;
+  const currentBranch = solarTimeData.earthlyBranch as EarthlyBranch;
 
-  const sovereignMapping = getSovereignHexagram(branch);
-
-  const handleHexagramPress = () => {    
-    context.emitOutput('hexagram', sovereignMapping.hexagramNumber);
-    // @todo pushView? context.pushView('hexagram-detail', { hexagramNumber: sovereignMapping.hexagramNumber });
+  // Get data for current viewing offset
+  const getHourData = (offset: number) => {
+    const targetBranch = getOffsetBranch(currentBranch, offset);
+    const progress = getBranchProgress(offset, solarTimeData.branchProgress);
+    return {
+      branch: targetBranch,
+      progress,
+      isCurrentHour: offset === 0,
+    };
   };
 
-  const handleHexagramLongPress = () => {
-    context.showKnowletSelector('hexagram', sovereignMapping.hexagramNumber);
-  };
+  // Render content for a specific hour
+  const renderHourContent = (hourData: ReturnType<typeof getHourData>) => {
+    const { branch, progress, isCurrentHour } = hourData;
+    const info = t.branches[branch];
+    const elementKey = ELEMENT_KEYS[info.element] || 'earth';
+    const elementColors = abstractColors.elements[elementKey as keyof typeof abstractColors.elements];
+    const elementColor = elementColors.activeColor;
 
-  const handleElementPress = () => {
-    // Element detail view could be added later
-    context.emitOutput('element', elementKey);
-  };
+    const sovereignMapping = getSovereignHexagram(branch);
 
-  const handleElementLongPress = () => {
-    context.showKnowletSelector('element', elementKey);
-  };
+    const handleHexagramPress = () => {
+      context.emitOutput('hexagram', sovereignMapping.hexagramNumber);
+    };
 
-  const handleYinYangPress = () => {
-    context.emitOutput('yinyang', info.yinYang);
-  };
+    const handleHexagramLongPress = () => {
+      context.showKnowletSelector('hexagram', sovereignMapping.hexagramNumber);
+    };
 
-  const handleYinYangLongPress = () => {
-    context.showKnowletSelector('yinyang', info.yinYang);
-  };
+    const handleElementPress = () => {
+      context.emitOutput('element', elementKey);
+    };
 
-  return (
-    <ScrollView contentContainerStyle={[styles.scrollContainer, { backgroundColor: colors.background }]}>
+    const handleElementLongPress = () => {
+      context.showKnowletSelector('element', elementKey);
+    };
+
+    const handleYinYangPress = () => {
+      context.emitOutput('yinyang', info.yinYang);
+    };
+
+    const handleYinYangLongPress = () => {
+      context.showKnowletSelector('yinyang', info.yinYang);
+    };
+
+    return (
+      <ScrollView contentContainerStyle={[styles.scrollContainer, { backgroundColor: colors.background }]}>
       <View style={styles.header}>
         <Text style={[styles.chinese, { color: colors.text }]}>{info.chinese}</Text>
         <Text style={[styles.pinyin, { color: colors.textSecondary }]}>{info.pinyin} shí</Text>
@@ -121,14 +160,13 @@ export function HoursView({ context }: Props) {
       </Text>
 
       <View style={styles.progressContainer}>
-        <View style={[styles.progressTrack, { backgroundColor: colors.border }]}>
-          <View
-            style={[
-              styles.progressFill,
-              { width: `${solarTimeData.branchProgress * 100}%`, backgroundColor: elementColor }
-            ]}
-          />
-        </View>
+        <AnimatedProgressBar
+          progress={progress}
+          color={elementColor}
+          trackColor={colors.border}
+          height={6}
+          borderRadius={3}
+        />
       </View>
 
       <Text style={[styles.description, { color: colors.textSecondary }]}>{info.description}</Text>
@@ -185,7 +223,23 @@ export function HoursView({ context }: Props) {
           <Text style={[styles.value, { color: colors.text }]}>{info.activity}</Text>
         </View>
       </View>
-    </ScrollView>
+      </ScrollView>
+    );
+  };
+
+  return (
+    <TemporalNavigator
+      current={getHourData(viewingOffset)}
+      previous={getHourData(viewingOffset - 1)}
+      next={getHourData(viewingOffset + 1)}
+      onPrevious={() => setViewingOffset(offset => offset - 1)}
+      onNext={() => setViewingOffset(offset => offset + 1)}
+      previousLabel={t.labels.previousHour}
+      nextLabel={t.labels.nextHour}
+      renderContent={renderHourContent}
+      colorScheme={context.colorScheme}
+      animationDuration={300}
+    />
   );
 }
 
@@ -230,15 +284,6 @@ const styles = StyleSheet.create({
   progressContainer: {
     width: '80%',
     marginBottom: 20,
-  },
-  progressTrack: {
-    height: 6,
-    borderRadius: 3,
-    overflow: 'hidden',
-  },
-  progressFill: {
-    height: '100%',
-    borderRadius: 3,
   },
   description: {
     fontSize: 16,

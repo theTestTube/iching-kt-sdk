@@ -64,6 +64,10 @@ export function createTimezoneGeoLocator(): GeoLocator {
       };
     },
 
+    async refreshStatus(): Promise<void> {
+      // Timezone locator has no external state to refresh
+    },
+
     requestPermission(): Promise<LocationPermissionState> {
       return Promise.resolve('granted');
     },

@@ -166,6 +166,16 @@ export function createCompositeGeoLocator(config: CompositeGeoLocatorConfig): Ge
       return getStatusInternal();
     },
 
+    async refreshStatus(): Promise<void> {
+      // Refresh all child locators so they re-check OS state
+      await Promise.all(locators.map(l => l.refreshStatus()));
+
+      // Re-evaluate subscriptions based on updated state
+      if (listeners.size > 0) {
+        updateSubscriptions();
+      }
+    },
+
     async requestPermission(): Promise<LocationPermissionState> {
       // Request permission from the highest precision locator
       const highestPrecisionLocator = getHighestPrecisionLocator();

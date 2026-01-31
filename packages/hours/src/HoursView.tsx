@@ -76,11 +76,13 @@ function getOffsetBranch(currentBranch: EarthlyBranch, offset: number): EarthlyB
 }
 
 /**
- * Calculate the progress within a given branch based on the offset from current time
- * For non-current hours, we show 0.5 (middle of the hour) as a placeholder
+ * Calculate the progress within a given branch based on the offset from current time.
+ * Past hours (negative offset) are fully elapsed, future hours (positive offset) are empty.
  */
 function getBranchProgress(offset: number, currentProgress: number): number {
-  return offset === 0 ? currentProgress : 0.5;
+  if (offset === 0) return currentProgress;
+  if (offset < 0) return 1;
+  return 0;
 }
 
 export function HoursView({ context }: Props) {

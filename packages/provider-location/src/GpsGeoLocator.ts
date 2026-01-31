@@ -1,4 +1,4 @@
-import type { GeoLocator, GeoPosition, GeoLocatorStatus, LocationPermissionState } from '@iching-kt/core';
+import type { GeoLocator, GeoPosition, GeoLocatorStatus, LocationPermissionState, LocationPrecision } from '@iching-kt/core';
 
 /**
  * GpsGeoLocator - High precision location using device GPS
@@ -35,6 +35,15 @@ interface GpsGeoLocatorConfig {
   expoLocation: ExpoLocation;
 }
 
+/** Determine precision from position accuracy in meters.
+ * GPS typically provides 5-30m accuracy → 'high'
+ * Network/coarse location provides 100-5000m → 'medium'
+ */
+function precisionFromAccuracy(accuracyMeters: number | undefined): LocationPrecision {
+  if (accuracyMeters === undefined) return 'high'; // No accuracy info, assume best
+  return accuracyMeters < 100 ? 'high' : 'medium';
+}
+
 export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
   const { expoLocation } = config;
   const listeners = new Set<(position: GeoPosition) => void>();
@@ -66,16 +75,21 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
 
   // Internal status getter (doesn't trigger events)
   function getStatusInternal(): GeoLocatorStatus {
-    // Precision should reflect ACTUAL position data availability, not just permission
-    // BUG FIX: Don't claim 'high' precision until we have a valid, fresh position
+    // Precision should reflect ACTUAL position data availability, not just permission.
+    // Position is valid when:
+    // - Watcher is active: position is the best available (coarse locations on
+    //   stationary devices update infrequently, but data remains valid)
+    // - Watcher is inactive: position is valid for 120s grace period
+    //   (covers app backgrounding before watcher cleanup)
     const hasValidPosition =
       currentPosition !== null &&
-      (Date.now() - currentPosition.timestamp.getTime()) < 60000; // Position must be < 60s old
+      (watchSubscription !== null ||
+        (Date.now() - currentPosition.timestamp.getTime()) < 120000);
 
     return {
       permissionState,
       isAvailable: true, // GPS is available on all mobile devices
-      currentPrecision: hasValidPosition ? 'high' : 'low',
+      currentPrecision: hasValidPosition ? currentPosition.precision : 'low',
     };
   }
 
@@ -132,15 +146,15 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
           timeInterval: 60000, // Throttle to max once per minute (allows CPU idle periods)
         },
         (location) => {
+          const accuracy = location.coords.accuracy ?? undefined;
           const position: GeoPosition = {
             longitude: location.coords.longitude,
             latitude: location.coords.latitude,
-            precision: 'high',
+            precision: precisionFromAccuracy(accuracy),
             timestamp: new Date(),
-            accuracyMeters: location.coords.accuracy ?? undefined,
+            accuracyMeters: accuracy,
           };
-          const hadValidPosition = currentPosition !== null &&
-            (Date.now() - currentPosition.timestamp.getTime()) < 60000;
+          const hadValidPosition = currentPosition !== null;
           currentPosition = position;
           listeners.forEach(cb => cb(position));
 
@@ -169,6 +183,10 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
 
     getStatus(): GeoLocatorStatus {
       return getStatusInternal();
+    },
+
+    async refreshStatus(): Promise<void> {
+      await refreshPermissionState();
     },
 
     async requestPermission(): Promise<LocationPermissionState> {
@@ -206,12 +224,13 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
           accuracy: expoLocation.Accuracy.High,
         });
 
+        const accuracy = location.coords.accuracy ?? undefined;
         const position: GeoPosition = {
           longitude: location.coords.longitude,
           latitude: location.coords.latitude,
-          precision: 'high',
+          precision: precisionFromAccuracy(accuracy),
           timestamp: new Date(),
-          accuracyMeters: location.coords.accuracy ?? undefined,
+          accuracyMeters: accuracy,
         };
 
         currentPosition = position;

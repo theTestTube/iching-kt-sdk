@@ -185,6 +185,13 @@ export interface GeoLocator {
    */
   onStatusChange(callback: (status: GeoLocatorStatus) => void): () => void;
 
+  /**
+   * Refresh internal state from the OS (e.g., re-check permission state).
+   * Non-interactive: never shows dialogs or prompts.
+   * Call when the app returns to foreground to detect external permission changes.
+   */
+  refreshStatus(): Promise<void>;
+
   /** Stop all tracking and release resources */
   dispose(): void;
 }

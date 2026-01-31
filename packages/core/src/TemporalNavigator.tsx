@@ -1,10 +1,18 @@
-import React, { useRef, useState } from 'react';
-import { View, Text, Pressable, StyleSheet, Animated } from 'react-native';
-import type { ColorScheme } from './types';
-import { getThemeColors } from './theme';
+import React, { useRef, useState, useEffect } from 'react';
+import { View, StyleSheet, Animated } from 'react-native';
+
+export interface TemporalNavigationState {
+  isTransitioning: boolean;
+  /** Call to navigate to previous. Null when at boundary or transitioning. */
+  onPrevious: (() => void) | null;
+  /** Call to navigate to next. Null when at boundary or transitioning. */
+  onNext: (() => void) | null;
+  /** Animated opacity value (0→1) for content that should fade during transitions */
+  fadeAnim: Animated.Value;
+}
 
 export interface TemporalNavigatorProps<T> {
-  /** Current temporal value (e.g., current hour data) */
+  /** Current temporal value */
   current: T;
 
   /** Previous temporal value (null if at start of cycle) */
@@ -19,17 +27,8 @@ export interface TemporalNavigatorProps<T> {
   /** Called when user navigates to next */
   onNext?: () => void;
 
-  /** Label for previous button */
-  previousLabel?: string;
-
-  /** Label for next button */
-  nextLabel?: string;
-
-  /** Render function for content */
-  renderContent: (value: T, isTransitioning: boolean) => React.ReactNode;
-
-  /** Color scheme */
-  colorScheme?: ColorScheme;
+  /** Render function - receives value and navigation state so content can place controls anywhere */
+  renderContent: (value: T, navigation: TemporalNavigationState) => React.ReactNode;
 
   /** Animation duration in ms (default: 300) */
   animationDuration?: number;
@@ -41,160 +40,74 @@ export function TemporalNavigator<T>({
   next,
   onPrevious,
   onNext,
-  previousLabel = '◀ Previous',
-  nextLabel = 'Next ▶',
   renderContent,
-  colorScheme = 'light',
   animationDuration = 300,
 }: TemporalNavigatorProps<T>) {
-  const colors = getThemeColors(colorScheme);
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [pendingFadeIn, setPendingFadeIn] = useState(false);
+
+  // Phase 3: After content swap renders, fade back in.
+  // Separated from fade-out to avoid recursive animation callbacks.
+  useEffect(() => {
+    if (!pendingFadeIn) return;
+    setPendingFadeIn(false);
+
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: animationDuration / 2,
+      useNativeDriver: true,
+    }).start(({ finished }) => {
+      if (finished) {
+        setIsTransitioning(false);
+      }
+    });
+  }, [pendingFadeIn]);
 
   const transitionTo = (direction: 'previous' | 'next') => {
-    if (isTransitioning) return; // Prevent concurrent transitions
-
+    if (isTransitioning) return;
     setIsTransitioning(true);
 
-    // Fade out
+    // Phase 1: Fade out
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: animationDuration / 2,
       useNativeDriver: true,
-    }).start(() => {
-      // Update content
+    }).start(({ finished }) => {
+      if (!finished) {
+        setIsTransitioning(false);
+        return;
+      }
+      // Phase 2: Swap content and schedule fade-in
       if (direction === 'previous') {
         onPrevious?.();
       } else {
         onNext?.();
       }
-
-      // Fade in
-      Animated.timing(fadeAnim, {
-        toValue: 1,
-        duration: animationDuration / 2,
-        useNativeDriver: true,
-      }).start(() => {
-        setIsTransitioning(false);
-      });
+      setPendingFadeIn(true);
     });
   };
 
-  const handlePrevious = () => {
-    if (previous !== null) {
-      transitionTo('previous');
-    }
+  const navigation: TemporalNavigationState = {
+    isTransitioning,
+    onPrevious: previous !== null && !isTransitioning
+      ? () => transitionTo('previous')
+      : null,
+    onNext: next !== null && !isTransitioning
+      ? () => transitionTo('next')
+      : null,
+    fadeAnim,
   };
-
-  const handleNext = () => {
-    if (next !== null) {
-      transitionTo('next');
-    }
-  };
-
-  const isPreviousDisabled = previous === null || isTransitioning;
-  const isNextDisabled = next === null || isTransitioning;
 
   return (
     <View style={styles.container}>
-      {/* Navigation Controls */}
-      <View style={styles.controls}>
-        <Pressable
-          onPress={handlePrevious}
-          disabled={isPreviousDisabled}
-          style={({ pressed }) => [
-            styles.button,
-            {
-              backgroundColor: isPreviousDisabled
-                ? colors.surfaceSecondary
-                : pressed
-                ? colors.primary
-                : colors.surface,
-              borderColor: colors.border,
-            },
-          ]}
-        >
-          <Text
-            style={[
-              styles.buttonText,
-              {
-                color: isPreviousDisabled ? colors.textTertiary : colors.text,
-              },
-            ]}
-          >
-            {previousLabel}
-          </Text>
-        </Pressable>
-
-        <Pressable
-          onPress={handleNext}
-          disabled={isNextDisabled}
-          style={({ pressed }) => [
-            styles.button,
-            {
-              backgroundColor: isNextDisabled
-                ? colors.surfaceSecondary
-                : pressed
-                ? colors.primary
-                : colors.surface,
-              borderColor: colors.border,
-            },
-          ]}
-        >
-          <Text
-            style={[
-              styles.buttonText,
-              {
-                color: isNextDisabled ? colors.textTertiary : colors.text,
-              },
-            ]}
-          >
-            {nextLabel}
-          </Text>
-        </Pressable>
-      </View>
-
-      {/* Animated Content */}
-      <Animated.View
-        style={[
-          styles.content,
-          {
-            opacity: fadeAnim,
-          },
-        ]}
-      >
-        {renderContent(current, isTransitioning)}
-      </Animated.View>
+      {renderContent(current, navigation)}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: '100%',
-  },
-  controls: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    gap: 12,
-  },
-  button: {
-    flex: 1,
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    borderWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    fontSize: 14,
-    fontWeight: '600',
-  },
-  content: {
     flex: 1,
     width: '100%',
   },

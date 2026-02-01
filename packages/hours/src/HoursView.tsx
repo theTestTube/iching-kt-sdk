@@ -215,9 +215,12 @@ export function HoursView({ context }: Props) {
         <View style={styles.dayProgressTrack}>
           {BRANCH_ORDER.map((b, i) => {
             const isViewing = i === viewingBranchIndex;
+            const segmentInfo = t.branches[b];
+            const segmentElementKey = (ELEMENT_KEYS[segmentInfo.element] || 'earth') as keyof typeof abstractColors.elements;
+            const segmentElementColors = abstractColors.elements[segmentElementKey];
             const segmentColor = isViewing
-              ? elementColor
-              : colors.borderLight;
+              ? segmentElementColors.activeColor
+              : segmentElementColors.defaultColor;
             return (
               <View
                 key={b}

@@ -7,6 +7,7 @@ import type { EarthlyBranch } from '@iching-kt/provider-time';
 import { getSovereignHexagram } from '@iching-kt/data-hexagrams';
 import { getTranslation } from './data';
 import { HexagramCard } from './HexagramCard';
+import { SlidingHourHeader } from './SlidingHourHeader';
 
 interface Props {
   context: KnowletContext;
@@ -156,143 +157,141 @@ export function HoursView({ context }: Props) {
     return (
       <ScrollView contentContainerStyle={[styles.scrollContainer, { backgroundColor: colors.background }]}>
 
-      {/* Upper fading section: identity content */}
-      <Animated.View style={[styles.fadingSection, { opacity: fadeAnim }]}>
-        <View style={styles.header}>
-          <Text style={[styles.chinese, { color: colors.text }]}>{info.chinese}</Text>
-          <Text style={[styles.pinyin, { color: colors.textSecondary }]}>{info.pinyin} shí</Text>
-        </View>
-
-        <Text style={[styles.animal, { color: colors.text }]}>{info.animal}</Text>
-      </Animated.View>
-
-      {/* Static navigation group: arrows, time range, progress bars */}
-      <View style={styles.timeRangeRow}>
-        <Pressable
-          onPress={navigation.onPrevious ?? undefined}
-          disabled={!navigation.onPrevious}
-          hitSlop={12}
-          style={styles.arrowButton}
-        >
-          <Text style={[
-            styles.arrow,
-            { color: navigation.onPrevious ? colors.text : colors.textTertiary },
-          ]}>
-            ◀
-          </Text>
-        </Pressable>
-
-        <Text style={[styles.timeRange, { color: colors.textSecondary }]}>
-          {getCivilTimeRange(branch, solarTimeData.solarOffsetMinutes)}
-        </Text>
-
-        <Pressable
-          onPress={navigation.onNext ?? undefined}
-          disabled={!navigation.onNext}
-          hitSlop={12}
-          style={styles.arrowButton}
-        >
-          <Text style={[
-            styles.arrow,
-            { color: navigation.onNext ? colors.text : colors.textTertiary },
-          ]}>
-            ▶
-          </Text>
-        </Pressable>
-      </View>
-
-      <View style={styles.progressContainer}>
-        <AnimatedProgressBar
-          progress={progress}
-          color={elementColor}
-          trackColor={colors.border}
-          height={6}
-          borderRadius={3}
+        {/* Sliding header carousel: previous / current / next */}
+        <SlidingHourHeader
+          branch={branch}
+          getBranchInfo={(b) => t.branches[b]}
+          textColor={colors.text}
+          textSecondaryColor={colors.textSecondary}
         />
-      </View>
 
-      <View style={styles.dayProgressContainer}>
-        <View style={styles.dayProgressTrack}>
-          {BRANCH_ORDER.map((b, i) => {
-            const isViewing = i === viewingBranchIndex;
-            const segmentInfo = t.branches[b];
-            const segmentElementKey = (ELEMENT_KEYS[segmentInfo.element] || 'earth') as keyof typeof abstractColors.elements;
-            const segmentElementColors = abstractColors.elements[segmentElementKey];
-            const segmentColor = isViewing
-              ? segmentElementColors.activeColor
-              : segmentElementColors.defaultColor;
-            return (
-              <View
-                key={b}
-                style={[
-                  styles.daySegment,
-                  {
-                    backgroundColor: segmentColor,
-                  },
-                  i === 0 && styles.daySegmentFirst,
-                  i === 11 && styles.daySegmentLast,
-                ]}
-              />
-            );
-          })}
-        </View>
-      </View>
-
-      {/* Lower fading section: details content */}
-      <Animated.View style={[styles.fadingSection, { opacity: fadeAnim }]}>
-        <Text style={[styles.description, { color: colors.textSecondary }]}>{info.description}</Text>
-
-        <View style={styles.badgesRow}>
-          <ActionableElement
-            outputType="element"
-            value={elementKey}
-            label={info.element}
-            onPress={handleElementPress}
-            onLongPress={handleElementLongPress}
-            isActive={true}
-            activeColor={elementColor}
-            style={styles.badge}
+        {/* Static navigation group: arrows, time range, progress bars */}
+        <View style={styles.timeRangeRow}>
+          <Pressable
+            onPress={navigation.onPrevious ?? undefined}
+            disabled={!navigation.onPrevious}
+            hitSlop={12}
+            style={styles.arrowButton}
           >
-            <Text style={[styles.badgeText, { color: colors.textInverse }]}>{info.element}</Text>
-          </ActionableElement>
-
-          <ActionableElement
-            outputType="yinyang"
-            value={info.yinYang}
-            label={info.yinYang === 'yang' ? 'Yang' : 'Yin'}
-            onPress={handleYinYangPress}
-            onLongPress={handleYinYangLongPress}
-            isActive={true}
-            activeColor={info.yinYang === 'yang' ? abstractColors.yinyang.yang.activeColor : abstractColors.yinyang.yin.activeColor}
-            style={styles.badge}
-          >
-            <Text style={[styles.badgeText, { color: colors.textInverse }]}>
-              {info.yinYang === 'yang' ? '☯ Yang' : '☯ Yin'}
+            <Text style={[
+              styles.arrow,
+              { color: navigation.onPrevious ? colors.text : colors.textTertiary },
+            ]}>
+              ◀
             </Text>
-          </ActionableElement>
+          </Pressable>
+
+          <Text style={[styles.timeRange, { color: colors.textSecondary }]}>
+            {getCivilTimeRange(branch, solarTimeData.solarOffsetMinutes)}
+          </Text>
+
+          <Pressable
+            onPress={navigation.onNext ?? undefined}
+            disabled={!navigation.onNext}
+            hitSlop={12}
+            style={styles.arrowButton}
+          >
+            <Text style={[
+              styles.arrow,
+              { color: navigation.onNext ? colors.text : colors.textTertiary },
+            ]}>
+              ▶
+            </Text>
+          </Pressable>
         </View>
 
-        <HexagramCard
-          context={context}
-          hexagramNumber={sovereignMapping.hexagramNumber}
-          label={t.labels.sovereignHexagram}
-          onPress={handleHexagramPress}
-          onLongPress={handleHexagramLongPress}
-          style={styles.hexagramCard}
-        />
+        <View style={styles.progressContainer}>
+          <AnimatedProgressBar
+            progress={progress}
+            color={elementColor}
+            trackColor={colors.border}
+            height={6}
+            borderRadius={3}
+          />
+        </View>
 
-        <View style={[styles.infoCard, { backgroundColor: colors.surfaceSecondary }]}>
-          <View style={styles.infoRow}>
-            <Text style={[styles.label, { color: colors.textTertiary }]}>{t.labels.organ}</Text>
-            <Text style={[styles.value, { color: colors.text }]}>{info.organ}</Text>
-          </View>
-          <View style={[styles.divider, { backgroundColor: colors.border }]} />
-          <View style={styles.infoRow}>
-            <Text style={[styles.label, { color: colors.textTertiary }]}>{t.labels.activity}</Text>
-            <Text style={[styles.value, { color: colors.text }]}>{info.activity}</Text>
+        <View style={styles.dayProgressContainer}>
+          <View style={styles.dayProgressTrack}>
+            {BRANCH_ORDER.map((b, i) => {
+              const isViewing = i === viewingBranchIndex;
+              const segmentInfo = t.branches[b];
+              const segmentElementKey = (ELEMENT_KEYS[segmentInfo.element] || 'earth') as keyof typeof abstractColors.elements;
+              const segmentElementColors = abstractColors.elements[segmentElementKey];
+              const segmentColor = isViewing
+                ? segmentElementColors.activeColor
+                : segmentElementColors.defaultColor;
+              return (
+                <View
+                  key={b}
+                  style={[
+                    styles.daySegment,
+                    {
+                      backgroundColor: segmentColor,
+                    },
+                    i === 0 && styles.daySegmentFirst,
+                    i === 11 && styles.daySegmentLast,
+                  ]}
+                />
+              );
+            })}
           </View>
         </View>
-      </Animated.View>
+
+        {/* Lower fading section: details content */}
+        <Animated.View style={[styles.fadingSection, { opacity: fadeAnim }]}>
+          <Text style={[styles.description, { color: colors.textSecondary }]}>{info.description}</Text>
+
+          <View style={styles.badgesRow}>
+            <ActionableElement
+              outputType="element"
+              value={elementKey}
+              label={info.element}
+              onPress={handleElementPress}
+              onLongPress={handleElementLongPress}
+              isActive={true}
+              activeColor={elementColor}
+              style={styles.badge}
+            >
+              <Text style={[styles.badgeText, { color: colors.textInverse }]}>{info.element}</Text>
+            </ActionableElement>
+
+            <ActionableElement
+              outputType="yinyang"
+              value={info.yinYang}
+              label={info.yinYang === 'yang' ? 'Yang' : 'Yin'}
+              onPress={handleYinYangPress}
+              onLongPress={handleYinYangLongPress}
+              isActive={true}
+              activeColor={info.yinYang === 'yang' ? abstractColors.yinyang.yang.activeColor : abstractColors.yinyang.yin.activeColor}
+              style={styles.badge}
+            >
+              <Text style={[styles.badgeText, { color: colors.textInverse }]}>
+                {info.yinYang === 'yang' ? '☯ Yang' : '☯ Yin'}
+              </Text>
+            </ActionableElement>
+          </View>
+
+          <HexagramCard
+            context={context}
+            hexagramNumber={sovereignMapping.hexagramNumber}
+            label={t.labels.sovereignHexagram}
+            onPress={handleHexagramPress}
+            onLongPress={handleHexagramLongPress}
+            style={styles.hexagramCard}
+          />
+
+          <View style={[styles.infoCard, { backgroundColor: colors.surfaceSecondary }]}>
+            <View style={styles.infoRow}>
+              <Text style={[styles.label, { color: colors.textTertiary }]}>{t.labels.organ}</Text>
+              <Text style={[styles.value, { color: colors.text }]}>{info.organ}</Text>
+            </View>
+            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={styles.infoRow}>
+              <Text style={[styles.label, { color: colors.textTertiary }]}>{t.labels.activity}</Text>
+              <Text style={[styles.value, { color: colors.text }]}>{info.activity}</Text>
+            </View>
+          </View>
+        </Animated.View>
 
       </ScrollView>
     );
@@ -328,25 +327,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   fadingSection: {
-    alignItems: 'center',
     width: '100%',
-  },
-  header: {
-    alignItems: 'center',
-    marginBottom: 8,
-  },
-  chinese: {
-    fontSize: 96,
-    fontWeight: '200',
-  },
-  pinyin: {
-    fontSize: 18,
-    fontStyle: 'italic',
-  },
-  animal: {
-    fontSize: 28,
-    fontWeight: '600',
-    marginBottom: 8,
+    alignSelf: 'stretch',
   },
   timeRangeRow: {
     flexDirection: 'row',
@@ -366,21 +348,21 @@ const styles = StyleSheet.create({
     fontVariant: ['tabular-nums'],
   },
   progressContainer: {
-    width: '80%',
+    width: '100%',
     marginBottom: 6,
   },
   dayProgressContainer: {
-    width: '80%',
+    width: '100%',
     marginBottom: 20,
   },
   dayProgressTrack: {
     flexDirection: 'row',
-    height: 6,
+    height: 12,
     gap: 2,
   },
   daySegment: {
     flex: 1,
-    height: 6,
+    height: 12,
   },
   daySegmentFirst: {
     borderTopLeftRadius: 3,
@@ -396,11 +378,13 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     marginBottom: 20,
     paddingHorizontal: 16,
+    alignSelf: 'center',
   },
   badgesRow: {
     flexDirection: 'row',
     gap: 12,
     marginBottom: 24,
+    alignSelf: 'center',
   },
   badge: {
     paddingHorizontal: 16,

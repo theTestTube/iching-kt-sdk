@@ -114,17 +114,21 @@ const styles = StyleSheet.create({
   },
   info: {
     flex: 1,
+    alignItems: 'flex-end',
   },
   number: {
     fontSize: 12,
     marginBottom: 2,
+    textAlign: 'right',
   },
   name: {
     fontSize: 18,
     fontWeight: '600',
     marginBottom: 2,
+    textAlign: 'right',
   },
   chinese: {
     fontSize: 14,
+    textAlign: 'right',
   },
 });

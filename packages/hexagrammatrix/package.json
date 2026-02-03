@@ -12,8 +12,8 @@
     "src"
   ],
   "dependencies": {
-    "@iching-kt/core": "workspace:*",
-    "@iching-kt/square": "workspace:*"
+    "@iching-kt/core": "*",
+    "@iching-kt/square": "*"
   },
   "peerDependencies": {
     "react": "^19",

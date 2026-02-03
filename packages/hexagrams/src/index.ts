@@ -33,7 +33,7 @@ export const hexagramsKnowlet: Knowlet = {
     supportedLanguages: ['en', 'es', 'zh'],
     consumes: ['hexagram'],
     produces: ['trigram'],
-    category: 'data',
+    category: 'board',
   },
   settingsSchema,
   View: HexagramView,

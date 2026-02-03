@@ -28,7 +28,7 @@ export const hexagramsKnowlet: Knowlet = {
     supportedLanguages: ['en', 'es', 'zh'],
     consumes: ['hexagram'],
     produces: ['trigram'],
-    category: 'data',
+    category: 'board',
   },
   // No settingsSchema - source selection is in General Settings > Translation Sources
   View: HexagramView,

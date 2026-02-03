@@ -1,0 +1,22 @@
+{
+  "name": "@iching-kt/hexagrammatrix",
+  "version": "0.1.0",
+  "description": "Hexagram Matrix board knowlet for I-Ching KT",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "main": "src/index.ts",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@iching-kt/core": "workspace:*",
+    "@iching-kt/square": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-native": "*"
+  }
+}

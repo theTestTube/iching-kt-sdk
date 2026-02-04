@@ -72,7 +72,7 @@ const BRANCH_ORDER: EarthlyBranch[] = [
  */
 function getOffsetBranch(currentBranch: EarthlyBranch, offset: number): EarthlyBranch {
   const currentIndex = BRANCH_ORDER.indexOf(currentBranch);
-  const targetIndex = (currentIndex + offset + 12) % 12; // +12 to handle negatives
+  const targetIndex = ((currentIndex + offset) % 12 + 12) % 12;
   return BRANCH_ORDER[targetIndex];
 }
 

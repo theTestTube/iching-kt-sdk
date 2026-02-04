@@ -25,6 +25,8 @@ type Translations = {
       description: string;
       shichen: string;
       sovereignHexagram: string;
+      previousHour: string;
+      nextHour: string;
     };
   };
 };
@@ -41,6 +43,8 @@ export const translations: Translations = {
       description: 'Description',
       shichen: 'Shichen',
       sovereignHexagram: 'Sovereign Hexagram',
+      previousHour: '◀ Previous',
+      nextHour: 'Next ▶',
     },
     branches: {
       zi: {
@@ -188,6 +192,8 @@ export const translations: Translations = {
       description: 'Descripción',
       shichen: 'Shichen',
       sovereignHexagram: 'Hexagrama Soberano',
+      previousHour: '◀ Anterior',
+      nextHour: 'Siguiente ▶',
     },
     branches: {
       zi: {
@@ -335,6 +341,8 @@ export const translations: Translations = {
       description: '說明',
       shichen: '時辰',
       sovereignHexagram: '消息卦',
+      previousHour: '◀ 上一個',
+      nextHour: '下一個 ▶',
     },
     branches: {
       zi: {

@@ -1,10 +1,13 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
+import { useState } from 'react';
+import { View, Text, Pressable, Animated, StyleSheet, ScrollView } from 'react-native';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, TemporalNavigator, AnimatedProgressBar } from '@iching-kt/core';
+import type { TemporalNavigationState } from '@iching-kt/core';
 import type { SolarTimeData } from '@iching-kt/provider-solar-time';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
 import { getSovereignHexagram } from '@iching-kt/data-hexagrams';
 import { getTranslation } from './data';
 import { HexagramCard } from './HexagramCard';
+import { SlidingHourHeader } from './SlidingHourHeader';
 
 interface Props {
   context: KnowletContext;
@@ -57,7 +60,34 @@ function getCivilTimeRange(branch: EarthlyBranch, solarOffsetMinutes: number): s
   return `${formatTime(civilStart)}-${formatTime(civilEnd)}`;
 }
 
+// Order of earthly branches in the 12-hour cycle
+const BRANCH_ORDER: EarthlyBranch[] = [
+  'zi', 'chou', 'yin', 'mao', 'chen', 'si',
+  'wu', 'wei', 'shen', 'you', 'xu', 'hai'
+];
+
+/**
+ * Get the branch that comes N positions after/before the given branch
+ * offset: positive = future, negative = past
+ */
+function getOffsetBranch(currentBranch: EarthlyBranch, offset: number): EarthlyBranch {
+  const currentIndex = BRANCH_ORDER.indexOf(currentBranch);
+  const targetIndex = ((currentIndex + offset) % 12 + 12) % 12;
+  return BRANCH_ORDER[targetIndex];
+}
+
+/**
+ * Calculate the progress within a given branch based on the offset from current time.
+ * Past hours (negative offset) are fully elapsed, future hours (positive offset) are empty.
+ */
+function getBranchProgress(offset: number, currentProgress: number): number {
+  if (offset === 0) return currentProgress;
+  if (offset < 0) return 1;
+  return 0;
+}
+
 export function HoursView({ context }: Props) {
+  const [viewingOffset, setViewingOffset] = useState(0);
   const solarTimeData = context.situations['solar-time'] as SolarTimeData | undefined;
   const t = getTranslation(context.language);
   const colors = getThemeColors(context.colorScheme);
@@ -72,120 +102,211 @@ export function HoursView({ context }: Props) {
     );
   }
 
-  const branch = solarTimeData.earthlyBranch as EarthlyBranch;
-  const info = t.branches[branch];
-  const elementKey = ELEMENT_KEYS[info.element] || 'earth';
-  const elementColors = abstractColors.elements[elementKey as keyof typeof abstractColors.elements];
-  const elementColor = elementColors.activeColor;
+  const currentBranch = solarTimeData.earthlyBranch as EarthlyBranch;
 
-  const sovereignMapping = getSovereignHexagram(branch);
-
-  const handleHexagramPress = () => {    
-    context.emitOutput('hexagram', sovereignMapping.hexagramNumber);
-    // @todo pushView? context.pushView('hexagram-detail', { hexagramNumber: sovereignMapping.hexagramNumber });
+  // Get data for current viewing offset
+  const getHourData = (offset: number) => {
+    const targetBranch = getOffsetBranch(currentBranch, offset);
+    const progress = getBranchProgress(offset, solarTimeData.branchProgress);
+    return {
+      branch: targetBranch,
+      progress,
+      isCurrentHour: offset === 0,
+    };
   };
 
-  const handleHexagramLongPress = () => {
-    context.showKnowletSelector('hexagram', sovereignMapping.hexagramNumber);
-  };
+  // Render content for a specific hour
+  const renderHourContent = (hourData: ReturnType<typeof getHourData>, navigation: TemporalNavigationState) => {
+    const { branch, progress, isCurrentHour } = hourData;
+    const info = t.branches[branch];
+    const elementKey = ELEMENT_KEYS[info.element] || 'earth';
+    const elementColors = abstractColors.elements[elementKey as keyof typeof abstractColors.elements];
+    const elementColor = elementColors.activeColor;
 
-  const handleElementPress = () => {
-    // Element detail view could be added later
-    context.emitOutput('element', elementKey);
-  };
+    const sovereignMapping = getSovereignHexagram(branch);
 
-  const handleElementLongPress = () => {
-    context.showKnowletSelector('element', elementKey);
-  };
+    const handleHexagramPress = () => {
+      context.emitOutput('hexagram', sovereignMapping.hexagramNumber);
+    };
 
-  const handleYinYangPress = () => {
-    context.emitOutput('yinyang', info.yinYang);
-  };
+    const handleHexagramLongPress = () => {
+      context.showKnowletSelector('hexagram', sovereignMapping.hexagramNumber);
+    };
 
-  const handleYinYangLongPress = () => {
-    context.showKnowletSelector('yinyang', info.yinYang);
+    const handleElementPress = () => {
+      context.emitOutput('element', elementKey);
+    };
+
+    const handleElementLongPress = () => {
+      context.showKnowletSelector('element', elementKey);
+    };
+
+    const handleYinYangPress = () => {
+      context.emitOutput('yinyang', info.yinYang);
+    };
+
+    const handleYinYangLongPress = () => {
+      context.showKnowletSelector('yinyang', info.yinYang);
+    };
+
+    // Current branch index for day progress bar highlighting
+    const viewingBranchIndex = BRANCH_ORDER.indexOf(branch);
+
+    const { fadeAnim } = navigation;
+
+    return (
+      <ScrollView contentContainerStyle={[styles.scrollContainer, { backgroundColor: colors.background }]}>
+
+        {/* Sliding header carousel: previous / current / next */}
+        <SlidingHourHeader
+          branch={branch}
+          getBranchInfo={(b) => t.branches[b]}
+          textColor={colors.text}
+          textSecondaryColor={colors.textSecondary}
+        />
+
+        {/* Static navigation group: arrows, time range, progress bars */}
+        <View style={styles.timeRangeRow}>
+          <Pressable
+            onPress={navigation.onPrevious ?? undefined}
+            disabled={!navigation.onPrevious}
+            hitSlop={12}
+            style={styles.arrowButton}
+          >
+            <Text style={[
+              styles.arrow,
+              { color: navigation.onPrevious ? colors.text : colors.textTertiary },
+            ]}>
+              ◀
+            </Text>
+          </Pressable>
+
+          <Text style={[styles.timeRange, { color: colors.textSecondary }]}>
+            {getCivilTimeRange(branch, solarTimeData.solarOffsetMinutes)}
+          </Text>
+
+          <Pressable
+            onPress={navigation.onNext ?? undefined}
+            disabled={!navigation.onNext}
+            hitSlop={12}
+            style={styles.arrowButton}
+          >
+            <Text style={[
+              styles.arrow,
+              { color: navigation.onNext ? colors.text : colors.textTertiary },
+            ]}>
+              ▶
+            </Text>
+          </Pressable>
+        </View>
+
+        <View style={styles.progressContainer}>
+          <AnimatedProgressBar
+            progress={progress}
+            color={elementColor}
+            trackColor={colors.border}
+            height={6}
+            borderRadius={3}
+          />
+        </View>
+
+        <View style={styles.dayProgressContainer}>
+          <View style={styles.dayProgressTrack}>
+            {BRANCH_ORDER.map((b, i) => {
+              const isViewing = i === viewingBranchIndex;
+              const segmentInfo = t.branches[b];
+              const segmentElementKey = (ELEMENT_KEYS[segmentInfo.element] || 'earth') as keyof typeof abstractColors.elements;
+              const segmentElementColors = abstractColors.elements[segmentElementKey];
+              const segmentColor = isViewing
+                ? segmentElementColors.activeColor
+                : segmentElementColors.defaultColor;
+              return (
+                <View
+                  key={b}
+                  style={[
+                    styles.daySegment,
+                    {
+                      backgroundColor: segmentColor,
+                    },
+                    i === 0 && styles.daySegmentFirst,
+                    i === 11 && styles.daySegmentLast,
+                  ]}
+                />
+              );
+            })}
+          </View>
+        </View>
+
+        {/* Lower fading section: details content */}
+        <Animated.View style={[styles.fadingSection, { opacity: fadeAnim }]}>
+          <Text style={[styles.description, { color: colors.textSecondary }]}>{info.description}</Text>
+
+          <View style={styles.badgesRow}>
+            <ActionableElement
+              outputType="element"
+              value={elementKey}
+              label={info.element}
+              onPress={handleElementPress}
+              onLongPress={handleElementLongPress}
+              isActive={true}
+              activeColor={elementColor}
+              style={styles.badge}
+            >
+              <Text style={[styles.badgeText, { color: colors.textInverse }]}>{info.element}</Text>
+            </ActionableElement>
+
+            <ActionableElement
+              outputType="yinyang"
+              value={info.yinYang}
+              label={info.yinYang === 'yang' ? 'Yang' : 'Yin'}
+              onPress={handleYinYangPress}
+              onLongPress={handleYinYangLongPress}
+              isActive={true}
+              activeColor={info.yinYang === 'yang' ? abstractColors.yinyang.yang.activeColor : abstractColors.yinyang.yin.activeColor}
+              style={styles.badge}
+            >
+              <Text style={[styles.badgeText, { color: colors.textInverse }]}>
+                {info.yinYang === 'yang' ? '☯ Yang' : '☯ Yin'}
+              </Text>
+            </ActionableElement>
+          </View>
+
+          <HexagramCard
+            context={context}
+            hexagramNumber={sovereignMapping.hexagramNumber}
+            label={t.labels.sovereignHexagram}
+            onPress={handleHexagramPress}
+            onLongPress={handleHexagramLongPress}
+            style={styles.hexagramCard}
+          />
+
+          <View style={[styles.infoCard, { backgroundColor: colors.surfaceSecondary }]}>
+            <View style={styles.infoRow}>
+              <Text style={[styles.label, { color: colors.textTertiary }]}>{t.labels.organ}</Text>
+              <Text style={[styles.value, { color: colors.text }]}>{info.organ}</Text>
+            </View>
+            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={styles.infoRow}>
+              <Text style={[styles.label, { color: colors.textTertiary }]}>{t.labels.activity}</Text>
+              <Text style={[styles.value, { color: colors.text }]}>{info.activity}</Text>
+            </View>
+          </View>
+        </Animated.View>
+
+      </ScrollView>
+    );
   };
 
   return (
-    <ScrollView contentContainerStyle={[styles.scrollContainer, { backgroundColor: colors.background }]}>
-      <View style={styles.header}>
-        <Text style={[styles.chinese, { color: colors.text }]}>{info.chinese}</Text>
-        <Text style={[styles.pinyin, { color: colors.textSecondary }]}>{info.pinyin} shí</Text>
-      </View>
-
-      <Text style={[styles.animal, { color: colors.text }]}>{info.animal}</Text>
-
-      {/* User's clock time range for this shichen */}
-      <Text style={[styles.timeRange, { color: colors.textSecondary }]}>
-        {getCivilTimeRange(branch, solarTimeData.solarOffsetMinutes)}
-      </Text>
-
-      <View style={styles.progressContainer}>
-        <View style={[styles.progressTrack, { backgroundColor: colors.border }]}>
-          <View
-            style={[
-              styles.progressFill,
-              { width: `${solarTimeData.branchProgress * 100}%`, backgroundColor: elementColor }
-            ]}
-          />
-        </View>
-      </View>
-
-      <Text style={[styles.description, { color: colors.textSecondary }]}>{info.description}</Text>
-
-      {/* Actionable badges for element and yin/yang */}
-      <View style={styles.badgesRow}>
-        <ActionableElement
-          outputType="element"
-          value={elementKey}
-          label={info.element}
-          onPress={handleElementPress}
-          onLongPress={handleElementLongPress}
-          isActive={true}
-          activeColor={elementColor}
-          style={styles.badge}
-        >
-          <Text style={[styles.badgeText, { color: colors.textInverse }]}>{info.element}</Text>
-        </ActionableElement>
-
-        <ActionableElement
-          outputType="yinyang"
-          value={info.yinYang}
-          label={info.yinYang === 'yang' ? 'Yang' : 'Yin'}
-          onPress={handleYinYangPress}
-          onLongPress={handleYinYangLongPress}
-          isActive={true}
-          activeColor={info.yinYang === 'yang' ? abstractColors.yinyang.yang.activeColor : abstractColors.yinyang.yin.activeColor}
-          style={styles.badge}
-        >
-          <Text style={[styles.badgeText, { color: colors.textInverse }]}>
-            {info.yinYang === 'yang' ? '☯ Yang' : '☯ Yin'}
-          </Text>
-        </ActionableElement>
-      </View>
-
-      {/* Sovereign Hexagram Section */}
-      <HexagramCard
-        context={context}
-        hexagramNumber={sovereignMapping.hexagramNumber}
-        label={t.labels.sovereignHexagram}
-        onPress={handleHexagramPress}
-        onLongPress={handleHexagramLongPress}
-        style={styles.hexagramCard}
-      />
-
-      <View style={[styles.infoCard, { backgroundColor: colors.surfaceSecondary }]}>
-        <View style={styles.infoRow}>
-          <Text style={[styles.label, { color: colors.textTertiary }]}>{t.labels.organ}</Text>
-          <Text style={[styles.value, { color: colors.text }]}>{info.organ}</Text>
-        </View>
-        <View style={[styles.divider, { backgroundColor: colors.border }]} />
-        <View style={styles.infoRow}>
-          <Text style={[styles.label, { color: colors.textTertiary }]}>{t.labels.activity}</Text>
-          <Text style={[styles.value, { color: colors.text }]}>{info.activity}</Text>
-        </View>
-      </View>
-    </ScrollView>
+    <TemporalNavigator
+      current={getHourData(viewingOffset)}
+      previous={getHourData(viewingOffset - 1)}
+      next={getHourData(viewingOffset + 1)}
+      onPrevious={() => setViewingOffset(offset => offset - 1)}
+      onNext={() => setViewingOffset(offset => offset + 1)}
+      renderContent={renderHourContent}
+      animationDuration={300}
+    />
   );
 }
 
@@ -205,40 +326,51 @@ const styles = StyleSheet.create({
   loading: {
     fontSize: 16,
   },
-  header: {
+  fadingSection: {
+    width: '100%',
+    alignSelf: 'stretch',
+  },
+  timeRangeRow: {
+    flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    justifyContent: 'center',
+    gap: 16,
+    marginBottom: 16,
   },
-  chinese: {
-    fontSize: 96,
-    fontWeight: '200',
+  arrowButton: {
+    padding: 4,
   },
-  pinyin: {
+  arrow: {
     fontSize: 18,
-    fontStyle: 'italic',
-  },
-  animal: {
-    fontSize: 28,
-    fontWeight: '600',
-    marginBottom: 8,
   },
   timeRange: {
     fontSize: 18,
     fontVariant: ['tabular-nums'],
-    marginBottom: 16,
   },
   progressContainer: {
-    width: '80%',
+    width: '100%',
+    marginBottom: 6,
+  },
+  dayProgressContainer: {
+    width: '100%',
     marginBottom: 20,
   },
-  progressTrack: {
-    height: 6,
-    borderRadius: 3,
-    overflow: 'hidden',
+  dayProgressTrack: {
+    flexDirection: 'row',
+    height: 12,
+    gap: 2,
   },
-  progressFill: {
-    height: '100%',
-    borderRadius: 3,
+  daySegment: {
+    flex: 1,
+    height: 12,
+  },
+  daySegmentFirst: {
+    borderTopLeftRadius: 3,
+    borderBottomLeftRadius: 3,
+  },
+  daySegmentLast: {
+    borderTopRightRadius: 3,
+    borderBottomRightRadius: 3,
   },
   description: {
     fontSize: 16,
@@ -246,11 +378,13 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     marginBottom: 20,
     paddingHorizontal: 16,
+    alignSelf: 'center',
   },
   badgesRow: {
     flexDirection: 'row',
     gap: 12,
     marginBottom: 24,
+    alignSelf: 'center',
   },
   badge: {
     paddingHorizontal: 16,

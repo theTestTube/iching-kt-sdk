@@ -11,6 +11,8 @@ interface PhaseDisplayInfo {
   phaseName: string;
   /** Chinese phase name */
   chinese: string;
+  /** Pinyin romanization */
+  pinyin: string;
 }
 
 interface Props {
@@ -127,8 +129,9 @@ export function SlidingMoonHeader({ phaseId, getPhaseDisplay, textColor, textSec
         ]}
       >
         <Text style={[styles.heroSymbol, { color: textColor }]}>{display.heroSymbol}</Text>
-        <Animated.View style={{ opacity: chineseOp }}>
+        <Animated.View style={{ opacity: chineseOp, alignItems: 'center' }}>
           <Text style={[styles.chinese, { color: textSecondaryColor }]}>{display.chinese}</Text>
+          <Text style={[styles.pinyin, { color: textSecondaryColor }]}>{display.pinyin}</Text>
         </Animated.View>
         <Text style={[styles.phaseName, { color: textColor }]}>{display.phaseName}</Text>
       </Animated.View>
@@ -166,7 +169,12 @@ const styles = StyleSheet.create({
   },
   chinese: {
     fontSize: 18,
+    fontWeight: '600',
+  },
+  pinyin: {
+    fontSize: 14,
     fontStyle: 'italic',
+    marginTop: 2,
   },
   phaseName: {
     fontSize: 28,

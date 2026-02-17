@@ -113,7 +113,8 @@ export function MoonView({ context }: Props) {
       return {
         heroSymbol,
         phaseName: phaseInfo.phaseName,
-        chinese: `${phaseInfo.chinese} ${phaseInfo.pinyin}`,
+        chinese: phaseInfo.chinese,
+        pinyin: phaseInfo.pinyin,
       };
     };
 

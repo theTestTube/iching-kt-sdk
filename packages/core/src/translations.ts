@@ -39,6 +39,15 @@ export function getTranslationSourceForLanguage(
 }
 
 /**
+ * Returns true when the UI language is the origin language of I-Ching terminology (Chinese).
+ * Used to conditionally hide supplementary Chinese/pinyin reference labels
+ * that would be redundant when the user is already reading in Chinese.
+ */
+export function isOriginLanguage(language: string): boolean {
+  return language === 'zh';
+}
+
+/**
  * Constructs the translation key for hexagram data lookup.
  * Format: `${language}-${source}` (e.g., 'en-wilhelm', 'es-legge', 'zh-zhouyi')
  */

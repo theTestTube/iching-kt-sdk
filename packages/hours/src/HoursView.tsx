@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, Text, Pressable, Animated, StyleSheet, ScrollView } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, TemporalNavigator, AnimatedProgressBar } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, TemporalNavigator, AnimatedProgressBar, isOriginLanguage } from '@iching-kt/core';
 import type { TemporalNavigationState } from '@iching-kt/core';
 import type { SolarTimeData } from '@iching-kt/provider-solar-time';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
@@ -161,6 +161,7 @@ export function HoursView({ context }: Props) {
         <SlidingHourHeader
           branch={branch}
           getBranchInfo={(b) => t.branches[b]}
+          hideOriginRef={isOriginLanguage(context.language)}
           textColor={colors.text}
           textSecondaryColor={colors.textSecondary}
         />

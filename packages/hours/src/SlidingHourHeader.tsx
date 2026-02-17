@@ -11,6 +11,7 @@ interface BranchDisplayInfo {
 interface Props {
   branch: EarthlyBranch;
   getBranchInfo: (branch: EarthlyBranch) => BranchDisplayInfo;
+  hideOriginRef: boolean;
   textColor: string;
   textSecondaryColor: string;
 }
@@ -40,7 +41,7 @@ function pinyinOpacityForPosition(pos: number): number {
   return pos === 0 ? 1 : 0;
 }
 
-export function SlidingHourHeader({ branch, getBranchInfo, textColor, textSecondaryColor }: Props) {
+export function SlidingHourHeader({ branch, getBranchInfo, hideOriginRef, textColor, textSecondaryColor }: Props) {
   const slideAnim = useRef(new Animated.Value(0)).current;
   const prevBranchRef = useRef<EarthlyBranch | null>(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -128,9 +129,11 @@ export function SlidingHourHeader({ branch, getBranchInfo, textColor, textSecond
         ]}
       >
         <Text style={[styles.chinese, { color: textColor }]}>{info.chinese}</Text>
-        <Animated.View style={{ opacity: pinyinOp }}>
-          <Text style={[styles.pinyin, { color: textSecondaryColor }]}>{info.pinyin} shí</Text>
-        </Animated.View>
+        {!hideOriginRef && (
+          <Animated.View style={{ opacity: pinyinOp }}>
+            <Text style={[styles.pinyin, { color: textSecondaryColor }]}>{info.pinyin} shí</Text>
+          </Animated.View>
+        )}
         <Text style={[styles.animal, { color: textColor }]}>{info.animal}</Text>
       </Animated.View>
     );

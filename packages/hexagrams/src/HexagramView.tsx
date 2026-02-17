@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getTranslationSourceForLanguage } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getTranslationSourceForLanguage, isOriginLanguage } from '@iching-kt/core';
 import { getHexagram, getHexagramTranslationBySource, TranslationSource } from '@iching-kt/data-hexagrams';
 
 interface Props {
@@ -24,6 +24,7 @@ export function HexagramView({ context }: Props) {
   ) as TranslationSource;
 
   const colors = getThemeColors(context.colorScheme);
+  const hideOriginRef = isOriginLanguage(context.language);
   const hexagram = getHexagram(hexagramNumber);
   const translation = getHexagramTranslationBySource(
     hexagramNumber,
@@ -53,15 +54,18 @@ export function HexagramView({ context }: Props) {
     <ScrollView contentContainerStyle={[styles.scrollContent, { backgroundColor: colors.background }]}>
       <View style={styles.heroSection}>
         <Text style={[styles.unicode, { color: colors.text }]}>{hexagram.unicode}</Text>
-        <Text style={[styles.chinese, { color: colors.text }]}>{hexagram.chinese}</Text>
-        <Text style={[styles.pinyin, { color: colors.textSecondary }]}>{hexagram.pinyin}</Text>
+        <Text style={[styles.number, { color: colors.textTertiary }]}>#{hexagram.number}</Text>
+        <Text style={[styles.name, { color: colors.text }]}>{translation.name}</Text>
+        <Text style={[styles.translationSource, { color: colors.textTertiary }]}>
+          {translationSource === 'zhouyi' ? '周易 Zhouyi' : translationSource === 'legge' ? 'James Legge (1882)' : 'Wilhelm-Baynes (1950)'}
+        </Text>
       </View>
-
-      <Text style={[styles.number, { color: colors.textTertiary }]}>#{hexagram.number}</Text>
-      <Text style={[styles.name, { color: colors.text }]}>{translation.name}</Text>
-      <Text style={[styles.translationSource, { color: colors.textTertiary }]}>
-        {translationSource === 'zhouyi' ? '周易 Zhouyi' : translationSource === 'legge' ? 'James Legge (1882)' : 'Wilhelm-Baynes (1950)'}
-      </Text>
+      {!hideOriginRef && (
+          <Text style={[styles.chinese, { color: colors.text }]}>{hexagram.chinese}</Text>
+      )}
+      {!hideOriginRef && (
+          <Text style={[styles.pinyin, { color: colors.textSecondary }]}>{hexagram.pinyin}</Text>
+      )}
       <Text style={[styles.meaning, { color: colors.textSecondary }]}>{translation.meaning}</Text>
 
       {/* Actionable trigrams */}
@@ -139,7 +143,6 @@ const styles = StyleSheet.create({
   },
   heroSection: {
     alignItems: 'center',
-    marginBottom: 16,
   },
   unicode: {
     fontSize: 120,

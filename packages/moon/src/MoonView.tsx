@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, Text, Pressable, Animated, StyleSheet, ScrollView } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, TemporalNavigator, AnimatedProgressBar } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, TemporalNavigator, AnimatedProgressBar, isOriginLanguage } from '@iching-kt/core';
 import type { TemporalNavigationState } from '@iching-kt/core';
 import type { MoonPhaseData, MoonPhaseId } from '@iching-kt/provider-moon-phase';
 import { PHASE_ORDER } from '@iching-kt/provider-moon-phase';
@@ -127,6 +127,7 @@ export function MoonView({ context }: Props) {
         <SlidingMoonHeader
           phaseId={phaseId}
           getPhaseDisplay={getPhaseDisplay}
+          hideOriginRef={isOriginLanguage(context.language)}
           textColor={colors.text}
           textSecondaryColor={colors.textSecondary}
         />

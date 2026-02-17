@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, isOriginLanguage } from '@iching-kt/core';
 import { getHexagram, getHexagramTranslationBySource } from '@iching-kt/data-hexagrams';
 import { getTranslationSourceForLanguage } from '@iching-kt/core';
 
@@ -70,9 +70,11 @@ export function HexagramCard({
         <View style={styles.info}>
           <Text style={[styles.number, { color: colors.textTertiary }]}>#{hexagram.number}</Text>
           <Text style={[styles.name, { color: colors.text }]}>{translation.name}</Text>
-          <Text style={[styles.chinese, { color: colors.textSecondary }]}>
-            {hexagram.chinese} ({hexagram.pinyin})
-          </Text>
+          {!isOriginLanguage(context.language) && (
+            <Text style={[styles.chinese, { color: colors.textSecondary }]}>
+              {hexagram.chinese} ({hexagram.pinyin})
+            </Text>
+          )}
         </View>
       </View>
     </ActionableElement>

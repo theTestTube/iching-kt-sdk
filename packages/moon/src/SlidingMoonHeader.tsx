@@ -18,6 +18,7 @@ interface PhaseDisplayInfo {
 interface Props {
   phaseId: MoonPhaseId;
   getPhaseDisplay: (phaseId: MoonPhaseId) => PhaseDisplayInfo;
+  hideOriginRef: boolean;
   textColor: string;
   textSecondaryColor: string;
 }
@@ -43,7 +44,7 @@ function chineseOpacityForPosition(pos: number): number {
   return pos === 0 ? 1 : 0;
 }
 
-export function SlidingMoonHeader({ phaseId, getPhaseDisplay, textColor, textSecondaryColor }: Props) {
+export function SlidingMoonHeader({ phaseId, getPhaseDisplay, hideOriginRef, textColor, textSecondaryColor }: Props) {
   const slideAnim = useRef(new Animated.Value(0)).current;
   const prevPhaseRef = useRef<MoonPhaseId | null>(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -129,10 +130,12 @@ export function SlidingMoonHeader({ phaseId, getPhaseDisplay, textColor, textSec
         ]}
       >
         <Text style={[styles.heroSymbol, { color: textColor }]}>{display.heroSymbol}</Text>
-        <Animated.View style={{ opacity: chineseOp, alignItems: 'center' }}>
-          <Text style={[styles.chinese, { color: textSecondaryColor }]}>{display.chinese}</Text>
-          <Text style={[styles.pinyin, { color: textSecondaryColor }]}>{display.pinyin}</Text>
-        </Animated.View>
+        {!hideOriginRef && (
+          <Animated.View style={{ opacity: chineseOp, alignItems: 'center' }}>
+            <Text style={[styles.chinese, { color: textSecondaryColor }]}>{display.chinese}</Text>
+            <Text style={[styles.pinyin, { color: textSecondaryColor }]}>{display.pinyin}</Text>
+          </Animated.View>
+        )}
         <Text style={[styles.phaseName, { color: textColor }]}>{display.phaseName}</Text>
       </Animated.View>
     );

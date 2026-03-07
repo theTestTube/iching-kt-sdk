@@ -18,7 +18,7 @@ export const branchesCircleKnowlet: Knowlet = {
     },
     requiredProviders: ['solar-time'],
     supportedLanguages: ['en', 'es', 'zh'],
-    consumes: ['hexagram', 'trigram', 'time'],
+    consumes: ['hexagram', 'time'],
     produces: ['hexagram', 'trigram'],
     category: 'board',
   },

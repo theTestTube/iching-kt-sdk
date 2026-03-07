@@ -13,3 +13,4 @@
 export * from './types';
 export * from './hexagrams';
 export * from './sovereign';
+export * from './trigrams';

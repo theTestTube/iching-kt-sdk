@@ -1,5 +1,6 @@
 import { Knowlet } from '@iching-kt/core';
 import { HexagramView } from './HexagramView';
+import { TrigramView } from './TrigramView';
 
 /**
  * Hexagrams Knowlet
@@ -34,4 +35,28 @@ export const hexagramsKnowlet: Knowlet = {
   View: HexagramView,
 };
 
-export { HexagramView };
+export const trigramsKnowlet: Knowlet = {
+  meta: {
+    id: 'trigrams',
+    name: 'Trigram Details',
+    names: {
+      en: 'Trigram Details',
+      es: 'Detalles del Trigrama',
+      zh: '三畫卦詳情',
+    },
+    description: 'View detailed information about a trigram',
+    descriptions: {
+      en: 'View detailed information about a trigram',
+      es: 'Ver información detallada sobre un trigrama',
+      zh: '查看三畫卦的詳細信息',
+    },
+    requiredProviders: [],
+    supportedLanguages: ['en', 'es', 'zh'],
+    consumes: ['trigram'],
+    produces: [],
+    category: 'board',
+  },
+  View: TrigramView,
+};
+
+export { HexagramView, TrigramView };

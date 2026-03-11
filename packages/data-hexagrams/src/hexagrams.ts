@@ -75,6 +75,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Cielo, el principio creativo, energía yang pura',
         judgment: 'Lo Creativo obra elevado éxito, propiciando mediante la perseverancia.',
         image: 'El movimiento del cielo es poderoso. Así el hombre superior se hace fuerte e incansable.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Dragón oculto. No actúes.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Dragón que aparece en el campo. Es propicio ver al gran hombre.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Todo el día el hombre superior es creativamente activo. Al caer la noche su mente sigue cargada de preocupaciones. Peligro. Sin censura.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Vuelo vacilante sobre las profundidades. Sin censura.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Dragón volando en los cielos. Es propicio ver al gran hombre.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'El dragón arrogante tendrá motivo para arrepentirse.' },
+        ],
       },
       'es-legge': {
         name: 'Lo Creativo',
@@ -160,6 +168,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Tierra, el principio receptivo, energía yin pura',
         judgment: 'Lo Receptivo obra elevado éxito, propiciando por la perseverancia de una yegua.',
         image: 'La condición de la tierra es la devoción receptiva. Así el hombre superior que tiene amplitud de carácter sostiene el mundo exterior.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Cuando hay escarcha bajo los pies, el hielo sólido no está lejos.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Recto, cuadrado, grande. Sin propósito deliberado, nada deja de propiciarse.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Líneas ocultas. Uno es capaz de permanecer perseverante. Si uno llegara a estar al servicio de un rey, no busque obras propias, sino lleve las cosas a su cumplimiento.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Un saco atado. Sin censura, sin elogio.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Una vestidura amarilla inferior trae suprema buena fortuna.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Los dragones luchan en la pradera. Su sangre es negra y amarilla.' },
+        ],
       },
       'es-legge': {
         name: 'Lo Receptivo',
@@ -245,6 +261,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Cielo y tierra se unen, armonía y prosperidad',
         judgment: 'Paz. Lo pequeño se va, lo grande se acerca. Buena fortuna. Éxito.',
         image: 'Cielo y tierra se unen: la imagen de la Paz. Así el gobernante divide y completa el curso del cielo y la tierra.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Cuando se arranca la hierba de cinta, la tierra viene con ella. Cada cual según su especie. Las empresas traen buena fortuna.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Soportar a los incultos con gentileza, cruzar el río con resolución, no descuidar lo lejano, no tomar en cuenta a los propios compañeros: así uno puede lograr caminar por el camino del medio.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Ninguna llanura sin declive subsiguiente. Ningún ir sin retorno. El que persevera en el peligro está sin censura. No te lamentes de esta verdad; disfruta la buena fortuna que aún posees.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Desciende revoloteando, sin alardear de su riqueza, junto con su vecino, sin artificio y sincero.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'El soberano I da en matrimonio a su hija. Esto trae bendición y suprema buena fortuna.' },
+          { position: 6, name: 'Seis en lo alto', text: 'La muralla cae de nuevo al foso. No uses ejércitos ahora. Haz conocer tus órdenes dentro de tu propia ciudad. La perseverancia trae humillación.' },
+        ],
       },
       'es-legge': {
         name: 'La Paz',
@@ -330,6 +354,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Cielo y tierra no se unen, estancamiento',
         judgment: 'Estancamiento. La gente malvada no propicia la perseverancia del hombre superior. Lo grande se va, lo pequeño se acerca.',
         image: 'Cielo y tierra no se unen: la imagen del Estancamiento. Así el hombre superior se repliega en su valor interior.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Cuando se arranca la hierba de cinta, la tierra viene con ella. Cada cual según su especie. La perseverancia trae buena fortuna y éxito.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Soportan y resisten; esto significa buena fortuna para las personas inferiores. El estancamiento sirve para ayudar al gran hombre a alcanzar el éxito.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Soportan la vergüenza.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'El que actúa por mandato del más alto permanece sin censura. Los que comparten su mismo ánimo participan de la bendición.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'El estancamiento cede. Buena fortuna para el gran hombre. "¿Y si fracasara, y si fracasara?" Así lo ata a un racimo de brotes de morera.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'El estancamiento llega a su fin. Primero estancamiento, luego buena fortuna.' },
+        ],
       },
       'es-legge': {
         name: 'El Estancamiento',
@@ -415,6 +447,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Aproximarse, volverse grande, avanzar',
         judgment: 'El Acercamiento tiene éxito supremo. La perseverancia propicia. Cuando llegue el octavo mes, habrá infortunio.',
         image: 'La tierra sobre el lago: la imagen del Acercamiento. Así el hombre superior es inagotable en su voluntad de enseñar.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Acercamiento conjunto. La perseverancia trae buena fortuna.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Acercamiento conjunto. Buena fortuna. Todo propicia.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Acercamiento cómodo. Nada que propicie. Si uno se deja llevar a la aflicción por ello, queda libre de censura.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Acercamiento completo. Sin censura.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Acercamiento sabio. Esto es lo apropiado para un gran príncipe. Buena fortuna.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Acercamiento magnánimo. Buena fortuna. Sin censura.' },
+        ],
       },
       'es-legge': {
         name: 'El Acercamiento',
@@ -500,6 +540,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Ver, observar, ser un ejemplo',
         judgment: 'Contemplación. La ablución se ha hecho, pero aún no la ofrenda. Llenos de confianza lo miran.',
         image: 'El viento sopla sobre la tierra: la imagen de la Contemplación. Así los reyes de antaño visitaban las regiones del mundo.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Contemplación de niño. Para un hombre inferior, sin censura. Para un hombre superior, humillación.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Contemplación a través de la rendija de la puerta. Propicio para la perseverancia de una mujer.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'La contemplación de mi vida decide la elección entre avanzar y retroceder.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Contemplación de la luz del reino. Es propicio ejercer influencia como huésped de un rey.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Contemplación de mi vida. El hombre superior está sin censura.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Contemplación de su vida. El hombre superior está sin censura.' },
+        ],
       },
       'es-legge': {
         name: 'La Contemplación',
@@ -585,6 +633,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Decadencia, despojo, deterioro',
         judgment: 'Desintegración. No es propicio ir a ningún lugar.',
         image: 'La montaña descansa sobre la tierra: la imagen de la Desintegración. Así los de arriba solo pueden asegurar su posición dando generosamente a los de abajo.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'La pata de la cama se desintegra. Los que perseveran son destruidos. Desgracia.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'La cama se desintegra en el borde. Los que perseveran son destruidos. Desgracia.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Él se desintegra con ellos. Sin censura.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'La cama se desintegra hasta la piel. Desgracia.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Un banco de peces. El favor llega a través de las damas de la corte. Todo actúa para propiciar.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Hay un gran fruto aún sin comer. El hombre superior recibe un carruaje. La casa del hombre inferior se desintegra.' },
+        ],
       },
       'es-legge': {
         name: 'La Decadencia',
@@ -670,6 +726,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El punto de inflexión, renovación, volver',
         judgment: 'Retorno. Éxito. Salir y entrar sin error. Los amigos vienen sin culpa. El camino va y viene.',
         image: 'Trueno dentro de la tierra: la imagen del Punto de Inflexión. Así los reyes de la antigüedad cerraban los pasos en el solsticio.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Retorno desde poca distancia. No hay necesidad de arrepentimiento. Gran buena fortuna.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Retorno tranquilo. Buena fortuna.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Retorno repetido. Peligro. Sin censura.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Caminando en medio de otros, uno regresa solo.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Retorno de corazón noble. Sin arrepentimiento.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Perder el retorno. Desgracia. Desgracia desde dentro y desde fuera. Si se ponen ejércitos en marcha de esta manera, al final se sufrirá una gran derrota.' },
+        ],
       },
       'es-legge': {
         name: 'El Retorno',
@@ -755,6 +819,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Retiro, ceder, retirada estratégica',
         judgment: 'Retirada. Éxito. En lo pequeño, la perseverancia propicia.',
         image: 'Montaña bajo el cielo: la imagen de la Retirada. Así el hombre superior mantiene al inferior a distancia, no con ira sino con reserva.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'En la cola durante la retirada. Esto es peligroso. No se debe desear emprender nada.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Lo sujeta firmemente con cuero de buey amarillo. Nadie puede arrancarlo.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Una retirada detenida es angustiante y peligrosa. Mantener personas como criados y siervas trae buena fortuna.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La retirada voluntaria trae buena fortuna al hombre superior y ruina al hombre inferior.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Retirada amistosa. La perseverancia trae buena fortuna.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Retirada jubilosa. Todo sirve para propiciar.' },
+        ],
       },
       'es-legge': {
         name: 'La Retirada',
@@ -840,6 +912,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Gran fuerza, vigor, avance poderoso',
         judgment: 'El Poder de lo Grande. La perseverancia propicia.',
         image: 'Trueno en el cielo: la imagen del Poder de lo Grande. Así el hombre superior no pisa senderos que no concuerdan con el orden establecido.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Poder en los dedos de los pies. Continuar trae desgracia. Esto es ciertamente verdad.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'La perseverancia trae buena fortuna.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'El hombre inferior obra mediante la fuerza. El hombre superior no actúa así. Continuar es peligroso. Un macho cabrío embiste contra un seto y enreda sus cuernos.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La perseverancia trae buena fortuna. El arrepentimiento desaparece. El seto se abre; no hay enredo. El poder depende del eje de un gran carro.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Pierde el macho cabrío con facilidad. Sin arrepentimiento.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Un macho cabrío embiste contra un seto. No puede ir hacia atrás, no puede ir hacia adelante. Nada sirve para propiciar. Si uno toma nota de la dificultad, esto trae buena fortuna.' },
+        ],
       },
       'es-legge': {
         name: 'La Gran Fuerza',
@@ -925,6 +1005,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Determinación, decisión, atravesar',
         judgment: 'Resolución. Uno debe hacer saber resueltamente el asunto en la corte del rey. Debe anunciarse con veracidad.',
         image: 'El lago se ha elevado al cielo: la imagen de la Resolución. Así el hombre superior dispensa riquezas hacia abajo y se abstiene de descansar en su virtud.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Poderoso en los dedos de los pies que avanzan. Cuando uno va sin estar a la altura de la tarea, comete un error.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Un grito de alarma. Armas al atardecer y en la noche. No temas nada.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Ser poderoso en los pómulos trae desgracia. El hombre superior está firmemente resuelto. Camina solo y es sorprendido por la lluvia. Queda salpicado, y la gente murmura contra él. Sin censura.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'No hay piel en sus muslos, y caminar se hace difícil. Si un hombre se dejara llevar como una oveja, el arrepentimiento desaparecería. Pero si estas palabras se escuchan, no serán creídas.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Al tratar con malas hierbas, es necesaria una firme resolución. Caminar por el camino del medio permanece libre de censura.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Sin grito. Al final llega el infortunio.' },
+        ],
       },
       'es-legge': {
         name: 'La Resolución',
@@ -1010,6 +1098,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Encuentro, reunión, tentación',
         judgment: 'Ir al Encuentro. La doncella es poderosa. No se debe desposar a tal doncella.',
         image: 'Bajo el cielo, viento: la imagen del Ir al Encuentro. Así actúa el príncipe al diseminar sus mandatos y proclamarlos a los cuatro rincones del cielo.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Debe ser frenado con un freno de bronce. La perseverancia trae buena fortuna. Si se le deja seguir su curso, se experimenta infortunio. Incluso un cerdo flaco tiene en sí la capacidad de enfurecerse.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Hay un pez en el estanque. Sin censura. No propicia a los huéspedes.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'No hay piel en sus muslos, y caminar se hace difícil. Si uno está atento al peligro, no se comete gran error.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'No hay pez en el estanque. Esto conduce al infortunio.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Un melón cubierto de hojas de sauce. Líneas ocultas. Entonces cae sobre uno desde el cielo.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Viene al encuentro con sus cuernos. Humillación. Sin censura.' },
+        ],
       },
       'es-legge': {
         name: 'El Encuentro',
@@ -1095,6 +1191,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Lucha inicial, dolores de parto, dificultad',
         judgment: 'La Dificultad Inicial obra éxito supremo, propiciando mediante la perseverancia. No se debe emprender nada. Propicia instalar ayudantes.',
         image: 'Trueno y lluvia se agitan; nubes y trueno ruedan: la imagen de la Dificultad Inicial. Así el hombre superior ordena el estado confuso.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Vacilación y obstáculo. Es propicio permanecer perseverante. Es propicio designar ayudantes.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Las dificultades se acumulan. El caballo y el carro se separan. No es un ladrón; quiere cortejar cuando llegue el momento. La doncella es casta, no se compromete. Diez años, y luego se compromete.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Quien caza el ciervo sin el guardabosque solo se pierde en el bosque. El hombre superior comprende las señales del tiempo y prefiere desistir. Continuar trae humillación.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'El caballo y el carro se separan. Esforzarse por la unión. Ir trae buena fortuna. Todo actúa para propiciar.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Dificultades en las bendiciones. Un poco de perseverancia trae buena fortuna. Gran perseverancia trae desgracia.' },
+          { position: 6, name: 'Seis en lo alto', text: 'El caballo y el carro se separan. Fluyen lágrimas de sangre.' },
+        ],
       },
       'es-legge': {
         name: 'La Dificultad Inicial',
@@ -1180,6 +1284,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Ignorancia, juventud, inexperiencia',
         judgment: 'La Insensatez Juvenil tiene éxito. No soy yo quien busca al joven insensato; el joven insensato me busca. La perseverancia propicia.',
         image: 'Un manantial que brota de la montaña: la imagen de la Insensatez Juvenil. Así el hombre superior desarrolla su carácter mediante la minuciosidad en todo lo que hace.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Para hacer que el necio se desarrolle, es propicio aplicar la disciplina. Las cadenas deben ser retiradas. Continuar así trae humillación.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Soportar a los necios con benevolencia trae buena fortuna. Saber cómo tratar a las mujeres trae buena fortuna. El hijo es capaz de hacerse cargo del hogar.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'No tomes a una doncella que, cuando ve a un hombre de bronce, pierde el dominio de sí misma. Nada propicia.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'La insensatez enredada trae humillación.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'La insensatez infantil trae buena fortuna.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Al castigar la insensatez, no es propicio cometer transgresiones. Lo único que propicia es prevenir las transgresiones.' },
+        ],
       },
       'es-legge': {
         name: 'La Inexperiencia Juvenil',
@@ -1265,6 +1377,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Nutrición, paciencia, tiempo favorable',
         judgment: 'Espera. Si eres sincero, tienes luz y éxito. La perseverancia trae buena fortuna. Ir al encuentro del gran hombre trae buena fortuna.',
         image: 'Las nubes se elevan hacia el cielo: la imagen de la Espera. Así el hombre superior come y bebe, descansa y se divierte.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Espera en el prado. Es propicio mantenerse en lo que perdura. Sin censura.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Espera en la arena. Hay algo de murmuración. El final trae buena fortuna.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Esperar en el barro provoca la llegada del enemigo.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Espera en la sangre. Sal del pozo.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Espera junto a la comida y la bebida. La perseverancia trae buena fortuna.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Uno cae al pozo. Llegan tres huéspedes no invitados. Hónralos, y al final habrá buena fortuna.' },
+        ],
       },
       'es-legge': {
         name: 'La Espera',
@@ -1350,6 +1470,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Litigio, discordia, contienda',
         judgment: 'Conflicto. Eres sincero pero estás obstruido. Una parada cautelosa a mitad del camino trae buena fortuna. Ir hasta el final trae desgracia.',
         image: 'Cielo y agua van en direcciones opuestas: la imagen del Conflicto. Así el hombre superior considera cuidadosamente el comienzo.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Si no se perpetúa el asunto, hay algo de murmuración. Al final, llega la buena fortuna.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'No se puede participar en el conflicto; uno regresa a casa y cede. La gente de su ciudad, trescientas familias, permanece libre de culpa.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Nutrirse de la antigua virtud induce la perseverancia. Peligro. Al final, llega la buena fortuna. Si por azar estás al servicio de un rey, no busques obras propias.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'No se puede participar en el conflicto. Uno da marcha atrás y se somete al destino, cambia su actitud y encuentra la paz en la perseverancia. Buena fortuna.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Contender ante él trae suprema buena fortuna.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Aunque por azar se le otorgue un cinturón de cuero, al final de una mañana le habrá sido arrebatado tres veces.' },
+        ],
       },
       'es-legge': {
         name: 'El Conflicto',
@@ -1435,6 +1563,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Tropas, disciplina militar, legalidad',
         judgment: 'El Ejército. El ejército necesita perseverancia y un hombre fuerte. Buena fortuna sin culpa.',
         image: 'En medio de la tierra hay agua: la imagen del Ejército. Así el hombre superior aumenta sus masas con generosidad hacia el pueblo.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Un ejército debe salir en el orden adecuado. Si el orden no es bueno, amenaza el infortunio.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'En medio del ejército. Buena fortuna. Sin censura. El rey otorga una triple condecoración.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Quizás el ejército lleva cadáveres en el carro. Desgracia.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'El ejército se retira. Sin censura.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Hay caza en el campo. Es propicio atraparla. Sin censura. Que el hijo mayor dirija el ejército. El menor transporta cadáveres; entonces la perseverancia trae desgracia.' },
+          { position: 6, name: 'Seis en lo alto', text: 'El gran príncipe emite mandatos, funda estados, inviste a las familias con feudos. No se deben emplear personas inferiores.' },
+        ],
       },
       'es-legge': {
         name: 'El Ejército',
@@ -1520,6 +1656,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Unión, alianza, lealtad',
         judgment: 'Unión trae buena fortuna. Pero si el hombre equivocado sostiene la reunión, nada sirve para avanzar.',
         image: 'Sobre la tierra hay agua: la imagen de la Unión. Así los reyes de la antigüedad otorgaban feudos a los príncipes.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Únete a él en verdad y lealtad; esto está sin censura. La verdad, como un cuenco de barro lleno: así al final la buena fortuna llega desde fuera.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Únete a él interiormente. La perseverancia trae buena fortuna.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Te unes con la gente equivocada.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Únete a él también exteriormente. La perseverancia trae buena fortuna.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Manifestación de la unión. En la cacería, el rey usa batidores solo en tres lados y renuncia a la caza que huye por delante. Los ciudadanos no necesitan advertencia. Buena fortuna.' },
+          { position: 6, name: 'Seis en lo alto', text: 'No encuentra cabeza para la unión. Desgracia.' },
+        ],
       },
       'es-legge': {
         name: 'La Unión',
@@ -1605,6 +1749,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Restricción, acumulación, influencia sutil',
         judgment: 'El Poder Domesticador de lo Pequeño tiene éxito. Nubes densas, sin lluvia de nuestra región occidental.',
         image: 'El viento sopla sobre el cielo: la imagen del Poder Domesticador de lo Pequeño. Así el hombre superior refina el aspecto exterior de su naturaleza.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Regresar al camino. ¿Cómo podría haber censura en esto? Buena fortuna.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Se deja llevar a regresar. Buena fortuna.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Los rayos saltan de las ruedas del carro. Marido y mujer ponen los ojos en blanco.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Si eres sincero, la sangre desaparece y el miedo cede. Sin censura.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Si eres sincero y estás lealmente unido, eres rico en tu vecino.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Llega la lluvia, hay reposo. Esto se debe al efecto duradero del carácter. La perseverancia pone a la mujer en peligro. La luna está casi llena. Si el hombre superior persiste, viene el infortunio.' },
+        ],
       },
       'es-legge': {
         name: 'La Pequeña Restricción',
@@ -1690,6 +1842,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Caminar, conducta, propiedad',
         judgment: 'Paso Firme. Pisar la cola del tigre. No muerde al hombre. Éxito.',
         image: 'Cielo arriba, lago abajo: la imagen del Paso Firme. Así el hombre superior discrimina entre alto y bajo.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Conducta sencilla. Avance sin censura.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Pisar un camino suave y llano. La perseverancia de un hombre retirado trae buena fortuna.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Un hombre tuerto es capaz de ver, un cojo es capaz de caminar. Pisa la cola del tigre. El tigre muerde al hombre. Desgracia. Así actúa un guerrero en nombre de su gran príncipe.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Pisa la cola del tigre. La cautela y la circunspección conducen finalmente a la buena fortuna.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Conducta resuelta. Perseverancia con conciencia del peligro.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Examina tu conducta y sopesa las señales favorables. Cuando todo se cumple, llega la suprema buena fortuna.' },
+        ],
       },
       'es-legge': {
         name: 'El Pisar Respetuoso',
@@ -1775,6 +1935,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Comunidad, unidad, hermandad',
         judgment: 'Comunidad con los Hombres en lo abierto. Éxito. Propicia cruzar la gran agua.',
         image: 'Cielo junto con fuego: la imagen de Comunidad con los Hombres. Así el hombre superior organiza los clanes.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Comunidad con los hombres en la puerta. Sin censura.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Comunidad con los hombres en el clan. Humillación.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Esconde armas en el matorral; sube al alto cerro frente a él. Durante tres años no se levanta.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Sube a su muralla; no puede atacar. Buena fortuna.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Los hombres unidos en comunidad primero lloran y se lamentan, pero después ríen. Después de grandes luchas logran encontrarse.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Comunidad con los hombres en la pradera. Sin arrepentimiento.' },
+        ],
       },
       'es-legge': {
         name: 'La Comunidad con los Hombres',
@@ -1860,6 +2028,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Gran abundancia, riqueza, confianza',
         judgment: 'Posesión en Gran Medida. Éxito supremo.',
         image: 'Fuego en el cielo arriba: la imagen de Posesión en Gran Medida. Así el hombre superior frena el mal y propicia el bien.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Sin relación con lo perjudicial; en esto no hay censura. Si uno permanece consciente de la dificultad, permanece sin censura.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Un gran carro para cargar. Uno puede emprender algo. Sin censura.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Un príncipe lo ofrece al Hijo del Cielo. Un hombre mezquino no puede hacer esto.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Establece una diferencia entre sí mismo y su vecino. Sin censura.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Aquel cuya verdad es accesible, aunque digna, tiene buena fortuna.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Está bendecido por el cielo. Buena fortuna. Nada que no propicie.' },
+        ],
       },
       'es-legge': {
         name: 'La Gran Posesión',
@@ -1945,6 +2121,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Humildad, restricción, cedencia',
         judgment: 'Modestia crea éxito. El hombre superior lleva las cosas a conclusión.',
         image: 'Dentro de la tierra, una montaña: la imagen de la Modestia. Así el hombre superior reduce lo excesivo y aumenta lo insuficiente.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Un hombre superior modesto en su modestia puede cruzar la gran agua. Buena fortuna.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Modestia que llega a expresarse. La perseverancia trae buena fortuna.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Un hombre superior de modestia y mérito lleva las cosas a conclusión. Buena fortuna.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Nada que no propicie la modestia en el movimiento.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'No alardear de riqueza ante el vecino. Es favorable atacar con fuerza. Nada que no propicie.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Modestia que llega a expresarse. Es favorable poner ejércitos en marcha para castigar la propia ciudad y el propio país.' },
+        ],
       },
       'es-legge': {
         name: 'La Modestia',
@@ -2030,6 +2214,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Alegría, disposición, armonía',
         judgment: 'Entusiasmo. Propicia instalar príncipes feudales y poner el ejército en marcha.',
         image: 'Trueno en la tierra: la imagen del Entusiasmo. Así los reyes antiguos hicieron música para promover la armonía.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'El entusiasmo que se expresa trae desgracia.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Firme como una roca. No un día entero. La perseverancia trae buena fortuna.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'El entusiasmo que mira hacia arriba crea arrepentimiento. La vacilación trae arrepentimiento.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La fuente del entusiasmo. Logra grandes cosas. No dudes. Reúnes amigos a tu alrededor como un pasador de cabello recoge el cabello.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Persistentemente enfermo, y aún no muere.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Entusiasmo ilusorio. Pero si después de la conclusión uno cambia, no hay censura.' },
+        ],
       },
       'es-legge': {
         name: 'El Entusiasmo',
@@ -2115,6 +2307,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Seguir, obediencia, flexibilidad',
         judgment: 'Seguimiento crea éxito supremo. La perseverancia que propicia trae recompensa.',
         image: 'El trueno sigue al relámpago: la imagen de Seguimiento. Así el hombre superior entra en el reino del descanso.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'El estándar está cambiando. La perseverancia trae buena fortuna. Salir por la puerta en compañía produce obras.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Si uno se aferra al niño pequeño, pierde al hombre fuerte.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Si uno se aferra al hombre fuerte, pierde al niño pequeño. Siguiendo, uno halla lo que busca. Es propicio permanecer perseverante.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Seguir crea éxito. La perseverancia trae desgracia. Ir por el propio camino con sinceridad trae claridad. ¿Cómo podría haber censura en esto?' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Sincero en el bien. Buena fortuna.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Se encuentra con firme lealtad y queda aún más ligado. El rey lo presenta en la Montaña Occidental.' },
+        ],
       },
       'es-legge': {
         name: 'El Seguimiento',
@@ -2200,6 +2400,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Decadencia, restauración, eliminación de podredumbre',
         judgment: 'Trabajo en lo Que Ha Sido Arruinado crea éxito supremo. Propicia cruzar la gran agua.',
         image: 'El viento soplando bajo la montaña: la imagen de Trabajo en lo Que Ha Sido Arruinado. Así el hombre superior incita al pueblo y fortalece su virtud.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Enmendar lo que ha sido arruinado por el padre. Si hay un hijo, ninguna culpa recae sobre el padre fallecido. Peligro. Al final, buena fortuna.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Enmendar lo que ha sido arruinado por la madre. No se debe ser demasiado perseverante.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Enmendar lo que ha sido arruinado por el padre. Habrá un poco de arrepentimiento. Sin gran censura.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Tolerar lo que ha sido arruinado por el padre. En continuar así se ve humillación.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Enmendar lo que ha sido arruinado por el padre. Uno se encuentra con elogio.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'No sirve a reyes ni príncipes; se fija metas más elevadas.' },
+        ],
       },
       'es-legge': {
         name: 'La Corrupción',
@@ -2285,6 +2493,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Determinación, eliminación de obstáculos, decisión',
         judgment: 'Mordedura a Través crea éxito. Es favorable imponer penas.',
         image: 'Trueno y relámpago: la imagen de Mordedura a Través. Así los reyes de tiempos anteriores hicieron firme las leyes.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Sus pies están sujetos en el cepo, de modo que los dedos desaparecen. Sin censura.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Muerde carne tierna, de modo que su nariz desaparece. Sin censura.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Muerde carne vieja y seca y golpea algo venenoso. Ligera humillación. Sin censura.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Muerde carne seca y fibrosa. Recibe flechas de metal. Es propicio estar atento a las dificultades y ser perseverante. Buena fortuna.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Muerde carne seca y magra. Recibe oro amarillo. Con perseverante conciencia del peligro. Sin censura.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Su cuello está sujeto en el cangue de madera, de modo que sus oídos desaparecen. Desgracia.' },
+        ],
       },
       'es-legge': {
         name: 'La Mordedura a Través',
@@ -2370,6 +2586,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Belleza, decoración, adorno',
         judgment: 'Gracia tiene éxito. En pequeños asuntos es favorable tener adónde ir.',
         image: 'Fuego se adhiere a la montaña: la imagen de la Gracia. Así el hombre superior ilumina los asuntos del mundo.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Otorga gracia a sus pies, abandona el carruaje y camina.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Otorga gracia a la barba de su mentón.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Gracioso y húmedo. La perseverancia constante trae buena fortuna.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: '¿Gracia o sencillez? Un caballo blanco llega como si tuviera alas. No es un ladrón; cortejará en el momento oportuno.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Gracia en colinas y jardines. El rollo de seda es escaso y pequeño. Humillación, pero al final buena fortuna.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Gracia simple. Sin censura.' },
+        ],
       },
       'es-legge': {
         name: 'La Ornamentación',
@@ -2455,6 +2679,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Ingenuidad, integridad, espontaneidad',
         judgment: 'Inocencia. Éxito supremo. La perseverancia propicia.',
         image: 'El trueno rueda bajo el cielo: la imagen de la Inocencia. Así los reyes de antaño, ricos en virtud, cultivaban el bien.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'El comportamiento inocente trae buena fortuna.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Si no se cuenta con la cosecha mientras se ara, ni con el uso del suelo mientras se despeja, es propicio emprender algo.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Infortunio inmerecido. La vaca que fue atada por alguien es la ganancia del caminante, la pérdida del ciudadano.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'El que puede ser perseverante permanece sin censura.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'No uses medicina en una enfermedad contraída sin culpa propia. Pasará por sí sola.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'La acción inocente trae desgracia. Nada propicia.' },
+        ],
       },
       'es-legge': {
         name: 'La Buena Fortuna Inesperada',
@@ -2540,6 +2772,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Acumulación de poder, disciplina, restricción',
         judgment: 'El Poder Domesticador de lo Grande. La perseverancia propicia. No come en casa. Buena fortuna.',
         image: 'Cielo dentro de la montaña: la imagen del Poder Domesticador de lo Grande. Así el hombre superior acumula muchos dichos y hechos del pasado para fortalecer su carácter.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'El peligro está cerca. Es propicio desistir.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Se retiran los ejes del carro.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'Un buen caballo que sigue a otros. La conciencia del peligro, con perseverancia, propicia. Practica a diario la conducción del carro y la defensa armada. Es propicio tener adónde ir.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'La placa frontal de un toro joven. Gran buena fortuna.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'El colmillo de un jabalí castrado. Buena fortuna.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'Uno alcanza el camino del cielo. Éxito.' },
+        ],
       },
       'es-legge': {
         name: 'La Gran Acumulación',
@@ -2625,6 +2865,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Nutrición, provisión, sustento',
         judgment: 'Las Esquinas de la Boca. La perseverancia trae buena fortuna. Presta atención a la provisión de nutrición.',
         image: 'Trueno debajo, montaña arriba: la imagen de Provisión de Nutrición. Así el hombre superior es cuidadoso con sus palabras y moderado en el comer y beber.',
+        lines: [
+          { position: 1, name: 'Nueve al comienzo', text: 'Sueltas tu tortuga mágica y me miras con las comisuras de la boca caídas. Desgracia.' },
+          { position: 2, name: 'Seis en el segundo puesto', text: 'Volverte hacia la cima en busca de nutrición, desviarte del camino para buscar nutrición de la colina. Continuar así trae desgracia.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Apartarse de la nutrición. La perseverancia trae desgracia. No actúes así por diez años. Nada sirve para propiciar.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Volverte hacia la cima en busca de provisión de nutrición trae buena fortuna. Espiando alrededor con ojos agudos como un tigre de anhelo insaciable. Sin censura.' },
+          { position: 5, name: 'Seis en el quinto puesto', text: 'Apartarse del camino. Permanecer perseverante trae buena fortuna. No se debe cruzar la gran agua.' },
+          { position: 6, name: 'Nueve en lo alto', text: 'La fuente de nutrición. La conciencia del peligro trae buena fortuna. Es propicio cruzar la gran agua.' },
+        ],
       },
       'es-legge': {
         name: 'La Provisión de Nutrición',
@@ -2710,6 +2958,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Exceso, extremidad, desequilibrio',
         judgment: 'Preponderancia de lo Grande. La viga se cede al punto de ruptura. Propicia tener adónde ir.',
         image: 'El lago desborda la madera: la imagen de Preponderancia de lo Grande. Así el hombre superior se mantiene solo sin temor y se retira del mundo sin pena.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Extender juncos blancos por debajo. Sin censura.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'Un álamo seco brota en la raíz. Un hombre mayor toma una mujer joven. Todo propicia.' },
+          { position: 3, name: 'Nueve en el tercer puesto', text: 'La viga se cede al punto de ruptura. Desgracia.' },
+          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La viga está apuntalada. Buena fortuna. Si hay motivos ulteriores, es humillante.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'Un álamo marchito produce flores. Una mujer mayor toma marido. Sin censura. Sin elogio.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Uno debe cruzar el agua. Le llega hasta la cabeza. Desgracia. Sin censura.' },
+        ],
       },
       'es-legge': {
         name: 'El Gran Exceso',
@@ -2795,6 +3051,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Peligro, agua que fluye, profundidad',
         judgment: 'El Abismo repetido. Si eres sincero, tienes éxito en tu corazón.',
         image: 'El agua fluye continuamente y alcanza su meta: la imagen del Abismo repetido. Así el hombre superior camina en virtud duradera y prosigue la obra de enseñar.',
+        lines: [
+          { position: 1, name: 'Seis al comienzo', text: 'Repetición del Abismo. En el abismo uno cae en un pozo. Desgracia.' },
+          { position: 2, name: 'Nueve en el segundo puesto', text: 'El abismo es peligroso. Solo se debe esforzar por alcanzar cosas pequeñas.' },
+          { position: 3, name: 'Seis en el tercer puesto', text: 'Hacia adelante y hacia atrás, abismo sobre abismo. En un peligro así, haz una pausa al principio y espera. De lo contrario caerás en un pozo en el abismo. No actúes de esta manera.' },
+          { position: 4, name: 'Seis en el cuarto puesto', text: 'Un cántaro de vino, un cuenco de arroz junto con él; vasijas de barro simplemente entregadas a través de la ventana. Ciertamente no hay censura en esto.' },
+          { position: 5, name: 'Nueve en el quinto puesto', text: 'El abismo no está lleno hasta desbordarse, está lleno solo hasta el borde. Sin censura.' },
+          { position: 6, name: 'Seis en lo alto', text: 'Atado con cuerdas y sogas, encerrado entre muros de prisión cercados de espinos: durante tres años no se encuentra el camino. Desgracia.' },
+        ],
       },
       'es-legge': {
         name: 'El Pozo',

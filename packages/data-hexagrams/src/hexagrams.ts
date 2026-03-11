@@ -89,6 +89,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El principio creativo; cielo y energía yang',
         judgment: 'Qian. Gran progreso y éxito. La ventaja de ser firme y correcto.',
         image: 'El cielo se mueve con vigor. El hombre superior aumenta su virtud y realiza su obra.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'El dragón yace oculto en las profundidades. No es tiempo para la acción.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'El dragón aparece en el campo. Será propicio encontrarse con el gran hombre.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'El hombre superior activo y vigilante todo el día, y por la noche aún cauteloso y aprensivo. La posición es peligrosa, pero no habrá error.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'El dragón parece como si estuviera saltando, pero aún está en las profundidades. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'El dragón en vuelo en el cielo. Será propicio encontrarse con el gran hombre.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'El dragón excediendo los límites apropiados. Habrá ocasión de arrepentimiento.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Lo Creativo',
@@ -182,6 +190,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El principio receptivo; tierra y energía yin',
         judgment: 'Kun. Lo receptivo produce gran progreso y éxito, cuando el sujeto muestra la firme corrección de una yegua.',
         image: 'La tierra está en su elemento abajo. El hombre superior, con gran virtud, sostiene las cosas.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Pisando la escarcha. El hielo firme vendrá gradualmente.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'El atributo de ser recto, cuadrado y grande. Su operación, sin esfuerzos repetidos, será en todo sentido propicia.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Manteniendo su excelencia bajo restricción, pero sosteniéndola firmemente. Si tuviera ocasión de servir al rey, aunque no reclamará el éxito para sí mismo, llevará los asuntos a buen término.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Un saco atado. No habrá motivo de censura ni de elogio.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'La vestidura inferior amarilla. Habrá gran buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Dragones luchando en el campo. Su sangre es púrpura y amarilla.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Lo Receptivo',
@@ -275,6 +291,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Armonía entre cielo y tierra',
         judgment: 'Tai. Lo pequeño parte; lo grande se acerca. Es propicio ser firme y correcto.',
         image: 'Cielo y tierra encontrándose forman Tai. El hombre superior así distribuye sus tesoros para beneficiar al pueblo común.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Cuando se arranca la hierba, la tierra en la que crece se arranca con ella. El avance trae buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él soporta a los incultos, cruza el río sin barca, no olvida a los que están lejos, y es imparcial. Así camina por el medio.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'No hay partida sin que haya un regreso. En el peligro y la dificultad, la firmeza y la corrección no traen error. No sufra; en el goce que viene habrá buena fortuna.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él baja revoloteando. No siendo rico, comparte con su vecino. Él es sincero en el ejercicio de su simple bondad.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'El gobernante Ti Yi dio a su hermana menor en matrimonio, y de ello vinieron felicidad y suprema buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'La muralla de la ciudad cae de nuevo en el foso. No emplee ejércitos. Emita sus órdenes en su propia ciudad. Aun siendo correcto, será causa de pesar.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Paz',
@@ -368,6 +392,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Estancamiento por falta de unidad entre cielo y tierra',
         judgment: 'Pi. No es propicio para el firme y correcto. Lo grande parte; lo pequeño se acerca.',
         image: 'Cielo y tierra sin contacto forman Pi. El hombre superior administra su virtud y evita la calamidad.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Cuando se arranca la hierba, la tierra en la que crece se arranca con ella. Con firme corrección habrá buena fortuna y progreso.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Ellos soportan y resisten. Para los hombres pequeños esto es buena fortuna. Para los grandes hombres el estancamiento conduce al éxito.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Ellos soportan vergüenza y humillación.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'El que actúa por mandato de su gobernante está libre de error. Los que son de ideas afines comparten las bendiciones.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'El estancamiento llega a su fin. Buena fortuna para el gran hombre. "Pero que diga: ¿Pereceré? ¿Pereceré? Así su estado será firme, como si estuviera atado a un grupo de frondosas moreras."' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'El estancamiento llega a su fin. Primero hubo estancamiento, y luego hay buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Estancamiento',
@@ -461,6 +493,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Aproximarse y acercamiento gradual',
         judgment: 'Lin. Es propicio ser firme y correcto, y estar en guardia contra todo mal.',
         image: 'El pantano elevándose sobre la tierra forma Lin. El hombre superior, en su conducta, cultiva la bondad y nunca se fatiga.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Avanzando juntos de una manera que es correcta. Habrá buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Avanzando juntos. Habrá buena fortuna; todo es propicio.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él avanza fácil y placenteramente. Pero esto no tiene nada que ofrecer. Si se preocupa por ello, no habrá error.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'El avance más completo. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'El avance sabio. Esto es correcto para un gran gobernante. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Avanzando con gran corazón. Habrá buena fortuna y ningún error.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Acercamiento',
@@ -554,6 +594,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Ver ampliamente; ofrecer con sinceridad',
         judgment: 'Guan. La ablución se ha realizado, pero no las ofrendas sacrificiales. Se muestra fe y reverencia.',
         image: 'El viento se mueve sobre la tierra formando Guan. Los reyes antiguos así contemplaban el mundo y establecían enseñanzas.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Una contemplación infantil. Para un hombre pequeño no habrá error. Para un hombre superior sería causa de pesar.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Espiando a través de una puerta desde dentro. Sería propicio si fuera solo la firme corrección de una mujer.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él contempla el curso de su propia vida, para avanzar o retroceder.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él contempla la gloria del reino. Será propicio para él, siendo tal como es, buscar ser huésped del rey.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Él contempla el curso de su propia vida. Un hombre superior, no caerá así en error alguno.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él contempla el curso de las vidas de ellos. Un hombre superior, no caerá así en error alguno.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Contemplación',
@@ -647,6 +695,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'División y despojo; separación gradual',
         judgment: 'Bo. No es propicio tener adónde ir.',
         image: 'La montaña adherida a la tierra forma Bo. Los hombres superiores consolidan el estado y fortalecen los lazos entre el pueblo.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él derriba el lecho dañando sus patas. Con firme corrección habrá mal, cuyo sentido es destrucción desde abajo.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él derriba el lecho dañando su armazón. Con firme corrección habrá mal.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él lo derriba. No habrá error.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él derriba el lecho, habiendo primero dañado la piel que lo cubre. Habrá mal.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él obtiene el favor de las damas del palacio, como si fueran una ristra de peces. Hay ventaja en todo sentido.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Hay un gran fruto sin comer. El hombre superior obtiene un carruaje, el hombre pequeño ve su choza derribada.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Desintegración',
@@ -740,6 +796,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Regresando; el punto de inflexión del año',
         judgment: 'Fu. Hay salida y entrada sin error. Los amigos vienen sin equivocación. Ir y venir es el camino.',
         image: 'Trueno en la tierra forma Fu. Los reyes antiguos cerraban puertas y pasajes en el solsticio de invierno.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'No se ha alejado mucho en su retorno. No hay ocasión de arrepentimiento. Habrá gran buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él ha retornado y descansa. Habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él retorna repetidamente. Está en posición de peligro, pero no habrá error.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él camina en medio de otros, pero retorna solo.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Un retorno noble. No habrá motivo de arrepentimiento.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él está ciego al retorno. Habrá mal. Habrá calamidades y errores. Si con sus ideas pone los ejércitos en marcha, el fin será una gran derrota.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Retorno',
@@ -833,6 +897,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Retirarse en momento oportuno',
         judgment: 'Dun. Progreso próspero. En asuntos pequeños, ser firme y correcto es propicio.',
         image: 'Cielo bajo la montaña forma Dun. El hombre superior mantiene al hombre inferior a distancia con dignidad y reserva.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Hay una retirada con la cola en ella. La posición es peligrosa. No debe hacerse ningún movimiento en dirección alguna.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él sostiene su propósito firmemente como con una correa hecha de cuero de buey amarillo, que no puede romperse.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Hay una retirada con enredo. Hay enfermedad y peligro. Él mantiene a sus sirvientes y concubinas, y hay buena fortuna.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él se retira a pesar de sus inclinaciones. En un hombre superior esto conduce a buena fortuna; en un hombre inferior a la ruina.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Él se retira de manera admirable. Con firme corrección habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él se retira de manera noble. Será propicio en todo sentido.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Retirada',
@@ -926,6 +998,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El vigor de la gran fuerza en su lugar apropiado',
         judgment: 'Da Zhuang. Ser firme y correcto es propicio.',
         image: 'Trueno en el cielo arriba forma Da Zhuang. El hombre superior no camina por senderos que entran en conflicto con el orden establecido.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él muestra su fuerza en los dedos de sus pies. Pero el avance conducirá al mal. Esto es ciertamente verdad.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Con firme corrección habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'El hombre pequeño usa toda su fuerza; en el caso del hombre superior es su regla no hacerlo. Aun con firme corrección la posición sería peligrosa. Un carnero embiste contra una cerca y enreda sus cuernos.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Con firme corrección habrá buena fortuna y no habrá ocasión de arrepentimiento. La cerca se abre sin enredar los cuernos. La fuerza es como la del eje de un gran carro.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él pierde su fuerza de carnero en la comodidad de su posición. Pero no habrá ocasión de arrepentimiento.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Un carnero embiste contra un seto. No puede retroceder, no puede avanzar. Nada será propicio. Si comprende la dificultad, habrá buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Poder de lo Grande',
@@ -1019,6 +1099,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Atravesar con determinación y sinceridad',
         judgment: 'Guai. Se debe dar a conocer el asunto en el palacio del rey con perfecta sinceridad. Hay peligro.',
         image: 'El agua del pantano elevándose al cielo forma Guai. El hombre superior dispensa sus favores hacia abajo sin retenerlos.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él muestra su fuerza en los dedos de sus pies delanteros. Avanzando, no tendrá éxito. Habrá error.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él está lleno de aprensión y cautela. Por la noche está armado contra el ataque. Que no se inquiete.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él muestra resolución en su porte. Habrá mal. El hombre superior está firmemente resuelto. Camina solo y encuentra la lluvia. Es visto como empapado, y hay murmuraciones contra él. Al final, no hay censura que se le atribuya.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'No tiene piel en sus muslos y le resulta difícil caminar. Si pudiera actuar como una oveja guiada tras sus compañeras, la ocasión de pesar desaparecería. Él oye estas palabras, pero no las cree.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Un lecho de verdolaga, que debería arrancarse con la mayor determinación. Entonces, manteniendo el debido Medio, no habrá error.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'No hay grito alguno. Al final habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Resolución',
@@ -1112,6 +1200,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Encuentro; una influencia femenina que se vuelve predominante',
         judgment: 'Gou. Hay una joven; no se debe desposarla.',
         image: 'Viento bajo el cielo forma Gou. El príncipe emite sus mandatos y estos llegan a todas las regiones.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Debe ser detenido con una cuña de metal. Con firme corrección habrá buena fortuna. Si se le permite seguir su curso, habrá mal. Incluso un cerdo flaco tendrá alguna causa de inquietud.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él tiene un morral de peces. No habrá error. Pero no será bueno dejar que los huéspedes lo tengan.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'No tiene piel en sus muslos y avanza con dificultad. Si es consciente del peligro, no habrá gran error.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'No tiene peces en su morral. Esto dará lugar al mal.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Un melón está envuelto en hojas de sauce. Contiene excelencia oculta. Hay lo que cae hacia él desde el cielo.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él recibe a otros sobre sus cuernos. Habrá ocasión de pesar, pero no habrá error.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Ir al Encuentro',
@@ -1205,6 +1301,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Dificultad y lucha al principio',
         judgment: 'Zhun. Es propicio ser firme y correcto, y no tener lugar adónde ir. Es propicio designar príncipes feudales.',
         image: 'Nubes y trueno forman Zhun. El hombre superior así refina el aspecto exterior de su naturaleza.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Dificultad en avanzar. Será propicio permanecer firme y correcto, y nombrar príncipes feudales para establecer el orden.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Las dificultades se acumulan. El caballo y el carro se detienen. No es un ladrón quien la tomaría por la fuerza; es uno que la busca para ser su esposa. La joven dama mantiene su firme corrección. Después de diez años tendrá hijos.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Uno persigue al ciervo sin el guardabosques y solo se pierde en el bosque. El hombre superior ve las señales y se abstiene. Avanzar traería pesar.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'El caballo y el carro se detienen. Él busca unión con un ayudante. Avanzar trae buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Dificultades en otorgar sus ricos favores. Con firmeza y corrección en las cosas pequeñas habrá buena fortuna; con ellas en las cosas grandes habrá mal.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'El caballo y el carro se detienen. Arroyos de sangre y lágrimas fluyen.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Dificultad Inicial',
@@ -1298,6 +1402,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Juventud e inexperiencia, buscando orientación',
         judgment: 'Meng. Es propicio que no sea yo quien busque al joven e inexperto, sino que él me busque. En la primera consulta le informo de sus dudas.',
         image: 'El manantial bajo la montaña forma Meng. El hombre superior así cultiva su carácter.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Al tratar con el joven e insensato, es bueno usar la disciplina. Las cadenas deben ser removidas. Continuar de este modo conduce al pesar.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Tratar al insensato con indulgencia conduce a buena fortuna. Saber cómo hacerse cargo de las mujeres conduce a buena fortuna. El hijo es capaz de administrar el hogar.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'No tome a una mujer que, al ver a un hombre de riqueza, no preservará su conducta apropiada. No habrá ventaja de ningún modo.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Atado en la insensatez. Habrá ocasión de pesar.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'La insensatez de corazón sencillo de la juventud trae buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Al castigar al insensato, no será propicio actuar como un agresor. Es propicio resistir la agresión.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Insensatez Juvenil',
@@ -1391,6 +1503,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Espera pacífica con fe',
         judgment: 'Xu. Con la sinceridad que seguramente estará allí, habrá luz, decisión y buena fortuna. Ir a cruzar la gran agua trae buena fortuna.',
         image: 'Nubes elevándose hacia el cielo forman Xu. El hombre superior en su ocio come y bebe y está de buen ánimo.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Esperando en la frontera distante. Será bueno mantener firmemente el propósito. No habrá error.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Esperando en la arena del arroyo de montaña. Habrá alguna pequeña dificultad con habladurías. El fin será bueno.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Esperando en el lodo, con ello invita la aproximación del daño.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Esperando en un lugar de sangre. Pero saldrá de la caverna.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Esperando entre comida y bebida. Con firme corrección habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él entra en la caverna. Vienen a él tres huéspedes que no eran esperados. Si los trata con respeto, habrá buena fortuna al final.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Espera',
@@ -1484,6 +1604,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Contienda y disputa',
         judgment: 'Song. Tenemos sinceridad y confianza en nosotros, pero estamos detenidos por falta de fe en otros. Si en medio de la dificultad permanecemos firmes y correctos, hay buena fortuna al final.',
         image: 'Cielo y agua yendo en direcciones opuestas forman Song. El hombre superior en sus deliberaciones debe sopesar cuidadosamente.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Si él no perpetúa el asunto sobre el cual es la contienda, habrá algunas murmuraciones contra él, pero al final habrá buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él no está a la altura de la contienda. Se retira y se oculta. El pueblo de su ciudad, trescientas familias, escapan de la calamidad.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él se limitará al sustento que se le asignó antiguamente. Por peligrosa que sea la posición, habrá buena fortuna al final. Si acaso se ocupa de los asuntos del rey, no reclamará el mérito del logro.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él no está a la altura de la contienda. Regresa al estudio de las ordenanzas del Cielo, cambia su deseo de contender y descansa en ser firme y correcto. Habrá buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Contender y someter el caso ante él conducirá a gran buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Aun si recibe un gran cinturón de cuero como símbolo de su rango, para el final de la mañana le habrá sido arrancado tres veces.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Conflicto',
@@ -1577,6 +1705,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Una fuerza organizada, disciplina y orden',
         judgment: 'Shi. El ejército requiere firmeza y buena fortuna llega al líder sin culpa.',
         image: 'Agua en la tierra forma el Ejército. El hombre superior así anima a la multitud.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'El ejército avanza según las reglas para tal movimiento. Si estas no son buenas, habrá mal.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él está en medio del ejército. Habrá buena fortuna y ningún error. El rey le ha transmitido tres veces las órdenes de su favor.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Quizá el ejército tiene muchos líderes ineficientes. Habrá mal.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'El ejército está en retirada. Ningún error.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Hay presa en el campo. Será propicio capturarla. No habrá error. Si el hijo mayor lidera el ejército, y hombres más jóvenes ocupan ociosos los cargos asignados a ellos, habrá mal.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'El gran gobernante emite sus órdenes, nombra a algunos como gobernantes de estados y a otros como jefes de clanes. Los hombres pequeños no deben ser empleados.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Ejército',
@@ -1670,6 +1806,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Unirse para un propósito común',
         judgment: 'Bi. Trae buena fortuna. Pero examine si la unión está basada en lo verdadero.',
         image: 'Agua sobre la tierra forma Bi. Los reyes antiguos así establecieron a los príncipes como ministros del estado.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Que la sinceridad en mantenerse unidos sea preservada, y no habrá error. Que la sinceridad llene la vasija de barro hasta rebosar: al final la buena fortuna vendrá de fuera.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Que el movimiento hacia la unión y el apego proceda de la mente interior. Con firme corrección habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él busca mantenerse unido con aquellos que no son los correctos.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'En la esfera exterior también se mantiene unido con el hombre digno. Con firme corrección habrá buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'El rey persigue la presa solo por tres lados y deja escapar la que está al frente. El pueblo de las ciudades no es advertido. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él busca mantenerse unido con otros sin tener una cabeza para el movimiento. Habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Unión',
@@ -1763,6 +1907,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El poder restrictivo de las cosas pequeñas',
         judgment: 'Xiao Chu. Trae buena fortuna. Nubes densas pero sin lluvia vienen del límite de nuestro territorio occidental.',
         image: 'El viento moviéndose por el cielo forma Xiao Chu. El hombre superior así refina el aspecto exterior de su naturaleza.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él regresa y sigue su propio camino. ¿Qué error podría haber en esto? Habrá buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Por su influencia es atraído a regresar. Habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Los radios estallan fuera de las ruedas del carro. Marido y mujer se miran con ojos desviados.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Si hay sinceridad en la actitud mostrada, la sangre y el temor causados por el adversario desaparecerán. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Si hay sinceridad en él y una rica adherencia a su vecino, será próspero en proporción.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'La lluvia llega y el descanso sigue. Este es el resultado del pleno desarrollo del carácter. Incluso la esposa puede estar en peligro. La luna está casi llena. Si el hombre superior persiste, habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Poder Domesticador de lo Pequeño',
@@ -1856,6 +2008,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Conducta apropiada y humildad',
         judgment: 'Lu. Cuando uno pisa la cola de un tigre y este no lo muerde, hay buena fortuna.',
         image: 'Cielo y pantano forman Lu. El hombre superior así establece una distinción entre alto y bajo.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él pisa su camino acostumbrado. Si avanza, no habrá error.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él pisa el camino llano y fácil; un hombre quieto y solitario, a quien, si es firme y correcto, le vendrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Un tuerto cree que puede ver; un cojo cree que puede caminar bien; uno pisa la cola del tigre y es mordido. Todo esto es mal. Un soldado actúa así para su gran gobernante.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él pisa la cola del tigre. La cautela aprensiva al final conducirá a buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Él pisa con resolución. Aunque sea firme y correcto, habrá peligro.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Podemos observar todo el curso que se ha pisado y examinar el presagio que da. Si es completo y sin fallo, habrá gran buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Porte',
@@ -1949,6 +2109,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Asociación con hombres en lo abierto',
         judgment: 'Tong Ren. En lo abierto trae buena fortuna. Es propicio cruzar la gran agua.',
         image: 'Cielo y fuego forman Tong Ren. El hombre superior así divide las cosas en categorías.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él sale de su puerta y se asocia con la gente. No habrá error.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él está en compañerismo con sus parientes. Habrá ocasión de pesar.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él esconde armas en la hierba espesa y asciende al alto montículo. Durante tres años no hace despliegue de fuerza.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él asciende la muralla de la ciudad; pero no procede a realizar el ataque que contempla. Habrá buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Los hombres en compañerismo primero se lamentan y lloran y después ríen. El gran comandante conquista y ellos vienen al encuentro.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él busca compañerismo con hombres en la pradera. No habrá ocasión de arrepentimiento.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Comunidad con los Hombres',
@@ -2042,6 +2210,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Grandes posesiones y alta posición',
         judgment: 'Da You. Suprema buena fortuna.',
         image: 'Fuego elevándose hacia el cielo forma Da You. El hombre superior así frena el mal y manifiesta el bien.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'No hay aproximación a lo que es dañino, y no hay error. Que haya una comprensión de la dificultad y no habrá error hasta el final.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Un gran carro para cargar: uno puede tener adónde ir sin error.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Un príncipe presenta sus ofrendas al Hijo del Cielo. Un hombre pequeño no estaría a la altura de tal deber.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él mantiene sus grandes recursos bajo restricción. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Su sinceridad es correspondida por todos. Que muestre una majestad apropiada, y habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él es ayudado por el cielo. Habrá buena fortuna, ventaja en todo sentido.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Gran Posesión',
@@ -2135,6 +2311,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Autocontrol modesto y cedencia',
         judgment: 'Qian. La modestia trae buena fortuna. El hombre superior lleva su obra a conclusión.',
         image: 'Una montaña dentro de la tierra forma Qian. El hombre superior disminuye lo mucho y aumenta lo poco.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'El hombre superior, siendo modesto acerca de su modestia, puede tener ocasión de cruzar la gran corriente. Habrá buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'La modestia encuentra su expresión en la sinceridad. Con firme corrección habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'El hombre superior de mérito reconocido mantiene su modestia. Habrá buena fortuna.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'No hay nada que no fuera propicio en el ejercicio de la modestia en el movimiento.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él no es rico; pero emplea a sus vecinos. Es propicio usar la fuerza. Nada que no fuera propicio.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'La modestia se ha dado a conocer. Es propicio poner ejércitos en marcha, para corregir la propia ciudad y país.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Modestia',
@@ -2228,6 +2412,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Armonía y placer en acuerdo',
         judgment: 'Yu. Es propicio establecer príncipes feudales y poner el ejército en movimiento.',
         image: 'Trueno en la tierra forma Yu. Los reyes antiguos usaban la música para celebrar sus logros y los ofrecían a lo divino.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él da expresión a su deleite. Habrá mal.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él es firme como una roca. Ve una cosa sin esperar a que suceda. Con firme corrección habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él mira hacia arriba en busca de la fuente del entusiasmo, dando ocasión de pesar. La vacilación trae pesar.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'La fuente de la armonía. Lo que se desea se obtiene a gran escala. Que no se alberguen dudas. Los amigos se reunirán a su alrededor.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Persistentemente enfermo, y sin embargo no muere.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Con entusiasmo oscurecido. Pero si después de la finalización hay un cambio, no habrá error.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Entusiasmo',
@@ -2321,6 +2513,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Dar y recibir en secuencia',
         judgment: 'Sui. Suprema buena fortuna. No hay culpa en ser firme y correcto. Hay ventaja en ceder al tiempo.',
         image: 'Trueno sobre el lago forma Sui. El hombre superior se retira del mundo al anochecer para descansar.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'El estándar está cambiando. Con firme corrección habrá buena fortuna. Ir más allá de su propia puerta para el intercambio produce obras meritorias.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Si se aferra al niño pequeño, perderá al hombre fuerte.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Si se aferra al hombre fuerte, perderá al niño pequeño. A través del seguimiento obtiene lo que desea. Será propicio mantener una firme corrección.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'El seguimiento trae éxito. Con firme corrección habrá mal. Pero si uno va por su camino con sinceridad, ¿qué error puede haber?' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Sincero en su apego a lo que es bueno. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él asegura un apego firme y queda aún más vinculado. El rey sacrifica en la Montaña Occidental.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Seguimiento',
@@ -2414,6 +2614,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Decadencia y remedio; enderezar lo arruinado',
         judgment: 'Gu. Hay gran buena fortuna en enderezar las cosas. Es propicio cruzar la gran agua.',
         image: 'Viento soplando bajo la montaña forma Gu. El hombre superior así incita al pueblo y fortalece su virtud.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él se ocupa de lo que fue arruinado por su padre. Si hay un hijo digno, el padre difunto estará libre de culpa. Hay peligro, pero al final habrá buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él se ocupa de lo que fue arruinado por su madre. No debería ser demasiado firme y correcto.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él se ocupa de lo que fue arruinado por su padre. Habrá una pequeña ocasión de arrepentimiento, pero ningún gran error.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él contempla con indulgencia lo que fue arruinado por su padre. Avanzando verá causa de pesar.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él se ocupa de lo que fue arruinado por su padre, y obtiene elogio y fama.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él no sirve a reyes ni señores feudales, sino que en espíritu elevado prefiere atender sus propios asuntos.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Corrupción',
@@ -2507,6 +2715,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Masticar y morder a través de obstáculos',
         judgment: 'Yao He. Masticar y morder a través trae buena fortuna. Es propicio procesar al criminal.',
         image: 'Relámpago sobre trueno forma Yao He. Los reyes antiguos así hacían las penas claras y severas.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Sus pies están en el cepo y sus dedos están ocultos. No habrá error.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él muerde la carne blanda y su nariz queda cubierta. No habrá error.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él muerde carne seca y encuentra algo venenoso. Hay una pequeña causa de vergüenza, pero ningún gran error.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él muerde carne seca con hueso. Obtiene las flechas de metal. Será propicio para él comprender la dificultad de su tarea y ser firme. Habrá buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él muerde carne seca y magra, y obtiene el oro amarillo. Si es firme y correcto, comprendiendo el peligro de su posición, no habrá error.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Su cuello está sujeto en la canga y sus orejas son destruidas. Habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Mordedura a Través',
@@ -2600,6 +2816,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Elegancia y embellecimiento',
         judgment: 'Bi. Hay buena fortuna en asuntos pequeños. Es bueno tener algún destino adónde ir.',
         image: 'Fuego al pie de la montaña forma Bi. El hombre superior así ilumina su cultura y no se atreve a cortar el litigio.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él adorna sus pies. Puede dejar su carruaje y caminar.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él adorna su barba.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Adornado y rociado con ricos favores. Pero que mantenga su firme corrección, y habrá buena fortuna.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Adornado, pero solo de blanco. Como si estuviera montado en un caballo blanco y provisto de alas. Él no es un ladrón; hará su cortejo en el momento apropiado.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Adornado entre las alturas y los jardines. Él presenta su rollo de seda, pequeño y leve. Puede haber vergüenza, pero habrá buena fortuna al final.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él está adornado en blanco sencillo. No habrá error.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Gracia',
@@ -2693,6 +2917,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Intención inocente y rectitud natural',
         judgment: 'Wu Wang. Hay suprema buena fortuna. Es propicio ser correcto y firme.',
         image: 'Trueno bajo el cielo forma Wu Wang. Los reyes antiguos así fomentaban la virtud abundantemente.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Cuando no hay insinceridad, la acción será afortunada.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Si uno cosecha sin haber arado, y recoge una cosecha sin haber preparado el terreno; sería propicio hacer algo.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Calamidad del inocente. El buey que fue atado por alguien es la ganancia del transeúnte, la pérdida del ciudadano.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Si es firme y correcto, no habrá error.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Para una enfermedad que no es la suya, que no use medicina. Habrá ocasión de alegría.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'La acción en el estado de inocencia conducirá a daño. No habrá ventaja de ningún modo.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Inocencia',
@@ -2786,6 +3018,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Acumular la fuerza para contener',
         judgment: 'Da Chu. Es propicio ser firme y correcto. Si no fuera por su hogar, hay buena fortuna. Es propicio cruzar la gran agua.',
         image: 'Cielo bajo la montaña forma Da Chu. El hombre superior acumula virtud para beneficiar al mundo.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Hay peligro. Será propicio detenerse.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Las correas bajo el cuerpo del carruaje han sido quitadas.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Un buen caballo en persecución. Si uno es firme y correcto, hay ventaja. Que practique diariamente la conducción y la defensa. Entonces habrá ventaja dondequiera que vaya.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'La pieza del cuerno en la cabeza de un toro joven. Gran buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'El colmillo de un cerdo castrado. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: '¡Cuán grande es el mandato de que el cielo abre el camino! Habrá progreso.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Poder Domesticador de lo Grande',
@@ -2879,6 +3119,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Atender al sustento y la nutrición',
         judgment: 'Yi. La corrección firme trae buena fortuna. Presta atención a proporcionar nutrición.',
         image: 'Trueno bajo la montaña forma Yi. El hombre superior es cuidadoso en sus palabras y moderado en el comer y beber.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Tú abandonas tu eficaz tortuga, y me miras hasta que tu mandíbula inferior cuelga. Habrá mal.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Mirando hacia abajo en busca de sustento, lo cual es contrario a lo apropiado; o buscándolo desde la altura de arriba, avanzar hacia lo cual conducirá al mal.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Actuando en contra del método de nutrir. Por firme y correcto que uno sea, habrá mal. Durante diez años que no emprenda acción alguna.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Mirando hacia abajo en busca del poder de nutrir. Habrá buena fortuna. Mirando con la mirada fija y descendente de un tigre, y con su deseo que lo impulsa a saltar una y otra vez. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Actuando en contra de lo regular y apropiado; pero si permanece en la firmeza, habrá buena fortuna. No debería intentar cruzar la gran corriente.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él es la fuente del sustento. Su posición es peligrosa, pero habrá buena fortuna. Será propicio cruzar la gran corriente.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Nutrición',
@@ -2972,6 +3220,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Ir demasiado lejos; exceder el medio',
         judgment: 'Da Guo. La viga se cede peligrosamente. Es propicio tener adónde ir. Pequeña buena fortuna.',
         image: 'El viento gira sobre el lago formando Da Guo. El hombre superior se mantiene solo sin temor.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él coloca juncos blancos debajo de las cosas puestas en el suelo. No habrá error.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Un sauce marchito produce brotes, o un viejo esposo obtiene una joven esposa. Habrá ventaja en todo sentido.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'La viga cumbrera se comba hasta el punto de quiebre. Habrá mal.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'La viga cumbrera está apuntalada. Habrá buena fortuna. Si el sujeto de la línea tiene otros fines, será avergonzado.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Un sauce marchito produce flores, o una vieja esposa obtiene un joven esposo. No habrá motivo de censura ni de elogio.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él tiene que vadear la corriente hasta que el agua oculta la corona de su cabeza. Habrá mal, pero no motivo de censura.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Exceso de lo Grande',
@@ -3065,6 +3321,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Peligro repetido; fluir a través de dificultades',
         judgment: 'Kan repetido. Si tienes verdad y sinceridad, y las muestras a otros, tendrás buena fortuna.',
         image: 'El agua sigue fluyendo y también llena; la doble repetición del trigrama del agua indica la idea de fluir. El hombre superior aplica esto a la práctica perpetua de la virtud.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Repetición del pozo peligroso. Él entra en un abismo dentro de las aguas profundas. Habrá mal.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él está en todo el peligro de las aguas profundas, y logrará solo cosas pequeñas.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Ya sea que venga o vaya, se enfrenta al pozo peligroso. En tal peligro, haga una pausa y espere; de lo contrario caerá en el pozo profundo. No actúe así.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Un frasco de licor, un plato de grano, y vasijas de barro simplemente pasados por la ventana. En verdad no hay error en esto.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'El agua en el pozo no sube hasta desbordarse; ha sido llenada solo hasta el nivel del borde. No habrá error.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Atado con cuerdas de tres hilos y colocado en un matorral de espinas; durante tres años no logra obtener su libertad. Habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Lo Abismal',
@@ -3158,6 +3422,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Brillo e iluminación',
         judgment: 'Li. Es propicio ser firme y correcto. Hay buena fortuna en cuidar de la vaca.',
         image: 'Fuego repetido, la imagen del Fuego. El hombre superior así se vuelve perpetuamente resplandeciente con luz y amor.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Las huellas de sus pisadas están confusas. Si es cuidadoso, no habrá error.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Brillo amarillo. Habrá gran buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'A la luz del sol poniente, en lugar de tocar la guitarra y cantar, profiere los gemidos de un anciano de ochenta años. Habrá mal.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: '¡Cuán súbita es su llegada! Se incendia, muere, es desechado.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Las lágrimas fluyen en torrentes con suspiros y pesares. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'El rey lo emplea en sus expediciones punitivas. Logrando mérito admirable, solo somete a los jefes; donde sus prisioneros no son sus asociados, no los castiga. No habrá error.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Lo Adherente',
@@ -3251,6 +3523,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Influir por atracción y respuesta natural',
         judgment: 'Xian. Hay buena fortuna en ser firme y correcto. Es propicio tener una doncella.',
         image: 'Un pantano en la montaña forma Xian. El hombre superior así busca popularidad estando listo para recibir.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él mueve su dedo gordo del pie.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él mueve las pantorrillas de sus piernas. Habrá mal. Si permanece quieto en su lugar, habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él mueve sus muslos y sigue de cerca lo que está delante de él. Avanzar de este modo causará pesar.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'La firme corrección conducirá a buena fortuna y prevendrá toda ocasión de arrepentimiento. Si uno está inquieto en sus movimientos, solo sus amigos seguirán su propósito.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Él mueve la carne a lo largo de la columna encima del corazón. No habrá ocasión de arrepentimiento.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él mueve sus mandíbulas, mejillas y lengua.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Influencia',
@@ -3344,6 +3624,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Perdurar sin cambio con buen resultado',
         judgment: 'Heng. Hay buena fortuna, no hay culpa. Es propicio ser firme y correcto.',
         image: 'Trueno y viento forman Heng. El hombre superior permanece resuelto e inmutable.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él desea profundamente la larga continuidad. Aun con firme corrección habrá mal; no habrá ventaja de ningún modo.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Toda ocasión de arrepentimiento desaparece.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él no mantiene continuamente su virtud. Hay quienes le imputarán esto como una desgracia. Por firme que sea, habrá motivo de pesar.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'No hay presa en el campo.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él mantiene continuamente la virtud indicada por su posición. En una esposa esto será afortunado; en un esposo, será mal.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él está agitado en sus movimientos. Habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Duración',
@@ -3437,6 +3725,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Promoción y movimiento hacia adelante',
         judgment: 'Jin. Progreso. Se presenta un buen caballo. En un día hay progreso muchas veces.',
         image: 'Fuego sobre la tierra forma Jin. El hombre superior así reconoce la excelencia luminosa y honra la virtud.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él avanza, pero es rechazado. Que sea firme y correcto, y habrá buena fortuna. Si le falta confianza, que sea generoso y complaciente, y no habrá error.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él avanza y sin embargo está afligido. Si es firme y correcto, habrá buena fortuna. Recibirá gran bendición de su abuela.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Todos a su alrededor están de acuerdo con él. Toda ocasión de arrepentimiento desaparece.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él avanza como una marmota. Por firme y correcto que sea, su posición es de peligro.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Toda ocasión de arrepentimiento desaparece. Que no se preocupe de si fracasará o tendrá éxito. Avanzar será afortunado y propicio en todo sentido.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él avanza sus cuernos. Pero solo para castigar al pueblo rebelde de su propia ciudad. La posición es peligrosa, pero habrá buena fortuna. Sin embargo, por firme y correcto que sea, habrá ocasión de pesar.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Progreso',
@@ -3530,6 +3826,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Brillo oculto; perdurar en la oscuridad',
         judgment: 'Ming Yi. En la adversidad, es propicio ser firme y correcto.',
         image: 'Luz entrando en la tierra forma Ming Yi. El hombre superior oculta su luz, pero aún brilla.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él vuela pero baja sus alas. El hombre superior, cuando viaja, no come durante tres días. Dondequiera que va, la gente allí puede hablar burlonamente de él.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'El oscurecimiento se muestra como una herida en el muslo izquierdo. Él se salva por la fuerza de un caballo. Habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'El oscurecimiento se muestra en una cacería en el sur. El gran jefe es capturado. Él no debería apresurarse a corregir todo de una vez.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él entra en el lado izquierdo del vientre de la tierra oscura, y es capaz de llevar a cabo la intención del oscurecimiento de la luz, al salir por la puerta y el patio.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'El oscurecimiento es el del conde de Ji. Será propicio ser firme y correcto.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'No hay luz, sino oscuridad. Él al principio había ascendido a la cima del cielo; su futuro será ir hacia la tierra.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Oscurecimiento de la Luz',
@@ -3623,6 +3927,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Relaciones domésticas y orden',
         judgment: 'Jia Ren. Es propicio que la mujer sea firme y correcta.',
         image: 'El viento surge del fuego: la imagen de la Familia. El hombre superior tiene sustancia en sus palabras y unidad en sus acciones.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él establece regulaciones restrictivas en su hogar. La ocasión de arrepentimiento desaparece.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Ella no debería seguir su propia inclinación. Debería atender la preparación de la comida. Con firme corrección habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Cuando los miembros del hogar son tratados con severa severidad, habrá ocasión de arrepentimiento, habrá peligro, pero también habrá buena fortuna. Cuando esposa e hijos están sonriendo y charlando a la ligera, al final habrá ocasión de pesar.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Ella es la enriquecedora del hogar. Habrá gran buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'La influencia del rey se extiende a su familia. No hay necesidad de ansiedad; habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Su carácter impone reverencia. Al final habrá buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Familia',
@@ -3716,6 +4028,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Estar opuesto, distanciamiento',
         judgment: 'Kui. En asuntos pequeños hay buena fortuna.',
         image: 'Fuego sobre el lago forma Kui. El hombre superior a pesar de su diferencia retiene su unidad con otros.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'La ocasión de arrepentimiento desaparecerá. Él pierde su caballo, pero que no lo busque; regresará por sí mismo. Cuando se encuentra con hombres malos, no errará.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él se encuentra con su señor en un pasaje secundario. No habrá error.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él ve el carruaje arrastrado hacia atrás, mientras los bueyes en él son empujados hacia atrás, y él mismo es sometido al afeitado de su cabeza y al corte de su nariz. No hay buen comienzo, pero habrá un buen final.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Aislado por la oposición, se encuentra con el hombre bueno, y mezclan sus sinceros deseos juntos. La posición es de peligro, pero no habrá error.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Toda ocasión de arrepentimiento desaparece. Con su pariente se une estrecha y fácilmente como si estuviera mordiendo un trozo de piel. Cuando avanza, ¿qué error puede haber?' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Aislado por la oposición, parece ver un cerdo cargando sobre su lomo una carga de lodo, o un carruaje lleno de fantasmas. Primero tensa su arco contra él, y después lo destensa. El sujeto no es un asaltante sino un pariente cercano. Avanzando, encontrará lluvia benéfica, y habrá buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Oposición',
@@ -3809,6 +4129,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Detención y progreso difícil',
         judgment: 'Jian. Es favorable ir al suroeste, y no favorable ir al noreste. Es propicio ver al gran hombre.',
         image: 'Agua en la montaña forma Jian. El hombre superior vuelve su atención hacia dentro y cultiva su carácter.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Avanzar conducirá a mayores dificultades, mientras que permanecer estacionario ofrecerá motivo de elogio.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'El ministro del rey lucha con dificultad tras dificultad, y no por culpa suya.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él avanza pero solo hacia mayores dificultades. Permanece estacionario y regresa con sus antiguos asociados.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él avanza pero solo hacia mayores dificultades. Permanece estacionario y se une con sus antiguos asociados.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Luchando con las mayores dificultades, trae ayuda y los amigos vienen.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él avanza pero solo hacia mayores dificultades. Permanece estacionario y es grandemente afortunado. Será propicio ver al gran hombre.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Obstrucción',
@@ -3902,6 +4230,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Liberación de la restricción y la dificultad',
         judgment: 'Jie. Es favorable ir al suroeste. No hay destino y volver es buena fortuna.',
         image: 'Trueno y lluvia se juntan formando Jie. El hombre superior así perdona los errores de otros.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'No hay error en el sujeto.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él atrapa tres zorros en la cacería y obtiene las puntas de flecha amarillas. Con firme corrección habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Un porteador con su carga y sin embargo viajando en carruaje. Solo tentará a los ladrones a atacarlo. Por firme y correcto que intente ser, habrá causa de pesar.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Remueva sus dedos gordos del pie. Los amigos entonces vendrán, entre usted y ellos habrá confianza mutua.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'El hombre superior ejecuta su función de remover lo que es dañino, y habrá buena fortuna. Que los hombres pequeños crean que él habla en serio.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Un príncipe con su arco dispara a un halcón en la cima de un alto muro, y lo alcanza. El efecto de su acción será propicio en todo sentido.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Liberación',
@@ -3995,6 +4331,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Disminuir para avanzar',
         judgment: 'Sun. Con sinceridad, hay suprema buena fortuna sin culpa. Es propicio ser firme y correcto.',
         image: 'Bajo la montaña hay un lago formando Sun. El hombre superior así frena su ira y restringe sus deseos.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él suspende sus propios asuntos y se apresura a ayudar al sujeto de la cuarta línea. No habrá error, pero que considere hasta qué punto debería disminuir sus propias preocupaciones.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Será propicio para él mantener su firme corrección, y habrá mal en su avance. Él puede dar aumento a su correlato sin quitarse a sí mismo.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Cuando tres hombres caminan juntos, el número se reduce en uno; cuando un hombre camina solo, obtiene su amigo.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él disminuye la dolencia bajo la cual trabaja haciendo que el sujeto de la primera línea se apresure a ayudarlo y alegrarlo. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Alguien seguramente lo aumentará. Él no puede evitarlo. Diez pares de caparazones de tortuga no pueden desviar este oráculo. Habrá gran buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él da aumento a otros sin quitarse a sí mismo. No habrá error. Con firme corrección habrá buena fortuna. Será propicio en todo sentido. Obtiene sirvientes pero no tiene familia.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Disminución',
@@ -4088,6 +4432,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Multiplicación y avance',
         judgment: 'Yi. Es propicio tener un destino. Es propicio cruzar la gran agua.',
         image: 'Viento y trueno forman Yi. El hombre superior así elimina lo malo y fortalece lo bueno.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Será propicio para él hacer un gran movimiento. Si es grandemente afortunado, no se le imputará culpa.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él es aumentado por diez pares de caparazones de tortuga cuyos oráculos no pueden ser opuestos. Que persevere, y habrá buena fortuna. Que el rey presente sus ofrendas a Dios, y habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él es aumentado por medio de lo que es malo, de modo que será conducido al bien y estará sin culpa. Que sea sincero y siga el camino del Medio, y que comunique el asunto al príncipe, usando el símbolo de jade.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Si sigue el debido Medio y anuncia el asunto al príncipe, sus palabras serán seguidas. Será propicio, siendo así, ser empleado en el traslado de la capital.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Si tiene un corazón sincero y benevolente, no pregunte al respecto; será grandemente afortunado. La sinceridad y la benevolencia serán reconocidas como virtudes.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él no es aumentado por nadie. Es golpeado por algunos. No mantiene su corazón invariablemente recto. Habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Aumento',
@@ -4181,6 +4533,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Reunirse en unión y comunión',
         judgment: 'Cui. El rey se acerca a su templo. Es propicio ver al gran hombre. Hay buena fortuna.',
         image: 'El lago se eleva sobre la tierra formando Cui. El hombre superior así ordena a sus oficiales.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Si hay sinceridad en él que no continúa hasta el final, habrá ahora desorden, ahora unión. Si pide ayuda, después de un apretón de manos tendrá a otros para reír con él. No debe preocuparse. Avanzar no dará ocasión de censura.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él es conducido adelante, y habrá buena fortuna y libertad de error. Hay sinceridad en él, y será propicio presentar incluso una pequeña ofrenda.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Hay reunión y suspiros. Nada será propicio de ningún modo. Avanzar no será incorrecto. Habrá un pequeño grado de falta.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Habrá gran buena fortuna y ningún error.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Él ocupa su posición y no hay error. Si alguno no tiene confianza en él, que procure que su virtud sea grande, prolongada y firmemente correcta, y toda ocasión de arrepentimiento desaparecerá.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él suspira y llora; pero no habrá error.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Reunión',
@@ -4274,6 +4634,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Avanzar sin obstáculo',
         judgment: 'Sheng. Hay gran buena fortuna. No es impropio ver al gran hombre. No albergues tristeza por perderlo. Ir al sur trae buena fortuna.',
         image: 'Madera dentro de la tierra forma Sheng. El hombre superior a través de su respeto y perseverancia expande su virtud.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él avanza ascendiendo con la bienvenida y confianza de los de arriba. Habrá gran buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Con la sinceridad indicada, será bueno presentar incluso una pequeña ofrenda. No habrá error.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él avanza ascendiendo libre y audazmente, como hacia una ciudad vacía.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'El rey hace sus ofrendas en el Monte Chi. Habrá buena fortuna; no habrá error.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Con firme corrección habrá buena fortuna. Él asciende por escalones.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él avanza ascendiendo ciegamente. Será propicio no relajar jamás la firme corrección de propósito.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Ascenso',
@@ -4367,6 +4735,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Opresión y reducción a la estrechez',
         judgment: 'Kun. Hay buena fortuna. No hay culpa. El hombre superior trae buena fortuna. Pero si tiene algo que decir, no será creído.',
         image: 'El lago sin agua forma Kun. El hombre superior así arriesga su vida persiguiendo su voluntad.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él está angustiado y oprimido bajo un árbol desnudo, y entra en un valle oscuro. Durante tres años no ve a nadie.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él está angustiado entre su vino y comida. Viene a él el hombre con rodilleras escarlatas. Será bueno que haga ofrendas. Operaciones activas de su parte conducirán al mal. No habrá error.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él se permite ser afligido y angustiado por cosas que no deberían afligirlo ni angustiarlo, y se apoya en espinas. Entra en su palacio y no ve a su esposa. Habrá mal.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él procede muy lentamente a ayudar al sujeto de la primera línea, angustiado como está en un carruaje. Habrá ocasión de pesar, pero el fin será alcanzado.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Su nariz y sus pies son cortados. Él es angustiado por el ministro con sus rodilleras escarlatas. Él es pausado en sus movimientos, sin embargo, y está satisfecho. Será bueno que sea tan sincero como en sacrificio a Dios.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él está angustiado por plantas trepadoras. Dice: "Cualquier movimiento me hará sentir el peligro de mi posición." Si siente el pesar que debería sentir y avanza, habrá buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Opresión',
@@ -4460,6 +4836,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Agua pura y provisión constante',
         judgment: 'Jing. La ciudad puede cambiar pero no el pozo. No disminuye ni aumenta. Yendo y viniendo, sacando agua, todos se benefician del pozo.',
         image: 'El agua pasa sobre la madera formando Jing. El hombre superior anima al pueblo común a apoyarse mutuamente.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Un pozo tan lodoso que los hombres no beberán de él; o un viejo pozo al que ni pájaros ni otras criaturas acuden.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Un pozo del cual por un agujero el agua escapa y fluye hacia los camarones y tales pequeñas criaturas entre la hierba, o uno cuya agua se escapa de un cesto roto.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'El pozo ha sido limpiado, pero no se usa. Esta es mi aflicción, pues el agua podría extraerse y usarse. Si el rey fuera inteligente, tanto él como nosotros podríamos recibir el beneficio de ello.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Un pozo cuyo revestimiento está bien colocado. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'En el pozo el agua es clara y fresca, y su fría agua de manantial puede extraerse libremente.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'El agua del pozo se extrae libremente. Es confiable. Habrá gran buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Pozo',
@@ -4553,6 +4937,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Cambio y transformación total',
         judgment: 'Ge. En su propio día es creído. Hay suprema buena fortuna, y es propicio ser firme y correcto.',
         image: 'Fuego en el lago forma Ge. El hombre superior fija el calendario y aclara las estaciones.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él está atado con la piel de un buey amarillo.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él hace sus cambios cuando ha pasado algún tiempo. La acción emprendida será afortunada. No habrá error.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'La acción emprendida será mala. Aunque es firme y correcto, su posición es peligrosa. Si el cambio que contempla ha sido mencionado tres veces, se creerá en él.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'La ocasión de arrepentimiento desaparece. Se cree en él, y el cambio de gobierno es afortunado.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'El gran hombre produce sus cambios como el tigre cuando cambia sus rayas. Antes de que consulte el oráculo y actúe, la fe ha sido depositada en él.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'El hombre superior produce sus cambios como el leopardo cuando cambia sus manchas. Los hombres pequeños cambian sus rostros y muestran su obediencia. Avanzar ahora conduciría al mal. Pero la firmeza y la corrección conducirán a buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Revolución',
@@ -4646,6 +5038,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Símbolo de transformación y sustento',
         judgment: 'Ding. Hay gran buena fortuna. Hay éxito.',
         image: 'Fuego sobre madera forma Ding. El hombre superior pone en orden lo desordenado.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'El caldero se vuelca y sus patas se levantan. Pero hay ventaja en que se vacíe así de lo que había de malo en él. O bien, la concubina es tomada por el bien de su hijo. No habrá error.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Hay el caldero con las cosas a cocinar en él. Si puede decir: "Mi enemigo me detesta, pero no puede acercarse a mí," habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Las asas del caldero son cambiadas. Hay dificultad en su avance. La carne grasa del faisán no se come. Pero la lluvia benéfica vendrá, y los motivos de arrepentimiento desaparecerán. Habrá buena fortuna al final.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'El caldero tiene sus patas rotas, y la cena del gobernante se derrama, y su persona queda mojada con la sopa. Habrá mal.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'El caldero tiene asas amarillas y anillos dorados. Habrá ventaja mediante ser firme y correcto.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'El caldero tiene anillos de jade. Habrá gran buena fortuna, y toda acción emprendida será propicia en todo sentido.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Caldero',
@@ -4739,6 +5139,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Choque y movimiento, poner en orden',
         judgment: 'Zhen. Hay buena fortuna. El choque viene como advertencia. El temblor y el miedo son seguidos por alegría y risa.',
         image: 'Trueno repetido forma la imagen del Despertar. El hombre superior prepara ordenadamente su sustento.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'El trueno llega y causa temor. Después hay regocijo y risas. Buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'El trueno se aproxima y trae peligro. Él pierde sus cauris y tiene que ascender las nueve colinas. Que no los busque. En siete días los encontrará.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'El trueno es terrible, pero si lo mueve a la acción, estará libre de error.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'En medio del trueno se hunde en el lodo.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'El trueno va y viene entre las condiciones peligrosas. Sin embargo nada en absoluto se pierde. Hay algo aún por hacer.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'El trueno produce ruina y miradas alarmadas alrededor. Avanzar conducirá a la desgracia. Si no ha alcanzado su propia persona, sino solo a su vecino, no habrá censura. Sus compañeros tendrán algo de qué hablar.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Lo Suscitativo',
@@ -4832,6 +5240,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Inmovilidad y permanecer quieto en su lugar',
         judgment: 'Gen. Cuando es tiempo de permanecer quieto, permanece quieto; cuando es tiempo de avanzar, avanza. Así avanzar y retroceder en el momento apropiado trae buena fortuna.',
         image: 'Montañas juntas forman Gen. El hombre superior no va más allá de los límites de su posición.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él mantiene sus dedos del pie en reposo. No habrá error; pero será propicio para él ser persistentemente firme y correcto.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él mantiene las pantorrillas de sus piernas en reposo. No puede ayudar al que sigue. Su mente no está contenta.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él mantiene sus lomos en reposo y separa las costillas del cuerpo inferior. La situación es peligrosa y el corazón arde con excitación reprimida.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él mantiene su tronco en reposo. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él mantiene sus mandíbulas en reposo, de modo que sus palabras están todas en orden. La ocasión de arrepentimiento desaparecerá.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él está dedicado a mantenerse quieto. Habrá buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Aquietamiento',
@@ -4925,6 +5341,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Avanzar paso a paso en secuencia apropiada',
         judgment: 'Jian. La doncella es entregada en matrimonio. Buena fortuna. Es propicio tener un destino adónde ir.',
         image: 'Viento sobre la montaña forma Jian. El hombre superior mora en excelencia y mejora las costumbres.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Los gansos salvajes se aproximan gradualmente a la orilla. Un joven oficial en posición de peligro; hay habladurías, pero no habrá error.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Los gansos salvajes se aproximan gradualmente a las grandes rocas, donde comen y beben alegremente y a sus anchas. Habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Los gansos salvajes se aproximan a las llanuras secas. El esposo parte en una expedición de la que no regresa. La esposa está encinta, pero no nutrirá a su hijo. Habrá mal. Hay ventaja en resistir a los saqueadores.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Los gansos salvajes se aproximan a los árboles. Pueden encontrar una rama plana. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Los gansos salvajes se aproximan al alto montículo. Durante tres años la esposa no queda encinta; pero al final el resultado natural no puede ser impedido. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Los gansos salvajes se aproximan al terreno elevado. Sus plumas pueden usarse como ornamentos. Habrá buena fortuna.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Desarrollo Gradual',
@@ -5018,6 +5442,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Sumisión femenina y la completación de las cosas',
         judgment: 'Gui Mei. Las empresas traen desgracia. No hay nada que sea propicio.',
         image: 'Trueno sobre el lago forma Gui Mei. El hombre superior entiende las cosas que llegan a su fin.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'La hermana menor es dada en matrimonio en una posición auxiliar a la esposa real. Es como un hombre cojo que sin embargo logra pisar. Avanzar será afortunado.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Ella mira con ojos entrecerrados y sin embargo puede ver. Habrá ventaja en que mantenga la firme corrección de una viuda solitaria.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'La hermana menor es dada en matrimonio como esclava. Regresa y es casada de nuevo como concubina.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'La hermana menor prolonga el tiempo. Puede ser lenta en casarse, pero el tiempo llegará.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'El soberano Di Yi dio a su hermana menor en matrimonio. Las mangas de la princesa no igualaban a las de la hermana aún menor que la acompañaba. La luna casi llena trae buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'La joven dama lleva la cesta, pero sin nada en ella, y el caballero degüella la oveja, pero sin que fluya sangre. No habrá ventaja de ningún modo.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Doncella Desposada',
@@ -5111,6 +5543,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Plenitud y prosperidad',
         judgment: 'Feng. El rey alcanza plenitud. No llores. Sé como el sol al mediodía.',
         image: 'Relámpago y trueno se juntan formando Feng. El hombre superior juzga a los que causan desorden.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él encuentra a su gobernante par. Aunque ambos son del mismo tipo, no habrá error. Si avanza, habrá mérito.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él está rodeado de pantallas tan grandes y gruesas que al mediodía puede ver desde ellas la constelación del Cazo. Si va e intenta iluminar a su príncipe, hará que se le vea con sospecha y desagrado. Que alimente su sentimiento de sincera devoción para que así pueda mover la mente de su príncipe, y habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él está rodeado de una vegetación tan exuberante que al mediodía puede ver desde ella las estrellas pequeñas. Se rompe el brazo derecho; pero no será hallado culpable.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él está rodeado de una pantalla tan grande y gruesa que al mediodía puede ver desde ella la constelación del Cazo. Pero se encuentra con el sujeto de la línea, indiviso como él mismo. Habrá buena fortuna.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él atrae a su alrededor a hombres de brillante capacidad. Habrá ocasión de congratulación y elogio. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Su casa es grande, pero él la ciega y la cubre con pantallas. Mira a través de la puerta y está quieta y solitaria. Durante tres años no se ve a nadie. Habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Abundancia',
@@ -5204,6 +5644,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Uno que viaja y está lejos de casa',
         judgment: 'Lu. Es propicio que el viajero sea firme y correcto; trae buena fortuna en su viaje.',
         image: 'Fuego en la montaña forma Lu. El hombre superior así se vuelve reflexivo y cuidadoso.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Si el extranjero se ocupa de cosas insignificantes, atraerá sobre sí más calamidad.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'El extranjero llega a un lugar de descanso, y tiene sus objetos de valor guardados en su pecho. Obtiene el firme apego de un joven sirviente.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'El extranjero quema su lugar de descanso y pierde el apego de su joven sirviente. Por firme y correcto que intente ser, estará en peligro.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'El extranjero está en un lugar de descanso. Obtiene sus propiedades y un hacha. Mi mente no está tranquila.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Él dispara a un faisán y este cae con una flecha. Al final obtendrá elogio y un alto cargo.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Un pájaro quema su nido. El extranjero primero ríe y luego llora. Ha perdido su docilidad de buey con demasiada facilidad. Habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Viajero',
@@ -5297,6 +5745,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Suavidad, penetración, sumisión',
         judgment: 'Xun. Hay buena fortuna. Es propicio tener un destino adónde ir. Es propicio ver al gran hombre.',
         image: 'Viento siguiendo viento forma Xun. El hombre superior así actúa como cuando despacha sus órdenes.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Al avanzar y al retirarse, la firmeza de un soldado valiente es propicia.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'El viento penetra bajo la cama. Él emplea adivinos y magos en gran número. Habrá buena fortuna y ningún error.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Él repite el proceso de penetración. Habrá ocasión de pesar.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'La ocasión de arrepentimiento desaparece. Él toma presa para su triple uso en la cacería.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Con firme corrección habrá buena fortuna. La ocasión de arrepentimiento desaparece. Todas las cosas son propicias. Puede no haber habido un buen comienzo, pero habrá un buen final. Tres días antes de hacer el cambio, y tres días después. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Penetración bajo la cama. Él pierde sus recursos y su hacha. Con firme corrección habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Lo Suave',
@@ -5390,6 +5846,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Alegría, satisfacción, apoyo mutuo',
         judgment: 'Dui. Hay buena fortuna. La corrección firme es propicia.',
         image: 'Dos lagos unidos forman Dui. El hombre superior así discute y conversa.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'El placer de la armonía interior. Habrá buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'El placer que surge de la sinceridad interior. Habrá buena fortuna. La ocasión de arrepentimiento desaparecerá.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él encuentra su placer en acercarse a otros. Habrá mal.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él delibera sobre en qué puede encontrar su placer, y aún no hay paz. Él bordea lo que sería dañino, pero habrá causa de alegría.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Él confía en uno que lo dañaría. La situación es peligrosa.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él es conducido y atraído hacia la alegría.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Lo Sereno',
@@ -5483,6 +5947,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Unión que se disuelve y dispersa',
         judgment: 'Huan. Hay buena fortuna. El rey se acerca a su lugar de culto. Es propicio cruzar la gran agua.',
         image: 'Viento moviéndose sobre agua forma Huan. Los reyes antiguos erigían templos para honrar lo divino.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él ofrece la ayuda de la fuerza de un caballo. Habrá buena fortuna.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'En medio de la dispersión prevaleciente, se apresura a su recurso de seguridad. Toda ocasión de arrepentimiento desaparecerá.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él disuelve su preocupación por sí mismo. No habrá ocasión de arrepentimiento.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Él dispersa los diferentes partidos en el estado; lo cual conduce a gran buena fortuna. De la dispersión los reúne en un foco. Esto es lo que los hombres ordinarios no pensarían.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Sus fuertes gritos son tan eficaces como el sudor que fluye del cuerpo. Un rey distribuye lo que sus almacenes contienen entre el pueblo sin censura.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él dispone de sus efectos dañinos, se retira de ella, y aleja lo que causaría daño. No habrá error.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Dispersión',
@@ -5576,6 +6048,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Restricción y regulación dentro de límites',
         judgment: 'Jie. Hay buena fortuna. Las restricciones dolorosas no deben persistir.',
         image: 'Agua sobre el lago forma Jie. El hombre superior establece sus pensamientos e investiga la naturaleza de las cosas.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él no abandona su patio. No habrá error.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él no abandona el patio fuera de su puerta. Habrá mal.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'En el descuido de los límites apropiados, tendrá ocasión de lamentación. Pero no habrá nadie a quien culpar sino a sí mismo.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Él está quieta y naturalmente atento a todas las formas de la propiedad. Habrá progreso y éxito.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Dulce es la práctica de la limitación. Habrá buena fortuna. Avanzar ofrecerá motivo de admiración.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Las regulaciones son severas y difíciles. Aun con firme corrección habrá mal. Pero aunque haya causa de arrepentimiento, eventualmente desaparecerá.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Limitación',
@@ -5669,6 +6149,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Buena fe y confianza entre las partes',
         judgment: 'Zhong Fu. Hay buena fortuna. Es propicio cruzar la gran agua.',
         image: 'Viento soplando sobre el lago forma Zhong Fu. El hombre superior determina demandas y pospone ejecuciones.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'El sujeto es firmemente correcto, y habrá buena fortuna. Si busca a otros más allá de sí mismo, no encontrará descanso.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Una grulla que clama en su retiro oculto. Sus crías le responden. Tengo una copa de buenos licores. La compartiré contigo.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'Él encuentra un camarada. Ahora toca su tambor, y ahora lo deja. Ahora llora, y ahora canta.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'La luna está casi llena. El caballo del carruaje se extravía. No habrá error.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'Él es perfectamente sincero y une. No habrá error.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'El gallo intenta ascender al cielo. Aun con firme corrección habrá mal.' },
+        ],
       },
       'es-zhouyi': {
         name: 'La Verdad Interior',
@@ -5762,6 +6250,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Exceder en asuntos pequeños',
         judgment: 'Xiao Guo. Hay buena fortuna en asuntos pequeños. No es propicio emprender grandes asuntos.',
         image: 'Trueno sobre la montaña forma Xiao Guo. El hombre superior así enfatiza lo pequeño y lo toma con ligereza.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'El pájaro vuela y con ello cae en la dificultad y el mal.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'Él pasa junto a su abuelo y encuentra a su abuela. Él no intenta nada contra su gobernante sino que lo encuentra como su ministro. No habrá error.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Si no toma precauciones extraordinarias contra el peligro, alguien puede venir por detrás y golpearlo. Habrá mal.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'No habrá error. Él no pasa junto a la dificultad sino que la enfrenta. Avanzar es peligroso y debe ser prevenido. No hay ocasión para emplear firme persistencia.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Nubes densas pero sin lluvia desde las fronteras occidentales. El príncipe dispara su flecha y atrapa al que está en la cueva.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él no lo encuentra, sino que pasa junto a él. El pájaro vuela lejos de él. Habrá mal. Esto indica calamidad y daño.' },
+        ],
       },
       'es-zhouyi': {
         name: 'El Exceso de lo Pequeño',
@@ -5855,6 +6351,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Ya completado y la necesidad de permanecer vigilante',
         judgment: 'Ji Ji. Hay buena fortuna en asuntos pequeños. Es propicio perseverar. Al principio hay buena fortuna, al final desorden.',
         image: 'Fuego sobre agua forma Ji Ji. El hombre superior piensa de antemano en las dificultades y se previene contra ellas.',
+        lines: [
+          { position: 1, name: 'En la primera línea, indivisa', text: 'Él arrastra hacia atrás su rueda. Moja su cola. No habrá error.' },
+          { position: 2, name: 'En la segunda línea, dividida', text: 'La mujer pierde la cortina de su carruaje. Que no corra a recuperarla; en siete días la obtendrá.' },
+          { position: 3, name: 'En la tercera línea, indivisa', text: 'Gao Zong emprendió una expedición contra los Gui Fang, y en tres años los conquistó. Los hombres pequeños no deben ser empleados en tales empresas.' },
+          { position: 4, name: 'En la cuarta línea, dividida', text: 'Junto a su piel tiene ropas de fina seda, pero sobre ellas se pone harapos. Él es cauteloso todo el día.' },
+          { position: 5, name: 'En la quinta línea, indivisa', text: 'El vecino del este mata un buey para su sacrificio; pero esto no iguala al pequeño sacrificio de primavera del vecino del oeste, cuya sinceridad recibe la bendición.' },
+          { position: 6, name: 'En la sexta línea, dividida', text: 'Él moja su cabeza. La posición es peligrosa.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Después de la Consumación',
@@ -5948,6 +6452,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Trabajo aún en progreso y acercándose a la completación',
         judgment: 'Wei Ji. Hay buena fortuna. El pequeño zorro casi completa el cruce pero se moja la cola. No hay nada propicio.',
         image: 'Agua sobre fuego forma Wei Ji. El hombre superior distingue cuidadosamente entre las cosas.',
+        lines: [
+          { position: 1, name: 'En la primera línea, dividida', text: 'Él moja su cola. Habrá ocasión de pesar.' },
+          { position: 2, name: 'En la segunda línea, indivisa', text: 'Él arrastra hacia atrás su rueda. Con firme corrección habrá buena fortuna.' },
+          { position: 3, name: 'En la tercera línea, dividida', text: 'El estado de las cosas aún no está remediado. Avanzar conducirá al mal. Será propicio cruzar la gran corriente.' },
+          { position: 4, name: 'En la cuarta línea, indivisa', text: 'Con firme corrección habrá buena fortuna, y la causa de arrepentimiento desaparecerá. Que se agite como si estuviera invadiendo a los Gui Fang. Después de tres años será recompensado con un gran reino.' },
+          { position: 5, name: 'En la quinta línea, dividida', text: 'Con firme corrección habrá buena fortuna, y no habrá ocasión de arrepentimiento. Vemos en él el brillo de un hombre superior y la posesión de sinceridad. Habrá buena fortuna.' },
+          { position: 6, name: 'En la sexta línea, indivisa', text: 'Él bebe vino libre y confiadamente. No habrá error. Pero si moja su cabeza, fallará en lo que es verdadero y correcto.' },
+        ],
       },
       'es-zhouyi': {
         name: 'Antes de la Consumación',

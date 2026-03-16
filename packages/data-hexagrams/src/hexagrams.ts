@@ -103,6 +103,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Cielo, principio creador, yang puro',
         judgment: 'Sublime éxito, propicio mediante la perseverancia.',
         image: 'El movimiento del Cielo es vigoroso. El hombre superior se fortalece sin cesar.',
+        lines: [
+          { position: 1, name: '初九', text: 'Dragón oculto. No actúes.' },
+          { position: 2, name: '九二', text: 'Dragón que aparece en el campo. Es propicio ver al gran hombre.' },
+          { position: 3, name: '九三', text: 'El hombre superior permanece creativamente activo todo el día. Al anochecer, aún vigilante y cauteloso. Peligro, pero sin censura.' },
+          { position: 4, name: '九四', text: 'Salto vacilante sobre el abismo. Sin censura.' },
+          { position: 5, name: '九五', text: 'Dragón que vuela en el cielo. Es propicio ver al gran hombre.' },
+          { position: 6, name: '上九', text: 'Dragón arrogante tendrá arrepentimiento.' },
+        ],
       },
       'zh-zhouyi': {
         name: '乾',
@@ -204,6 +212,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Tierra, principio receptivo, yin puro',
         judgment: 'Sublime éxito, propicio mediante la perseverancia de una yegua.',
         image: 'La condición de la Tierra es receptiva. El hombre superior con amplia virtud sostiene todas las cosas.',
+        lines: [
+          { position: 1, name: '初六', text: 'Al pisar la escarcha, el hielo firme se aproxima.' },
+          { position: 2, name: '六二', text: 'Recto, cuadrado, grande. Sin esfuerzo deliberado, nada deja de ser propicio.' },
+          { position: 3, name: '六三', text: 'Contiene la excelencia; se puede perseverar. Si se sirve al rey, no busques logros propios, sino lleva las cosas a buen término.' },
+          { position: 4, name: '六四', text: 'Saco atado. Sin censura, sin elogio.' },
+          { position: 5, name: '六五', text: 'Vestidura inferior amarilla. Suprema buena fortuna.' },
+          { position: 6, name: '上六', text: 'Dragones luchan en el campo. Su sangre es oscura y amarilla.' },
+        ],
       },
       'zh-zhouyi': {
         name: '坤',
@@ -305,6 +321,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La paz, prosperidad, comunicación entre cielo y tierra',
         judgment: 'Lo pequeño parte, lo grande llega. Buena fortuna. Éxito.',
         image: 'Cielo y tierra se comunican: la Paz. El gobernante así completa el curso del cielo y la tierra.',
+        lines: [
+          { position: 1, name: '初九', text: 'Al arrancar la hierba, salen juntas las raíces. Avanzar es propicio.' },
+          { position: 2, name: '九二', text: 'Soportar lo inculto, cruzar el río a pie, no descuidar lo distante, prescindir de los compañeros: así se obtiene estima por el camino medio.' },
+          { position: 3, name: '九三', text: 'No hay llanura sin pendiente, no hay ida sin retorno. Perseverancia en la dificultad, sin censura. No te aflijas por la sinceridad; en el sustento hallarás bendición.' },
+          { position: 4, name: '六四', text: 'Desciende revoloteando, no por riqueza, sino con sus vecinos. Sin precaución, con sinceridad.' },
+          { position: 5, name: '六五', text: 'El emperador Yi entrega a su hija en matrimonio. Esto trae bendición y suprema buena fortuna.' },
+          { position: 6, name: '上六', text: 'La muralla se derrumba en el foso. No emplees el ejército. Desde la propia ciudad proclama las órdenes. La perseverancia trae humillación.' },
+        ],
       },
       'zh-zhouyi': {
         name: '泰',
@@ -406,6 +430,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El estancamiento, obstrucción, falta de comunicación',
         judgment: 'Estancamiento de gente indigna. No propicio para la perseverancia del hombre superior. Lo grande parte, lo pequeño llega.',
         image: 'Cielo y tierra no se comunican: el Estancamiento. El hombre superior modera su virtud para evitar calamidades.',
+        lines: [
+          { position: 1, name: '初六', text: 'Al arrancar la hierba, salen juntas las raíces. La perseverancia trae buena fortuna y éxito.' },
+          { position: 2, name: '六二', text: 'Envuelve y soporta. Para el hombre inferior, buena fortuna. Para el gran hombre, el estancamiento conduce al éxito.' },
+          { position: 3, name: '六三', text: 'Envuelve la vergüenza.' },
+          { position: 4, name: '九四', text: 'Hay un mandato del cielo; sin censura. Los compañeros comparten la bendición.' },
+          { position: 5, name: '九五', text: 'El estancamiento cesa. Para el gran hombre, buena fortuna. ¡Que no perezca, que no perezca! Átalo al tronco de la morera.' },
+          { position: 6, name: '上九', text: 'El estancamiento se derrumba. Primero estancamiento, después alegría.' },
+        ],
       },
       'zh-zhouyi': {
         name: '否',
@@ -507,6 +539,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El acercamiento, aproximación, supervisión',
         judgment: 'Sublime éxito, propicio mediante la perseverancia. Cuando llegue el octavo mes, habrá adversidad.',
         image: 'Sobre el lago hay tierra: el Acercamiento. El hombre superior enseña y reflexiona sin límite.',
+        lines: [
+          { position: 1, name: '初九', text: 'Acercamiento conjunto. La perseverancia trae buena fortuna.' },
+          { position: 2, name: '九二', text: 'Acercamiento conjunto. Propicio, nada que no sea beneficioso.' },
+          { position: 3, name: '六三', text: 'Acercamiento complaciente. Nada que sea propicio. Pero si ya te preocupas por ello, sin censura.' },
+          { position: 4, name: '六四', text: 'Acercamiento pleno. Sin censura.' },
+          { position: 5, name: '六五', text: 'Acercamiento sabio. Digno de un gran soberano. Propicio.' },
+          { position: 6, name: '上六', text: 'Acercamiento generoso. Propicio, sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '臨',
@@ -608,6 +648,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La contemplación, observar, ser modelo',
         judgment: 'La ablución se ha hecho, pero no la ofrenda. Con sinceridad, solemne reverencia.',
         image: 'El viento recorre la tierra: la Contemplación. Los antiguos reyes visitaban las regiones, observaban al pueblo y establecían las enseñanzas.',
+        lines: [
+          { position: 1, name: '初六', text: 'Contemplación infantil. Para el hombre inferior, sin censura; para el hombre superior, humillación.' },
+          { position: 2, name: '六二', text: 'Contemplación a través de la rendija. Propicio para la perseverancia de la mujer.' },
+          { position: 3, name: '六三', text: 'Contemplar mi propia vida para decidir avanzar o retirarse.' },
+          { position: 4, name: '六四', text: 'Contemplar la luz del reino. Es propicio actuar como huésped del rey.' },
+          { position: 5, name: '九五', text: 'Contemplar mi propia vida. El hombre superior queda sin censura.' },
+          { position: 6, name: '上九', text: 'Contemplar su vida. El hombre superior queda sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '觀',
@@ -709,6 +757,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La desintegración, desprendimiento, decadencia',
         judgment: 'No propicio emprender nada.',
         image: 'La montaña se adhiere a la tierra: la Desintegración. Los de arriba con generosidad hacia abajo aseguran la morada.',
+        lines: [
+          { position: 1, name: '初六', text: 'Desmoronamiento del lecho por las patas. Se destruye la perseverancia. Desgracia.' },
+          { position: 2, name: '六二', text: 'Desmoronamiento del lecho por el borde. Se destruye la perseverancia. Desgracia.' },
+          { position: 3, name: '六三', text: 'Desmoronamiento. Sin censura.' },
+          { position: 4, name: '六四', text: 'Desmoronamiento del lecho hasta la piel. Desgracia.' },
+          { position: 5, name: '六五', text: 'Una sarta de peces. Favor a través de las damas de palacio. Nada que no sea propicio.' },
+          { position: 6, name: '上九', text: 'Gran fruto sin comer. El hombre superior obtiene un carruaje; al hombre inferior se le desmorona su choza.' },
+        ],
       },
       'zh-zhouyi': {
         name: '剝',
@@ -810,6 +866,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El retorno, renovación, punto de inflexión',
         judgment: 'Éxito. Salir y entrar sin aflicción. Los amigos vienen sin culpa.',
         image: 'Trueno en la tierra: el Retorno. Los antiguos reyes en el solsticio cerraban los pasos.',
+        lines: [
+          { position: 1, name: '初九', text: 'Retorno desde poca distancia. Sin necesidad de arrepentimiento. Suprema buena fortuna.' },
+          { position: 2, name: '六二', text: 'Retorno tranquilo. Propicio.' },
+          { position: 3, name: '六三', text: 'Retorno repetido. Peligro, pero sin censura.' },
+          { position: 4, name: '六四', text: 'Caminando entre los demás, retorna solo.' },
+          { position: 5, name: '六五', text: 'Retorno generoso. Sin arrepentimiento.' },
+          { position: 6, name: '上六', text: 'Retorno extraviado. Desgracia, hay desastres y calamidades. Si se emplea al ejército, al final habrá una gran derrota.' },
+        ],
       },
       'zh-zhouyi': {
         name: '復',
@@ -911,6 +975,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La retirada, retirarse, ocultarse',
         judgment: 'Éxito. En lo pequeño, propicio mediante la perseverancia.',
         image: 'Bajo el cielo hay una montaña: la Retirada. El hombre superior se aleja del hombre inferior.',
+        lines: [
+          { position: 1, name: '初六', text: 'En la cola de la retirada. Peligro. No emprendas nada.' },
+          { position: 2, name: '六二', text: 'Lo sujeta con cuero de buey amarillo. Nadie puede soltarlo.' },
+          { position: 3, name: '九三', text: 'Retirada atada. Hay enfermedad y peligro. Mantener sirvientes y concubinas es propicio.' },
+          { position: 4, name: '九四', text: 'Retirada voluntaria. Para el hombre superior, propicio; para el hombre inferior, adverso.' },
+          { position: 5, name: '九五', text: 'Retirada elegante. La perseverancia trae buena fortuna.' },
+          { position: 6, name: '上九', text: 'Retirada serena. Nada que no sea propicio.' },
+        ],
       },
       'zh-zhouyi': {
         name: '遯',
@@ -1012,6 +1084,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El poder de lo grande, gran fuerza, vigor',
         judgment: 'Propicio mediante la perseverancia.',
         image: 'Trueno en el cielo: el Poder de lo Grande. El hombre superior no pisa lo que no es correcto.',
+        lines: [
+          { position: 1, name: '初九', text: 'Poder en los dedos de los pies. Avanzar trae desgracia. Hay sinceridad.' },
+          { position: 2, name: '九二', text: 'La perseverancia trae buena fortuna.' },
+          { position: 3, name: '九三', text: 'El hombre inferior usa la fuerza; el hombre superior la domina. La perseverancia es peligrosa. El carnero embiste contra la cerca y enreda sus cuernos.' },
+          { position: 4, name: '九四', text: 'La perseverancia trae buena fortuna, el arrepentimiento se desvanece. La cerca se abre sin enredar. Poder en los ejes del gran carro.' },
+          { position: 5, name: '六五', text: 'Se pierde el carnero con facilidad. Sin arrepentimiento.' },
+          { position: 6, name: '上六', text: 'El carnero embiste contra la cerca. No puede retroceder ni avanzar. Nada es propicio. Si se persevera en la dificultad, buena fortuna.' },
+        ],
       },
       'zh-zhouyi': {
         name: '大壯',
@@ -1113,6 +1193,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La resolucion, irrupcion, avance decisivo',
         judgment: 'Proclamar en la corte del rey. Con sinceridad clamar: hay peligro.',
         image: 'El lago asciende al cielo: la Resolucion. El hombre superior distribuye beneficios hacia abajo.',
+        lines: [
+          { position: 1, name: '初九', text: 'Poder en los dedos delanteros. Avanzar sin poder vencer lleva a la censura.' },
+          { position: 2, name: '九二', text: 'Grito de alarma. De noche hay armas. No te preocupes.' },
+          { position: 3, name: '九三', text: 'Poder en los pómulos, trae desgracia. El hombre superior resuelve con resolución. Camina solo y encuentra la lluvia; se moja y se enoja. Sin censura.' },
+          { position: 4, name: '九四', text: 'Las nalgas sin piel; el andar es torpe. Si dejaras que te guiara un carnero, el arrepentimiento se desvanecería. Oyes las palabras pero no las crees.' },
+          { position: 5, name: '九五', text: 'La planta de tierra firme se arranca con resolución. Camino medio, sin censura.' },
+          { position: 6, name: '上六', text: 'Sin grito de alarma. Al final, desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '夬',
@@ -1214,6 +1302,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El encuentro, venir al encuentro, tentacion',
         judgment: 'La mujer es poderosa. No se debe tomar esposa.',
         image: 'Bajo el cielo hay viento: el Encuentro. El soberano difunde sus mandatos a los cuatro puntos cardinales.',
+        lines: [
+          { position: 1, name: '初六', text: 'Atado a un freno de metal. La perseverancia es propicia. Si emprendes algo, se ve la desgracia. El cerdo flaco es sincero pero se agita.' },
+          { position: 2, name: '九二', text: 'Hay un pez en el envoltorio. Sin censura. No es propicio para el huésped.' },
+          { position: 3, name: '九三', text: 'Las nalgas sin piel; el andar es torpe. Peligro, pero no gran censura.' },
+          { position: 4, name: '九四', text: 'El envoltorio sin pez. Eso provoca desgracia.' },
+          { position: 5, name: '九五', text: 'Con sauce se envuelve el melón. Contiene excelencia. Algo cae del cielo.' },
+          { position: 6, name: '上九', text: 'El encuentro con los cuernos. Humillación, pero sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '姤',
@@ -1315,6 +1411,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Dificultad inicial, brote naciente, comienzo arduo',
         judgment: 'Sublime éxito, propicio mediante la perseverancia. No emprender nada. Propicio establecer ayudantes.',
         image: 'Nubes y trueno: la Dificultad Inicial. El hombre superior pone orden en los asuntos.',
+        lines: [
+          { position: 1, name: '初九', text: 'Vacilación ante el obstáculo. Es propicio permanecer en perseverancia. Es propicio establecer ayudantes.' },
+          { position: 2, name: '六二', text: 'Dificultad tras dificultad, caballos y carros se detienen. No son bandidos, sino pretendientes de boda. La doncella persevera y no se entrega; después de diez años, se entregará.' },
+          { position: 3, name: '六三', text: 'Quien caza ciervos sin guía solo se adentra en el bosque. El hombre superior, percibiendo la situación, prefiere desistir. Avanzar traería humillación.' },
+          { position: 4, name: '六四', text: 'Caballos y carros se detienen. Busca la unión matrimonial. Avanzar es propicio, nada que no sea beneficioso.' },
+          { position: 5, name: '九五', text: 'Dificultad para distribuir sus favores. Pequeña perseverancia trae buena fortuna; gran perseverancia trae desgracia.' },
+          { position: 6, name: '上六', text: 'Caballos y carros se detienen. Lágrimas de sangre se derraman.' },
+        ],
       },
       'zh-zhouyi': {
         name: '屯',
@@ -1416,6 +1520,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Insensatez juvenil, inexperiencia, oscuridad inicial',
         judgment: 'Éxito. No soy yo quien busca al joven insensato; el joven insensato me busca. En la primera consulta informo; si pregunta dos o tres veces, es irreverencia. Si es irreverente, no informo. Propicio mediante la perseverancia.',
         image: 'Bajo la montaña brota un manantial: la Insensatez Juvenil. El hombre superior con acción decidida cultiva la virtud.',
+        lines: [
+          { position: 1, name: '初六', text: 'Para disciplinar al ignorante, es propicio usar el castigo como ejemplo, quitando grilletes y cadenas. Pero avanzar así trae humillación.' },
+          { position: 2, name: '九二', text: 'Soportar al ignorante es propicio. Tomar esposa es propicio. El hijo es capaz de gobernar la casa.' },
+          { position: 3, name: '六三', text: 'No tomes a esta mujer. Ve al hombre de oro y pierde la compostura. Nada es propicio.' },
+          { position: 4, name: '六四', text: 'Ignorancia aislada. Humillación.' },
+          { position: 5, name: '六五', text: 'Inocencia juvenil. Propicio.' },
+          { position: 6, name: '上九', text: 'Golpear al ignorante. No es propicio actuar como bandido; es propicio defenderse de bandidos.' },
+        ],
       },
       'zh-zhouyi': {
         name: '蒙',
@@ -1517,6 +1629,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La espera, aguardar, nutrición',
         judgment: 'Con sinceridad, brillante éxito. La perseverancia trae buena fortuna. Propicio cruzar la gran agua.',
         image: 'Nubes ascienden al cielo: la Espera. El hombre superior come, bebe y se regocija.',
+        lines: [
+          { position: 1, name: '初九', text: 'Espera en las afueras. Es propicio perseverar constantemente. Sin censura.' },
+          { position: 2, name: '九二', text: 'Espera en la arena. Hay algunas murmuraciones, pero al final, buena fortuna.' },
+          { position: 3, name: '九三', text: 'Espera en el barro. Esto atrae la llegada de enemigos.' },
+          { position: 4, name: '六四', text: 'Espera en la sangre. Sal de la caverna.' },
+          { position: 5, name: '九五', text: 'Espera ante el vino y la comida. La perseverancia trae buena fortuna.' },
+          { position: 6, name: '上六', text: 'Se entra en la caverna. Llegan tres huéspedes inesperados. Trátalos con respeto y al final habrá buena fortuna.' },
+        ],
       },
       'zh-zhouyi': {
         name: '需',
@@ -1618,6 +1738,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Conflicto, litigio, contienda',
         judgment: 'Con sinceridad obstruida, cautela. Buena fortuna en el medio. Adversidad al final. Propicio ver al gran hombre. No propicio cruzar la gran agua.',
         image: 'Cielo y agua van en direcciones opuestas: el Conflicto. El hombre superior en sus asuntos planea desde el comienzo.',
+        lines: [
+          { position: 1, name: '初六', text: 'Si no se perpetúa el asunto, habrá algunas murmuraciones, pero al final, buena fortuna.' },
+          { position: 2, name: '九二', text: 'No se puede sostener el conflicto. Regresa y huye. En su aldea de trescientas familias, no habrá calamidad.' },
+          { position: 3, name: '六三', text: 'Nutrirse de la antigua virtud. La perseverancia es peligrosa, pero al final propicia. Si se sirve al rey, no busques logros propios.' },
+          { position: 4, name: '九四', text: 'No se puede sostener el conflicto. Regresa y acepta el destino. Cambia, permanece en firme corrección. Propicio.' },
+          { position: 5, name: '九五', text: 'Conflicto ante el juez. Suprema buena fortuna.' },
+          { position: 6, name: '上九', text: 'Quizás se le otorgue un cinturón ceremonial, pero antes de que termine la mañana, le será arrebatado tres veces.' },
+        ],
       },
       'zh-zhouyi': {
         name: '訟',
@@ -1719,6 +1847,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El ejército, las tropas, la multitud',
         judgment: 'El ejército con perseverancia. Un hombre maduro, buena fortuna. Sin culpa.',
         image: 'En medio de la tierra hay agua: el Ejército. El hombre superior acoge al pueblo y nutre a la multitud.',
+        lines: [
+          { position: 1, name: '初六', text: 'El ejército debe partir con disciplina. Si la disciplina no es buena, desgracia.' },
+          { position: 2, name: '九二', text: 'En medio del ejército. Buena fortuna, sin censura. El rey otorga tres veces el mandato.' },
+          { position: 3, name: '六三', text: 'El ejército quizás transporte cadáveres en el carro. Desgracia.' },
+          { position: 4, name: '六四', text: 'El ejército acampa a la izquierda. Sin censura.' },
+          { position: 5, name: '六五', text: 'Hay presa en el campo. Es propicio capturarla. Sin censura. El hijo mayor lidera el ejército; el hijo menor transporta cadáveres. La perseverancia trae desgracia.' },
+          { position: 6, name: '上六', text: 'El gran soberano emite órdenes: fundar estados y establecer familias. El hombre inferior no debe ser empleado.' },
+        ],
       },
       'zh-zhouyi': {
         name: '師',
@@ -1820,6 +1956,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La unión, solidaridad, alianza',
         judgment: 'Buena fortuna. Examina el oráculo: sublime, duradera perseverancia. Sin culpa. Los inquietos vienen. Para el rezagado, adversidad.',
         image: 'Agua sobre la tierra: la Unión. Los antiguos reyes establecieron miríadas de estados y se aliaron con los señores feudales.',
+        lines: [
+          { position: 1, name: '初六', text: 'Con sinceridad, busca la unión. Sin censura. La sinceridad llena la vasija de barro; al final vendrán otras bendiciones. Propicio.' },
+          { position: 2, name: '六二', text: 'La unión viene desde dentro. La perseverancia trae buena fortuna.' },
+          { position: 3, name: '六三', text: 'Te unes a quienes no debes.' },
+          { position: 4, name: '六四', text: 'Unión exterior. La perseverancia trae buena fortuna.' },
+          { position: 5, name: '九五', text: 'Unión manifiesta. El rey emplea la triple batida y deja escapar la presa que huye delante. La gente de la aldea no necesita advertencia. Propicio.' },
+          { position: 6, name: '上六', text: 'Unión sin cabeza. Desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '比',
@@ -1921,6 +2065,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El poder domesticador de lo pequeño, pequeña acumulación',
         judgment: 'Éxito. Nubes densas sin lluvia desde nuestra región occidental.',
         image: 'El viento recorre el cielo: el Poder Domesticador de lo Pequeño. El hombre superior cultiva las virtudes de la cultura.',
+        lines: [
+          { position: 1, name: '初九', text: 'Regreso por el propio camino. ¿Qué censura habría? Propicio.' },
+          { position: 2, name: '九二', text: 'Se deja llevar de regreso. Propicio.' },
+          { position: 3, name: '九三', text: 'Al carro se le sueltan los rayos de la rueda. Marido y mujer se miran con resentimiento.' },
+          { position: 4, name: '六四', text: 'Hay sinceridad. La sangre se aleja, el temor se disipa. Sin censura.' },
+          { position: 5, name: '九五', text: 'Sinceridad que une firmemente. Riqueza compartida con los vecinos.' },
+          { position: 6, name: '上九', text: 'Ya llueve, ya se reposa. Se estima la virtud acumulada. La perseverancia de la mujer es peligrosa. La luna casi llena; si el hombre superior avanza, desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '小畜',
@@ -2022,6 +2174,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El porte, la conducta, pisar con cuidado',
         judgment: 'Pisar la cola del tigre. No muerde al hombre. Éxito.',
         image: 'Arriba el cielo, abajo el lago: el Porte. El hombre superior distingue entre lo alto y lo bajo, y establece la voluntad del pueblo.',
+        lines: [
+          { position: 1, name: '初九', text: 'Conducta sencilla. Avanzar sin censura.' },
+          { position: 2, name: '九二', text: 'Pisar un camino llano y liso. La perseverancia del hombre recluido trae buena fortuna.' },
+          { position: 3, name: '六三', text: 'El tuerto puede ver, el cojo puede pisar. Pisa la cola del tigre y este muerde a la persona. Desgracia. El guerrero actúa en nombre del gran soberano.' },
+          { position: 4, name: '九四', text: 'Pisar la cola del tigre. Cautela y temor; al final, buena fortuna.' },
+          { position: 5, name: '九五', text: 'Pisar con resolución. La perseverancia es peligrosa.' },
+          { position: 6, name: '上九', text: 'Examina tu conducta y considera los presagios. Si el ciclo se completa, suprema buena fortuna.' },
+        ],
       },
       'zh-zhouyi': {
         name: '履',
@@ -2123,6 +2283,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Comunidad con los hombres, hermandad, unión',
         judgment: 'Comunidad con los hombres en lo abierto. Éxito. Propicio cruzar la gran agua. Propicio mediante la perseverancia.',
         image: 'Cielo y fuego: la Comunidad con los Hombres. El hombre superior organiza los clanes y distingue las cosas.',
+        lines: [
+          { position: 1, name: '初九', text: 'Compañerismo ante la puerta. Sin censura.' },
+          { position: 2, name: '六二', text: 'Compañerismo solo con el clan. Humillación.' },
+          { position: 3, name: '九三', text: 'Oculta tropas en la espesura, sube a la colina alta. Durante tres años no se levanta.' },
+          { position: 4, name: '九四', text: 'Sube a la muralla, pero no puede atacar. Propicio.' },
+          { position: 5, name: '九五', text: 'Los compañeros primero lloran y se lamentan, después ríen. El gran ejército logra el encuentro.' },
+          { position: 6, name: '上九', text: 'Compañerismo en las afueras. Sin arrepentimiento.' },
+        ],
       },
       'zh-zhouyi': {
         name: '同人',
@@ -2224,6 +2392,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La gran posesión, abundancia, prosperidad',
         judgment: 'Sublime éxito.',
         image: 'Fuego en lo alto del cielo: la Gran Posesión. El hombre superior reprime el mal y promueve el bien.',
+        lines: [
+          { position: 1, name: '初九', text: 'Sin relación con lo dañino. No hay censura. En la dificultad, sin censura.' },
+          { position: 2, name: '九二', text: 'Un gran carro para transportar. Hay adónde ir. Sin censura.' },
+          { position: 3, name: '九三', text: 'El príncipe ofrece al Hijo del Cielo. El hombre inferior no puede hacer esto.' },
+          { position: 4, name: '九四', text: 'No por su ostentación. Sin censura.' },
+          { position: 5, name: '六五', text: 'Su sinceridad es conmovedora e imponente. Propicio.' },
+          { position: 6, name: '上九', text: 'Bendecido por el Cielo. Propicio, nada que no sea beneficioso.' },
+        ],
       },
       'zh-zhouyi': {
         name: '大有',
@@ -2325,6 +2501,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La modestia, humildad, contención',
         judgment: 'Éxito. El hombre superior tiene buen final.',
         image: 'En medio de la tierra hay una montaña: la Modestia. El hombre superior reduce lo excesivo y aumenta lo escaso.',
+        lines: [
+          { position: 1, name: '初六', text: 'El hombre superior modesto entre los modestos. Es propicio cruzar la gran agua. Propicio.' },
+          { position: 2, name: '六二', text: 'Modestia que se expresa. La perseverancia trae buena fortuna.' },
+          { position: 3, name: '九三', text: 'El hombre superior laborioso y modesto lleva las cosas a buen término. Propicio.' },
+          { position: 4, name: '六四', text: 'Nada que no sea propicio. Despliega la modestia.' },
+          { position: 5, name: '六五', text: 'No rico, pero con sus vecinos. Es propicio emprender campañas. Nada que no sea beneficioso.' },
+          { position: 6, name: '上六', text: 'Modestia que se expresa. Es propicio poner en marcha al ejército para castigar ciudades y reinos.' },
+        ],
       },
       'zh-zhouyi': {
         name: '謙',
@@ -2426,6 +2610,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El entusiasmo, alegría, preparación',
         judgment: 'Propicio establecer feudatarios y mover el ejército.',
         image: 'Trueno surge de la tierra: el Entusiasmo. Los antiguos reyes hacían música para honrar la virtud.',
+        lines: [
+          { position: 1, name: '初六', text: 'Entusiasmo que se proclama. Desgracia.' },
+          { position: 2, name: '六二', text: 'Firme como la piedra. Sin esperar al fin del día. La perseverancia trae buena fortuna.' },
+          { position: 3, name: '六三', text: 'Entusiasmo con la mirada levantada. Arrepentimiento. La vacilación trae arrepentimiento.' },
+          { position: 4, name: '九四', text: 'La fuente del entusiasmo. Se logran grandes cosas. No dudes; los amigos se reúnen como el cabello en una horquilla.' },
+          { position: 5, name: '六五', text: 'Perseverancia en la enfermedad. Constantemente sin morir.' },
+          { position: 6, name: '上六', text: 'Entusiasmo ciego. Pero si hay cambio al completarse, sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '豫',
@@ -2527,6 +2719,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El seguimiento, adaptarse, ir con la corriente',
         judgment: 'Sublime éxito. Propicio mediante la perseverancia. Sin culpa.',
         image: 'Trueno dentro del lago: el Seguimiento. El hombre superior al anochecer entra a descansar.',
+        lines: [
+          { position: 1, name: '初九', text: 'El funcionario cambia. La perseverancia trae buena fortuna. Salir por la puerta y relacionarse trae mérito.' },
+          { position: 2, name: '六二', text: 'Si te atas al muchacho, pierdes al hombre maduro.' },
+          { position: 3, name: '六三', text: 'Si te atas al hombre maduro, pierdes al muchacho. Siguiendo, se encuentra lo que se busca. Es propicio permanecer en perseverancia.' },
+          { position: 4, name: '九四', text: 'Seguir trae captura. La perseverancia trae desgracia. Pero si hay sinceridad en el camino y claridad, ¿qué censura habría?' },
+          { position: 5, name: '九五', text: 'Sinceridad en lo excelente. Propicio.' },
+          { position: 6, name: '上六', text: 'Firmemente atado y luego unido con lazos. El rey hace ofrendas en la Montaña del Oeste.' },
+        ],
       },
       'zh-zhouyi': {
         name: '隨',
@@ -2628,6 +2828,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La corrupción, reparar lo echado a perder, renovación',
         judgment: 'Sublime éxito. Propicio cruzar la gran agua. Tres días antes del comienzo, tres días después del comienzo.',
         image: 'Viento bajo la montaña: la Corrupción. El hombre superior estimula al pueblo y nutre la virtud.',
+        lines: [
+          { position: 1, name: '初六', text: 'Reparar la decadencia del padre. Si hay un hijo capaz, el padre difunto queda sin censura. Peligro, pero al final buena fortuna.' },
+          { position: 2, name: '九二', text: 'Reparar la decadencia de la madre. No se puede perseverar.' },
+          { position: 3, name: '九三', text: 'Reparar la decadencia del padre. Habrá algo de arrepentimiento, pero no gran censura.' },
+          { position: 4, name: '六四', text: 'Tolerar la decadencia del padre. Avanzar trae humillación.' },
+          { position: 5, name: '六五', text: 'Reparar la decadencia del padre. Se obtiene elogio.' },
+          { position: 6, name: '上九', text: 'No sirve a reyes ni príncipes. Eleva y ennoblece sus propios asuntos.' },
+        ],
       },
       'zh-zhouyi': {
         name: '蠱',
@@ -2729,6 +2937,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La mordedura, morder a través, justicia',
         judgment: 'Éxito. Propicio aplicar castigos.',
         image: 'Trueno y fuego: la Mordedura a Través. Los antiguos reyes clarificaban los castigos y establecían las leyes.',
+        lines: [
+          { position: 1, name: '初九', text: 'Calza grilletes que le cubren los pies. Sin censura.' },
+          { position: 2, name: '六二', text: 'Muerde la carne tierna hasta cubrir la nariz. Sin censura.' },
+          { position: 3, name: '六三', text: 'Muerde carne seca y encuentra veneno. Pequeña humillación, pero sin censura.' },
+          { position: 4, name: '九四', text: 'Muerde carne seca con hueso. Obtiene flechas de metal. Es propicio la perseverancia en la dificultad. Propicio.' },
+          { position: 5, name: '六五', text: 'Muerde carne seca. Obtiene oro amarillo. Perseverancia peligrosa, pero sin censura.' },
+          { position: 6, name: '上九', text: 'Lleva la canga que le cubre las orejas. Desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '咬嗑',
@@ -2830,6 +3046,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La gracia, ornamento, belleza formal',
         judgment: 'Éxito. En lo pequeño, propicio emprender algo.',
         image: 'Fuego bajo la montaña: la Gracia. El hombre superior aclara los asuntos del gobierno.',
+        lines: [
+          { position: 1, name: '初九', text: 'Adorna sus pies. Deja el carro y camina.' },
+          { position: 2, name: '六二', text: 'Adorna su barba.' },
+          { position: 3, name: '九三', text: 'Adornado y reluciente. La perseverancia eterna trae buena fortuna.' },
+          { position: 4, name: '六四', text: 'Adornado con sencillez. Un caballo blanco llega alado. No son bandidos, sino pretendientes de boda.' },
+          { position: 5, name: '六五', text: 'Adorno en jardines y colinas. El rollo de seda es escaso. Humillación, pero al final buena fortuna.' },
+          { position: 6, name: '上九', text: 'Adorno sencillo y blanco. Sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '賁',
@@ -2931,6 +3155,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La inocencia, sin falsedad, lo inesperado',
         judgment: 'Sublime éxito, propicio mediante la perseverancia. Si no es correcto, hay calamidad; no propicio emprender nada.',
         image: 'Bajo el cielo el trueno avanza: la Inocencia. Los antiguos reyes con abundancia correspondían a las estaciones y nutrían todas las cosas.',
+        lines: [
+          { position: 1, name: '初九', text: 'Inocencia. Avanzar es propicio.' },
+          { position: 2, name: '六二', text: 'Sin arar para cosechar, sin roturar para cultivar: entonces es propicio emprender algo.' },
+          { position: 3, name: '六三', text: 'Desgracia inesperada de la inocencia. Alguien ata una vaca; el caminante la obtiene, y es desgracia para la gente de la aldea.' },
+          { position: 4, name: '九四', text: 'Se puede perseverar. Sin censura.' },
+          { position: 5, name: '九五', text: 'Enfermedad inesperada de la inocencia. Sin medicinas, habrá alegría.' },
+          { position: 6, name: '上九', text: 'Inocencia. Actuar trae calamidad. Nada es propicio.' },
+        ],
       },
       'zh-zhouyi': {
         name: '無妄',
@@ -3032,6 +3264,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El poder domesticador de lo grande, gran acumulación',
         judgment: 'Propicio mediante la perseverancia. No comer en casa es buena fortuna. Propicio cruzar la gran agua.',
         image: 'El cielo dentro de la montaña: el Poder Domesticador de lo Grande. El hombre superior conoce muchos dichos y hechos del pasado.',
+        lines: [
+          { position: 1, name: '初九', text: 'Hay peligro. Es propicio detenerse.' },
+          { position: 2, name: '九二', text: 'Al carro se le quitan los ejes.' },
+          { position: 3, name: '九三', text: 'Buen caballo que persigue. Es propicio la perseverancia en la dificultad. Practica diariamente la defensa del carro. Es propicio tener adónde ir.' },
+          { position: 4, name: '六四', text: 'La tablilla protectora del novillo joven. Suprema buena fortuna.' },
+          { position: 5, name: '六五', text: 'Los colmillos del jabalí castrado. Propicio.' },
+          { position: 6, name: '上九', text: '¡Cómo se abre la vía del Cielo! Éxito.' },
+        ],
       },
       'zh-zhouyi': {
         name: '大畜',
@@ -3133,6 +3373,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Las comisuras de la boca, nutrición, sustento',
         judgment: 'La perseverancia trae buena fortuna. Observa la nutrición y cómo uno busca llenar su boca.',
         image: 'Trueno bajo la montaña: la Nutrición. El hombre superior es cuidadoso con sus palabras.',
+        lines: [
+          { position: 1, name: '初九', text: 'Dejas tu tortuga mágica y me miras con la boca abierta de deseo. Desgracia.' },
+          { position: 2, name: '六二', text: 'Nutrición invertida; apartarse del camino para buscar nutrición en la colina. Avanzar trae desgracia.' },
+          { position: 3, name: '六三', text: 'Apartarse de la nutrición. Perseverancia trae desgracia. Durante diez años no actúes. Nada es propicio.' },
+          { position: 4, name: '六四', text: 'Nutrición invertida trae buena fortuna. El tigre observa con mirada penetrante, su deseo es insaciable. Sin censura.' },
+          { position: 5, name: '六五', text: 'Apartarse del camino. Permanecer en perseverancia trae buena fortuna. No se debe cruzar la gran agua.' },
+          { position: 6, name: '上九', text: 'La fuente de la nutrición. Peligro, pero propicio. Es propicio cruzar la gran agua.' },
+        ],
       },
       'zh-zhouyi': {
         name: '頤',
@@ -3234,6 +3482,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El exceso de lo grande, preponderancia, extremo',
         judgment: 'La viga maestra se dobla. Propicio emprender algo. Éxito.',
         image: 'El lago sobre el viento: el Exceso de lo Grande. El hombre superior permanece solo sin temor.',
+        lines: [
+          { position: 1, name: '初六', text: 'Colocar esteras de junco blanco debajo. Sin censura.' },
+          { position: 2, name: '九二', text: 'El álamo seco retoña. El hombre viejo obtiene una esposa joven. Nada que no sea propicio.' },
+          { position: 3, name: '九三', text: 'La viga maestra se comba. Desgracia.' },
+          { position: 4, name: '九四', text: 'La viga maestra se eleva. Propicio. Pero si hay otras cosas, humillación.' },
+          { position: 5, name: '九五', text: 'El álamo seco florece. La mujer vieja obtiene un esposo joven. Sin censura, sin elogio.' },
+          { position: 6, name: '上六', text: 'Cruzar el agua sumerge la cabeza. Desgracia, pero sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '大過',
@@ -3335,6 +3591,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Lo abismal, el agua, peligro repetido',
         judgment: 'El Abismo repetido. Con sinceridad, solo el corazón tiene éxito. La acción es estimada.',
         image: 'El agua fluye sin cesar: lo Abismal. El hombre superior actúa con virtud constante.',
+        lines: [
+          { position: 1, name: '初六', text: 'Abismo repetido. Se cae en el pozo dentro del abismo. Desgracia.' },
+          { position: 2, name: '九二', text: 'El abismo tiene peligros. Busca y logra algo pequeño.' },
+          { position: 3, name: '六三', text: 'Al venir y al ir, abismo tras abismo. Peligro y también un lecho de espinas. Se cae en el pozo dentro del abismo. No actúes.' },
+          { position: 4, name: '六四', text: 'Una jarra de vino, un cuenco de arroz adicional, vasijas sencillas. Ofrece el pacto a través de la ventana. Al final, sin censura.' },
+          { position: 5, name: '九五', text: 'El abismo no se desborda; solo se llena hasta el borde. Sin censura.' },
+          { position: 6, name: '上六', text: 'Atado con cuerdas y sogas, encerrado entre espinas. Durante tres años no encuentra la salida. Desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '坎',
@@ -3436,6 +3700,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Lo adherente, el fuego, claridad',
         judgment: 'Propicio mediante la perseverancia. Éxito. Criar una vaca trae buena fortuna.',
         image: 'La claridad surge dos veces: lo Adherente. El gran hombre perpetuando la luz ilumina los cuatro puntos cardinales.',
+        lines: [
+          { position: 1, name: '初九', text: 'Pasos confusos. Sé respetuoso y no habrá censura.' },
+          { position: 2, name: '六二', text: 'Brillo amarillo. Suprema buena fortuna.' },
+          { position: 3, name: '九三', text: 'A la luz del sol poniente: si no golpeas la vasija y cantas, será el lamento de la vejez. Desgracia.' },
+          { position: 4, name: '九四', text: 'Llega de repente: arde, muere, es desechado.' },
+          { position: 5, name: '六五', text: 'Lágrimas que fluyen a raudales, suspiros de tristeza. Propicio.' },
+          { position: 6, name: '上九', text: 'El rey sale en campaña. Hay gloria al cortar cabezas. Captura a los que no son del mismo bando. Sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '離',
@@ -3537,6 +3809,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La influencia, atracción mutua, cortejo',
         judgment: 'Éxito. Propicio mediante la perseverancia. Tomar esposa trae buena fortuna.',
         image: 'Lago sobre la montaña: la Influencia. El hombre superior con humildad recibe a las personas.',
+        lines: [
+          { position: 1, name: '初六', text: 'La influencia se manifiesta en el dedo gordo del pie.' },
+          { position: 2, name: '六二', text: 'La influencia se manifiesta en las pantorrillas. Desgracia. Permanecer trae buena fortuna.' },
+          { position: 3, name: '九三', text: 'La influencia se manifiesta en los muslos. Se aferra a lo que sigue. Avanzar trae humillación.' },
+          { position: 4, name: '九四', text: 'La perseverancia trae buena fortuna; el arrepentimiento se desvanece. Si vas y vienes agitadamente, los amigos seguirán tus pensamientos.' },
+          { position: 5, name: '九五', text: 'La influencia se manifiesta en la espalda. Sin arrepentimiento.' },
+          { position: 6, name: '上六', text: 'La influencia se manifiesta en las mandíbulas, mejillas y lengua.' },
+        ],
       },
       'zh-zhouyi': {
         name: '咸',
@@ -3638,6 +3918,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La duración, constancia, perseverancia',
         judgment: 'Éxito. Sin culpa. Propicio mediante la perseverancia. Propicio emprender algo.',
         image: 'Trueno y viento: la Duración. El hombre superior permanece firme y no cambia de dirección.',
+        lines: [
+          { position: 1, name: '初六', text: 'Buscar la constancia demasiado profundamente. Perseverancia trae desgracia. Nada es propicio.' },
+          { position: 2, name: '九二', text: 'El arrepentimiento se desvanece.' },
+          { position: 3, name: '九三', text: 'Quien no mantiene constante su virtud, quizás atraiga la vergüenza. Perseverancia humillante.' },
+          { position: 4, name: '九四', text: 'No hay presa en el campo.' },
+          { position: 5, name: '六五', text: 'Hacer constante su virtud. La perseverancia es propicia para la mujer, adversa para el hombre.' },
+          { position: 6, name: '上六', text: 'Constancia agitada. Desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '恆',
@@ -3739,6 +4027,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El progreso, avance, ascenso',
         judgment: 'El marqués pacífico recibe caballos en abundancia y es recibido tres veces en un día.',
         image: 'El fuego surge de la tierra: el Progreso. El hombre superior ilumina su virtud luminosa.',
+        lines: [
+          { position: 1, name: '初六', text: 'Avance reprimido. La perseverancia trae buena fortuna. Si no hay confianza, permanece sereno. Sin censura.' },
+          { position: 2, name: '六二', text: 'Avance en la aflicción. La perseverancia trae buena fortuna. Se recibe esta gran bendición de la abuela del rey.' },
+          { position: 3, name: '六三', text: 'Todos confían. El arrepentimiento se desvanece.' },
+          { position: 4, name: '九四', text: 'Avanzar como un hámster. La perseverancia es peligrosa.' },
+          { position: 5, name: '六五', text: 'El arrepentimiento se desvanece. No te preocupes por pérdidas o ganancias. Avanzar es propicio; nada que no sea beneficioso.' },
+          { position: 6, name: '上九', text: 'Avanzar con los cuernos, solo para someter ciudades. Peligro, pero propicio. Sin censura, pero la perseverancia trae humillación.' },
+        ],
       },
       'zh-zhouyi': {
         name: '晉',
@@ -3840,6 +4136,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El oscurecimiento de la luz, luz herida, adversidad',
         judgment: 'Propicio en la dificultad mediante la perseverancia.',
         image: 'La luz entra en la tierra: el Oscurecimiento de la Luz. El hombre superior vela su claridad ante las dificultades.',
+        lines: [
+          { position: 1, name: '初九', text: 'La luz herida en vuelo deja caer sus alas. El hombre superior en su camino no come durante tres días. Tiene adónde ir; el anfitrión murmura.' },
+          { position: 2, name: '六二', text: 'La luz es herida en el muslo izquierdo. Se rescata con la fuerza de un caballo. Propicio.' },
+          { position: 3, name: '九三', text: 'La luz herida en la cacería del sur. Se captura al gran cabecilla. No se puede apresurar la perseverancia.' },
+          { position: 4, name: '六四', text: 'Se entra en el vientre izquierdo. Se alcanza el corazón de la luz herida y se sale por la puerta y el patio.' },
+          { position: 5, name: '六五', text: 'La luz herida como la del príncipe Ji. La perseverancia es propicia.' },
+          { position: 6, name: '上六', text: 'No hay luz, sino oscuridad. Primero asciende al cielo, después se hunde en la tierra.' },
+        ],
       },
       'zh-zhouyi': {
         name: '明夷',
@@ -3941,6 +4245,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La familia, el clan, el hogar',
         judgment: 'Propicio para la perseverancia de la mujer.',
         image: 'El viento surge del fuego: la Familia. El hombre superior tiene sustancia en sus palabras y constancia en su conducta.',
+        lines: [
+          { position: 1, name: '初九', text: 'Firmeza en la familia. El arrepentimiento se desvanece.' },
+          { position: 2, name: '六二', text: 'No debe seguir sus caprichos. Su lugar está en la provisión del alimento. La perseverancia trae buena fortuna.' },
+          { position: 3, name: '九三', text: 'Cuando los miembros de la familia son severos, hay arrepentimiento y peligro, pero buena fortuna. Cuando la mujer y los hijos ríen sin mesura, al final hay humillación.' },
+          { position: 4, name: '六四', text: 'Una familia rica. Gran buena fortuna.' },
+          { position: 5, name: '九五', text: 'El rey llega al hogar. No te preocupes. Propicio.' },
+          { position: 6, name: '上九', text: 'Hay sinceridad e imponencia. Al final, buena fortuna.' },
+        ],
       },
       'zh-zhouyi': {
         name: '家人',
@@ -4042,6 +4354,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La oposicion, divergencia, miradas opuestas',
         judgment: 'En asuntos pequeños, buena fortuna.',
         image: 'Fuego sobre el lago: la Oposicion. El hombre superior siendo igual mantiene su diferencia.',
+        lines: [
+          { position: 1, name: '初九', text: 'El arrepentimiento se desvanece. Si pierdes el caballo, no lo persigas; volverá solo. Al ver personas malvadas, no habrá censura.' },
+          { position: 2, name: '九二', text: 'Encuentras al señor en un callejón estrecho. Sin censura.' },
+          { position: 3, name: '六三', text: 'El carro es arrastrado hacia atrás, el buey se resiste, la persona tiene la frente marcada y la nariz cortada. No hay un buen comienzo, pero habrá un buen final.' },
+          { position: 4, name: '九四', text: 'Aislado en la oposición, encuentras a un hombre afín. Se intercambia sinceridad. Peligro, pero sin censura.' },
+          { position: 5, name: '六五', text: 'El arrepentimiento se desvanece. El pariente muerde a través de la envoltura. ¿Qué censura habría al avanzar?' },
+          { position: 6, name: '上九', text: 'Aislado en la oposición. Ves un cerdo cubierto de barro, un carro lleno de demonios. Primero tensas el arco, después lo bajas. No son bandidos sino pretendientes de boda. Al avanzar, si encuentras lluvia, habrá buena fortuna.' },
+        ],
       },
       'zh-zhouyi': {
         name: '睽',
@@ -4143,6 +4463,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La obstruccion, dificultad, impedimento',
         judgment: 'Propicio el suroeste. No propicio el noreste. Propicio ver al gran hombre. La perseverancia trae buena fortuna.',
         image: 'Agua sobre la montana: la Obstruccion. El hombre superior se vuelve hacia si mismo y cultiva su virtud.',
+        lines: [
+          { position: 1, name: '初六', text: 'Avanzar lleva al obstáculo. Regresar trae elogio.' },
+          { position: 2, name: '六二', text: 'El ministro del rey enfrenta obstáculo tras obstáculo. No por causa propia.' },
+          { position: 3, name: '九三', text: 'Avanzar lleva al obstáculo; por eso regresa.' },
+          { position: 4, name: '六四', text: 'Avanzar lleva al obstáculo. Regresar lleva a la unión.' },
+          { position: 5, name: '九五', text: 'En medio del gran obstáculo, llegan los compañeros.' },
+          { position: 6, name: '上六', text: 'Avanzar lleva al obstáculo. Regresar trae gran buena fortuna. Es propicio ver al gran hombre.' },
+        ],
       },
       'zh-zhouyi': {
         name: '蹇',
@@ -4244,6 +4572,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La liberacion, solucion, alivio',
         judgment: 'Propicio el suroeste. Si no hay donde ir, el retorno trae buena fortuna. Si hay donde ir, actuar pronto trae buena fortuna.',
         image: 'Trueno y lluvia actuan: la Liberacion. El hombre superior perdona las faltas y absuelve los crimenes.',
+        lines: [
+          { position: 1, name: '初六', text: 'Sin censura.' },
+          { position: 2, name: '九二', text: 'En la cacería se capturan tres zorros. Se obtienen flechas amarillas. La perseverancia trae buena fortuna.' },
+          { position: 3, name: '六三', text: 'Cargar bultos y viajar en carruaje atrae a los ladrones. La perseverancia trae humillación.' },
+          { position: 4, name: '九四', text: 'Libérate del dedo gordo del pie. El compañero llega y entonces hay confianza.' },
+          { position: 5, name: '六五', text: 'El hombre superior se libera con determinación. Propicio. Hay sinceridad frente al hombre inferior.' },
+          { position: 6, name: '上六', text: 'El príncipe dispara al halcón sobre la alta muralla. Lo captura. Nada que no sea propicio.' },
+        ],
       },
       'zh-zhouyi': {
         name: '解',
@@ -4345,6 +4681,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La disminucion, reduccion, sacrificio',
         judgment: 'Con sinceridad, sublime buena fortuna. Sin culpa. Se puede perseverar. Propicio emprender algo.',
         image: 'Bajo la montana hay un lago: la Disminucion. El hombre superior frena la ira y reprime los deseos.',
+        lines: [
+          { position: 1, name: '初九', text: 'Terminar los asuntos y apresurarse a ir. Sin censura. Pero considera cuánto puedes disminuir.' },
+          { position: 2, name: '九二', text: 'La perseverancia es propicia. Avanzar trae desgracia. Sin disminuir, aumenta.' },
+          { position: 3, name: '六三', text: 'Cuando tres caminan juntos, pierden a uno. Cuando uno camina solo, encuentra a su compañero.' },
+          { position: 4, name: '六四', text: 'Disminuye tu enfermedad. Haz que la alegría llegue pronto. Sin censura.' },
+          { position: 5, name: '六五', text: 'Alguien lo aumenta. Ni diez pares de tortugas pueden oponerse. Suprema buena fortuna.' },
+          { position: 6, name: '上九', text: 'Sin disminuir, aumenta. Sin censura. Perseverancia propicia. Es propicio emprender algo. Obtiene sirvientes pero no una casa propia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '損',
@@ -4446,6 +4790,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El aumento, beneficio, incremento',
         judgment: 'Propicio emprender algo. Propicio cruzar la gran agua.',
         image: 'Viento y trueno: el Aumento. El hombre superior al ver el bien se mueve hacia el.',
+        lines: [
+          { position: 1, name: '初九', text: 'Es propicio emprender grandes obras. Suprema buena fortuna. Sin censura.' },
+          { position: 2, name: '六二', text: 'Alguien lo aumenta. Ni diez pares de tortugas pueden oponerse. Perseverancia eterna trae buena fortuna. El rey hace ofrendas al Señor del Cielo. Propicio.' },
+          { position: 3, name: '六三', text: 'Aumenta mediante sucesos desafortunados. Sin censura. Hay sinceridad en el camino medio. Informa al príncipe con el cetro de jade.' },
+          { position: 4, name: '六四', text: 'Camino medio. Informa al príncipe y será seguido. Es propicio ser empleado en la mudanza de la capital.' },
+          { position: 5, name: '九五', text: 'Sinceridad y corazón benevolente. No preguntes: suprema buena fortuna. La sinceridad beneficia mi virtud.' },
+          { position: 6, name: '上九', text: 'Nadie lo aumenta; alguien lo golpea. No mantiene firme su corazón. Desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '益',
@@ -4547,6 +4899,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La reunion, congregacion, asamblea',
         judgment: 'Exito. El rey se acerca al templo. Propicio ver al gran hombre. Exito. Propicio mediante la perseverancia. Usar grandes ofrendas trae buena fortuna.',
         image: 'El lago sobre la tierra: la Reunion. El hombre superior prepara las armas para lo imprevisto.',
+        lines: [
+          { position: 1, name: '初六', text: 'Hay sinceridad pero no hasta el final. Confusión y reunión desordenada. Si clamas, una mano te consuela y ríes. No te preocupes; avanzar es sin censura.' },
+          { position: 2, name: '六二', text: 'Dejarse llevar trae buena fortuna. Sin censura. Si hay sinceridad, es propicio hacer una ofrenda modesta.' },
+          { position: 3, name: '六三', text: 'Reunión con suspiros. Nada propicio. Avanzar sin censura, pero pequeña humillación.' },
+          { position: 4, name: '九四', text: 'Gran buena fortuna. Sin censura.' },
+          { position: 5, name: '九五', text: 'Reunión en torno a una posición. Sin censura. Si no hay sinceridad, es necesaria perseverancia suprema y duradera. El arrepentimiento se desvanece.' },
+          { position: 6, name: '上六', text: 'Lamentos y lágrimas. Sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '萃',
@@ -4648,6 +5008,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El ascenso, empuje hacia arriba, promocion',
         judgment: 'Sublime exito. Es propicio ver al gran hombre. No te preocupes. Una expedicion al sur trae buena fortuna.',
         image: 'En la tierra crece la madera: el Ascenso. El hombre superior con docilidad acumula lo pequeno para alcanzar lo alto y grande.',
+        lines: [
+          { position: 1, name: '初六', text: 'Ascenso acogido con confianza. Gran buena fortuna.' },
+          { position: 2, name: '九二', text: 'Si hay sinceridad, es propicio hacer una ofrenda modesta. Sin censura.' },
+          { position: 3, name: '九三', text: 'Se asciende a una ciudad vacía.' },
+          { position: 4, name: '六四', text: 'El rey hace ofrendas en el Monte Qi. Propicio, sin censura.' },
+          { position: 5, name: '六五', text: 'La perseverancia trae buena fortuna. Se asciende por la escalera.' },
+          { position: 6, name: '上六', text: 'Ascenso en la oscuridad. Es propicio la perseverancia incesante.' },
+        ],
       },
       'zh-zhouyi': {
         name: '升',
@@ -4749,6 +5117,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La opresion, agotamiento, dificultad extrema',
         judgment: 'Exito. La perseverancia. El gran hombre tiene buena fortuna. Sin culpa. Si tiene palabras, no seran creidas.',
         image: 'El lago sin agua: la Opresion. El hombre superior arriesga su vida para cumplir su voluntad.',
+        lines: [
+          { position: 1, name: '初六', text: 'Las nalgas oprimidas por un tronco de árbol. Se entra en un valle oscuro. Durante tres años no se ve a nadie.' },
+          { position: 2, name: '九二', text: 'Oprimido ante el vino y la comida. Llega el hombre del cinturón escarlata. Es propicio hacer ofrendas. Avanzar trae desgracia, pero sin censura.' },
+          { position: 3, name: '六三', text: 'Oprimido por las piedras, apoyado en espinas y cardos. Se entra en su palacio y no se encuentra a su esposa. Desgracia.' },
+          { position: 4, name: '九四', text: 'Viene lenta, muy lentamente. Oprimido por un carro de metal. Humillación, pero habrá un final.' },
+          { position: 5, name: '九五', text: 'La nariz y los pies cortados. Oprimido por el hombre del cinturón rojo. Lentamente llega el alivio. Es propicio hacer ofrendas y sacrificios.' },
+          { position: 6, name: '上六', text: 'Oprimido por enredaderas. En precario equilibrio, dice: moverse trae arrepentimiento. Si hay arrepentimiento y se avanza, buena fortuna.' },
+        ],
       },
       'zh-zhouyi': {
         name: '困',
@@ -4850,6 +5226,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El pozo, fuente inagotable, renovacion',
         judgment: 'La ciudad puede cambiar, pero el pozo no cambia. No pierde ni gana. Van y vienen al pozo. Casi llegar y no sacar el agua, o romper el cantaro, trae adversidad.',
         image: 'Agua sobre madera: el Pozo. El hombre superior estimula al pueblo y los exhorta a ayudarse.',
+        lines: [
+          { position: 1, name: '初六', text: 'El barro del pozo no se bebe. El pozo viejo no atrae animales.' },
+          { position: 2, name: '九二', text: 'En la hondonada del pozo se dispara a peces. El cántaro está roto y gotea.' },
+          { position: 3, name: '九三', text: 'El pozo está limpio pero no se bebe. Esto entristece mi corazón. Puede ser usado para sacar agua. Si el rey es sabio, todos reciben su bendición.' },
+          { position: 4, name: '六四', text: 'El pozo se reviste de ladrillos. Sin censura.' },
+          { position: 5, name: '九五', text: 'El pozo es claro. Agua fresca de manantial para beber.' },
+          { position: 6, name: '上六', text: 'El pozo se recoge sin tapar. Hay sinceridad. Suprema buena fortuna.' },
+        ],
       },
       'zh-zhouyi': {
         name: '井',
@@ -4951,6 +5335,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La revolucion, transformacion, muda',
         judgment: 'En el dia propio se es creido. Sublime exito. Propicio mediante la perseverancia. El arrepentimiento desaparece.',
         image: 'Fuego en medio del lago: la Revolucion. El hombre superior ordena el calendario y aclara las estaciones.',
+        lines: [
+          { position: 1, name: '初九', text: 'Envuelto con cuero de buey amarillo.' },
+          { position: 2, name: '六二', text: 'Cuando llega el día propicio, entonces se realiza la revolución. Avanzar es propicio, sin censura.' },
+          { position: 3, name: '九三', text: 'Avanzar trae desgracia. La perseverancia es peligrosa. Cuando la palabra de revolución se pronuncie tres veces, habrá confianza.' },
+          { position: 4, name: '九四', text: 'El arrepentimiento se desvanece. Hay sinceridad para cambiar el mandato. Propicio.' },
+          { position: 5, name: '九五', text: 'El gran hombre se transforma como un tigre. Antes de consultar el oráculo ya hay confianza.' },
+          { position: 6, name: '上六', text: 'El hombre superior se transforma como un leopardo. El hombre inferior cambia de rostro. Avanzar trae desgracia. Permanecer en perseverancia trae buena fortuna.' },
+        ],
       },
       'zh-zhouyi': {
         name: '革',
@@ -5052,6 +5444,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El caldero, transformacion, nutricion sagrada',
         judgment: 'Sublime buena fortuna. Exito.',
         image: 'Fuego sobre madera: el Caldero. El hombre superior rectifica su posicion y consolida su destino.',
+        lines: [
+          { position: 1, name: '初六', text: 'El caldero volcado sobre sus patas. Es propicio sacar lo estancado. Se obtiene una concubina por su hijo. Sin censura.' },
+          { position: 2, name: '九二', text: 'El caldero tiene contenido. Mi compañero está enfermo pero no puede alcanzarme. Propicio.' },
+          { position: 3, name: '九三', text: 'Las asas del caldero se alteran, su movimiento se bloquea. La grasa del faisán no se come. Cuando llega la lluvia, el arrepentimiento disminuye. Al final, buena fortuna.' },
+          { position: 4, name: '九四', text: 'Las patas del caldero se rompen. Se derrama la comida del príncipe. La forma es vergonzosa. Desgracia.' },
+          { position: 5, name: '六五', text: 'El caldero con asas amarillas y anillas de metal. La perseverancia es propicia.' },
+          { position: 6, name: '上九', text: 'El caldero con anillas de jade. Gran buena fortuna. Nada que no sea propicio.' },
+        ],
       },
       'zh-zhouyi': {
         name: '鼎',
@@ -5153,6 +5553,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Lo suscitativo, el trueno, conmocion',
         judgment: 'Exito. El trueno llega causando temor, despues palabras y risas. El trueno aterroriza a cien millas, pero no deja caer el caliz del sacrificio.',
         image: 'Trueno repetido: lo Suscitativo. El hombre superior con temor y temblor cultiva su persona.',
+        lines: [
+          { position: 1, name: '初九', text: 'El trueno llega causando temor. Después, risa y palabras alegres. Propicio.' },
+          { position: 2, name: '六二', text: 'El trueno llega con peligro. Pierde sus tesoros y sube a las nueve colinas. No los persigas; en siete días los recuperarás.' },
+          { position: 3, name: '六三', text: 'El trueno conmociona y aturde. Si el trueno impulsa a actuar, no habrá calamidad.' },
+          { position: 4, name: '九四', text: 'El trueno se hunde en el lodo.' },
+          { position: 5, name: '六五', text: 'El trueno va y viene con peligro. Piensa: no se pierde nada; hay asuntos que atender.' },
+          { position: 6, name: '上六', text: 'El trueno trae temblor y miradas asustadas. Avanzar trae desgracia. Si el trueno no alcanza el propio cuerpo sino al vecino, sin censura. Pero habrá murmuraciones sobre el matrimonio.' },
+        ],
       },
       'zh-zhouyi': {
         name: '震',
@@ -5254,6 +5662,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El aquietamiento, la montana, detenerse',
         judgment: 'Aquietar la espalda de modo que ya no siente el cuerpo. Camina por el patio y no ve a las personas. Sin culpa.',
         image: 'Montanas sucesivas: el Aquietamiento. El hombre superior no permite que sus pensamientos vayan mas alla de su posicion.',
+        lines: [
+          { position: 1, name: '初六', text: 'Mantener quietos los pies. Sin censura. Es propicio la perseverancia constante.' },
+          { position: 2, name: '六二', text: 'Mantener quietas las pantorrillas. No puede rescatar a quien sigue. Su corazón no está contento.' },
+          { position: 3, name: '九三', text: 'Mantener quietas las caderas. Rigidez en la columna. Peligro que abrasa el corazón.' },
+          { position: 4, name: '六四', text: 'Mantener quieto el tronco. Sin censura.' },
+          { position: 5, name: '六五', text: 'Mantener quietas las mandíbulas. Las palabras tienen orden. El arrepentimiento se desvanece.' },
+          { position: 6, name: '上九', text: 'Quietud generosa. Propicio.' },
+        ],
       },
       'zh-zhouyi': {
         name: '艮',
@@ -5355,6 +5771,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El desarrollo gradual, progreso paulatino',
         judgment: 'La doncella es dada en matrimonio. Buena fortuna. Propicio mediante la perseverancia.',
         image: 'Sobre la montana hay viento: el Desarrollo Gradual. El hombre superior mora en virtud digna y mejora las costumbres.',
+        lines: [
+          { position: 1, name: '初六', text: 'El ganso silvestre se acerca a la orilla. El joven está en peligro. Hay murmuraciones, pero sin censura.' },
+          { position: 2, name: '六二', text: 'El ganso silvestre se acerca a la roca. Come y bebe en paz. Propicio.' },
+          { position: 3, name: '九三', text: 'El ganso silvestre se acerca a la meseta. El hombre parte y no regresa. La mujer queda encinta pero no da a luz. Desgracia. Es propicio defenderse de bandidos.' },
+          { position: 4, name: '六四', text: 'El ganso silvestre se acerca al árbol. Quizás encuentre una rama plana. Sin censura.' },
+          { position: 5, name: '九五', text: 'El ganso silvestre se acerca a la cima. La mujer no concibe durante tres años. Al final nadie puede impedirlo. Propicio.' },
+          { position: 6, name: '上九', text: 'El ganso silvestre se acerca a la meseta alta. Sus plumas pueden usarse como ornamento. Propicio.' },
+        ],
       },
       'zh-zhouyi': {
         name: '漸',
@@ -5456,6 +5880,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La doncella desposada, matrimonio, subordinacion',
         judgment: 'Emprender trae adversidad. Nada propicio.',
         image: 'Trueno sobre el lago: la Doncella Desposada. El hombre superior reconoce lo transitorio y comprende el deterioro.',
+        lines: [
+          { position: 1, name: '初九', text: 'La doncella se casa como concubina. El cojo puede pisar. Avanzar es propicio.' },
+          { position: 2, name: '九二', text: 'El tuerto puede ver. Es propicia la perseverancia del hombre solitario.' },
+          { position: 3, name: '六三', text: 'La doncella se casa como sirvienta. Regresa y se casa como concubina.' },
+          { position: 4, name: '九四', text: 'La doncella retrasa el plazo de la boda. Un matrimonio tardío llega a su tiempo.' },
+          { position: 5, name: '六五', text: 'El emperador Yi entrega a su hija en matrimonio. Las vestiduras de la princesa no igualan en esplendor a las de la concubina. La luna casi llena. Propicio.' },
+          { position: 6, name: '上六', text: 'La mujer sostiene la cesta pero está vacía. El hombre sacrifica el carnero pero no hay sangre. Nada es propicio.' },
+        ],
       },
       'zh-zhouyi': {
         name: '歸妹',
@@ -5557,6 +5989,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La abundancia, plenitud, grandeza',
         judgment: 'Exito. El rey la alcanza. No te preocupes. Es apropiado ser como el sol al mediodia.',
         image: 'Trueno y relampago llegan juntos: la Abundancia. El hombre superior decide los litigios y ejecuta los castigos.',
+        lines: [
+          { position: 1, name: '初九', text: 'Encuentra a su señor y compañero. Aunque sea por diez días, sin censura. Avanzar obtiene reconocimiento.' },
+          { position: 2, name: '六二', text: 'La abundancia oscurece: al mediodía se ve la Estrella del Norte. Avanzar trae sospechas y enfermedad. Si hay sinceridad y se manifiesta, propicio.' },
+          { position: 3, name: '九三', text: 'La abundancia desborda: al mediodía se ven las gotas de lluvia. Se fractura el brazo derecho. Sin censura.' },
+          { position: 4, name: '九四', text: 'La abundancia oscurece: al mediodía se ve la Estrella del Norte. Encuentra a su señor igual. Propicio.' },
+          { position: 5, name: '六五', text: 'Llega la brillantez. Hay celebración y elogio. Propicio.' },
+          { position: 6, name: '上六', text: 'Su casa es abundante, su hogar está protegido. Espía por la puerta: todo en silencio, nadie hay. Durante tres años no se ve a nadie. Desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '豐',
@@ -5658,6 +6098,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El viajero, el forastero, transito',
         judgment: 'Propicio mediante la perseverancia. Exito. Para el viajero, la perseverancia trae buena fortuna.',
         image: 'Fuego sobre la montana: el Viajero. El hombre superior con claridad y cautela aplica los castigos.',
+        lines: [
+          { position: 1, name: '初六', text: 'El viajero se ocupa de mezquindades. Así atrae la desgracia sobre sí.' },
+          { position: 2, name: '六二', text: 'El viajero llega a la posada. Lleva consigo sus bienes. Obtiene la lealtad de un joven sirviente.' },
+          { position: 3, name: '九三', text: 'Al viajero se le quema la posada. Pierde a su joven sirviente. La perseverancia es peligrosa.' },
+          { position: 4, name: '九四', text: 'El viajero encuentra refugio. Obtiene sus bienes y un hacha. Mi corazón no está contento.' },
+          { position: 5, name: '六五', text: 'Dispara al faisán; una flecha se pierde. Pero al final obtiene elogio y un cargo.' },
+          { position: 6, name: '上九', text: 'Al pájaro se le quema el nido. El viajero primero ríe, después llora y se lamenta. Se pierde el buey con facilidad. Desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '旅',
@@ -5759,6 +6207,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Lo suave, el viento, penetracion gentil',
         judgment: 'Pequeno exito. Propicio emprender algo. Propicio ver al gran hombre.',
         image: 'Viento sigue al viento: lo Suave. El hombre superior reitera sus mandatos al ejecutar los asuntos.',
+        lines: [
+          { position: 1, name: '初六', text: 'Avanza y retrocede. Es propicia la perseverancia del guerrero.' },
+          { position: 2, name: '九二', text: 'Penetración bajo la cama. Se emplean adivinos e intérpretes en abundancia. Propicio, sin censura.' },
+          { position: 3, name: '九三', text: 'Penetración repetida. Humillación.' },
+          { position: 4, name: '六四', text: 'El arrepentimiento se desvanece. En la cacería se capturan tres tipos de presa.' },
+          { position: 5, name: '九五', text: 'La perseverancia trae buena fortuna, el arrepentimiento se desvanece. Nada que no sea propicio. No hay un buen comienzo pero sí un buen final. Tres días antes del cambio, tres días después del cambio. Propicio.' },
+          { position: 6, name: '上九', text: 'Penetración bajo la cama. Pierde sus bienes y su hacha. La perseverancia trae desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '巽',
@@ -5860,6 +6316,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Lo sereno, el lago, alegria',
         judgment: 'Exito. Propicio mediante la perseverancia.',
         image: 'Lagos conectados: lo Sereno. El hombre superior con amigos discute y practica.',
+        lines: [
+          { position: 1, name: '初九', text: 'Alegría armoniosa. Propicio.' },
+          { position: 2, name: '九二', text: 'Alegría sincera. Propicio, el arrepentimiento se desvanece.' },
+          { position: 3, name: '六三', text: 'Alegría que viene. Desgracia.' },
+          { position: 4, name: '九四', text: 'Alegría deliberada no trae paz. Pero si se aparta la enfermedad, habrá alegría.' },
+          { position: 5, name: '九五', text: 'Sinceridad ante lo que desintegra. Hay peligro.' },
+          { position: 6, name: '上六', text: 'Alegría seductora.' },
+        ],
       },
       'zh-zhouyi': {
         name: '兌',
@@ -5961,6 +6425,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La dispersion, disolucion, disipacion',
         judgment: 'Exito. El rey se acerca a tener un templo. Propicio cruzar la gran agua. Propicio mediante la perseverancia.',
         image: 'El viento recorre el agua: la Dispersion. Los antiguos reyes hacian ofrendas a lo supremo y erigian templos.',
+        lines: [
+          { position: 1, name: '初六', text: 'Se rescata con la fuerza de un caballo. Propicio.' },
+          { position: 2, name: '九二', text: 'La dispersión corre hacia su apoyo. El arrepentimiento se desvanece.' },
+          { position: 3, name: '六三', text: 'Dispersa su propio yo. Sin arrepentimiento.' },
+          { position: 4, name: '六四', text: 'Dispersa su grupo. Suprema buena fortuna. La dispersión lleva a la acumulación. Algo que la gente común no puede concebir.' },
+          { position: 5, name: '九五', text: 'Dispersa el sudor con sus grandes proclamas. Dispersión desde la morada del rey. Sin censura.' },
+          { position: 6, name: '上九', text: 'Dispersa su sangre. Alejarse, mantenerse a distancia. Sin censura.' },
+        ],
       },
       'zh-zhouyi': {
         name: '渙',
@@ -6062,6 +6534,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La limitacion, moderacion, medida',
         judgment: 'Exito. La limitacion amarga no puede persistir.',
         image: 'Sobre el lago hay agua: la Limitacion. El hombre superior establece numeros y medidas.',
+        lines: [
+          { position: 1, name: '初九', text: 'No salir de la puerta del patio interior. Sin censura.' },
+          { position: 2, name: '九二', text: 'No salir de la puerta del patio exterior. Desgracia.' },
+          { position: 3, name: '六三', text: 'Quien no conoce la limitación tendrá razón para lamentarse. Sin censura.' },
+          { position: 4, name: '九四', text: 'Limitación serena. Éxito.' },
+          { position: 5, name: '六五', text: 'Limitación dulce. Propicio. Avanzar obtiene reconocimiento.' },
+          { position: 6, name: '上六', text: 'Limitación amarga. La perseverancia trae desgracia. El arrepentimiento se desvanece.' },
+        ],
       },
       'zh-zhouyi': {
         name: '節',
@@ -6163,6 +6643,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'La verdad interior, sinceridad central, confianza',
         judgment: 'Cerdos y peces. Buena fortuna. Propicio cruzar la gran agua. Propicio mediante la perseverancia.',
         image: 'Viento sobre el lago: la Verdad Interior. El hombre superior delibera sobre los procesos y pospone las ejecuciones.',
+        lines: [
+          { position: 1, name: '初九', text: 'Estar preparado trae buena fortuna. Hay intranquilidad si se depende de otros.' },
+          { position: 2, name: '九二', text: 'La grulla llama desde la sombra; su cría le responde. Tengo una buena copa; la comparto contigo.' },
+          { position: 3, name: '六三', text: 'Encuentra un adversario. Unas veces toca el tambor, otras veces se detiene; unas veces llora, otras veces canta.' },
+          { position: 4, name: '六四', text: 'La luna casi llena. El caballo del compañero se pierde. Sin censura.' },
+          { position: 5, name: '九五', text: 'Sinceridad que une firmemente. Sin censura.' },
+          { position: 6, name: '上九', text: 'El canto del gallo sube hasta el cielo. La perseverancia trae desgracia.' },
+        ],
       },
       'zh-zhouyi': {
         name: '中孚',
@@ -6264,6 +6752,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'El exceso de lo pequeno, preponderancia de lo pequeno',
         judgment: 'Exito. Propicio mediante la perseverancia. Se pueden hacer cosas pequenas, no se deben hacer cosas grandes. El pajaro volando deja su canto: no conviene ascender, conviene descender. Gran buena fortuna.',
         image: 'Trueno sobre la montana: el Exceso de lo Pequeno. El hombre superior en su conducta excede en respeto.',
+        lines: [
+          { position: 1, name: '初六', text: 'El pájaro en vuelo trae desgracia.' },
+          { position: 2, name: '六二', text: 'Pasa de largo al abuelo y encuentra a la abuela. No alcanza al soberano pero encuentra al ministro. Sin censura.' },
+          { position: 3, name: '九三', text: 'Si no tomas precauciones extraordinarias, alguien puede atacarte por la espalda. Desgracia.' },
+          { position: 4, name: '九四', text: 'Sin censura. Sin pasar de largo, lo encuentras. Avanzar es peligroso; hay que estar alerta. No actúes con perseverancia permanente.' },
+          { position: 5, name: '六五', text: 'Nubes densas sin lluvia, desde mi suburbio occidental. El príncipe lanza la flecha y alcanza al que está en la cueva.' },
+          { position: 6, name: '上六', text: 'Sin encontrar, pasando de largo. El pájaro en vuelo se aleja. Desgracia. Esto significa desastre y calamidad.' },
+        ],
       },
       'zh-zhouyi': {
         name: '小過',
@@ -6365,6 +6861,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Despues de la consumacion, ya cruzado, completado',
         judgment: 'Exito en lo pequeno. Propicio mediante la perseverancia. Al principio buena fortuna, al final desorden.',
         image: 'Agua sobre fuego: Despues de la Consumacion. El hombre superior reflexiona sobre las calamidades y se previene contra ellas.',
+        lines: [
+          { position: 1, name: '初九', text: 'Frena sus ruedas. Moja su cola. Sin censura.' },
+          { position: 2, name: '六二', text: 'La mujer pierde la cortina de su carruaje. No la persigas; en siete días la recuperarás.' },
+          { position: 3, name: '九三', text: 'El emperador Gao Zong combatió el País de los Demonios. En tres años lo conquistó. No emplees al hombre inferior.' },
+          { position: 4, name: '六四', text: 'Hay ropas remendadas con harapos. Mantente alerta todo el día.' },
+          { position: 5, name: '九五', text: 'El vecino del este sacrifica un buey, pero no iguala la modesta ofrenda del vecino del oeste, que verdaderamente recibe la bendición.' },
+          { position: 6, name: '上六', text: 'Moja su cabeza. Peligro.' },
+        ],
       },
       'zh-zhouyi': {
         name: '既濟',
@@ -6466,6 +6970,14 @@ export const hexagrams: Record<number, Hexagram> = {
         meaning: 'Antes de la consumacion, aun no cruzado, incompleto',
         judgment: 'Exito. El pequeno zorro casi cruza, se moja la cola. Nada propicio.',
         image: 'Fuego sobre agua: Antes de la Consumacion. El hombre superior con cautela distingue las cosas y las ubica en su lugar.',
+        lines: [
+          { position: 1, name: '初六', text: 'Moja su cola. Humillación.' },
+          { position: 2, name: '九二', text: 'Frena sus ruedas. La perseverancia trae buena fortuna.' },
+          { position: 3, name: '六三', text: 'Antes de la consumación. Avanzar trae desgracia. Es propicio cruzar la gran agua.' },
+          { position: 4, name: '九四', text: 'La perseverancia trae buena fortuna, el arrepentimiento se desvanece. La conmoción sirve para atacar el País de los Demonios. En tres años se recibe recompensa de un gran reino.' },
+          { position: 5, name: '六五', text: 'La perseverancia trae buena fortuna. Sin arrepentimiento. La luz del hombre superior tiene sinceridad. Propicio.' },
+          { position: 6, name: '上九', text: 'Sinceridad al beber vino. Sin censura. Pero si se moja la cabeza, la sinceridad se pierde.' },
+        ],
       },
       'zh-zhouyi': {
         name: '未濟',

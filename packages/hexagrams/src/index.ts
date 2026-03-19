@@ -1,5 +1,6 @@
 import { Knowlet } from '@iching-kt/core';
 import { HexagramView } from './HexagramView';
+import { HexagramCardView } from './HexagramCardView';
 import { TrigramView } from './TrigramView';
 
 /**
@@ -31,8 +32,14 @@ export const hexagramsKnowlet: Knowlet = {
     produces: ['trigram'],
     category: 'board',
   },
+  cardDescription: {
+    en: 'Hexagram details',
+    es: 'Detalles del hexagrama',
+    zh: '卦象詳情',
+  },
   // No settingsSchema - source selection is in General Settings > Translation Sources
   View: HexagramView,
+  CardView: HexagramCardView,
 };
 
 export const trigramsKnowlet: Knowlet = {
@@ -59,4 +66,4 @@ export const trigramsKnowlet: Knowlet = {
   View: TrigramView,
 };
 
-export { HexagramView, TrigramView };
+export { HexagramView, HexagramCardView, TrigramView };

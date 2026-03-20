@@ -30,12 +30,12 @@ export const hexagramsKnowlet: Knowlet = {
     supportedLanguages: ['en', 'es', 'zh'],
     consumes: ['hexagram'],
     produces: ['trigram'],
+    cardDescription: {
+      en: 'Hexagram details',
+      es: 'Detalles del hexagrama',
+      zh: '卦象詳情',
+    },
     category: 'board',
-  },
-  cardDescription: {
-    en: 'Hexagram details',
-    es: 'Detalles del hexagrama',
-    zh: '卦象詳情',
   },
   // No settingsSchema - source selection is in General Settings > Translation Sources
   View: HexagramView,

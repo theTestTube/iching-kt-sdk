@@ -94,7 +94,13 @@ export function HexagramLineValues({
                   <Text
                     style={[
                       styles.markerText,
-                      { color: themeColors.accent, fontSize: markerSize },
+                      {
+                        color: themeColors.accent,
+                        fontSize: markerSize,
+                        textShadowColor: colorScheme === 'dark' ? '#000' : '#fff',
+                        textShadowRadius: 3,
+                        textShadowOffset: { width: 0, height: 0 },
+                      },
                     ]}
                   >
                     {markerChar}
@@ -142,6 +148,7 @@ const styles = StyleSheet.create({
   },
   markerText: {
     fontWeight: '700',
-    lineHeight: 14,
+    textAlign: 'center',
+    includeFontPadding: false,
   },
 });

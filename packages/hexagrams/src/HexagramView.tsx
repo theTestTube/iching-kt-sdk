@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { KnowletContext, ActionableElement, getThemeColors, getTranslationSourceForLanguage, isOriginLanguage } from '@iching-kt/core';
-import { getHexagram, getHexagramTranslationBySource, TranslationSource } from '@iching-kt/data-hexagrams';
+import { getHexagram, getHexagramTranslationBySource, TranslationSource, HexagramLineText } from '@iching-kt/data-hexagrams';
 
 interface Props {
   context: KnowletContext;
@@ -11,11 +11,46 @@ const TRIGRAM_SYMBOLS: Record<string, string> = {
   wind: '☴', water: '☵', mountain: '☶', earth: '☷',
 };
 
+interface HexagramInputData {
+  hexagramNumber: number;
+  changingLines?: number[];
+  isRelating?: boolean;
+}
+
+function parseHexagramInput(inputData?: { type: string; value: unknown }): HexagramInputData {
+  if (inputData?.type !== 'hexagram') {
+    return { hexagramNumber: 1 };
+  }
+  const value = inputData.value;
+  if (typeof value === 'number') {
+    return { hexagramNumber: value };
+  }
+  if (typeof value === 'object' && value !== null && 'hexagramNumber' in value) {
+    const obj = value as { hexagramNumber: number; changingLines?: number[]; isRelating?: boolean };
+    return {
+      hexagramNumber: obj.hexagramNumber,
+      changingLines: obj.changingLines,
+      isRelating: obj.isRelating,
+    };
+  }
+  return { hexagramNumber: 1 };
+}
+
+function getLinesToShow(lines: HexagramLineText[], changingLines?: number[]): HexagramLineText[] {
+  if (!changingLines || changingLines.length === 0) {
+    return lines;
+  }
+  return lines.filter((line) => changingLines.includes(line.position));
+}
+
+function getLinesTitle(language: string): string {
+  if (language === 'zh') return '爻辭';
+  if (language === 'es') return 'Las Líneas';
+  return 'The Lines';
+}
+
 export function HexagramView({ context }: Props) {
-  // Get hexagram number from inputData (passed from another knowlet)
-  const hexagramNumber = context.inputData?.type === 'hexagram'
-    ? (context.inputData.value as number)
-    : 1; // Default to hexagram 1
+  const parsed = parseHexagramInput(context.inputData);
 
   // Get translation source from user preferences (with defaults)
   const translationSource = getTranslationSourceForLanguage(
@@ -25,9 +60,9 @@ export function HexagramView({ context }: Props) {
 
   const colors = getThemeColors(context.colorScheme);
   const hideOriginRef = isOriginLanguage(context.language);
-  const hexagram = getHexagram(hexagramNumber);
+  const hexagram = getHexagram(parsed.hexagramNumber);
   const translation = getHexagramTranslationBySource(
-    hexagramNumber,
+    parsed.hexagramNumber,
     context.language,
     translationSource
   );
@@ -49,6 +84,10 @@ export function HexagramView({ context }: Props) {
   const handleTrigramLongPress = (trigramId: string) => {
     context.showKnowletSelector('trigram', trigramId);
   };
+
+  const linesToShow = translation.lines && !parsed.isRelating
+    ? getLinesToShow(translation.lines, parsed.changingLines)
+    : null;
 
   return (
     <ScrollView contentContainerStyle={[styles.scrollContent, { backgroundColor: colors.background }]}>
@@ -118,6 +157,24 @@ export function HexagramView({ context }: Props) {
         </Text>
         <Text style={[styles.sectionText, { color: colors.text }]}>{translation.image}</Text>
       </View>
+
+      {linesToShow && linesToShow.length > 0 && (
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.textTertiary }]}>
+            {getLinesTitle(context.language)}
+          </Text>
+          {linesToShow.map((line) => (
+            <View key={line.position} style={styles.lineEntry}>
+              <Text style={[styles.lineName, { color: colors.textSecondary }]}>
+                {line.name}
+              </Text>
+              <Text style={[styles.lineText, { color: colors.text }]}>
+                {line.text}
+              </Text>
+            </View>
+          ))}
+        </View>
+      )}
 
       <View style={[styles.binarySection, { borderTopColor: colors.border }]}>
         <Text style={[styles.binaryLabel, { color: colors.textTertiary }]}>Binary</Text>
@@ -216,6 +273,19 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   sectionText: {
+    fontSize: 16,
+    lineHeight: 24,
+  },
+  lineEntry: {
+    marginBottom: 16,
+  },
+  lineName: {
+    fontSize: 14,
+    fontWeight: '600',
+    fontStyle: 'italic',
+    marginBottom: 4,
+  },
+  lineText: {
     fontSize: 16,
     lineHeight: 24,
   },

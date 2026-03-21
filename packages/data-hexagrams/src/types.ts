@@ -8,11 +8,22 @@
 
 export type TranslationSource = 'wilhelm' | 'legge' | 'zhouyi';
 
+export interface HexagramLineText {
+  /** Line position (1-6, bottom to top) */
+  position: number;
+  /** Traditional line name, e.g. "Nine at the beginning" or "初九" */
+  name: string;
+  /** The interpretive text for this line */
+  text: string;
+}
+
 export interface HexagramTranslation {
   name: string;
   meaning: string;
   judgment: string;
   image: string;
+  /** Line texts (6 entries, one per line). Optional to allow incremental population. */
+  lines?: HexagramLineText[];
 }
 
 export type TrigramId = 'heaven' | 'earth' | 'thunder' | 'water' | 'mountain' | 'wind' | 'fire' | 'lake';

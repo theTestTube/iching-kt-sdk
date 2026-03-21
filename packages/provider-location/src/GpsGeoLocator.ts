@@ -89,7 +89,7 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
     return {
       permissionState,
       isAvailable: true, // GPS is available on all mobile devices
-      currentPrecision: hasValidPosition ? currentPosition.precision : 'low',
+      currentPrecision: hasValidPosition && currentPosition ? currentPosition.precision : 'low',
     };
   }
 

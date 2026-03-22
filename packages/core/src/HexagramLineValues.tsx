@@ -42,7 +42,7 @@ export function HexagramLineValues({
   const lineHeight = Math.max(2, Math.floor(size / 8));
   const lineGap = Math.max(2, Math.floor(size / 10));
   const yinGapWidth = Math.max(3, Math.floor(size / 5));
-  const markerFontSize = Math.max(8, lineHeight + 4);
+  const markerFontSize = Math.max(10, lineHeight + 6);
 
   // Render from top to bottom (index 5 first, index 0 last)
   const displayOrder = [5, 4, 3, 2, 1, 0];
@@ -98,8 +98,8 @@ export function HexagramLineValues({
                     fontSize: markerFontSize,
                     lineHeight: markerFontSize,
                     textShadowColor: '#000',
-                    textShadowRadius: 4,
-                    textShadowOffset: { width: 1, height: 1 },
+                    textShadowRadius: 6,
+                    textShadowOffset: { width: 0, height: 0 },
                   },
                 ]}
               >

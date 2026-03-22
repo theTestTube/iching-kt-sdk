@@ -7,9 +7,10 @@
  */
 
 import React from 'react';
+// @ts-expect-error — @testing-library/react v16 re-exports these from @testing-library/dom at runtime
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { HeTuView } from '../views/HeTuView';
-import { KnowletContext } from '@iching-kt/core';
+import { KnowletContext, DEFAULT_TRANSLATION_PREFERENCES } from '@iching-kt/core';
 import { EarthlyBranch } from '@iching-kt/provider-time';
 
 // Mock context factory
@@ -23,6 +24,7 @@ const createMockContext = (overrides: Partial<KnowletContext> = {}): KnowletCont
   settings: {},
   language: 'en',
   colorScheme: 'light',
+  translationPreferences: DEFAULT_TRANSLATION_PREFERENCES,
   jumpTo: jest.fn(),
   pushView: jest.fn(),
   popView: jest.fn(),

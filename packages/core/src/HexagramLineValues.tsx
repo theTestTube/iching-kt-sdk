@@ -66,50 +66,53 @@ export function HexagramLineValues({
 
         const markerChar = value === 9 ? '×' : value === 6 ? '○' : null;
 
-        const rowHeight = markerChar
-          ? Math.max(lineHeight + lineGap, markerSize + 4)
-          : lineHeight + lineGap;
+        // Line segments shared between normal and changing render paths
+        const lineSegments = isYang || isNull ? (
+          <View style={[styles.solidLine, { backgroundColor: lineColor, height: lineHeight }]} />
+        ) : (
+          <>
+            <View style={[styles.yinSegment, { backgroundColor: lineColor, height: lineHeight }]} />
+            <View style={{ width: yinGapWidth }} />
+            <View style={[styles.yinSegment, { backgroundColor: lineColor, height: lineHeight }]} />
+          </>
+        );
 
         return (
           <View
             key={lineIdx}
             style={[
               styles.lineRow,
-              { height: rowHeight, paddingBottom: lineGap },
+              { marginBottom: lineGap },
               isActive && { backgroundColor: themeColors.surface },
             ]}
           >
-            <View style={[styles.lineArea, { height: lineHeight }]}>
-              {isYang || isNull ? (
-                <View style={[styles.solidLine, { backgroundColor: lineColor }]} />
-              ) : (
-                <>
-                  <View style={[styles.yinSegment, { backgroundColor: lineColor }]} />
-                  <View style={{ width: yinGapWidth }} />
-                  <View style={[styles.yinSegment, { backgroundColor: lineColor }]} />
-                </>
-              )}
-
-              {/* Marker inside lineArea so it centers on the line; overflow visible prevents clipping */}
-              {markerChar && (
-                <View style={styles.markerOverlay} pointerEvents="none">
-                  <Text
-                    style={[
-                      styles.markerText,
-                      {
-                        color: '#fff',
-                        fontSize: markerSize,
-                        textShadowColor: '#000',
-                        textShadowRadius: 2,
-                        textShadowOffset: { width: 0, height: 0 },
-                      },
-                    ]}
-                  >
-                    {markerChar}
-                  </Text>
+            {isChanging ? (
+              // Changing line: container tall enough for marker, line as background
+              <View style={[styles.changingLine, { height: markerSize }]}>
+                <View style={[StyleSheet.absoluteFill, styles.lineArea]}>
+                  {lineSegments}
                 </View>
-              )}
-            </View>
+                <Text
+                  style={[
+                    styles.markerText,
+                    {
+                      color: '#fff',
+                      fontSize: markerSize,
+                      textShadowColor: '#000',
+                      textShadowRadius: 2,
+                      textShadowOffset: { width: 0, height: 0 },
+                    },
+                  ]}
+                >
+                  {markerChar}
+                </Text>
+              </View>
+            ) : (
+              // Normal line: thin bar
+              <View style={styles.lineArea}>
+                {lineSegments}
+              </View>
+            )}
           </View>
         );
       })}
@@ -124,31 +127,21 @@ const styles = StyleSheet.create({
   lineRow: {
     width: '100%',
     justifyContent: 'center',
-    position: 'relative',
   },
   lineArea: {
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    position: 'relative',
-    overflow: 'visible',
+  },
+  changingLine: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   solidLine: {
     flex: 1,
-    height: '100%',
   },
   yinSegment: {
     flex: 1,
-    height: '100%',
-  },
-  markerOverlay: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   markerText: {
     fontWeight: '700',

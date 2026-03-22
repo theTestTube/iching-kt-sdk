@@ -100,7 +100,7 @@ export function HexagramLineValues({
                     left: 0,
                     right: 0,
                     bottom: value === 6 ? 2 : 0,
-                    color: '#fff',
+                    color: colorScheme === 'dark' ? '#fff' : '#000',
                     fontSize: markerFontSize,
                     textAlign: 'center',
                     textAlignVertical: 'center',

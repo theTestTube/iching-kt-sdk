@@ -42,7 +42,8 @@ export function HexagramLineValues({
   const lineHeight = Math.max(2, Math.floor(size / 8));
   const lineGap = Math.max(2, Math.floor(size / 10));
   const yinGapWidth = Math.max(3, Math.floor(size / 5));
-  const markerSize = Math.max(8, Math.floor(size / 3));
+  const slotHeight = lineHeight + lineGap;
+  const markerFontSize = Math.floor(slotHeight * 1);
 
   // Render from top to bottom (index 5 first, index 0 last)
   const displayOrder = [5, 4, 3, 2, 1, 0];
@@ -82,37 +83,54 @@ export function HexagramLineValues({
             key={lineIdx}
             style={[
               styles.lineRow,
-              { marginBottom: lineGap },
+              { height: slotHeight },
               isActive && { backgroundColor: themeColors.surface },
             ]}
           >
-            {isChanging ? (
-              // Changing line: container tall enough for marker, line as background
-              <View style={[styles.changingLine, { height: markerSize }]}>
-                <View style={[StyleSheet.absoluteFill, styles.lineArea]}>
-                  {lineSegments}
-                </View>
-                <Text
-                  style={[
-                    styles.markerText,
-                    {
-                      color: '#fff',
-                      fontSize: markerSize,
-                      textShadowColor: '#000',
-                      textShadowRadius: 2,
-                      textShadowOffset: { width: 0, height: 0 },
-                    },
-                  ]}
-                >
-                  {markerChar}
-                </Text>
-              </View>
-            ) : (
-              // Normal line: thin bar
-              <View style={styles.lineArea}>
-                {lineSegments}
-              </View>
-            )}
+            <View style={[StyleSheet.absoluteFill, styles.lineArea]}>
+              {lineSegments}
+            </View>
+            {isChanging && (() => {
+              const markerTopOffset = value === 6 ? -7 : -3;
+              const fillColor = colorScheme === 'dark' ? '#fff' : '#000';
+              const outlineColor = colorScheme === 'dark' ? '#000' : '#fff';
+              const sw = 1.5;
+              const offsets: [number, number][] = [
+                [-sw, -sw], [0, -sw], [sw, -sw],
+                [-sw, 0],             [sw, 0],
+                [-sw, sw],  [0, sw],  [sw, sw],
+              ];
+              const base = {
+                position: 'absolute' as const,
+                top: markerTopOffset,
+                left: 0,
+                right: 0,
+                bottom: -markerTopOffset,
+                fontSize: markerFontSize,
+                textAlign: 'center' as const,
+                textAlignVertical: 'center' as const,
+                fontWeight: '700' as const,
+                includeFontPadding: false,
+              };
+              return (
+                <>
+                  {offsets.map(([dx, dy], i) => (
+                    <Text
+                      key={`o${i}`}
+                      style={[base, {
+                        color: outlineColor,
+                        transform: [{ translateX: dx }, { translateY: dy }],
+                      }]}
+                    >
+                      {markerChar}
+                    </Text>
+                  ))}
+                  <Text style={[base, { color: fillColor }]}>
+                    {markerChar}
+                  </Text>
+                </>
+              );
+            })()}
           </View>
         );
       })}
@@ -126,6 +144,7 @@ const styles = StyleSheet.create({
   },
   lineRow: {
     width: '100%',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   lineArea: {
@@ -133,19 +152,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   },
-  changingLine: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   solidLine: {
     flex: 1,
   },
   yinSegment: {
     flex: 1,
-  },
-  markerText: {
-    fontWeight: '700',
-    textAlign: 'center',
-    includeFontPadding: false,
   },
 });

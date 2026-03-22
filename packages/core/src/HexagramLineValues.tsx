@@ -90,29 +90,47 @@ export function HexagramLineValues({
             <View style={[StyleSheet.absoluteFill, styles.lineArea]}>
               {lineSegments}
             </View>
-            {isChanging && (
-              <Text
-                style={[
-                  styles.markerText,
-                  {
-                    position: 'absolute',
-                    top: value === 6 ? -2 : 0,
-                    left: 0,
-                    right: 0,
-                    bottom: value === 6 ? 2 : 0,
-                    color: colorScheme === 'dark' ? '#fff' : '#000',
-                    fontSize: markerFontSize,
-                    textAlign: 'center',
-                    textAlignVertical: 'center',
-                    textShadowColor: colorScheme === 'dark' ? '#000' : '#fff',
-                    textShadowRadius: 8,
-                    textShadowOffset: { width: 0, height: 0 },
-                  },
-                ]}
-              >
-                {markerChar}
-              </Text>
-            )}
+            {isChanging && (() => {
+              const markerTopOffset = value === 6 ? -2 : 0;
+              const fillColor = colorScheme === 'dark' ? '#fff' : '#000';
+              const outlineColor = colorScheme === 'dark' ? '#000' : '#fff';
+              const sw = 1.5;
+              const offsets: [number, number][] = [
+                [-sw, -sw], [0, -sw], [sw, -sw],
+                [-sw, 0],             [sw, 0],
+                [-sw, sw],  [0, sw],  [sw, sw],
+              ];
+              const base = {
+                position: 'absolute' as const,
+                top: markerTopOffset,
+                left: 0,
+                right: 0,
+                bottom: -markerTopOffset,
+                fontSize: markerFontSize,
+                textAlign: 'center' as const,
+                textAlignVertical: 'center' as const,
+                fontWeight: '700' as const,
+                includeFontPadding: false,
+              };
+              return (
+                <>
+                  {offsets.map(([dx, dy], i) => (
+                    <Text
+                      key={`o${i}`}
+                      style={[base, {
+                        color: outlineColor,
+                        transform: [{ translateX: dx }, { translateY: dy }],
+                      }]}
+                    >
+                      {markerChar}
+                    </Text>
+                  ))}
+                  <Text style={[base, { color: fillColor }]}>
+                    {markerChar}
+                  </Text>
+                </>
+              );
+            })()}
           </View>
         );
       })}
@@ -139,9 +157,5 @@ const styles = StyleSheet.create({
   },
   yinSegment: {
     flex: 1,
-  },
-  markerText: {
-    fontWeight: '700',
-    includeFontPadding: false,
   },
 });

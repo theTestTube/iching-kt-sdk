@@ -104,8 +104,8 @@ export function HexagramLineValues({
                     fontSize: markerFontSize,
                     textAlign: 'center',
                     textAlignVertical: 'center',
-                    textShadowColor: '#000',
-                    textShadowRadius: 6,
+                    textShadowColor: colorScheme === 'dark' ? '#000' : '#fff',
+                    textShadowRadius: colorScheme === 'dark' ? 6 : 4,
                     textShadowOffset: { width: 0, height: 0 },
                   },
                 ]}

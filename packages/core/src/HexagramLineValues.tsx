@@ -66,48 +66,50 @@ export function HexagramLineValues({
 
         const markerChar = value === 9 ? '×' : value === 6 ? '○' : null;
 
+        const rowHeight = markerChar
+          ? Math.max(lineHeight + lineGap, markerSize + 4)
+          : lineHeight + lineGap;
+
         return (
           <View
             key={lineIdx}
             style={[
               styles.lineRow,
-              { height: lineHeight + lineGap, paddingBottom: lineGap },
+              { height: rowHeight, paddingBottom: lineGap },
               isActive && { backgroundColor: themeColors.surface },
             ]}
           >
             <View style={[styles.lineArea, { height: lineHeight }]}>
               {isYang || isNull ? (
-                // Yang or placeholder: solid bar (placeholder is low-opacity)
                 <View style={[styles.solidLine, { backgroundColor: lineColor }]} />
               ) : (
-                // Yin: broken with gap
                 <>
                   <View style={[styles.yinSegment, { backgroundColor: lineColor }]} />
                   <View style={{ width: yinGapWidth }} />
                   <View style={[styles.yinSegment, { backgroundColor: lineColor }]} />
                 </>
               )}
-
-              {/* Changing line marker overlay */}
-              {markerChar && (
-                <View style={styles.markerOverlay} pointerEvents="none">
-                  <Text
-                    style={[
-                      styles.markerText,
-                      {
-                        color: themeColors.accent,
-                        fontSize: markerSize,
-                        textShadowColor: colorScheme === 'dark' ? '#000' : '#fff',
-                        textShadowRadius: 3,
-                        textShadowOffset: { width: 0, height: 0 },
-                      },
-                    ]}
-                  >
-                    {markerChar}
-                  </Text>
-                </View>
-              )}
             </View>
+
+            {/* Changing line marker — rendered in lineRow for enough vertical space */}
+            {markerChar && (
+              <View style={styles.markerOverlay} pointerEvents="none">
+                <Text
+                  style={[
+                    styles.markerText,
+                    {
+                      color: '#fff',
+                      fontSize: markerSize,
+                      textShadowColor: '#000',
+                      textShadowRadius: 2,
+                      textShadowOffset: { width: 0, height: 0 },
+                    },
+                  ]}
+                >
+                  {markerChar}
+                </Text>
+              </View>
+            )}
           </View>
         );
       })}
@@ -121,7 +123,8 @@ const styles = StyleSheet.create({
   },
   lineRow: {
     width: '100%',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
+    position: 'relative',
   },
   lineArea: {
     flexDirection: 'row',

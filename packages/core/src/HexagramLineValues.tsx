@@ -89,27 +89,27 @@ export function HexagramLineValues({
                   <View style={[styles.yinSegment, { backgroundColor: lineColor }]} />
                 </>
               )}
-            </View>
 
-            {/* Changing line marker — rendered in lineRow for enough vertical space */}
-            {markerChar && (
-              <View style={styles.markerOverlay} pointerEvents="none">
-                <Text
-                  style={[
-                    styles.markerText,
-                    {
-                      color: '#fff',
-                      fontSize: markerSize,
-                      textShadowColor: '#000',
-                      textShadowRadius: 2,
-                      textShadowOffset: { width: 0, height: 0 },
-                    },
-                  ]}
-                >
-                  {markerChar}
-                </Text>
-              </View>
-            )}
+              {/* Marker inside lineArea so it centers on the line; overflow visible prevents clipping */}
+              {markerChar && (
+                <View style={styles.markerOverlay} pointerEvents="none">
+                  <Text
+                    style={[
+                      styles.markerText,
+                      {
+                        color: '#fff',
+                        fontSize: markerSize,
+                        textShadowColor: '#000',
+                        textShadowRadius: 2,
+                        textShadowOffset: { width: 0, height: 0 },
+                      },
+                    ]}
+                  >
+                    {markerChar}
+                  </Text>
+                </View>
+              )}
+            </View>
           </View>
         );
       })}
@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     position: 'relative',
+    overflow: 'visible',
   },
   solidLine: {
     flex: 1,

@@ -43,7 +43,7 @@ export function HexagramLineValues({
   const lineGap = Math.max(2, Math.floor(size / 10));
   const yinGapWidth = Math.max(3, Math.floor(size / 5));
   const slotHeight = lineHeight + lineGap;
-  const markerFontSize = Math.floor(slotHeight * 0.8);
+  const markerFontSize = Math.floor(slotHeight * 1);
 
   // Render from top to bottom (index 5 first, index 0 last)
   const displayOrder = [5, 4, 3, 2, 1, 0];
@@ -91,7 +91,7 @@ export function HexagramLineValues({
               {lineSegments}
             </View>
             {isChanging && (() => {
-              const markerTopOffset = value === 6 ? -2 : 0;
+              const markerTopOffset = value === 6 ? -7 : -3;
               const fillColor = colorScheme === 'dark' ? '#fff' : '#000';
               const outlineColor = colorScheme === 'dark' ? '#000' : '#fff';
               const sw = 1.5;

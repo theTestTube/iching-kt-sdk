@@ -82,36 +82,28 @@ export function HexagramLineValues({
             key={lineIdx}
             style={[
               styles.lineRow,
-              { marginBottom: lineGap },
+              { height: markerSize, marginBottom: lineGap },
               isActive && { backgroundColor: themeColors.surface },
             ]}
           >
-            {isChanging ? (
-              // Changing line: container tall enough for marker, line as background
-              <View style={[styles.changingLine, { height: markerSize }]}>
-                <View style={[StyleSheet.absoluteFill, styles.lineArea]}>
-                  {lineSegments}
-                </View>
-                <Text
-                  style={[
-                    styles.markerText,
-                    {
-                      color: '#fff',
-                      fontSize: markerSize,
-                      textShadowColor: '#000',
-                      textShadowRadius: 2,
-                      textShadowOffset: { width: 0, height: 0 },
-                    },
-                  ]}
-                >
-                  {markerChar}
-                </Text>
-              </View>
-            ) : (
-              // Normal line: thin bar
-              <View style={styles.lineArea}>
-                {lineSegments}
-              </View>
+            <View style={[StyleSheet.absoluteFill, styles.lineArea]}>
+              {lineSegments}
+            </View>
+            {isChanging && (
+              <Text
+                style={[
+                  styles.markerText,
+                  {
+                    color: '#fff',
+                    fontSize: markerSize,
+                    textShadowColor: '#000',
+                    textShadowRadius: 2,
+                    textShadowOffset: { width: 0, height: 0 },
+                  },
+                ]}
+              >
+                {markerChar}
+              </Text>
             )}
           </View>
         );
@@ -126,16 +118,13 @@ const styles = StyleSheet.create({
   },
   lineRow: {
     width: '100%',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   lineArea: {
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-  },
-  changingLine: {
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   solidLine: {
     flex: 1,

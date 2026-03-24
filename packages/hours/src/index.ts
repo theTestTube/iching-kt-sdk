@@ -1,5 +1,6 @@
 import { Knowlet, KnowletContext } from '@iching-kt/core';
 import { HoursView } from './HoursView';
+import { HoursCardView } from './HoursCardView';
 import { HexagramDetailView } from './HexagramDetailView';
 import { HexagramCard } from './HexagramCard';
 
@@ -36,9 +37,15 @@ export const hoursKnowlet: Knowlet = {
     supportedLanguages: ['en', 'es', 'zh'],
     consumes: ['time'],
     produces: ['hexagram', 'trigram', 'element', 'yinyang'],
+    cardDescription: {
+      en: 'Current hour hexagram',
+      es: 'Hexagrama de la hora actual',
+      zh: '當前時辰卦象',
+    },
     category: 'board',
   },
   View: HoursKnowletView,
+  CardView: HoursCardView,
 };
 
-export { HoursView, HexagramDetailView, HexagramCard };
+export { HoursView, HoursCardView, HexagramDetailView, HexagramCard };

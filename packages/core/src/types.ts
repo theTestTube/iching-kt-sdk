@@ -39,6 +39,8 @@ export interface KnowletMeta {
   names?: Record<string, string>;
   description?: string;
   descriptions?: Record<string, string>;
+  /** Short description for card display (localized) */
+  cardDescription?: Record<string, string>;
   icon?: string;
   requiredProviders: string[];
   supportedLanguages: string[];
@@ -109,10 +111,26 @@ export interface KnowletContext {
   inputData?: { type: OutputType; value: unknown };
 }
 
+/** Props for a knowlet's compact card view */
+export interface KnowletCardViewProps {
+  context: KnowletContext;
+  /** Whether to render in ultra-compact mode */
+  compact?: boolean;
+  /** Optional toss/hexagram data for hexagram-aware cards */
+  hexagramData?: {
+    hexagramNumber: number;
+    changingLines?: number[];
+    relatingHexagram?: number | null;
+    notation?: string;
+  };
+}
+
 export interface Knowlet {
   meta: KnowletMeta;
   settingsSchema?: KnowletSettingsSchema;
   View: React.ComponentType<{ context: KnowletContext }>;
+  /** Compact card view for inline display in conversations */
+  CardView?: React.ComponentType<KnowletCardViewProps>;
   SettingsView?: React.ComponentType<{
     settings: KnowletSettings;
     onChange: (settings: KnowletSettings) => void;

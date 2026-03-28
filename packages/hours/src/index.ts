@@ -27,6 +27,7 @@ export const hoursKnowlet: Knowlet = {
       es: 'Horas del Día',
       zh: '十二時辰',
     },
+    icon: '⏰',
     description: 'Explore the 12 double-hours (Shichen) and their sovereign hexagrams',
     descriptions: {
       en: 'Explore the 12 double-hours (Shichen) and their sovereign hexagrams',

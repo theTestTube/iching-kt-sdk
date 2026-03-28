@@ -1,6 +1,7 @@
 import { Knowlet, KnowletContext } from '@iching-kt/core';
 import { HexagramDetailView } from '@iching-kt/hours';
 import { MoonView } from './MoonView';
+import { MoonCardView } from './MoonCardView';
 
 function MoonKnowletView({ context }: { context: KnowletContext }) {
   if (context.currentView?.id === 'hexagram-detail') {
@@ -20,6 +21,7 @@ export const moonKnowlet: Knowlet = {
       es: 'Fases Lunares',
       zh: '月相',
     },
+    icon: '🌙',
     description: 'Explore the 8 lunar phases and their trigram correspondences from the Cantong qi',
     descriptions: {
       en: 'Explore the 8 lunar phases and their trigram correspondences from the Cantong qi',
@@ -33,6 +35,7 @@ export const moonKnowlet: Knowlet = {
     category: 'board',
   },
   View: MoonKnowletView,
+  CardView: MoonCardView,
 };
 
 export { MoonView } from './MoonView';

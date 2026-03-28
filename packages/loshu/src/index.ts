@@ -10,6 +10,7 @@ export const loshuKnowlet: Knowlet = {
       es: 'Cuadrado Lo Shu',
       zh: '洛書',
     },
+    icon: '洛',
     description: 'The ancient 3x3 magic square diagram of I-Ching cosmology',
     descriptions: {
       en: 'The ancient 3x3 magic square diagram of I-Ching cosmology',

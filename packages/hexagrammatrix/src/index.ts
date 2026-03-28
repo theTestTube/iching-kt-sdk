@@ -10,6 +10,7 @@ export const hexagramMatrixKnowlet: Knowlet = {
       es: 'Matriz de Hexagramas',
       zh: '卦象矩陣',
     },
+    icon: '▦',
     description: 'The 8x8 matrix of all 64 hexagrams',
     descriptions: {
       en: 'The 8x8 matrix of all 64 hexagrams',

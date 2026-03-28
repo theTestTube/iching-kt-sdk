@@ -10,6 +10,7 @@ export const hetuKnowlet: Knowlet = {
       es: 'Diagrama He Tu',
       zh: '河圖',
     },
+    icon: '河',
     description: 'The River Map showing the five elemental cycles',
     descriptions: {
       en: 'The River Map showing the five elemental cycles',

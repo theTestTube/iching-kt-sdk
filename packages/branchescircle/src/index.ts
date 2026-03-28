@@ -10,6 +10,7 @@ export const branchesCircleKnowlet: Knowlet = {
       es: 'Círculo de Ramas',
       zh: '地支圓',
     },
+    icon: '🐉',
     description: 'The twelve Earthly Branches arranged in a circle',
     descriptions: {
       en: 'The twelve Earthly Branches arranged in a circle',

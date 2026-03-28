@@ -2,6 +2,7 @@ import { Knowlet } from '@iching-kt/core';
 import { HexagramView } from './HexagramView';
 import { HexagramCardView } from './HexagramCardView';
 import { TrigramView } from './TrigramView';
+import { TrigramCardView } from './TrigramCardView';
 
 /**
  * Hexagrams Knowlet
@@ -20,6 +21,7 @@ export const hexagramsKnowlet: Knowlet = {
       es: 'Detalles del Hexagrama',
       zh: '卦象詳情',
     },
+    icon: '☰',
     description: 'View detailed information about a hexagram',
     descriptions: {
       en: 'View detailed information about a hexagram',
@@ -51,6 +53,7 @@ export const trigramsKnowlet: Knowlet = {
       es: 'Detalles del Trigrama',
       zh: '三畫卦詳情',
     },
+    icon: '☳',
     description: 'View detailed information about a trigram',
     descriptions: {
       en: 'View detailed information about a trigram',
@@ -64,6 +67,7 @@ export const trigramsKnowlet: Knowlet = {
     category: 'board',
   },
   View: TrigramView,
+  CardView: TrigramCardView,
 };
 
-export { HexagramView, HexagramCardView, TrigramView };
+export { HexagramView, HexagramCardView, TrigramView, TrigramCardView };

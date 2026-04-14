@@ -5,6 +5,7 @@ module.exports = {
     '<rootDir>/packages/hours',
     '<rootDir>/packages/provider-moon-phase',
     '<rootDir>/packages/moon',
+    '<rootDir>/packages/elements',
   ],
   collectCoverageFrom: [
     'packages/*/src/**/*.{ts,tsx}',

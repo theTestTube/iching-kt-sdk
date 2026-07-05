@@ -14,3 +14,4 @@ export * from './types';
 export * from './hexagrams';
 export * from './sovereign';
 export * from './trigrams';
+export * from './reductions';

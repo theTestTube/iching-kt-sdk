@@ -130,6 +130,11 @@ export function getTrigram(id: TrigramId): TrigramData | undefined {
   return TRIGRAMS[id];
 }
 
+/** Look a trigram up by its 3-bit binary (bottom→top, '1' = yang). */
+export function getTrigramIdByBinary(binary: string): TrigramId | undefined {
+  return (Object.keys(TRIGRAMS) as TrigramId[]).find((id) => TRIGRAMS[id].binary === binary);
+}
+
 export function getTrigramTranslation(id: TrigramId, language: string): TrigramTranslation | undefined {
   const trigram = TRIGRAMS[id];
   if (!trigram) return undefined;

@@ -1,5 +1,5 @@
 import { Knowlet } from '@iching-kt/core';
-import { LoShuView } from '@iching-kt/square';
+import { LoShuView, LoShuCardView } from '@iching-kt/square';
 
 export const loshuKnowlet: Knowlet = {
   meta: {
@@ -24,6 +24,7 @@ export const loshuKnowlet: Knowlet = {
     category: 'board',
   },
   View: LoShuView,
+  CardView: LoShuCardView,
 };
 
 export { LoShuView };

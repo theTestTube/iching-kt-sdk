@@ -1,5 +1,5 @@
 import { Knowlet } from '@iching-kt/core';
-import { HeTuView } from '@iching-kt/square';
+import { HeTuView, HeTuCardView } from '@iching-kt/square';
 
 export const hetuKnowlet: Knowlet = {
   meta: {
@@ -24,6 +24,7 @@ export const hetuKnowlet: Knowlet = {
     category: 'board',
   },
   View: HeTuView,
+  CardView: HeTuCardView,
 };
 
 export { HeTuView };

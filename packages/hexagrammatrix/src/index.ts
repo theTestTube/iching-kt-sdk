@@ -1,5 +1,5 @@
 import { Knowlet } from '@iching-kt/core';
-import { HexagramMatrixView } from '@iching-kt/square';
+import { HexagramMatrixView, HexagramMatrixCardView } from '@iching-kt/square';
 
 export const hexagramMatrixKnowlet: Knowlet = {
   meta: {
@@ -24,6 +24,7 @@ export const hexagramMatrixKnowlet: Knowlet = {
     category: 'board',
   },
   View: HexagramMatrixView,
+  CardView: HexagramMatrixCardView,
 };
 
 export { HexagramMatrixView };

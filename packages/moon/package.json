@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@iching-kt/core": "*",
+    "@iching-kt/hours": "*",
     "@iching-kt/provider-moon-phase": "*",
     "@iching-kt/data-hexagrams": "*",
     "@iching-kt/provider-time": "*"

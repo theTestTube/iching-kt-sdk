@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { KnowletContext, ActionableElement, getThemeColors } from '@iching-kt/core';
-import type { SolarTimeData } from '@iching-kt/provider-solar-time';
+import { resolveActiveBranch } from '../cards/situationInputs';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
 import { EARTHLY_BRANCHES } from '@iching-kt/provider-time';
 import { getSovereignHexagram, getHexagram } from '@iching-kt/data-hexagrams';
@@ -9,7 +9,7 @@ interface Props {
   context: KnowletContext;
 }
 
-const BRANCH_INFO: Record<EarthlyBranch, { chinese: string; animal: string; animalEs: string }> = {
+export const BRANCH_INFO: Record<EarthlyBranch, { chinese: string; animal: string; animalEs: string }> = {
   zi: { chinese: '子', animal: 'Rat', animalEs: 'Rata' },
   chou: { chinese: '丑', animal: 'Ox', animalEs: 'Buey' },
   yin: { chinese: '寅', animal: 'Tiger', animalEs: 'Tigre' },
@@ -27,8 +27,7 @@ const BRANCH_INFO: Record<EarthlyBranch, { chinese: string; animal: string; anim
 const CIRCLE_RADIUS = 120;
 
 export function BranchesCircleView({ context }: Props) {
-  const solarTimeData = context.situations['solar-time'] as SolarTimeData | undefined;
-  const currentBranch = solarTimeData?.shichen as EarthlyBranch | undefined;
+  const currentBranch = resolveActiveBranch(context);
   const colors = getThemeColors(context.colorScheme);
 
   const handlePress = (branch: EarthlyBranch) => {

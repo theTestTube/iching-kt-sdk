@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { KnowletContext, ActionableElement, getThemeColors } from '@iching-kt/core';
 import { getHexagram } from '@iching-kt/data-hexagrams';
-import type { SolarTimeData } from '@iching-kt/provider-solar-time';
+import { resolveActiveBranch } from '../cards/situationInputs';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
 import { getSovereignHexagram, sovereignSequence } from '@iching-kt/data-hexagrams';
 
@@ -15,7 +15,7 @@ const TRIGRAM_SYMBOLS: Record<string, string> = {
   wind: '☴', water: '☵', mountain: '☶', earth: '☷',
 };
 
-const HEXAGRAM_MATRIX: number[][] = [
+export const HEXAGRAM_MATRIX: number[][] = [
   [1, 43, 14, 34, 9, 5, 26, 11],
   [10, 58, 38, 54, 61, 60, 41, 19],
   [13, 49, 30, 55, 37, 63, 22, 36],
@@ -27,8 +27,7 @@ const HEXAGRAM_MATRIX: number[][] = [
 ];
 
 export function HexagramMatrixView({ context }: Props) {
-  const solarTimeData = context.situations['solar-time'] as SolarTimeData | undefined;
-  const currentBranch = solarTimeData?.shichen as EarthlyBranch | undefined;
+  const currentBranch = resolveActiveBranch(context);
   const currentSovereign = currentBranch ? getSovereignHexagram(currentBranch) : null;
   const activeHexagram = currentSovereign?.hexagramNumber;
   const colors = getThemeColors(context.colorScheme);

@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
-import type { SolarTimeData, EarthlyBranch } from '@iching-kt/provider-solar-time';
+import type { EarthlyBranch } from '@iching-kt/provider-solar-time';
+import { resolveActiveBranch } from '../cards/situationInputs';
 
 interface Props {
   context: KnowletContext;
@@ -16,13 +17,13 @@ interface Props {
  *
  * Mapped to trigrams and directions
  */
-const LO_SHU_GRID = [
+export const LO_SHU_GRID = [
   [4, 9, 2],
   [3, 5, 7],
   [8, 1, 6],
 ];
 
-const LO_SHU_TRIGRAMS: Record<number, { trigram: string; trigramId: string; direction: string; element: string }> = {
+export const LO_SHU_TRIGRAMS: Record<number, { trigram: string; trigramId: string; direction: string; element: string }> = {
   1: { trigram: '☵', trigramId: 'water', direction: 'N', element: 'Water' },
   2: { trigram: '☷', trigramId: 'earth', direction: 'SW', element: 'Earth' },
   3: { trigram: '☳', trigramId: 'thunder', direction: 'E', element: 'Wood' },
@@ -34,7 +35,7 @@ const LO_SHU_TRIGRAMS: Record<number, { trigram: string; trigramId: string; dire
   9: { trigram: '☲', trigramId: 'fire', direction: 'S', element: 'Fire' },
 };
 
-const BRANCH_TO_LOSHU: Record<EarthlyBranch, number> = {
+export const BRANCH_TO_LOSHU: Record<EarthlyBranch, number> = {
   zi: 1, chou: 8, yin: 3, mao: 3, chen: 4, si: 9,
   wu: 9, wei: 2, shen: 7, you: 7, xu: 6, hai: 1,
 };
@@ -49,8 +50,7 @@ const ELEMENT_TO_KEY: Record<string, 'water' | 'wood' | 'fire' | 'earth' | 'meta
 };
 
 export function LoShuView({ context }: Props) {
-  const solarTimeData = context.situations['solar-time'] as SolarTimeData | undefined;
-  const currentBranch = solarTimeData?.earthlyBranch;
+  const currentBranch = resolveActiveBranch(context);
   const activeLoshu = currentBranch ? BRANCH_TO_LOSHU[currentBranch] : undefined;
   const colors = getThemeColors(context.colorScheme);
   const abstractColors = getAbstractColors(context.colorScheme);

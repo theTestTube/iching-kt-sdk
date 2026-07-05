@@ -60,3 +60,7 @@ export const squareKnowlet: Knowlet = {
 };
 
 export { LoShuView, HeTuView, BranchesCircleView, HexagramMatrixView };
+export { LoShuCardView } from './cards/LoShuCardView';
+export { HeTuCardView } from './cards/HeTuCardView';
+export { BranchesCircleCardView } from './cards/BranchesCircleCardView';
+export { HexagramMatrixCardView } from './cards/HexagramMatrixCardView';

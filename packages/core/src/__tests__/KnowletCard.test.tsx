@@ -23,8 +23,8 @@ const mockContext: KnowletContext = {
   colorScheme: 'light',
   situations: {},
   settings: {},
-  jumpTo: jest.fn(),
-  emit: jest.fn(),
+  jumpTo: vi.fn(),
+  emit: vi.fn(),
 };
 
 function makeKnowlet(overrides?: Partial<Knowlet>): Knowlet {
@@ -99,7 +99,7 @@ describe('KnowletCard', () => {
   });
 
   it('calls onPress with knowlet id', () => {
-    const onPress = jest.fn();
+    const onPress = vi.fn();
     const knowlet = makeKnowlet();
 
     const { getByText } = render(
@@ -112,7 +112,7 @@ describe('KnowletCard', () => {
   });
 
   it('calls onLongPress with knowlet id', () => {
-    const onLongPress = jest.fn();
+    const onLongPress = vi.fn();
     const knowlet = makeKnowlet();
 
     const { getByText } = render(

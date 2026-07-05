@@ -10,7 +10,8 @@
   "dependencies": {
     "@iching-kt/core": "*",
     "@iching-kt/provider-time": "*",
-    "@iching-kt/data-hexagrams": "*"
+    "@iching-kt/data-hexagrams": "*",
+    "@iching-kt/provider-solar-time": "*"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

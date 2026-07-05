@@ -8,6 +8,9 @@
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@iching-kt/provider-time": "*"
+  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   }

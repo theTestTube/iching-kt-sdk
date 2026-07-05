@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
-import type { SolarTimeData } from '@iching-kt/provider-solar-time';
+import { resolveActiveBranch } from '../cards/situationInputs';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
 
 interface Props {
@@ -15,7 +15,7 @@ interface ElementData {
   branches: EarthlyBranch[];
 }
 
-const ELEMENTS: Record<string, ElementData> = {
+export const ELEMENTS: Record<string, ElementData> = {
   water: {
     name: 'Water', nameEs: 'Agua',
     inner: 1, outer: 6,
@@ -43,7 +43,7 @@ const ELEMENTS: Record<string, ElementData> = {
   },
 };
 
-function getActiveElement(branch?: EarthlyBranch): string | undefined {
+export function getActiveElement(branch?: EarthlyBranch): string | undefined {
   if (!branch) return undefined;
   for (const [key, data] of Object.entries(ELEMENTS)) {
     if (data.branches.includes(branch)) return key;
@@ -52,8 +52,7 @@ function getActiveElement(branch?: EarthlyBranch): string | undefined {
 }
 
 export function HeTuView({ context }: Props) {
-  const solarTimeData = context.situations['solar-time'] as SolarTimeData | undefined;
-  const currentBranch = solarTimeData?.shichen as EarthlyBranch | undefined;
+  const currentBranch = resolveActiveBranch(context);
   const activeElement = getActiveElement(currentBranch);
   const colors = getThemeColors(context.colorScheme);
   const abstractColors = getAbstractColors(context.colorScheme);

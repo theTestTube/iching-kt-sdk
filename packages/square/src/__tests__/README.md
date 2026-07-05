@@ -2,9 +2,14 @@
 
 This directory contains UI tests using two complementary testing frameworks:
 
-## 1. Jest + React Native Testing Library (Unit/Integration Tests)
+## 1. Vitest + Testing Library (Unit/Integration Tests)
 
 **Files:** `*.test.tsx`
+
+Suites run under the workspace-root Vitest config (`vitest.config.ts`): jsdom
+environment, `react-native` aliased to `react-native-web`, and globals enabled
+(`describe`/`it`/`expect`/`vi` — no imports needed). Components render with
+`@testing-library/react`; the DOM they produce comes from react-native-web.
 
 ### Purpose
 - Component unit tests
@@ -12,24 +17,22 @@ This directory contains UI tests using two complementary testing frameworks:
 - Props and callback verification
 - Accessibility testing
 
-### Installation
-```bash
-npm install --save-dev @testing-library/react-native jest @types/jest react-test-renderer
-```
-
 ### Running Tests
 ```bash
-# Run all tests
-npm test
+# From the workspace root — all packages
+pnpm test
 
-# Run with watch mode
-npm run test:watch
+# Watch mode
+pnpm test:watch
 
-# Run specific test file
-npm test -- --testPathPattern=HeTuView
+# Run specific test file(s) by filter
+npx vitest run HeTuView
 
-# Run with coverage
-npm test -- --coverage
+# Run only this package's suites
+npx vitest run packages/square
+
+# With coverage
+npx vitest run --coverage
 ```
 
 ### Key Test Cases
@@ -38,6 +41,8 @@ npm test -- --coverage
 - **State Transitions**: Tests active element changes when time branch changes
 - **Interactions**: Verifies press and long-press callbacks
 - **Edge Cases**: Handles missing data gracefully
+- **Board cards**: Compact CardView miniatures (`*CardView.test.tsx`) — active
+  highlighting from frozen situations, and adopted `inputData` precedence
 
 ---
 
@@ -108,31 +113,3 @@ useEffect(() => {
 ### Test Verification
 - `HeTuView.test.tsx`: "State Transitions" describe block
 - `HeTuView.maestro.yaml`: Flow 4 (state transitions) and Flow 6 (Earth element visual regression)
-
----
-
-## CI Integration
-
-### GitHub Actions Example
-```yaml
-name: UI Tests
-on: [push, pull_request]
-
-jobs:
-  unit-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-      - run: npm install
-      - run: npm test -- --coverage
-
-  e2e-tests:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: mobile-dev-inc/action-maestro-cloud@v1
-        with:
-          api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
-          app-file: app-release.apk
-```

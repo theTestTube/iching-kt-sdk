@@ -1,5 +1,5 @@
 import { Knowlet } from '@iching-kt/core';
-import { BranchesCircleView } from '@iching-kt/square';
+import { BranchesCircleView, BranchesCircleCardView } from '@iching-kt/square';
 
 export const branchesCircleKnowlet: Knowlet = {
   meta: {
@@ -24,6 +24,7 @@ export const branchesCircleKnowlet: Knowlet = {
     category: 'board',
   },
   View: BranchesCircleView,
+  CardView: BranchesCircleCardView,
 };
 
 export { BranchesCircleView };

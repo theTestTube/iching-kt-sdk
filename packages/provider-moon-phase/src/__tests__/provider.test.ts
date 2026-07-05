@@ -17,11 +17,11 @@ import { PHASE_ORDER } from '../types';
 
 describe('Moon Phase Situation Provider', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   afterEach(() => {
-    jest.useRealTimers();
+    vi.useRealTimers();
   });
 
   it('should have id "moon-phase"', () => {
@@ -58,7 +58,7 @@ describe('Moon Phase Situation Provider', () => {
   describe('subscribe', () => {
     it('should call callback immediately with current data', () => {
       const provider = createMoonPhaseProvider();
-      const callback = jest.fn();
+      const callback = vi.fn();
 
       provider.subscribe(callback);
       expect(callback).toHaveBeenCalledTimes(1);
@@ -69,33 +69,33 @@ describe('Moon Phase Situation Provider', () => {
 
     it('should return an unsubscribe function', () => {
       const provider = createMoonPhaseProvider();
-      const callback = jest.fn();
+      const callback = vi.fn();
 
       const unsubscribe = provider.subscribe(callback);
       expect(typeof unsubscribe).toBe('function');
 
       unsubscribe();
       // Advance time past update interval — should not call again
-      jest.advanceTimersByTime(4000000);
+      vi.advanceTimersByTime(4000000);
       expect(callback).toHaveBeenCalledTimes(1);
     });
 
     it('should update after hourly interval', () => {
       const provider = createMoonPhaseProvider();
-      const callback = jest.fn();
+      const callback = vi.fn();
 
       provider.subscribe(callback);
       expect(callback).toHaveBeenCalledTimes(1);
 
       // Advance 1 hour
-      jest.advanceTimersByTime(3600000);
+      vi.advanceTimersByTime(3600000);
       expect(callback).toHaveBeenCalledTimes(2);
     });
 
     it('should support multiple subscribers', () => {
       const provider = createMoonPhaseProvider();
-      const cb1 = jest.fn();
-      const cb2 = jest.fn();
+      const cb1 = vi.fn();
+      const cb2 = vi.fn();
 
       provider.subscribe(cb1);
       provider.subscribe(cb2);
@@ -105,15 +105,15 @@ describe('Moon Phase Situation Provider', () => {
       expect(cb2).toHaveBeenCalledTimes(1);
 
       // Advance 1 hour — both should be called again
-      jest.advanceTimersByTime(3600000);
+      vi.advanceTimersByTime(3600000);
       expect(cb1).toHaveBeenCalledTimes(2);
       expect(cb2).toHaveBeenCalledTimes(2);
     });
 
     it('should stop updates when all subscribers unsubscribe', () => {
       const provider = createMoonPhaseProvider();
-      const cb1 = jest.fn();
-      const cb2 = jest.fn();
+      const cb1 = vi.fn();
+      const cb2 = vi.fn();
 
       const unsub1 = provider.subscribe(cb1);
       const unsub2 = provider.subscribe(cb2);
@@ -122,7 +122,7 @@ describe('Moon Phase Situation Provider', () => {
       unsub2();
 
       // Advance time — no more calls
-      jest.advanceTimersByTime(3600000);
+      vi.advanceTimersByTime(3600000);
       expect(cb1).toHaveBeenCalledTimes(1);
       expect(cb2).toHaveBeenCalledTimes(1);
     });

@@ -11,7 +11,7 @@ export const elementsKnowlet: Knowlet = {
       es: 'Cinco Elementos',
       zh: '五行',
     },
-    icon: '☯',
+    icon: '五',
     description: 'Wu Xing — the five elemental phases and their correspondences',
     descriptions: {
       en: 'Wu Xing — the five elemental phases and their correspondences',

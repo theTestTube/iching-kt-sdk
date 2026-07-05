@@ -7,36 +7,15 @@
  */
 
 import React from 'react';
-// @ts-expect-error — @testing-library/react v16 re-exports these from @testing-library/dom at runtime
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { HeTuView } from '../views/HeTuView';
-import { KnowletContext, DEFAULT_TRANSLATION_PREFERENCES } from '@iching-kt/core';
+import { createMockContext } from './testContext';
 import { EarthlyBranch } from '@iching-kt/provider-time';
 
-// Mock context factory
-// HeTuView reads earthly branch from situations['solar-time'].shichen
-const createMockContext = (overrides: Partial<KnowletContext> = {}): KnowletContext => ({
-  situations: {
-    'solar-time': {
-      shichen: 'zi' as EarthlyBranch, // Water element
-    },
-  },
-  settings: {},
-  language: 'en',
-  colorScheme: 'light',
-  translationPreferences: DEFAULT_TRANSLATION_PREFERENCES,
-  jumpTo: jest.fn(),
-  pushView: jest.fn(),
-  popView: jest.fn(),
-  currentView: null,
-  emitOutput: jest.fn(),
-  showKnowletSelector: jest.fn(),
-  ...overrides,
-});
 
 describe('HeTuView', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('Rendering', () => {
@@ -82,7 +61,7 @@ describe('HeTuView', () => {
   describe('Active Element State', () => {
     it('shows Water as active element when branch is zi', () => {
       const context = createMockContext({
-        situations: { 'solar-time': { shichen: 'zi' } },
+        situations: { 'solar-time': { shichen: { branch: 'zi' } } },
       });
       const { getByText } = render(<HeTuView context={context} />);
 
@@ -91,7 +70,7 @@ describe('HeTuView', () => {
 
     it('shows Earth as active element when branch is chen', () => {
       const context = createMockContext({
-        situations: { 'solar-time': { shichen: 'chen' } },
+        situations: { 'solar-time': { shichen: { branch: 'chen' } } },
       });
       const { getByText } = render(<HeTuView context={context} />);
 
@@ -100,7 +79,7 @@ describe('HeTuView', () => {
 
     it('shows active element legend text', () => {
       const context = createMockContext({
-        situations: { 'solar-time': { shichen: 'chen' } },
+        situations: { 'solar-time': { shichen: { branch: 'chen' } } },
       });
       const { getByText } = render(<HeTuView context={context} />);
 
@@ -111,7 +90,7 @@ describe('HeTuView', () => {
   describe('State Transitions', () => {
     it('correctly updates when transitioning from Earth to Water branch', async () => {
       const initialContext = createMockContext({
-        situations: { 'solar-time': { shichen: 'chen' } }, // Earth
+        situations: { 'solar-time': { shichen: { branch: 'chen' } } }, // Earth
       });
 
       const { getByText, rerender } = render(<HeTuView context={initialContext} />);
@@ -121,7 +100,7 @@ describe('HeTuView', () => {
 
       // Transition to Water branch
       const updatedContext = createMockContext({
-        situations: { 'solar-time': { shichen: 'zi' } }, // Water
+        situations: { 'solar-time': { shichen: { branch: 'zi' } } }, // Water
       });
 
       await act(async () => {
@@ -136,14 +115,14 @@ describe('HeTuView', () => {
 
     it('correctly updates when transitioning from Water to Earth branch', async () => {
       const initialContext = createMockContext({
-        situations: { 'solar-time': { shichen: 'zi' } }, // Water
+        situations: { 'solar-time': { shichen: { branch: 'zi' } } }, // Water
       });
 
       const { getByText, rerender } = render(<HeTuView context={initialContext} />);
 
       // Transition to Earth branch
       const updatedContext = createMockContext({
-        situations: { 'solar-time': { shichen: 'xu' } }, // Earth
+        situations: { 'solar-time': { shichen: { branch: 'xu' } } }, // Earth
       });
 
       await act(async () => {
@@ -166,7 +145,7 @@ describe('HeTuView', () => {
           rerender(
             <HeTuView
               context={createMockContext({
-                situations: { 'solar-time': { shichen: branch } },
+                situations: { 'solar-time': { shichen: { branch } } },
               })}
             />
           );
@@ -183,7 +162,7 @@ describe('HeTuView', () => {
 
   describe('Interactions', () => {
     it('calls emitOutput on element click', () => {
-      const emitOutput = jest.fn();
+      const emitOutput = vi.fn();
       const context = createMockContext({ emitOutput });
       const { getByLabelText } = render(<HeTuView context={context} />);
 

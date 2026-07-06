@@ -98,12 +98,12 @@ export function getTendency(lines: CastLines): HexagramTendency {
 export const tendencyExplanations: Record<TendencyRationale, Record<string, string>> = {
   majority: {
     en: "Adopted {tendency} because {count} of the main hexagram's 6 lines are {lines} — the dominant polarity.",
-    es: 'Adopto {tendency} porque {count} de las 6 lineas del hexagrama principal son {lines} — la polaridad dominante.',
+    es: 'Adopto {tendency} porque {count} de las 6 líneas del hexagrama principal son {lines} — la polaridad dominante.',
     zh: '採用{tendency}，因主卦六爻中有{count}爻為{lines}，屬多數之極性。',
   },
   'tie-lower-trigram': {
     en: 'Adopted {tendency} because the 6 lines are evenly split, so the lower (inner) trigram {trigram} decides.',
-    es: 'Adopto {tendency} porque las 6 lineas estan igualadas, asi que decide el trigrama inferior (interior) {trigram}.',
+    es: 'Adopto {tendency} porque las 6 líneas están igualadas, así que decide el trigrama inferior (interior) {trigram}.',
     zh: '採用{tendency}，因六爻陰陽各半，故由下卦（內卦）{trigram}定其極性。',
   },
 };
@@ -116,7 +116,7 @@ export const tendencyExplanations: Record<TendencyRationale, Record<string, stri
 export const tendencyCaveat: Record<string, string> = {
   en: "Shows the hexagram's dominant polarity (more yin vs more yang lines) — a simplification, exact for the twelve sovereign hexagrams, and not the ruling line (卦主).",
   es: 'Muestra la polaridad dominante del hexagrama (más líneas yin o yang) — una simplificación, exacta para los doce hexagramas soberanos, no la línea regente (卦主).',
-  zh: '顯示主卦之多數極性（陰爻多或陽爻多）——為簡化，僅對十二消息卦精確，非卦主。',
+  zh: '顯示主卦之多數極性（陰爻多或陽爻多）——此乃簡化之法，僅對十二消息卦精確，非卦主。',
 };
 
 const POLARITY_WORDS: Record<string, Record<Polarity, string>> = {

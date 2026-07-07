@@ -3,11 +3,36 @@ import { View, Text, StyleSheet } from 'react-native';
 import { KnowletCardViewProps, getThemeColors, getAbstractColors } from '@iching-kt/core';
 import { YinYangId, getTranslation } from './data';
 
+interface YinYangInput {
+  polarity?: YinYangId;
+  explanation?: string;
+}
+
+function parseYinYangInput(inputData?: { type: string; value: unknown }): YinYangInput {
+  if (inputData?.type !== 'yinyang') {
+    return {};
+  }
+  const value = inputData.value;
+  if (value === 'yin' || value === 'yang') {
+    return { polarity: value };
+  }
+  if (typeof value === 'object' && value !== null && 'polarity' in value) {
+    const obj = value as { polarity?: unknown; explanation?: unknown };
+    if (obj.polarity === 'yin' || obj.polarity === 'yang') {
+      return {
+        polarity: obj.polarity,
+        explanation: typeof obj.explanation === 'string' ? obj.explanation : undefined,
+      };
+    }
+  }
+  return {};
+}
+
 export function YinYangCardView({ context, compact }: KnowletCardViewProps) {
   const colors = getThemeColors(context.colorScheme);
   const abstractColors = getAbstractColors(context.colorScheme);
 
-  const polarity = context.inputData?.value as YinYangId | undefined;
+  const { polarity, explanation } = parseYinYangInput(context.inputData);
   const t = getTranslation(context.language);
 
   if (!polarity || !t.polarities[polarity]) {
@@ -33,6 +58,15 @@ export function YinYangCardView({ context, compact }: KnowletCardViewProps) {
         </Text>
       </View>
       <Text style={[styles.name, { color: colors.text }]}>{info.pinyin}</Text>
+      {explanation && (
+        <Text
+          testID="yinyang-card-explanation"
+          style={[styles.explanation, { color: colors.textSecondary }]}
+          numberOfLines={compact ? 3 : undefined}
+        >
+          {explanation}
+        </Text>
+      )}
     </View>
   );
 }
@@ -64,5 +98,10 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 13,
     fontWeight: '500',
+  },
+  explanation: {
+    fontSize: 11,
+    lineHeight: 15,
+    textAlign: 'center',
   },
 });

@@ -135,7 +135,7 @@ describe('getTendencyExplanation — recorded sentences from decision 2026-07-04
   it('counts the dominant polarity, not always yang (yin majority, es)', () => {
     const explained = getTendencyExplanation(getTendency([7, 8, 8, 8, 8, 8]), 'es');
     expect(explained).toBe(
-      'Adopto yin porque 5 de las 6 lineas del hexagrama principal son partidas (yin) — la polaridad dominante.',
+      'Adopto yin porque 5 de las 6 líneas del hexagrama principal son partidas (yin) — la polaridad dominante.',
     );
   });
 

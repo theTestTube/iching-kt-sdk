@@ -17,19 +17,28 @@ export interface SolarTimeProviderConfig {
   updateIntervalMs?: number; // Default: 60000 (1 minute)
 }
 
-function getCurrentSolarTimeData(
-  geoLocator: GeoLocator,
+/**
+ * Pure situation-at-timestamp function for the solar-time domain (#67).
+ *
+ * Computes the exact SolarTimeData the provider would emit at an arbitrary
+ * `civilTime` from a given position — no clock, no I/O, fully deterministic.
+ * When `position` is missing, longitude is estimated from the civil time's
+ * timezone offset (the provider's original fallback). Used both by the live
+ * provider (`getCurrentSolarTimeData`) and by the app's pin-time time adoption,
+ * which recomputes a frozen snapshot at the last-message timestamp.
+ */
+export function solarTimeDataAt(
+  position: GeoPosition | null | undefined,
   civilTime: Date
 ): SolarTimeData {
-  // Get current position from geoLocator
-  let position: GeoPosition | null | undefined = geoLocator.currentPosition;
-
-  if (!position) {
+  let resolved: GeoPosition;
+  if (position) {
+    resolved = position;
+  } else {
     // Fallback: estimate longitude from timezone offset
-    const offsetMinutes = -civilTime.getTimezoneOffset();
-    const longitude = (offsetMinutes / 60) * 15;
-    position = {
-      longitude,
+    const estOffsetMinutes = -civilTime.getTimezoneOffset();
+    resolved = {
+      longitude: (estOffsetMinutes / 60) * 15,
       latitude: 0,
       precision: 'low',
       timestamp: civilTime,
@@ -39,7 +48,7 @@ function getCurrentSolarTimeData(
   // Calculate solar time
   const { solarTime, offsetMinutes } = calculateTrueSolarTime(
     civilTime,
-    position.longitude
+    resolved.longitude
   );
 
   // Get shichen data
@@ -50,9 +59,9 @@ function getCurrentSolarTimeData(
     civilTime,
     solarTime,
     solarOffsetMinutes: offsetMinutes,
-    precision: position.precision,
+    precision: resolved.precision,
     shichen,
-    longitude: position.longitude,
+    longitude: resolved.longitude,
     hour: civilTime.getHours(),
     minute: civilTime.getMinutes(),
     solarHour: solarTime.getHours(),
@@ -62,6 +71,13 @@ function getCurrentSolarTimeData(
     earthlyBranchIndex: shichen.index,
     branchProgress: shichen.progress,
   };
+}
+
+function getCurrentSolarTimeData(
+  geoLocator: GeoLocator,
+  civilTime: Date
+): SolarTimeData {
+  return solarTimeDataAt(geoLocator.currentPosition, civilTime);
 }
 
 export function createSolarTimeProvider(

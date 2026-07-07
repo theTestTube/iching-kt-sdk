@@ -15,9 +15,16 @@ import { calculateMoonPhase, getPhaseProgress } from './calculator';
 /** Default update interval: 1 hour (3600000 ms) */
 const DEFAULT_UPDATE_INTERVAL_MS = 3600000;
 
-function getCurrentMoonPhaseData(): MoonPhaseData {
-  const now = new Date();
-  const calc = calculateMoonPhase(now);
+/**
+ * Pure situation-at-timestamp function for the moon-phase domain (#67).
+ *
+ * Computes the exact MoonPhaseData the provider would emit for an arbitrary
+ * `date` — no clock, no I/O, fully deterministic. Used both by the live
+ * provider (`getCurrentMoonPhaseData`) and by the app's pin-time time adoption,
+ * which recomputes a frozen snapshot at the last-message timestamp.
+ */
+export function moonPhaseDataAt(date: Date): MoonPhaseData {
+  const calc = calculateMoonPhase(date);
   const phaseProgress = getPhaseProgress(calc.lunationProgress);
 
   return {
@@ -30,6 +37,10 @@ function getCurrentMoonPhaseData(): MoonPhaseData {
     isWaxing: calc.isWaxing,
     phaseProgress,
   };
+}
+
+function getCurrentMoonPhaseData(): MoonPhaseData {
+  return moonPhaseDataAt(new Date());
 }
 
 export function createMoonPhaseProvider(): SituationProvider<MoonPhaseData> {

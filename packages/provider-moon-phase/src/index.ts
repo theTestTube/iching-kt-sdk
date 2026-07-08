@@ -1,5 +1,5 @@
 export { calculateMoonPhase, getPhaseProgress } from './calculator';
-export { createMoonPhaseProvider } from './provider';
+export { createMoonPhaseProvider, moonPhaseDataAt } from './provider';
 export type {
   MoonPhaseId,
   MoonPhaseCalculation,

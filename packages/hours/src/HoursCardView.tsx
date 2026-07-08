@@ -30,8 +30,10 @@ export function HoursCardView({ context, compact }: KnowletCardViewProps) {
   const colors = getThemeColors(context.colorScheme);
   const solarTime = context.situations['solar-time'] as SolarTimeData | undefined;
 
-  // Fallback when no solar time data
-  if (!solarTime?.solarTimeMinutes) {
+  // Fallback when no solar time data. Guard on the snapshot itself, not on a
+  // derived minute value — solar midnight is minute 0, which a truthiness check
+  // would wrongly read as "no data".
+  if (!solarTime) {
     return (
       <View style={styles.content}>
         <Text style={[styles.icon, compact && styles.iconCompact]}>⏰</Text>
@@ -42,7 +44,10 @@ export function HoursCardView({ context, compact }: KnowletCardViewProps) {
     );
   }
 
-  const branch = getBranchForMinutes(solarTime.solarTimeMinutes as number);
+  // SolarTimeData exposes solarHour/solarMinute; derive minutes-of-day from
+  // those real fields (the provider never emits a `solarTimeMinutes` field).
+  const solarTimeMinutes = solarTime.solarHour * 60 + solarTime.solarMinute;
+  const branch = getBranchForMinutes(solarTimeMinutes);
   const sovereign = getSovereignHexagram(branch);
   const hex = getHexagram(sovereign.hexagramNumber);
   if (!hex) return null;

@@ -1,0 +1,26 @@
+{
+  "name": "@iching-kt/provider-rotation",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@iching-kt/core": "*"
+  },
+  "peerDependencies": {
+    "expo-sensors": ">=13.0.0"
+  },
+  "peerDependenciesMeta": {
+    "expo-sensors": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "vitest": "^1.0.0"
+  }
+}

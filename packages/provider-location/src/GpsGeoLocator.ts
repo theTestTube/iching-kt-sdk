@@ -51,6 +51,7 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
   let watchSubscription: { remove: () => void } | null = null;
   let currentPosition: GeoPosition | null = null;
   let permissionState: LocationPermissionState = 'undetermined';
+  let canAskAgain: boolean | undefined = undefined;
   let lastEmittedStatus: GeoLocatorStatus | null = null;
 
   // Helper to emit status change events (only if status actually changed)
@@ -62,7 +63,8 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
       const unchanged =
         lastEmittedStatus.permissionState === currentStatus.permissionState &&
         lastEmittedStatus.isAvailable === currentStatus.isAvailable &&
-        lastEmittedStatus.currentPrecision === currentStatus.currentPrecision;
+        lastEmittedStatus.currentPrecision === currentStatus.currentPrecision &&
+        lastEmittedStatus.canAskAgain === currentStatus.canAskAgain;
 
       if (unchanged) {
         return; // Don't emit duplicate events
@@ -90,14 +92,17 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
       permissionState,
       isAvailable: true, // GPS is available on all mobile devices
       currentPrecision: hasValidPosition && currentPosition ? currentPosition.precision : 'low',
+      canAskAgain,
     };
   }
 
   // Refresh permission state from OS
   async function refreshPermissionState(): Promise<void> {
     try {
-      const { status } = await expoLocation.getForegroundPermissionsAsync();
+      const { status, canAskAgain: nextCanAskAgain } = await expoLocation.getForegroundPermissionsAsync();
       const newState = mapExpoPermissionStatus(status);
+      const canAskAgainChanged = nextCanAskAgain !== canAskAgain;
+      canAskAgain = nextCanAskAgain;
       if (newState !== permissionState) {
         permissionState = newState;
         // If permission just became granted, start watching
@@ -110,6 +115,10 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
           currentPosition = null; // Clear stale position
         }
         // Emit status change event
+        emitStatusChange();
+      } else if (canAskAgainChanged) {
+        // Permission unchanged but the OS flipped canAskAgain (e.g. user hit
+        // "Don't ask again") — surface it so the UI can route to Settings.
         emitStatusChange();
       }
     } catch (error) {
@@ -191,8 +200,10 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
 
     async requestPermission(): Promise<LocationPermissionState> {
       try {
-        const { status } = await expoLocation.requestForegroundPermissionsAsync();
+        const { status, canAskAgain: nextCanAskAgain } = await expoLocation.requestForegroundPermissionsAsync();
         const newState = mapExpoPermissionStatus(status);
+        const canAskAgainChanged = nextCanAskAgain !== canAskAgain;
+        canAskAgain = nextCanAskAgain;
         if (newState !== permissionState) {
           permissionState = newState;
           // If permission just became granted, start watching
@@ -205,6 +216,10 @@ export function createGpsGeoLocator(config: GpsGeoLocatorConfig): GeoLocator {
             currentPosition = null;
           }
           // Emit status change event
+          emitStatusChange();
+        } else if (canAskAgainChanged) {
+          // Denied again with "Don't ask again" — permission stayed 'denied'
+          // but canAskAgain flipped to false; surface it for Settings routing.
           emitStatusChange();
         }
         return permissionState;

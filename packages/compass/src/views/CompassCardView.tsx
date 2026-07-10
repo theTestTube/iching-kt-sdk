@@ -6,6 +6,38 @@ import type { RotationData } from '@iching-kt/provider-rotation';
 import { getDirectionForHeading } from '../directions';
 
 /**
+ * Location seal state for the compass card (#68). Carried on the pinned card's
+ * render context as `inputData = { type: 'gps', value: CompassLocationInput }`.
+ * INDEPENDENT of the rotation-presence axis: a card can have a live
+ * magnetometer AND unavailable location, or vice-versa.
+ */
+export type CompassLocationState = 'acquiring' | 'precise' | 'coarse' | 'unavailable';
+
+export interface CompassLocationInput {
+  /** Terminal or in-flight seal state. Undefined → render no location row. */
+  locationState?: CompassLocationState;
+  /** Sealed coordinates (present once precise/coarse). */
+  frozenPosition?: { latitude: number; longitude: number };
+  /** Live, display-only fallback (timezone centroid) shown while acquiring. */
+  displayPosition?: { latitude: number; longitude: number };
+}
+
+function readLocationInput(inputData: KnowletCardViewProps['context']['inputData']): CompassLocationInput | undefined {
+  if (!inputData || inputData.type !== 'gps') return undefined;
+  return inputData.value as CompassLocationInput | undefined;
+}
+
+const LOCATION_LABELS: Record<string, { acquiring: string; precise: string; coarse: string; unavailable: string }> = {
+  en: { acquiring: 'Locating…', precise: 'Precise', coarse: 'Approx.', unavailable: 'Location unavailable' },
+  es: { acquiring: 'Ubicando…', precise: 'Precisa', coarse: 'Aprox.', unavailable: 'Ubicación no disponible' },
+  zh: { acquiring: '定位中…', precise: '精確', coarse: '大約', unavailable: '無法定位' },
+};
+
+function formatCoords(p: { latitude: number; longitude: number }): string {
+  return `${p.latitude.toFixed(1)}°, ${p.longitude.toFixed(1)}°`;
+}
+
+/**
  * Compass CardView — rotation-presence model (#66), two states:
  *  live:     a `rotation` situation is present → stable current-heading trigram
  *            + N orbits (inside rotating layer, no counter-rotation → feet toward center)
@@ -23,6 +55,8 @@ import { getDirectionForHeading } from '../directions';
 export function CompassCardView({ context, compact }: KnowletCardViewProps) {
   const rotationData = context.situations['rotation'] as RotationData | undefined;
   const hasRotation = rotationData !== undefined;
+
+  const location = readLocationInput(context.inputData);
 
   const colors = getThemeColors(context.colorScheme);
   const abstractColors = getAbstractColors(context.colorScheme);
@@ -177,8 +211,68 @@ export function CompassCardView({ context, compact }: KnowletCardViewProps) {
             {DEGRADED_LABEL[lang] ?? DEGRADED_LABEL.en}
           </Text>
         )}
+
+        {/* ── Location seal row (independent of rotation axis, #68) ── */}
+        {location?.locationState && (
+          <LocationRow location={location} lang={lang} colors={colors} />
+        )}
       </View>
     </View>
+  );
+}
+
+/**
+ * Location seal indicator — a separate row from the rotation readout (#68).
+ * Renders nothing meaningful without a locationState (guarded by caller).
+ * The "Enable location" affordance for the `unavailable` state is overlaid by
+ * the app's pinned-card wrapper — this MIT view only reports the state.
+ */
+function LocationRow({
+  location,
+  lang,
+  colors,
+}: {
+  location: CompassLocationInput;
+  lang: 'en' | 'es' | 'zh';
+  colors: ReturnType<typeof getThemeColors>;
+}) {
+  const labels = LOCATION_LABELS[lang] ?? LOCATION_LABELS.en;
+  const state = location.locationState;
+
+  if (state === 'acquiring') {
+    const provisional = location.displayPosition;
+    return (
+      <Text
+        testID="compass-card-location-acquiring"
+        style={[styles.location, { color: colors.textTertiary }]}
+      >
+        {labels.acquiring}
+        {provisional ? ` ~${formatCoords(provisional)}` : ''}
+      </Text>
+    );
+  }
+
+  if (state === 'precise' || state === 'coarse') {
+    const word = state === 'precise' ? labels.precise : labels.coarse;
+    const coords = location.frozenPosition ? formatCoords(location.frozenPosition) : '';
+    return (
+      <Text
+        testID={`compass-card-location-${state}`}
+        style={[styles.location, { color: colors.textSecondary }]}
+      >
+        📍 {coords}{coords ? ' · ' : ''}{word}
+      </Text>
+    );
+  }
+
+  // unavailable
+  return (
+    <Text
+      testID="compass-card-location-unavailable"
+      style={[styles.location, { color: colors.textTertiary }]}
+    >
+      {labels.unavailable}
+    </Text>
   );
 }
 
@@ -223,5 +317,9 @@ const styles = StyleSheet.create({
   },
   disabledLabel: {
     fontSize: 13,
+  },
+  location: {
+    fontSize: 11,
+    marginTop: 2,
   },
 });

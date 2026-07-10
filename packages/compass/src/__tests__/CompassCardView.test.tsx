@@ -46,3 +46,65 @@ describe('CompassCardView', () => {
     expect(getByText('☳')).toBeTruthy();
   });
 });
+
+// ── Location seal layer (#68) — an axis independent of rotation-presence ──
+const locationInput = (value: unknown) => ({ inputData: { type: 'gps' as const, value } });
+
+describe('CompassCardView location seal layer', () => {
+  it('renders NO location row when there is no location inputData (backward compatible)', () => {
+    const { queryByTestId } = render(<CompassCardView context={createMockContext()} />);
+    expect(queryByTestId('compass-card-location-acquiring')).toBeNull();
+    expect(queryByTestId('compass-card-location-precise')).toBeNull();
+    expect(queryByTestId('compass-card-location-unavailable')).toBeNull();
+  });
+
+  it('shows the acquiring label, with provisional centroid coords when a displayPosition is present', () => {
+    const context = createMockContext(
+      locationInput({ locationState: 'acquiring', displayPosition: { latitude: 40.4, longitude: -3.7 } })
+    );
+    const { getByTestId } = render(<CompassCardView context={context} />);
+    const row = getByTestId('compass-card-location-acquiring');
+    expect(row.textContent).toContain('Locating');
+    expect(row.textContent).toContain('40.4°, -3.7°');
+  });
+
+  it('shows a precise located indicator with frozen coords', () => {
+    const context = createMockContext(
+      locationInput({ locationState: 'precise', frozenPosition: { latitude: 51.5, longitude: -0.1 } })
+    );
+    const { getByTestId, queryByTestId } = render(<CompassCardView context={context} />);
+    const row = getByTestId('compass-card-location-precise');
+    expect(row.textContent).toContain('📍');
+    expect(row.textContent).toContain('51.5°, -0.1°');
+    expect(row.textContent).toContain('Precise');
+    expect(queryByTestId('compass-card-location-coarse')).toBeNull();
+  });
+
+  it('shows an approximate located indicator for a coarse fix', () => {
+    const context = createMockContext(
+      locationInput({ locationState: 'coarse', frozenPosition: { latitude: 34.0, longitude: -118.2 } })
+    );
+    const { getByTestId } = render(<CompassCardView context={context} />);
+    const row = getByTestId('compass-card-location-coarse');
+    expect(row.textContent).toContain('📍');
+    expect(row.textContent).toContain('Approx');
+  });
+
+  it('shows the unavailable label for a degraded seal', () => {
+    const context = createMockContext(locationInput({ locationState: 'unavailable' }));
+    const { getByTestId } = render(<CompassCardView context={context} />);
+    expect(getByTestId('compass-card-location-unavailable').textContent).toContain('Location unavailable');
+  });
+
+  it('renders BOTH the live heading AND an unavailable location — the two axes are independent', () => {
+    const context = createMockContext({
+      ...rotationAt(0),
+      ...locationInput({ locationState: 'unavailable' }),
+    });
+    const { getByTestId } = render(<CompassCardView context={context} />);
+    // Rotation axis: live heading present (magnetometer working)…
+    expect(getByTestId('compass-card-heading').textContent).toContain('0°');
+    // …while the location axis is independently unavailable.
+    expect(getByTestId('compass-card-location-unavailable')).toBeTruthy();
+  });
+});

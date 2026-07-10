@@ -30,7 +30,8 @@ export function createCompositeGeoLocator(config: CompositeGeoLocatorConfig): Ge
       const unchanged =
         lastEmittedStatus.permissionState === currentStatus.permissionState &&
         lastEmittedStatus.isAvailable === currentStatus.isAvailable &&
-        lastEmittedStatus.currentPrecision === currentStatus.currentPrecision;
+        lastEmittedStatus.currentPrecision === currentStatus.currentPrecision &&
+        lastEmittedStatus.canAskAgain === currentStatus.canAskAgain;
 
       if (unchanged) {
         return; // Don't emit duplicate events
@@ -55,6 +56,9 @@ export function createCompositeGeoLocator(config: CompositeGeoLocatorConfig): Ge
       permissionState: highestStatus.permissionState,
       isAvailable: highestStatus.isAvailable,
       currentPrecision: bestStatus.currentPrecision,
+      // canAskAgain reflects the highest-precision locator (GPS): whether the
+      // OS will still prompt if we request the better precision.
+      canAskAgain: highestStatus.canAskAgain,
     };
   }
 

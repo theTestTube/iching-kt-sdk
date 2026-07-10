@@ -29,5 +29,6 @@ export const compassKnowlet: Knowlet = {
 };
 
 export { CompassView, CompassCardView };
+export type { CompassLocationState, CompassLocationInput } from './views/CompassCardView';
 export { COMPASS_DIRECTIONS, getDirectionForHeading } from './directions';
 export type { DirectionInfo } from './directions';

@@ -167,6 +167,13 @@ export interface GeoLocatorStatus {
   permissionState: LocationPermissionState;
   isAvailable: boolean;  // Whether location services are enabled on device
   currentPrecision: LocationPrecision;
+  /**
+   * Whether the OS will still show a permission dialog if asked again.
+   * `false` means permission is permanently denied ("Don't ask again" / iOS
+   * denied) → the app must route the user to system Settings instead of
+   * calling requestPermission(). Optional/undefined when unknown.
+   */
+  canAskAgain?: boolean;
 }
 
 /** GeoLocator interface - abstracts platform-specific location services */

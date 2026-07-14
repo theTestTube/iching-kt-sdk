@@ -88,6 +88,14 @@ export interface TranslationPreferences {
   zh: ChineseSource;
 }
 
+/**
+ * Visual grammar for knowlet cards in the boards panel.
+ * - `tiles`: uniform 100×100 square, board name in a header strip on top.
+ * - `album`: 120×160 portrait, art fills the card, board name overlaid at the bottom.
+ * A user preference; defaults to `tiles`. See CardFrame / KnowletCard.
+ */
+export type CardStyle = 'tiles' | 'album';
+
 export interface KnowletContext {
   situations: Record<string, SituationData>;
   settings: KnowletSettings;
@@ -109,6 +117,8 @@ export interface KnowletContext {
   showKnowletSelector: (type: OutputType, value: unknown) => void;
   /** Input data passed from another knowlet (if navigated via output emission) */
   inputData?: { type: OutputType; value: unknown };
+  /** User's preferred card visual grammar for the boards panel (defaults to `tiles`). */
+  cardStyle?: CardStyle;
 }
 
 /** Props for a knowlet's compact card view */

@@ -4,6 +4,7 @@ export * from './hooks';
 export * from './theme';
 export * from './translations';
 export * from './ActionableElement';
+export * from './CardFrame';
 export * from './KnowletCard';
 export * from './HexagramLines';
 export * from './HexagramLineValues';

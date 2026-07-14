@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, StyleProp, ViewStyle } from 'react-native';
+import { Text, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { ActionableElement } from './ActionableElement';
+import { CardFrame, CARD_FRAME_DIMENSIONS } from './CardFrame';
 import { getThemeColors } from './theme';
 import type { Knowlet, KnowletContext, KnowletCardViewProps } from './types';
 
@@ -43,6 +44,8 @@ export function KnowletCard({
   const { meta } = knowlet;
   const name = meta.names?.[context.language] ?? meta.name;
   const icon = meta.icon ?? '☯';
+  const cardStyle = context.cardStyle ?? 'tiles';
+  const dims = CARD_FRAME_DIMENSIONS[cardStyle];
 
   const handlePress = onPress
     ? () => onPress(meta.id)
@@ -52,29 +55,13 @@ export function KnowletCard({
     ? () => onLongPress(meta.id)
     : undefined;
 
-  // Use the knowlet's CardView if available
-  if (knowlet.CardView) {
-    return (
-      <ActionableElement
-        outputType="hexagram"
-        value={meta.id}
-        label={name}
-        onPress={handlePress ? () => handlePress() : undefined}
-        onLongPress={handleLongPress ? () => handleLongPress() : undefined}
-        defaultColor={colors.surface}
-        colorScheme={context.colorScheme}
-        style={[styles.card, compact && styles.cardCompact, style]}
-      >
-        <knowlet.CardView
-          context={context}
-          compact={compact}
-          hexagramData={hexagramData}
-        />
-      </ActionableElement>
-    );
-  }
+  // Body: the knowlet's CardView if available, else a large fallback icon.
+  const body = knowlet.CardView ? (
+    <knowlet.CardView context={context} compact={compact} hexagramData={hexagramData} />
+  ) : (
+    <Text style={styles.fallbackIcon}>{icon}</Text>
+  );
 
-  // Fallback: icon + name
   return (
     <ActionableElement
       outputType="hexagram"
@@ -84,47 +71,20 @@ export function KnowletCard({
       onLongPress={handleLongPress ? () => handleLongPress() : undefined}
       defaultColor={colors.surface}
       colorScheme={context.colorScheme}
-      style={[styles.card, compact && styles.cardCompact, style]}
+      style={[
+        { width: dims.width, height: dims.height, borderRadius: dims.borderRadius },
+        style,
+      ]}
     >
-      <View style={styles.fallbackContent}>
-        <Text style={[styles.icon, compact && styles.iconCompact]}>{icon}</Text>
-        <Text
-          style={[styles.name, { color: colors.text }, compact && styles.nameCompact]}
-          numberOfLines={1}
-        >
-          {name}
-        </Text>
-      </View>
+      <CardFrame variant={cardStyle} name={name} icon={icon} colorScheme={context.colorScheme}>
+        {body}
+      </CardFrame>
     </ActionableElement>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    width: 120,
-    padding: 12,
-    alignItems: 'center',
-  },
-  cardCompact: {
-    width: 90,
-    padding: 8,
-  },
-  fallbackContent: {
-    alignItems: 'center',
-    gap: 4,
-  },
-  icon: {
+  fallbackIcon: {
     fontSize: 28,
-  },
-  iconCompact: {
-    fontSize: 20,
-  },
-  name: {
-    fontSize: 12,
-    fontWeight: '500',
-    textAlign: 'center',
-  },
-  nameCompact: {
-    fontSize: 10,
   },
 });

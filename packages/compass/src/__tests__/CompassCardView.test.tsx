@@ -26,6 +26,8 @@ describe('CompassCardView', () => {
     // Default north-up: Kan (☵) at center, no live heading readout.
     expect(getByText('☵')).toBeTruthy();
     expect(getByTestId('compass-card-degraded')).toBeTruthy();
+    // Honest copy (#95): the heading is missing, not the hardware.
+    expect(getByTestId('compass-card-degraded').textContent).toBe('No heading');
     expect(queryByTestId('compass-card-heading')).toBeNull();
   });
 

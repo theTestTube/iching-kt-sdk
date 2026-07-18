@@ -109,10 +109,13 @@ export function CompassCardView({ context, compact }: KnowletCardViewProps) {
     extrapolate: 'extend',
   });
 
+  // "No heading", not "No compass": the sensor may exist but be idle on this
+  // surface (it only runs while the compass board is open), or the pin may have
+  // been sealed without a heading. Claiming hardware absence misleads (#95).
   const DEGRADED_LABEL: Record<string, string> = {
-    en: 'No compass',
-    es: 'Sin brújula',
-    zh: '無羅盤',
+    en: 'No heading',
+    es: 'Sin rumbo',
+    zh: '無方位',
   };
 
   // N/^ use transform:translateY to reach orbit — layout stays within ROSE bounds

@@ -21,6 +21,13 @@ export interface ThemeColors {
   primary: string;
   accent: string;
 
+  // Status colors (UI state indicators — health/budget/traffic-light).
+  // Saturated fills meant to carry an inverse-colored glyph (see textInverse).
+  success: string;
+  warning: string;
+  danger: string;
+  neutral: string;
+
   // Overlay
   overlay: string;
 }
@@ -73,6 +80,11 @@ const lightColors: ThemeColors = {
   primary: '#007AFF',
   accent: '#1a1a2e',
 
+  success: '#22C55E',
+  warning: '#F59E0B',
+  danger: '#EF4444',
+  neutral: '#6B7280',
+
   overlay: 'rgba(0, 0, 0, 0.5)',
 };
 
@@ -91,6 +103,11 @@ const darkColors: ThemeColors = {
 
   primary: '#0A84FF',
   accent: '#e0e0e0',
+
+  success: '#4ADE80',
+  warning: '#FBBF24',
+  danger: '#F87171',
+  neutral: '#9CA3AF',
 
   overlay: 'rgba(0, 0, 0, 0.7)',
 };

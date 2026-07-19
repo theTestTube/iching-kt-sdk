@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { getThemeColors } from '@iching-kt/core';
+import { getThemeColors, CARD_TYPOGRAPHY, CARD_SPACING } from '@iching-kt/core';
 import type { KnowletCardViewProps } from '@iching-kt/core';
 import type { MoonPhaseData } from '@iching-kt/provider-moon-phase';
 import { getTranslation } from './data';
@@ -57,25 +57,25 @@ export function MoonCardView({ context, compact }: KnowletCardViewProps) {
 const styles = StyleSheet.create({
   content: {
     alignItems: 'center',
-    gap: 4,
+    gap: CARD_SPACING.gapSm,
   },
   icon: {
-    fontSize: 28,
+    ...CARD_TYPOGRAPHY.displayIcon,
     textAlign: 'center',
   },
   iconCompact: {
-    fontSize: 20,
+    ...CARD_TYPOGRAPHY.displayIconCompact,
   },
   label: {
-    fontSize: 12,
-    fontWeight: '500',
+    ...CARD_TYPOGRAPHY.label,
     textAlign: 'center',
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    gap: CARD_SPACING.gap,
   },
+  // In-row phase emoji sized to the info row, not the display-icon role.
   emoji: {
     fontSize: 24,
   },
@@ -86,13 +86,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   phaseName: {
-    fontSize: 12,
-    fontWeight: '600',
+    ...CARD_TYPOGRAPHY.title,
   },
   phaseNameCompact: {
-    fontSize: 10,
+    ...CARD_TYPOGRAPHY.titleCompact,
   },
   trigram: {
-    fontSize: 10,
+    ...CARD_TYPOGRAPHY.caption,
   },
 });

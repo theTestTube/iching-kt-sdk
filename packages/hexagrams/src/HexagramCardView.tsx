@@ -5,6 +5,8 @@ import {
   getThemeColors,
   getTranslationSourceForLanguage,
   isOriginLanguage,
+  CARD_TYPOGRAPHY,
+  CARD_SPACING,
 } from '@iching-kt/core';
 import type { KnowletCardViewProps } from '@iching-kt/core';
 import { getHexagram, getHexagramTranslationBySource } from '@iching-kt/data-hexagrams';
@@ -151,18 +153,17 @@ function RelatingHexagramRow({
 
 const styles = StyleSheet.create({
   content: {
-    gap: 4,
+    gap: CARD_SPACING.gapSm,
   },
   icon: {
-    fontSize: 28,
+    ...CARD_TYPOGRAPHY.displayIcon,
     textAlign: 'center',
   },
   iconCompact: {
-    fontSize: 20,
+    ...CARD_TYPOGRAPHY.displayIconCompact,
   },
   label: {
-    fontSize: 12,
-    fontWeight: '500',
+    ...CARD_TYPOGRAPHY.label,
     textAlign: 'center',
   },
   primaryRow: {
@@ -171,43 +172,43 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   unicode: {
-    fontSize: 28,
+    ...CARD_TYPOGRAPHY.displayIcon,
   },
   unicodeCompact: {
-    fontSize: 20,
+    ...CARD_TYPOGRAPHY.displayIconCompact,
   },
   info: {
     flex: 1,
   },
   number: {
-    fontSize: 10,
+    ...CARD_TYPOGRAPHY.micro,
   },
   name: {
-    fontSize: 13,
-    fontWeight: '600',
+    ...CARD_TYPOGRAPHY.title,
   },
   nameCompact: {
-    fontSize: 11,
+    ...CARD_TYPOGRAPHY.titleCompact,
   },
   chinese: {
-    fontSize: 11,
+    ...CARD_TYPOGRAPHY.caption,
   },
   notation: {
-    fontSize: 11,
+    ...CARD_TYPOGRAPHY.caption,
     fontFamily: 'monospace',
   },
   changingRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    gap: CARD_SPACING.gap,
   },
   changingLabel: {
-    fontSize: 10,
+    ...CARD_TYPOGRAPHY.micro,
   },
   changingDots: {
     flexDirection: 'row',
     gap: 3,
   },
+  // Changing-line dots sized as geometry, not text.
   dot: {
     width: 6,
     height: 6,
@@ -216,9 +217,10 @@ const styles = StyleSheet.create({
   relatingRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 4,
+    gap: CARD_SPACING.gapSm,
     paddingTop: 2,
   },
+  // Connector arrow + mini relating glyph sized to the relating row, not the text scale.
   relatingArrow: {
     fontSize: 12,
     fontWeight: '600',
@@ -227,7 +229,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   relatingInfo: {
-    fontSize: 11,
+    ...CARD_TYPOGRAPHY.caption,
     flex: 1,
   },
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { getThemeColors } from '@iching-kt/core';
+import { getThemeColors, CARD_TYPOGRAPHY, CARD_SPACING } from '@iching-kt/core';
 import type { KnowletCardViewProps } from '@iching-kt/core';
 import { getTrigram, getTrigramTranslation } from '@iching-kt/data-hexagrams';
 import type { TrigramId } from '@iching-kt/data-hexagrams';
@@ -45,36 +45,34 @@ export function TrigramCardView({ context, compact }: KnowletCardViewProps) {
 const styles = StyleSheet.create({
   content: {
     alignItems: 'center',
-    gap: 2,
+    gap: CARD_SPACING.gapXs,
   },
   icon: {
-    fontSize: 28,
+    ...CARD_TYPOGRAPHY.displayIcon,
     textAlign: 'center',
   },
   iconCompact: {
-    fontSize: 20,
+    ...CARD_TYPOGRAPHY.displayIconCompact,
   },
   label: {
-    fontSize: 12,
-    fontWeight: '500',
+    ...CARD_TYPOGRAPHY.label,
     textAlign: 'center',
   },
   unicode: {
-    fontSize: 28,
+    ...CARD_TYPOGRAPHY.displayIcon,
   },
   unicodeCompact: {
-    fontSize: 20,
+    ...CARD_TYPOGRAPHY.displayIconCompact,
   },
   name: {
-    fontSize: 12,
-    fontWeight: '600',
+    ...CARD_TYPOGRAPHY.title,
     textAlign: 'center',
   },
   nameCompact: {
-    fontSize: 10,
+    ...CARD_TYPOGRAPHY.titleCompact,
   },
   chinese: {
-    fontSize: 10,
+    ...CARD_TYPOGRAPHY.caption,
     textAlign: 'center',
   },
 });

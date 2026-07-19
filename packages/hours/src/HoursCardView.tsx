@@ -5,6 +5,8 @@ import {
   getThemeColors,
   getTranslationSourceForLanguage,
   isOriginLanguage,
+  CARD_TYPOGRAPHY,
+  CARD_SPACING,
 } from '@iching-kt/core';
 import type { KnowletCardViewProps } from '@iching-kt/core';
 import type { SolarTimeData } from '@iching-kt/provider-solar-time';
@@ -84,25 +86,25 @@ export function HoursCardView({ context, compact }: KnowletCardViewProps) {
 const styles = StyleSheet.create({
   content: {
     alignItems: 'center',
-    gap: 4,
+    gap: CARD_SPACING.gapSm,
   },
   icon: {
-    fontSize: 28,
+    ...CARD_TYPOGRAPHY.displayIcon,
     textAlign: 'center',
   },
   iconCompact: {
-    fontSize: 20,
+    ...CARD_TYPOGRAPHY.displayIconCompact,
   },
   label: {
-    fontSize: 12,
-    fontWeight: '500',
+    ...CARD_TYPOGRAPHY.label,
     textAlign: 'center',
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    gap: CARD_SPACING.gap,
   },
+  // In-row hexagram glyph sized to the info row, not the display-icon role.
   unicode: {
     fontSize: 24,
   },
@@ -113,13 +115,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   branchName: {
-    fontSize: 10,
+    ...CARD_TYPOGRAPHY.caption,
   },
   name: {
-    fontSize: 12,
-    fontWeight: '600',
+    ...CARD_TYPOGRAPHY.title,
   },
   nameCompact: {
-    fontSize: 10,
+    ...CARD_TYPOGRAPHY.titleCompact,
   },
 });

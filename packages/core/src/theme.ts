@@ -1,3 +1,4 @@
+import type { TextStyle } from 'react-native';
 import { ColorScheme } from './types';
 
 export interface ThemeColors {
@@ -143,3 +144,48 @@ export function getAbstractColors(colorScheme: ColorScheme): AbstractColors {
 export function useAbstractColors(colorScheme: ColorScheme): AbstractColors {
   return getAbstractColors(colorScheme);
 }
+
+/** A card text role: font size + optional weight + optional line height. */
+export interface CardTextStyle {
+  fontSize: number;
+  fontWeight?: TextStyle['fontWeight'];
+  lineHeight?: number;
+}
+
+/**
+ * Shared typography scale for knowlet card **content** (#82). Text-content
+ * CardViews derive their font sizes/weights from these roles instead of
+ * hard-coding literals, so cards read as one system. `*Compact` variants apply
+ * when a CardView renders in `compact` mode. Sizes are color-scheme independent.
+ *
+ * Deliberately NOT governed by this scale (see CARD_TYPOGRAPHY consumers):
+ * - Glyphs sized to fixed geometry: the square boards' cell glyphs
+ *   (LoShu/HeTu/matrix/branches) and the compass rose derive their sizes from
+ *   their own cell/rose dimensions, not from body-text roles.
+ * - CardFrame chrome: the frame header/overlay is tuned to the fixed 100/120px
+ *   card footprint, a separate concern from CardView body content.
+ */
+export const CARD_TYPOGRAPHY = {
+  /** Large placeholder glyph when a card has no content yet (☯ / 🔀 / ⏰). */
+  displayIcon: { fontSize: 28 } as CardTextStyle,
+  displayIconCompact: { fontSize: 20 } as CardTextStyle,
+  /** Content name / heading (hexagram, trigram, phase, element name). */
+  title: { fontSize: 13, fontWeight: '600' } as CardTextStyle,
+  titleCompact: { fontSize: 11, fontWeight: '600' } as CardTextStyle,
+  /** Placeholder caption under the display icon (board label fallback). */
+  label: { fontSize: 12, fontWeight: '500' } as CardTextStyle,
+  /** Secondary text: Chinese gloss, explanation, notation, relating info. */
+  caption: { fontSize: 11 } as CardTextStyle,
+  /** Smallest meta: numbers, tiny labels. */
+  micro: { fontSize: 10 } as CardTextStyle,
+} as const;
+
+/** Shared inner spacing scale for card content (#82). */
+export const CARD_SPACING = {
+  /** Tight gap between stacked glyph + label. */
+  gapXs: 2,
+  gapSm: 4,
+  gap: 6,
+  /** Inner padding for content that paints its own surface. */
+  padding: 8,
+} as const;

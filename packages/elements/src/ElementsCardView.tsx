@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { KnowletCardViewProps, getThemeColors, getAbstractColors } from '@iching-kt/core';
+import { KnowletCardViewProps, getThemeColors, getAbstractColors, CARD_TYPOGRAPHY, CARD_SPACING } from '@iching-kt/core';
 import { WuXingId, getTranslation } from './data';
 
 export function ElementsCardView({ context, compact }: KnowletCardViewProps) {
@@ -42,11 +42,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 8,
-    gap: 6,
+    padding: CARD_SPACING.padding,
+    gap: CARD_SPACING.gap,
   },
   icon: {
-    fontSize: 28,
+    ...CARD_TYPOGRAPHY.displayIcon,
   },
   badge: {
     width: 52,
@@ -55,16 +55,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  // Badge glyph sized to the 52px badge, not the content-text scale.
   chinese: {
     color: '#fff',
     fontWeight: 'bold',
   },
   label: {
-    fontSize: 12,
+    ...CARD_TYPOGRAPHY.label,
   },
   name: {
-    fontSize: 13,
-    fontWeight: '500',
+    ...CARD_TYPOGRAPHY.title,
     textTransform: 'capitalize',
   },
 });

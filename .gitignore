@@ -2,3 +2,6 @@ node_modules/
 dist/
 *.log
 .DS_Store
+
+# Scratch — untracked handoff/seed/passport artifacts. Disposable by definition.
+.scratch/

@@ -127,3 +127,32 @@ const translations: Record<string, PolarityTranslations> = {
 export function getTranslation(language: string): PolarityTranslations {
   return translations[language] ?? translations.en;
 }
+
+export interface YinYangInput {
+  polarity?: YinYangId;
+  explanation?: string;
+}
+
+/**
+ * Read this board's polarity out of the SHARED global `inputData` slot.
+ *
+ * Two accepted shapes: a plain polarity id, and the `{ polarity, explanation }`
+ * object a pinned card adopts from a toss (#65). Anything else — including the
+ * foreign types that share the slot — yields an empty result rather than a
+ * payload that makes `abstractColors.yinyang[...]` throw on `.activeColor`.
+ */
+export function parseYinYangInput(inputData?: { type: string; value: unknown }): YinYangInput {
+  if (inputData?.type !== 'yinyang') return {};
+  const value = inputData.value;
+  if (value === 'yin' || value === 'yang') return { polarity: value };
+  if (typeof value === 'object' && value !== null && 'polarity' in value) {
+    const obj = value as { polarity?: unknown; explanation?: unknown };
+    if (obj.polarity === 'yin' || obj.polarity === 'yang') {
+      return {
+        polarity: obj.polarity,
+        explanation: typeof obj.explanation === 'string' ? obj.explanation : undefined,
+      };
+    }
+  }
+  return {};
+}

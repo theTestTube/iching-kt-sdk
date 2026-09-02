@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { KnowletCardViewProps, getThemeColors, getAbstractColors, CARD_TYPOGRAPHY, CARD_SPACING } from '@iching-kt/core';
-import { WuXingId, getTranslation } from './data';
+import { getTranslation, parseElementInput } from './data';
 
 export function ElementsCardView({ context, compact }: KnowletCardViewProps) {
   const colors = getThemeColors(context.colorScheme);
   const abstractColors = getAbstractColors(context.colorScheme);
 
-  const element = context.inputData?.value as WuXingId | undefined;
+  const element = parseElementInput(context.inputData);
   const t = getTranslation(context.language);
 
   if (!element || !t.elements[element]) {

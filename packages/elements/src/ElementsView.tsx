@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { KnowletContext, getThemeColors, getAbstractColors } from '@iching-kt/core';
-import { WuXingId, WU_XING_ORDER, getTranslation } from './data';
+import { WuXingId, WU_XING_ORDER, getTranslation, parseElementInput } from './data';
 
 // Pentagram node positions (percent of 300x300 canvas, centered at 150,150, r=110)
 // Top=fire, then clockwise: earth, metal, wood, water
@@ -36,7 +36,7 @@ interface Props {
 }
 
 export function ElementsView({ context }: Props) {
-  const inputElement = context.inputData?.value as WuXingId | undefined;
+  const inputElement = parseElementInput(context.inputData);
   const [selected, setSelected] = useState<WuXingId>(inputElement ?? 'wood');
 
   const t = getTranslation(context.language);

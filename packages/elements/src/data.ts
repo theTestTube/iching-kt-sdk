@@ -324,3 +324,18 @@ export function getElementName(id: WuXingId, language: string): string {
   const t = getTranslation(language);
   return t.elements[id].chinese;
 }
+
+/**
+ * Read this board's element out of the SHARED global `inputData` slot.
+ *
+ * `inputData` carries whatever the last emit or pin adoption put there — often
+ * a type this board does not consume (a hexagram, say). Reading `.value`
+ * blindly hands a foreign payload to `abstractColors.elements[...]`, which then
+ * throws on `.activeColor`. Anything that is not a known element id yields
+ * undefined so the caller can fall back.
+ */
+export function parseElementInput(inputData?: { type: string; value: unknown }): WuXingId | undefined {
+  if (inputData?.type !== 'element') return undefined;
+  const value = inputData.value;
+  return WU_XING_ORDER.includes(value as WuXingId) ? (value as WuXingId) : undefined;
+}

@@ -1,32 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { KnowletCardViewProps, getThemeColors, getAbstractColors, CARD_TYPOGRAPHY, CARD_SPACING } from '@iching-kt/core';
-import { YinYangId, getTranslation } from './data';
-
-interface YinYangInput {
-  polarity?: YinYangId;
-  explanation?: string;
-}
-
-function parseYinYangInput(inputData?: { type: string; value: unknown }): YinYangInput {
-  if (inputData?.type !== 'yinyang') {
-    return {};
-  }
-  const value = inputData.value;
-  if (value === 'yin' || value === 'yang') {
-    return { polarity: value };
-  }
-  if (typeof value === 'object' && value !== null && 'polarity' in value) {
-    const obj = value as { polarity?: unknown; explanation?: unknown };
-    if (obj.polarity === 'yin' || obj.polarity === 'yang') {
-      return {
-        polarity: obj.polarity,
-        explanation: typeof obj.explanation === 'string' ? obj.explanation : undefined,
-      };
-    }
-  }
-  return {};
-}
+import { getTranslation, parseYinYangInput } from './data';
 
 export function YinYangCardView({ context, compact }: KnowletCardViewProps) {
   const colors = getThemeColors(context.colorScheme);

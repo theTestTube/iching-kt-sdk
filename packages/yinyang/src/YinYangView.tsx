@@ -7,14 +7,14 @@ import {
   StyleSheet,
 } from 'react-native';
 import { KnowletContext, getThemeColors, getAbstractColors } from '@iching-kt/core';
-import { YinYangId, YIN_YANG_ORDER, getTranslation } from './data';
+import { YinYangId, YIN_YANG_ORDER, getTranslation, parseYinYangInput } from './data';
 
 interface Props {
   context: KnowletContext;
 }
 
 export function YinYangView({ context }: Props) {
-  const inputPolarity = context.inputData?.value as YinYangId | undefined;
+  const inputPolarity = parseYinYangInput(context.inputData).polarity;
   const [selected, setSelected] = useState<YinYangId>(inputPolarity ?? 'yin');
 
   const t = getTranslation(context.language);

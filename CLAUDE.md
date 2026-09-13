@@ -30,6 +30,6 @@ test on every push and pull request to `develop`.
 - Commit messages are prefix-based and at most 128 characters: `add:`, `upd:`, `rm:`, `fix:`,
   `wip:`, `merge:`.
 - Repository documents are written in English.
-- Everything committed here is released under the MIT licence. Do not add text that cannot be
-  released under it. Link to such text instead.
+- This repository's own contributions are licensed under MIT (see `LICENSE`). Do not add text
+  whose rights would not allow that. Link to it instead.
 - Design knowledge lives in the I-Ching KT wiki, not in this repository. See [WIKI.md](WIKI.md).

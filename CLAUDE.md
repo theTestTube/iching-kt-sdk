@@ -7,8 +7,7 @@ review and assistant workflows in `.github/workflows/`.
 
 `iching-kt-sdk` is the public, MIT-licensed SDK of I-Ching KT: a pnpm workspace of TypeScript
 packages under `packages/*`. `packages/core` holds the shared contracts and components. The
-other packages are built-in knowlets, providers and data. The proprietary app,
-`theTestTube/iching-kt`, consumes these packages.
+other packages are built-in knowlets, providers and data. Applications consume them as packages.
 
 ## Commands
 
@@ -32,4 +31,5 @@ test on every push and pull request to `develop`.
 - Repository documents are written in English.
 - This repository's own contributions are licensed under MIT (see `LICENSE`). Do not add text
   whose rights would not allow that. Link to it instead.
-- Design knowledge lives in the I-Ching KT wiki, not in this repository. See [WIKI.md](WIKI.md).
+- The maintainers keep design rationale in a wiki outside this repository. Contributing does not
+  require it. See [WIKI.md](WIKI.md).

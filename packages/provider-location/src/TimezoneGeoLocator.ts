@@ -30,6 +30,10 @@ export function createTimezoneGeoLocator(): GeoLocator {
   /**
    * Calculate milliseconds until next minute boundary.
    * Aligns timezone checks to minute changes for better power efficiency.
+   * Hermes caches the device timezone at JS-context startup: polling cannot
+   * observe timezone changes hidden by that cache (DST/travel may need a restart).
+   * This longitude estimate remains timezone-dependent; only solar calculations
+   * with a fixed longitude are immune. Consolidation is tracked separately in CR-22.
    */
   const getMillisecondsToNextMinute = (): number => {
     const now = new Date();

@@ -64,8 +64,8 @@ export function solarTimeDataAt(
     longitude: resolved.longitude,
     hour: civilTime.getHours(),
     minute: civilTime.getMinutes(),
-    solarHour: solarTime.getHours(),
-    solarMinute: solarTime.getMinutes(),
+    solarHour: solarTime.getUTCHours(),
+    solarMinute: solarTime.getUTCMinutes(),
     // Legacy compatibility
     earthlyBranch: shichen.branch,
     earthlyBranchIndex: shichen.index,

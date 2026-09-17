@@ -36,7 +36,7 @@ export interface SolarTimeData extends SituationData {
   /** Civil clock time (with timezone/DST as reported by device) */
   civilTime: Date;
 
-  /** True local solar time */
+  /** Mean solar wall time encoded in UTC fields; use UTC getters or solarHour/solarMinute. */
   solarTime: Date;
 
   /** Offset from civil time in minutes (positive = solar ahead of civil) */

@@ -18,16 +18,12 @@ const at = (longitude: number, precision: GeoPosition['precision']): GeoPosition
 });
 
 describe('solarTimeDataAt', () => {
-  let previousTimezone: string | undefined;
-
   beforeEach(() => {
-    previousTimezone = process.env.TZ;
-    process.env.TZ = 'UTC';
+    vi.stubEnv('TZ', 'UTC');
   });
 
   afterEach(() => {
-    if (previousTimezone === undefined) delete process.env.TZ;
-    else process.env.TZ = previousTimezone;
+    vi.unstubAllEnvs();
     vi.restoreAllMocks();
   });
 
@@ -74,7 +70,7 @@ describe('solarTimeDataAt', () => {
   });
 
   it('keeps New York solar time unchanged between winter and DST', () => {
-    process.env.TZ = 'America/New_York';
+    vi.stubEnv('TZ', 'America/New_York');
     const winter = new Date('2020-01-21T12:00:00Z');
     const summer = new Date('2020-07-21T12:00:00Z');
     expect(winter.getTimezoneOffset()).toBe(300);
@@ -92,7 +88,7 @@ describe('solarTimeDataAt', () => {
 
   it.each(['UTC', 'America/New_York'])(
     'preserves solar dates and shichen boundaries in %s', (timezone) => {
-      process.env.TZ = timezone;
+      vi.stubEnv('TZ', timezone);
       const cases = [
         ['2020-07-21T11:55:00Z', -74, '2020-07-21T06:59:00.000Z', 6, 59, 'mao', 34, 119 / 120, 1],
         ['2020-07-21T11:56:00Z', -74, '2020-07-21T07:00:00.000Z', 7, 0, 'chen', 43, 0, 120],

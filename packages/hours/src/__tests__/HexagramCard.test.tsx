@@ -4,7 +4,7 @@
  * Tests the translation logic that HexagramCard uses to ensure:
  * 1. Hexagram names are correctly translated using user's translation source preference
  * 2. Component respects language settings
- * 3. Component properly handles different translation sources (wilhelm, legge, zhouyi)
+ * 3. Component properly handles different translation sources (legge, zhouyi; a stale 'wilhelm' falls back to legge, #197)
  *
  * Framework: Jest
  * Run: npm test -- --testPathPattern=HexagramCard
@@ -16,17 +16,17 @@ import type { TranslationPreferences } from '@iching-kt/core';
 
 describe('HexagramCard - Translation Source Behavior', () => {
   describe('Hexagram Translation Source Preference', () => {
-    it('should select wilhelm translation for English (default)', () => {
-      const prefs: TranslationPreferences = { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' };
+    it('should fall back to legge for English when a stale wilhelm preference is stored', () => {
+      const prefs = { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' } as unknown as TranslationPreferences;
       const source = getTranslationSourceForLanguage('en', prefs);
       const translation = getHexagramTranslationBySource(23, 'en', source as any);
 
-      expect(source).toBe('wilhelm');
-      expect(translation?.name).toBe('Splitting Apart');
+      expect(source).toBe('legge');
+      expect(translation?.name).toBe('Decay');
     });
 
     it('should select legge translation for English when preferred', () => {
-      const prefs: TranslationPreferences = { en: 'legge', es: 'wilhelm', zh: 'zhouyi' };
+      const prefs: TranslationPreferences = { en: 'legge', es: 'legge', zh: 'zhouyi' };
       const source = getTranslationSourceForLanguage('en', prefs);
       const translation = getHexagramTranslationBySource(23, 'en', source as any);
 
@@ -35,17 +35,17 @@ describe('HexagramCard - Translation Source Behavior', () => {
       expect(translation?.name).toBe('Decay');
     });
 
-    it('should select wilhelm translation for Spanish (default)', () => {
-      const prefs: TranslationPreferences = { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' };
+    it('should fall back to legge for Spanish when a stale wilhelm preference is stored', () => {
+      const prefs = { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' } as unknown as TranslationPreferences;
       const source = getTranslationSourceForLanguage('es', prefs);
       const translation = getHexagramTranslationBySource(23, 'es', source as any);
 
-      expect(source).toBe('wilhelm');
-      expect(translation?.name).toBe('La Desintegración');
+      expect(source).toBe('legge');
+      expect(translation?.name).toBe('La Decadencia');
     });
 
     it('should select legge translation for Spanish when preferred', () => {
-      const prefs: TranslationPreferences = { en: 'wilhelm', es: 'legge', zh: 'zhouyi' };
+      const prefs: TranslationPreferences = { en: 'legge', es: 'legge', zh: 'zhouyi' };
       const source = getTranslationSourceForLanguage('es', prefs);
       const translation = getHexagramTranslationBySource(23, 'es', source as any);
 
@@ -55,7 +55,7 @@ describe('HexagramCard - Translation Source Behavior', () => {
     });
 
     it('should select zhouyi translation for Spanish when preferred', () => {
-      const prefs: TranslationPreferences = { en: 'wilhelm', es: 'zhouyi', zh: 'zhouyi' };
+      const prefs: TranslationPreferences = { en: 'legge', es: 'zhouyi', zh: 'zhouyi' };
       const source = getTranslationSourceForLanguage('es', prefs);
       const translation = getHexagramTranslationBySource(23, 'es', source as any);
 
@@ -64,7 +64,7 @@ describe('HexagramCard - Translation Source Behavior', () => {
     });
 
     it('should use zhouyi translation for Chinese language', () => {
-      const prefs: TranslationPreferences = { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' };
+      const prefs: TranslationPreferences = { en: 'legge', es: 'legge', zh: 'zhouyi' };
       const source = getTranslationSourceForLanguage('zh', prefs);
       const translation = getHexagramTranslationBySource(23, 'zh', source as any);
 
@@ -86,7 +86,7 @@ describe('HexagramCard - Translation Source Behavior', () => {
 
     it('should handle hexagram #1 correctly', () => {
       const hexagram = getHexagram(1);
-      const translation = getHexagramTranslationBySource(1, 'en', 'wilhelm');
+      const translation = getHexagramTranslationBySource(1, 'en', 'legge');
 
       expect(hexagram).toBeTruthy();
       expect(hexagram?.number).toBe(1);
@@ -95,16 +95,16 @@ describe('HexagramCard - Translation Source Behavior', () => {
 
     it('should handle hexagram #64 correctly', () => {
       const hexagram = getHexagram(64);
-      const translation = getHexagramTranslationBySource(64, 'en', 'wilhelm');
+      const translation = getHexagramTranslationBySource(64, 'en', 'legge');
 
       expect(hexagram).toBeTruthy();
       expect(hexagram?.number).toBe(64);
-      expect(translation?.name).toBe('Before Completion');
+      expect(translation?.name).toBe('Not Yet Completed');
     });
 
     it('should return undefined for invalid hexagram numbers', () => {
       const hexagram = getHexagram(999);
-      const translation = getHexagramTranslationBySource(999, 'en', 'wilhelm');
+      const translation = getHexagramTranslationBySource(999, 'en', 'legge');
 
       expect(hexagram).toBeUndefined();
       expect(translation).toBeUndefined();
@@ -114,18 +114,18 @@ describe('HexagramCard - Translation Source Behavior', () => {
   describe('Multi-Language Support', () => {
     const testHexagrams = [
       { number: 1, en: 'The Creative', es: 'Lo Creativo' },
-      { number: 23, en: 'Splitting Apart', es: 'La Desintegración' },
-      { number: 64, en: 'Before Completion', es: 'Antes de la Completación' },
+      { number: 23, en: 'Decay', es: 'La Decadencia' },
+      { number: 64, en: 'Not Yet Completed', es: 'Aún No Completado' },
     ];
 
     testHexagrams.forEach(({ number, en, es }) => {
       it(`should translate hexagram #${number} correctly in English`, () => {
-        const translation = getHexagramTranslationBySource(number, 'en', 'wilhelm');
+        const translation = getHexagramTranslationBySource(number, 'en', 'legge');
         expect(translation?.name).toBe(en);
       });
 
       it(`should translate hexagram #${number} correctly in Spanish`, () => {
-        const translation = getHexagramTranslationBySource(number, 'es', 'wilhelm');
+        const translation = getHexagramTranslationBySource(number, 'es', 'legge');
         expect(translation?.name).toBe(es);
       });
     });
@@ -145,14 +145,12 @@ describe('HexagramCard - Translation Source Behavior', () => {
     });
 
     it('should use default when preference not specified', () => {
-      const defaultPrefs: TranslationPreferences = { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' };
+      const sourceEn = getTranslationSourceForLanguage('en');
+      const sourceEs = getTranslationSourceForLanguage('es');
+      const sourceZh = getTranslationSourceForLanguage('zh');
 
-      const sourceEn = getTranslationSourceForLanguage('en', defaultPrefs);
-      const sourceEs = getTranslationSourceForLanguage('es', defaultPrefs);
-      const sourceZh = getTranslationSourceForLanguage('zh', defaultPrefs);
-
-      expect(sourceEn).toBe('wilhelm');
-      expect(sourceEs).toBe('wilhelm');
+      expect(sourceEn).toBe('legge');
+      expect(sourceEs).toBe('legge');
       expect(sourceZh).toBe('zhouyi');
     });
   });
@@ -161,7 +159,7 @@ describe('HexagramCard - Translation Source Behavior', () => {
     it('should have translations for all 64 hexagrams in English', () => {
       for (let i = 1; i <= 64; i++) {
         const hexagram = getHexagram(i);
-        const translation = getHexagramTranslationBySource(i, 'en', 'wilhelm');
+        const translation = getHexagramTranslationBySource(i, 'en', 'legge');
 
         expect(hexagram).toBeTruthy();
         expect(translation).toBeTruthy();
@@ -171,7 +169,7 @@ describe('HexagramCard - Translation Source Behavior', () => {
 
     it('should have translations for all 64 hexagrams in Spanish', () => {
       for (let i = 1; i <= 64; i++) {
-        const translation = getHexagramTranslationBySource(i, 'es', 'wilhelm');
+        const translation = getHexagramTranslationBySource(i, 'es', 'legge');
         expect(translation).toBeTruthy();
       }
     });
@@ -189,19 +187,19 @@ describe('HexagramCard - Translation Source Behavior', () => {
       // Simulating HexagramCard logic
       const context = {
         language: 'es',
-        translationPreferences: { en: 'wilhelm', es: 'legge', zh: 'zhouyi' } as TranslationPreferences,
+        translationPreferences: { en: 'legge', es: 'legge', zh: 'zhouyi' } as TranslationPreferences,
       };
 
       const source = getTranslationSourceForLanguage(context.language, context.translationPreferences);
       const translation = getHexagramTranslationBySource(23, context.language, source as any);
 
-      // User should see "Po" (Legge) instead of "La Desintegración" (Wilhelm)
+      // User should see the Legge rendering, not the Zhouyi one ("La Desintegración")
       expect(source).toBe('legge');
-      expect(translation?.name).not.toBe('La Desintegración');
+      expect(translation?.name).toBe('La Decadencia');
     });
 
     it('should respect language changes', () => {
-      const prefs: TranslationPreferences = { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' };
+      const prefs: TranslationPreferences = { en: 'legge', es: 'zhouyi', zh: 'zhouyi' };
 
       // English view
       const enSource = getTranslationSourceForLanguage('en', prefs);
@@ -215,7 +213,7 @@ describe('HexagramCard - Translation Source Behavior', () => {
       const zhSource = getTranslationSourceForLanguage('zh', prefs);
       const zhTranslation = getHexagramTranslationBySource(23, 'zh', zhSource as any);
 
-      expect(enTranslation?.name).toBe('Splitting Apart');
+      expect(enTranslation?.name).toBe('Decay');
       expect(esTranslation?.name).toBe('La Desintegración');
       expect(zhTranslation?.name).toBeTruthy();
     });

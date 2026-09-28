@@ -1,12 +1,15 @@
 /**
  * Hexagram data types
  * Translations sourced from:
- * - Wilhelm-Baynes (Public Domain since 2020)
- * - James Legge (Public Domain since 1882)
- * - Zhouyi 周易 (Classical Chinese, Public Domain)
+ * - James Legge, The Yi King (1882, public domain)
+ * - Zhouyi 周易 (classical Chinese, public domain)
  */
 
-export type TranslationSource = 'wilhelm' | 'legge' | 'zhouyi';
+/**
+ * Translation sources with shipped data. 'wilhelm' returns once re-derived
+ * from Richard Wilhelm's 1924 German original (#277).
+ */
+export type TranslationSource = 'legge' | 'zhouyi';
 
 export interface HexagramLineText {
   /** Line position (1-6, bottom to top) */
@@ -36,7 +39,7 @@ export interface Hexagram {
   binary: string;
   upperTrigram: TrigramId;
   lowerTrigram: TrigramId;
-  /** Translations by language-source key (e.g., 'en-wilhelm', 'en-legge', 'es-wilhelm', 'es-legge', 'zh-zhouyi') */
+  /** Translations by language-source key (e.g., 'en-legge', 'es-legge', 'es-zhouyi', 'zh-zhouyi') */
   translations: Record<string, HexagramTranslation>;
 }
 

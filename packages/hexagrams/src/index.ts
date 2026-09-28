@@ -9,8 +9,8 @@ import { TrigramCardView } from './TrigramCardView';
  *
  * Translation source is controlled globally via Translation Sources in General Settings.
  * - Chinese (zh): Original 周易 text (untranslated)
- * - English (en): Wilhelm-Baynes or Legge (untranslated, direct from source)
- * - Spanish (es): Claude translations at build time from Chinese/Legge/Wilhelm
+ * - English (en): Legge (untranslated, direct from source)
+ * - Spanish (es): Claude translations at build time from Chinese/Legge
  */
 export const hexagramsKnowlet: Knowlet = {
   meta: {

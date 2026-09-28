@@ -5,8 +5,9 @@
  *
  * License: MIT
  * Data Sources:
- * - Wilhelm-Baynes Translation (Public Domain since 2020)
- * - James Legge Translation (Public Domain)
+ * - James Legge, The Yi King (1882, public domain)
+ * - Zhouyi 周易 (classical Chinese, public domain)
+ * - Sovereign hexagrams: Han-dynasty guaqi 卦氣 doctrine (public domain)
  * - Unicode Consortium (Open Standard)
  */
 

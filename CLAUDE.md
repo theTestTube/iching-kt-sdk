@@ -29,6 +29,8 @@ test on every push and pull request to `develop`.
 - Commit messages are prefix-based and at most 128 characters: `add:`, `upd:`, `rm:`, `fix:`,
   `wip:`, `merge:`.
 - Repository documents are written in English.
+- Domain vocabulary is in [CONTEXT.md](CONTEXT.md). It holds public-domain facts and the project's
+  own epithets only.
 - This repository's own contributions are licensed under MIT (see `LICENSE`). Do not add text
   whose rights would not allow that. Link to it instead.
 - The maintainers keep design rationale in a wiki outside this repository. Contributing does not

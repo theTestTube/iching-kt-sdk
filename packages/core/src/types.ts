@@ -69,18 +69,18 @@ export interface KnowletSettingsSchema {
   };
 }
 
-/** Translation source for English content */
-export type EnglishSource = 'wilhelm' | 'legge';
-/** Translation source for Spanish content */
-export type SpanishSource = 'wilhelm' | 'legge' | 'zhouyi';
+/** Translation source for English content ('wilhelm' returns with #277) */
+export type EnglishSource = 'legge';
+/** Translation source for Spanish content ('wilhelm' returns with #277) */
+export type SpanishSource = 'legge' | 'zhouyi';
 /** Translation source for Chinese content */
 export type ChineseSource = 'zhouyi';
 
 /**
  * User's translation source preferences per language.
  * - Chinese (zh): Always Zhouyi 周易 classical text (default: 'zhouyi')
- * - English (en): Wilhelm-Baynes or Legge (default: 'wilhelm')
- * - Spanish (es): Wilhelm-Baynes, Legge, or Zhouyi translated to Spanish (default: 'wilhelm')
+ * - English (en): Legge (default: 'legge')
+ * - Spanish (es): Legge or Zhouyi translated to Spanish (default: 'legge')
  */
 export interface TranslationPreferences {
   en: EnglishSource;
@@ -234,7 +234,7 @@ export interface GeoLocator {
 // Translation Metadata Types (for attribution display)
 /** Known translation sources */
 export type TranslationSource =
-  | 'wilhelm'          // Wilhelm-Baynes translation
+  | 'wilhelm'          // Richard Wilhelm, I Ging (1924 German original, public domain)
   | 'legge'            // James Legge translation (1882)
   | 'claude'           // Claude (Anthropic) AI translation
   | 'original-chinese' // Original Zhouyi text
@@ -251,7 +251,6 @@ export type SourceLanguage = 'zh' | 'en' | 'de' | 'es';
 
 /**
  * Metadata attached to translatable content for attribution display.
- * Per decision: 2026-01-22-ux-pattern-for-translation-source-attribution-display.md
  */
 export interface TranslationMetadata {
   /** Primary source of this translation */

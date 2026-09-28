@@ -1,19 +1,22 @@
 /**
  * I-Ching Hexagram Data - All 64 Hexagrams
  *
- * Sources (Public Domain / Free Distribution):
- * - Wilhelm-Baynes Translation (Public Domain since 2020) - modern, accessible
- * - James Legge Translation (Public Domain since 1882) - classical, scholarly
+ * Sources:
+ * - James Legge, The Yi King (Sacred Books of the East XVI, 1882) - public domain
+ * - Zhouyi 周易 (classical Chinese) - public domain
  * - Unicode Consortium (Open Standard)
  *
  * Complete dataset of all 64 hexagrams with multilingual support.
  *
  * Translation keys use language-source format:
- * - 'en-wilhelm': English Wilhelm-Baynes translation (default)
- * - 'en-legge': English James Legge translation
- * - 'es-wilhelm': Spanish Wilhelm-Baynes translation (default)
- * - 'es-legge': Spanish James Legge translation
+ * - 'en-legge': English James Legge translation (default)
+ * - 'es-legge': Spanish translation of Legge (default)
+ * - 'es-zhouyi': Spanish translation of the classical Chinese
  * - 'zh-zhouyi': Chinese classical text (周易, default)
+ *
+ * The Wilhelm-Baynes English (1950) is still in copyright and is not shipped.
+ * Wilhelm keys return once re-derived from Richard Wilhelm's 1924 German
+ * original, which is public domain (#197, #277).
  */
 
 import { Hexagram, TranslationSource } from './types';
@@ -28,34 +31,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'heaven',
     lowerTrigram: 'heaven',
     translations: {
-      en: {
-        name: 'The Creative',
-        meaning: 'Heaven, the creative principle, pure yang energy',
-        judgment: 'The Creative works sublime success, furthering through perseverance.',
-        image: 'The movement of heaven is full of power. Thus the superior man makes himself strong and untiring.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Hidden dragon. Do not act.' },
-          { position: 2, name: 'Nine in the second place', text: 'Dragon appearing in the field. It furthers one to see the great man.' },
-          { position: 3, name: 'Nine in the third place', text: 'All day long the superior man is creatively active. At nightfall his mind is still beset with cares. Danger. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Wavering flight over the depths. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Flying dragon in the heavens. It furthers one to see the great man.' },
-          { position: 6, name: 'Nine at the top', text: 'Arrogant dragon will have cause to repent.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Creative',
-        meaning: 'Heaven, the creative principle, pure yang energy',
-        judgment: 'The Creative works sublime success, furthering through perseverance.',
-        image: 'The movement of heaven is full of power. Thus the superior man makes himself strong and untiring.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Hidden dragon. Do not act.' },
-          { position: 2, name: 'Nine in the second place', text: 'Dragon appearing in the field. It furthers one to see the great man.' },
-          { position: 3, name: 'Nine in the third place', text: 'All day long the superior man is creatively active. At nightfall his mind is still beset with cares. Danger. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Wavering flight over the depths. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Flying dragon in the heavens. It furthers one to see the great man.' },
-          { position: 6, name: 'Nine at the top', text: 'Arrogant dragon will have cause to repent.' },
-        ],
-      },
       'en-legge': {
         name: 'The Creative',
         meaning: 'The creative principle; heaven and yang energy',
@@ -68,20 +43,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'The dragon looking as if he were leaping up, but still in the deep. There will be no mistake.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The dragon on the wing in the sky. It will be advantageous to meet with the great man.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'The dragon exceeding the proper limits. There will be occasion for repentance.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Lo Creativo',
-        meaning: 'Cielo, el principio creativo, energía yang pura',
-        judgment: 'Lo Creativo obra elevado éxito, propiciando mediante la perseverancia.',
-        image: 'El movimiento del cielo es poderoso. Así el hombre superior se hace fuerte e incansable.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Dragón oculto. No actúes.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Dragón que aparece en el campo. Es propicio ver al gran hombre.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Todo el día el hombre superior es creativamente activo. Al caer la noche su mente sigue cargada de preocupaciones. Peligro. Sin censura.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Vuelo vacilante sobre las profundidades. Sin censura.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Dragón volando en los cielos. Es propicio ver al gran hombre.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'El dragón arrogante tendrá motivo para arrepentirse.' },
         ],
       },
       'es-legge': {
@@ -137,34 +98,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'earth',
     lowerTrigram: 'earth',
     translations: {
-      en: {
-        name: 'The Receptive',
-        meaning: 'Earth, the receptive principle, pure yin energy',
-        judgment: 'The Receptive brings about sublime success, furthering through the perseverance of a mare.',
-        image: 'The earth\'s condition is receptive devotion. Thus the superior man who has breadth of character carries the outer world.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'When there is hoarfrost underfoot, solid ice is not far off.' },
-          { position: 2, name: 'Six in the second place', text: 'Straight, square, great. Without purpose, yet nothing remains unfurthered.' },
-          { position: 3, name: 'Six in the third place', text: 'Hidden lines. One is able to remain persevering. If one should happen to be in the service of a king, seek not works, but bring to completion.' },
-          { position: 4, name: 'Six in the fourth place', text: 'A tied-up sack. No blame, no praise.' },
-          { position: 5, name: 'Six in the fifth place', text: 'A yellow lower garment brings supreme good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'Dragons fight in the meadow. Their blood is black and yellow.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Receptive',
-        meaning: 'Earth, the receptive principle, pure yin energy',
-        judgment: 'The Receptive brings about sublime success, furthering through the perseverance of a mare.',
-        image: 'The earth\'s condition is receptive devotion. Thus the superior man who has breadth of character carries the outer world.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'When there is hoarfrost underfoot, solid ice is not far off.' },
-          { position: 2, name: 'Six in the second place', text: 'Straight, square, great. Without purpose, yet nothing remains unfurthered.' },
-          { position: 3, name: 'Six in the third place', text: 'Hidden lines. One is able to remain persevering. If one should happen to be in the service of a king, seek not works, but bring to completion.' },
-          { position: 4, name: 'Six in the fourth place', text: 'A tied-up sack. No blame, no praise.' },
-          { position: 5, name: 'Six in the fifth place', text: 'A yellow lower garment brings supreme good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'Dragons fight in the meadow. Their blood is black and yellow.' },
-        ],
-      },
       'en-legge': {
         name: 'The Receptive',
         meaning: 'The receptive principle; earth and yin energy',
@@ -177,20 +110,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'A sack tied up. There will be no ground for blame or for praise.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The yellow lower garment. There will be great good fortune.' },
           { position: 6, name: 'In the sixth line, divided', text: 'Dragons fighting in the wild. Their blood is purple and yellow.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Lo Receptivo',
-        meaning: 'Tierra, el principio receptivo, energía yin pura',
-        judgment: 'Lo Receptivo obra elevado éxito, propiciando por la perseverancia de una yegua.',
-        image: 'La condición de la tierra es la devoción receptiva. Así el hombre superior que tiene amplitud de carácter sostiene el mundo exterior.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Cuando hay escarcha bajo los pies, el hielo sólido no está lejos.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Recto, cuadrado, grande. Sin propósito deliberado, nada deja de propiciarse.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Líneas ocultas. Uno es capaz de permanecer perseverante. Si uno llegara a estar al servicio de un rey, no busque obras propias, sino lleve las cosas a su cumplimiento.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Un saco atado. Sin censura, sin elogio.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Una vestidura amarilla inferior trae suprema buena fortuna.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Los dragones luchan en la pradera. Su sangre es negra y amarilla.' },
         ],
       },
       'es-legge': {
@@ -246,34 +165,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'earth',
     lowerTrigram: 'heaven',
     translations: {
-      en: {
-        name: 'Peace',
-        meaning: 'Heaven and earth unite, harmony and prosperity',
-        judgment: 'Peace. The small departs, the great approaches. Good fortune. Success.',
-        image: 'Heaven and earth unite: the image of Peace. Thus the ruler divides and completes the course of heaven and earth.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'When ribbon grass is pulled up, the sod comes with it. Each according to his kind. Undertakings bring good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'Bearing with the uncultured in gentleness, fording the river with resolution, not neglecting what is distant, not regarding one\'s companions: thus one may manage to walk in the middle.' },
-          { position: 3, name: 'Nine in the third place', text: 'No plain not followed by a slope. No going not followed by a return. He who remains persevering in danger is without blame. Do not complain about this truth; enjoy the good fortune you still possess.' },
-          { position: 4, name: 'Six in the fourth place', text: 'He flutters down, not boasting of his wealth, together with his neighbor, guileless and sincere.' },
-          { position: 5, name: 'Six in the fifth place', text: 'The sovereign I gives his daughter in marriage. This brings blessing and supreme good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'The wall falls back into the moat. Use no army now. Make your commands known within your own town. Perseverance brings humiliation.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Peace',
-        meaning: 'Heaven and earth unite, harmony and prosperity',
-        judgment: 'Peace. The small departs, the great approaches. Good fortune. Success.',
-        image: 'Heaven and earth unite: the image of Peace. Thus the ruler divides and completes the course of heaven and earth.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'When ribbon grass is pulled up, the sod comes with it. Each according to his kind. Undertakings bring good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'Bearing with the uncultured in gentleness, fording the river with resolution, not neglecting what is distant, not regarding one\'s companions: thus one may manage to walk in the middle.' },
-          { position: 3, name: 'Nine in the third place', text: 'No plain not followed by a slope. No going not followed by a return. He who remains persevering in danger is without blame. Do not complain about this truth; enjoy the good fortune you still possess.' },
-          { position: 4, name: 'Six in the fourth place', text: 'He flutters down, not boasting of his wealth, together with his neighbor, guileless and sincere.' },
-          { position: 5, name: 'Six in the fifth place', text: 'The sovereign I gives his daughter in marriage. This brings blessing and supreme good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'The wall falls back into the moat. Use no army now. Make your commands known within your own town. Perseverance brings humiliation.' },
-        ],
-      },
       'en-legge': {
         name: 'Peace',
         meaning: 'Harmony between heaven and earth',
@@ -286,20 +177,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He comes fluttering down. Not rich, he yet shares with his neighbor. He is sincere in the exercise of his simple goodness.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The ruler Ti Yi married off his younger sister, and thereby happiness and supreme good fortune came about.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The city wall falls back into the moat. Use no armies. Issue your commands in your own city. Even if correct, it will be cause for regret.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Paz',
-        meaning: 'Cielo y tierra se unen, armonía y prosperidad',
-        judgment: 'Paz. Lo pequeño se va, lo grande se acerca. Buena fortuna. Éxito.',
-        image: 'Cielo y tierra se unen: la imagen de la Paz. Así el gobernante divide y completa el curso del cielo y la tierra.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Cuando se arranca la hierba de cinta, la tierra viene con ella. Cada cual según su especie. Las empresas traen buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Soportar a los incultos con gentileza, cruzar el río con resolución, no descuidar lo lejano, no tomar en cuenta a los propios compañeros: así uno puede lograr caminar por el camino del medio.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Ninguna llanura sin declive subsiguiente. Ningún ir sin retorno. El que persevera en el peligro está sin censura. No te lamentes de esta verdad; disfruta la buena fortuna que aún posees.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Desciende revoloteando, sin alardear de su riqueza, junto con su vecino, sin artificio y sincero.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'El soberano I da en matrimonio a su hija. Esto trae bendición y suprema buena fortuna.' },
-          { position: 6, name: 'Seis en lo alto', text: 'La muralla cae de nuevo al foso. No uses ejércitos ahora. Haz conocer tus órdenes dentro de tu propia ciudad. La perseverancia trae humillación.' },
         ],
       },
       'es-legge': {
@@ -355,34 +232,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'heaven',
     lowerTrigram: 'earth',
     translations: {
-      en: {
-        name: 'Standstill',
-        meaning: 'Heaven and earth do not unite, stagnation',
-        judgment: 'Standstill. Evil people do not further the perseverance of the superior man. The great departs, the small approaches.',
-        image: 'Heaven and earth do not unite: the image of Standstill. Thus the superior man falls back upon his inner worth.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'When ribbon grass is pulled up, the sod comes with it. Each according to his kind. Perseverance brings good fortune and success.' },
-          { position: 2, name: 'Six in the second place', text: 'They bear and endure; this means good fortune for inferior people. The standstill serves to help the great man to attain success.' },
-          { position: 3, name: 'Six in the third place', text: 'They bear shame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He who acts at the command of the highest remains without blame. Those of like mind partake of the blessing.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Standstill is giving way. Good fortune for the great man. "What if it should fail, what if it should fail?" In this way he ties it to a cluster of mulberry shoots.' },
-          { position: 6, name: 'Nine at the top', text: 'The standstill comes to an end. First standstill, then good fortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Standstill',
-        meaning: 'Heaven and earth do not unite, stagnation',
-        judgment: 'Standstill. Evil people do not further the perseverance of the superior man. The great departs, the small approaches.',
-        image: 'Heaven and earth do not unite: the image of Standstill. Thus the superior man falls back upon his inner worth.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'When ribbon grass is pulled up, the sod comes with it. Each according to his kind. Perseverance brings good fortune and success.' },
-          { position: 2, name: 'Six in the second place', text: 'They bear and endure; this means good fortune for inferior people. The standstill serves to help the great man to attain success.' },
-          { position: 3, name: 'Six in the third place', text: 'They bear shame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He who acts at the command of the highest remains without blame. Those of like mind partake of the blessing.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Standstill is giving way. Good fortune for the great man. "What if it should fail, what if it should fail?" In this way he ties it to a cluster of mulberry shoots.' },
-          { position: 6, name: 'Nine at the top', text: 'The standstill comes to an end. First standstill, then good fortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Standstill',
         meaning: 'Stagnation from lack of unity between heaven and earth',
@@ -395,20 +244,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He who acts at the command of his ruler is without error. Those who are of like mind share in the blessings.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The stagnation is at an end. Good fortune for the great man. "But let him say, \'Shall I perish? Shall I perish?\' So shall his state be firm, as if bound to a clump of bushy mulberry trees."' },
           { position: 6, name: 'In the sixth line, undivided', text: 'The stagnation comes to an end. First there was stagnation, and then there is good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Estancamiento',
-        meaning: 'Cielo y tierra no se unen, estancamiento',
-        judgment: 'Estancamiento. La gente malvada no propicia la perseverancia del hombre superior. Lo grande se va, lo pequeño se acerca.',
-        image: 'Cielo y tierra no se unen: la imagen del Estancamiento. Así el hombre superior se repliega en su valor interior.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Cuando se arranca la hierba de cinta, la tierra viene con ella. Cada cual según su especie. La perseverancia trae buena fortuna y éxito.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Soportan y resisten; esto significa buena fortuna para las personas inferiores. El estancamiento sirve para ayudar al gran hombre a alcanzar el éxito.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Soportan la vergüenza.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'El que actúa por mandato del más alto permanece sin censura. Los que comparten su mismo ánimo participan de la bendición.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'El estancamiento cede. Buena fortuna para el gran hombre. "¿Y si fracasara, y si fracasara?" Así lo ata a un racimo de brotes de morera.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'El estancamiento llega a su fin. Primero estancamiento, luego buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -464,34 +299,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'earth',
     lowerTrigram: 'lake',
     translations: {
-      en: {
-        name: 'Approach',
-        meaning: 'Drawing near, becoming great, advancing',
-        judgment: 'Approach has supreme success. Perseverance furthers. When the eighth month comes, there will be misfortune.',
-        image: 'The earth above the lake: the image of Approach. Thus the superior man is inexhaustible in his will to teach.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Joint approach. Perseverance brings good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'Joint approach. Good fortune. Everything furthers.' },
-          { position: 3, name: 'Six in the third place', text: 'Comfortable approach. Nothing that would further. If one is induced to grieve over it, one becomes free of blame.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Complete approach. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Wise approach. This is right for a great prince. Good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'Greathearted approach. Good fortune. No blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Approach',
-        meaning: 'Drawing near, becoming great, advancing',
-        judgment: 'Approach has supreme success. Perseverance furthers. When the eighth month comes, there will be misfortune.',
-        image: 'The earth above the lake: the image of Approach. Thus the superior man is inexhaustible in his will to teach.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Joint approach. Perseverance brings good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'Joint approach. Good fortune. Everything furthers.' },
-          { position: 3, name: 'Six in the third place', text: 'Comfortable approach. Nothing that would further. If one is induced to grieve over it, one becomes free of blame.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Complete approach. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Wise approach. This is right for a great prince. Good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'Greathearted approach. Good fortune. No blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Approach',
         meaning: 'Drawing near and gradual approach',
@@ -504,20 +311,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'The most complete advance. There will be no error.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The wise advance. This is right for a great ruler. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, divided', text: 'Advancing with a great heart. There will be good fortune and no error.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Acercamiento',
-        meaning: 'Aproximarse, volverse grande, avanzar',
-        judgment: 'El Acercamiento tiene éxito supremo. La perseverancia propicia. Cuando llegue el octavo mes, habrá infortunio.',
-        image: 'La tierra sobre el lago: la imagen del Acercamiento. Así el hombre superior es inagotable en su voluntad de enseñar.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Acercamiento conjunto. La perseverancia trae buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Acercamiento conjunto. Buena fortuna. Todo propicia.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Acercamiento cómodo. Nada que propicie. Si uno se deja llevar a la aflicción por ello, queda libre de censura.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Acercamiento completo. Sin censura.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Acercamiento sabio. Esto es lo apropiado para un gran príncipe. Buena fortuna.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Acercamiento magnánimo. Buena fortuna. Sin censura.' },
         ],
       },
       'es-legge': {
@@ -573,34 +366,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'wind',
     lowerTrigram: 'earth',
     translations: {
-      en: {
-        name: 'Contemplation',
-        meaning: 'Viewing, observing, being an example',
-        judgment: 'Contemplation. The ablution has been made, but not yet the offering. Full of trust they look up to him.',
-        image: 'The wind blows over the earth: the image of Contemplation. Thus the kings of old visited the regions of the world.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Boylike contemplation. For an inferior man, no blame. For a superior man, humiliation.' },
-          { position: 2, name: 'Six in the second place', text: 'Contemplation through the crack of the door. Furthering for the perseverance of a woman.' },
-          { position: 3, name: 'Six in the third place', text: 'Contemplation of my life decides the choice between advance and retreat.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Contemplation of the light of the kingdom. It furthers one to exert influence as the guest of a king.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Contemplation of my life. The superior man is without blame.' },
-          { position: 6, name: 'Nine at the top', text: 'Contemplation of his life. The superior man is without blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Contemplation',
-        meaning: 'Viewing, observing, being an example',
-        judgment: 'Contemplation. The ablution has been made, but not yet the offering. Full of trust they look up to him.',
-        image: 'The wind blows over the earth: the image of Contemplation. Thus the kings of old visited the regions of the world.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Boylike contemplation. For an inferior man, no blame. For a superior man, humiliation.' },
-          { position: 2, name: 'Six in the second place', text: 'Contemplation through the crack of the door. Furthering for the perseverance of a woman.' },
-          { position: 3, name: 'Six in the third place', text: 'Contemplation of my life decides the choice between advance and retreat.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Contemplation of the light of the kingdom. It furthers one to exert influence as the guest of a king.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Contemplation of my life. The superior man is without blame.' },
-          { position: 6, name: 'Nine at the top', text: 'Contemplation of his life. The superior man is without blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Contemplation',
         meaning: 'Viewing widely; offering with sincerity',
@@ -613,20 +378,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He contemplates the glory of the kingdom. It will be advantageous for him, being such as he is, to seek to be a guest of the king.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'He contemplates the course of his own life. A superior man, he will thus fall into no error.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He contemplates the course of their lives. A superior man, he will thus fall into no error.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Contemplación',
-        meaning: 'Ver, observar, ser un ejemplo',
-        judgment: 'Contemplación. La ablución se ha hecho, pero aún no la ofrenda. Llenos de confianza lo miran.',
-        image: 'El viento sopla sobre la tierra: la imagen de la Contemplación. Así los reyes de antaño visitaban las regiones del mundo.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Contemplación de niño. Para un hombre inferior, sin censura. Para un hombre superior, humillación.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Contemplación a través de la rendija de la puerta. Propicio para la perseverancia de una mujer.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'La contemplación de mi vida decide la elección entre avanzar y retroceder.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Contemplación de la luz del reino. Es propicio ejercer influencia como huésped de un rey.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Contemplación de mi vida. El hombre superior está sin censura.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Contemplación de su vida. El hombre superior está sin censura.' },
         ],
       },
       'es-legge': {
@@ -682,34 +433,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'mountain',
     lowerTrigram: 'earth',
     translations: {
-      en: {
-        name: 'Splitting Apart',
-        meaning: 'Decay, stripping away, deterioration',
-        judgment: 'Splitting Apart. It does not further one to go anywhere.',
-        image: 'The mountain rests on the earth: the image of Splitting Apart. Thus those above can ensure their position only by giving generously to those below.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'The leg of the bed is split. Those who persevere are destroyed. Misfortune.' },
-          { position: 2, name: 'Six in the second place', text: 'The bed is split at the edge. Those who persevere are destroyed. Misfortune.' },
-          { position: 3, name: 'Six in the third place', text: 'He splits with them. No blame.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The bed is split up to the skin. Misfortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'A shoal of fishes. Favor comes through the court ladies. Everything acts to further.' },
-          { position: 6, name: 'Nine at the top', text: 'There is a large fruit still uneaten. The superior man receives a carriage. The house of the inferior man is split apart.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Splitting Apart',
-        meaning: 'Decay, stripping away, deterioration',
-        judgment: 'Splitting Apart. It does not further one to go anywhere.',
-        image: 'The mountain rests on the earth: the image of Splitting Apart. Thus those above can ensure their position only by giving generously to those below.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'The leg of the bed is split. Those who persevere are destroyed. Misfortune.' },
-          { position: 2, name: 'Six in the second place', text: 'The bed is split at the edge. Those who persevere are destroyed. Misfortune.' },
-          { position: 3, name: 'Six in the third place', text: 'He splits with them. No blame.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The bed is split up to the skin. Misfortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'A shoal of fishes. Favor comes through the court ladies. Everything acts to further.' },
-          { position: 6, name: 'Nine at the top', text: 'There is a large fruit still uneaten. The superior man receives a carriage. The house of the inferior man is split apart.' },
-        ],
-      },
       'en-legge': {
         name: 'Decay',
         meaning: 'Splitting and stripping away; gradual separation',
@@ -722,20 +445,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He overthrows the couch, having first injured the skin on it. There will be evil.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He obtains favor of the palace ladies, as if they were a string of fishes. There is advantage in every way.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'There is a large fruit uneaten. The superior man gets a carriage, the small man has his hut overthrown.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Desintegración',
-        meaning: 'Decadencia, despojo, deterioro',
-        judgment: 'Desintegración. No es propicio ir a ningún lugar.',
-        image: 'La montaña descansa sobre la tierra: la imagen de la Desintegración. Así los de arriba solo pueden asegurar su posición dando generosamente a los de abajo.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'La pata de la cama se desintegra. Los que perseveran son destruidos. Desgracia.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'La cama se desintegra en el borde. Los que perseveran son destruidos. Desgracia.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Él se desintegra con ellos. Sin censura.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'La cama se desintegra hasta la piel. Desgracia.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Un banco de peces. El favor llega a través de las damas de la corte. Todo actúa para propiciar.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Hay un gran fruto aún sin comer. El hombre superior recibe un carruaje. La casa del hombre inferior se desintegra.' },
         ],
       },
       'es-legge': {
@@ -791,34 +500,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'earth',
     lowerTrigram: 'thunder',
     translations: {
-      en: {
-        name: 'Return',
-        meaning: 'The turning point, renewal, coming back',
-        judgment: 'Return. Success. Going out and coming in without error. Friends come without blame. To and fro goes the way.',
-        image: 'Thunder within the earth: the image of the Turning Point. Thus the kings of antiquity closed the passes at the time of solstice.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Return from a short distance. No need for remorse. Great good fortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Quiet return. Good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'Repeated return. Danger. No blame.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Walking in the midst of others, one returns alone.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Noblehearted return. No remorse.' },
-          { position: 6, name: 'Six at the top', text: 'Missing the return. Misfortune. Misfortune from within and without. If armies are set marching in this way, one will in the end suffer a great defeat.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Return',
-        meaning: 'The turning point, renewal, coming back',
-        judgment: 'Return. Success. Going out and coming in without error. Friends come without blame. To and fro goes the way.',
-        image: 'Thunder within the earth: the image of the Turning Point. Thus the kings of antiquity closed the passes at the time of solstice.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Return from a short distance. No need for remorse. Great good fortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Quiet return. Good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'Repeated return. Danger. No blame.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Walking in the midst of others, one returns alone.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Noblehearted return. No remorse.' },
-          { position: 6, name: 'Six at the top', text: 'Missing the return. Misfortune. Misfortune from within and without. If armies are set marching in this way, one will in the end suffer a great defeat.' },
-        ],
-      },
       'en-legge': {
         name: 'Return',
         meaning: 'Returning; the turning point of the year',
@@ -831,20 +512,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He is walking in the midst of others, but returns alone.' },
           { position: 5, name: 'In the fifth line, divided', text: 'A noble return. There will be no ground for repentance.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He is blind to the return. There will be evil. There will be calamities and errors. If with his views he put the hosts in motion, the end will be a great defeat.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Retorno',
-        meaning: 'El punto de inflexión, renovación, volver',
-        judgment: 'Retorno. Éxito. Salir y entrar sin error. Los amigos vienen sin culpa. El camino va y viene.',
-        image: 'Trueno dentro de la tierra: la imagen del Punto de Inflexión. Así los reyes de la antigüedad cerraban los pasos en el solsticio.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Retorno desde poca distancia. No hay necesidad de arrepentimiento. Gran buena fortuna.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Retorno tranquilo. Buena fortuna.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Retorno repetido. Peligro. Sin censura.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Caminando en medio de otros, uno regresa solo.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Retorno de corazón noble. Sin arrepentimiento.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Perder el retorno. Desgracia. Desgracia desde dentro y desde fuera. Si se ponen ejércitos en marcha de esta manera, al final se sufrirá una gran derrota.' },
         ],
       },
       'es-legge': {
@@ -900,34 +567,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'heaven',
     lowerTrigram: 'mountain',
     translations: {
-      en: {
-        name: 'Retreat',
-        meaning: 'Withdrawal, yielding, strategic retreat',
-        judgment: 'Retreat. Success. In what is small, perseverance furthers.',
-        image: 'Mountain under heaven: the image of Retreat. Thus the superior man keeps the inferior at a distance, not angrily but with reserve.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'At the tail in retreat. This is dangerous. One must not wish to undertake anything.' },
-          { position: 2, name: 'Six in the second place', text: 'He holds him fast with yellow oxhide. No one can tear him loose.' },
-          { position: 3, name: 'Nine in the third place', text: 'A halted retreat is nerve-wracking and dangerous. To retain people as men and maidservants brings good fortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Voluntary retreat brings good fortune to the superior man and downfall to the inferior man.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Friendly retreat. Perseverance brings good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'Cheerful retreat. Everything serves to further.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Retreat',
-        meaning: 'Withdrawal, yielding, strategic retreat',
-        judgment: 'Retreat. Success. In what is small, perseverance furthers.',
-        image: 'Mountain under heaven: the image of Retreat. Thus the superior man keeps the inferior at a distance, not angrily but with reserve.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'At the tail in retreat. This is dangerous. One must not wish to undertake anything.' },
-          { position: 2, name: 'Six in the second place', text: 'He holds him fast with yellow oxhide. No one can tear him loose.' },
-          { position: 3, name: 'Nine in the third place', text: 'A halted retreat is nerve-wracking and dangerous. To retain people as men and maidservants brings good fortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Voluntary retreat brings good fortune to the superior man and downfall to the inferior man.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Friendly retreat. Perseverance brings good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'Cheerful retreat. Everything serves to further.' },
-        ],
-      },
       'en-legge': {
         name: 'Retreat',
         meaning: 'Withdrawing in wise season',
@@ -940,20 +579,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He retires notwithstanding his likings. In a superior man this leads to good fortune; in an inferior man to ruin.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'He retires in an admirable way. With firm correctness there will be good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He retires in a noble way. It will be advantageous in every way.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Retirada',
-        meaning: 'Retiro, ceder, retirada estratégica',
-        judgment: 'Retirada. Éxito. En lo pequeño, la perseverancia propicia.',
-        image: 'Montaña bajo el cielo: la imagen de la Retirada. Así el hombre superior mantiene al inferior a distancia, no con ira sino con reserva.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'En la cola durante la retirada. Esto es peligroso. No se debe desear emprender nada.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Lo sujeta firmemente con cuero de buey amarillo. Nadie puede arrancarlo.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Una retirada detenida es angustiante y peligrosa. Mantener personas como criados y siervas trae buena fortuna.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La retirada voluntaria trae buena fortuna al hombre superior y ruina al hombre inferior.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Retirada amistosa. La perseverancia trae buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Retirada jubilosa. Todo sirve para propiciar.' },
         ],
       },
       'es-legge': {
@@ -1009,34 +634,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'thunder',
     lowerTrigram: 'heaven',
     translations: {
-      en: {
-        name: 'The Power of the Great',
-        meaning: 'Great strength, vigor, powerful advance',
-        judgment: 'The Power of the Great. Perseverance furthers.',
-        image: 'Thunder in heaven above: the image of the Power of the Great. Thus the superior man does not tread upon paths that do not accord with established order.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Power in the toes. Continuing brings misfortune. This is certainly true.' },
-          { position: 2, name: 'Nine in the second place', text: 'Perseverance brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The inferior man works through power. The superior man does not act thus. To continue is dangerous. A goat butts against a hedge and gets its horns entangled.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Perseverance brings good fortune. Remorse disappears. The hedge opens; there is no entanglement. Power depends upon the axle of a big cart.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Loses the goat with ease. No remorse.' },
-          { position: 6, name: 'Six at the top', text: 'A goat butts against a hedge. It cannot go backward, it cannot go forward. Nothing serves to further. If one notes the difficulty, this brings good fortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Power of the Great',
-        meaning: 'Great strength, vigor, powerful advance',
-        judgment: 'The Power of the Great. Perseverance furthers.',
-        image: 'Thunder in heaven above: the image of the Power of the Great. Thus the superior man does not tread upon paths that do not accord with established order.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Power in the toes. Continuing brings misfortune. This is certainly true.' },
-          { position: 2, name: 'Nine in the second place', text: 'Perseverance brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The inferior man works through power. The superior man does not act thus. To continue is dangerous. A goat butts against a hedge and gets its horns entangled.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Perseverance brings good fortune. Remorse disappears. The hedge opens; there is no entanglement. Power depends upon the axle of a big cart.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Loses the goat with ease. No remorse.' },
-          { position: 6, name: 'Six at the top', text: 'A goat butts against a hedge. It cannot go backward, it cannot go forward. Nothing serves to further. If one notes the difficulty, this brings good fortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Great Strength',
         meaning: 'The vigor of great strength in its proper place',
@@ -1049,20 +646,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'With firm correctness there will be good fortune and no occasion for repentance. The fence is opened without entangling the horns. The strength is like that in the axle of a large wagon.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He loses his ram-like strength in the ease of his position. But there will be no occasion for repentance.' },
           { position: 6, name: 'In the sixth line, divided', text: 'A ram butts against a hedge. He is unable to retreat, unable to advance. Nothing will be advantageous. If he realize the difficulty, there will be good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Poder de lo Grande',
-        meaning: 'Gran fuerza, vigor, avance poderoso',
-        judgment: 'El Poder de lo Grande. La perseverancia propicia.',
-        image: 'Trueno en el cielo: la imagen del Poder de lo Grande. Así el hombre superior no pisa senderos que no concuerdan con el orden establecido.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Poder en los dedos de los pies. Continuar trae desgracia. Esto es ciertamente verdad.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'La perseverancia trae buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'El hombre inferior obra mediante la fuerza. El hombre superior no actúa así. Continuar es peligroso. Un macho cabrío embiste contra un seto y enreda sus cuernos.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La perseverancia trae buena fortuna. El arrepentimiento desaparece. El seto se abre; no hay enredo. El poder depende del eje de un gran carro.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Pierde el macho cabrío con facilidad. Sin arrepentimiento.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Un macho cabrío embiste contra un seto. No puede ir hacia atrás, no puede ir hacia adelante. Nada sirve para propiciar. Si uno toma nota de la dificultad, esto trae buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -1118,34 +701,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'lake',
     lowerTrigram: 'heaven',
     translations: {
-      en: {
-        name: 'Breakthrough',
-        meaning: 'Resoluteness, determination, breaking through',
-        judgment: 'Breakthrough. One must resolutely make the matter known at the court of the king. It must be announced truthfully.',
-        image: 'The lake has risen up to heaven: the image of Breakthrough. Thus the superior man dispenses riches downward and refrains from resting on his virtue.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Mighty in the forward-striding toes. When one goes and is not equal to the task, one makes a mistake.' },
-          { position: 2, name: 'Nine in the second place', text: 'A cry of alarm. Arms at evening and at night. Fear nothing.' },
-          { position: 3, name: 'Nine in the third place', text: 'To be powerful in the cheekbones brings misfortune. The superior man is firmly resolved. He walks alone and is caught in the rain. He is bespattered, and people murmur against him. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'There is no skin on his thighs, and walking comes hard. If a man were to let himself be led like a sheep, remorse would disappear. But if these words are heard, they will not be believed.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'In dealing with weeds, firm resolution is necessary. Walking in the middle remains free of blame.' },
-          { position: 6, name: 'Six at the top', text: 'No cry. In the end misfortune comes.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Breakthrough',
-        meaning: 'Resoluteness, determination, breaking through',
-        judgment: 'Breakthrough. One must resolutely make the matter known at the court of the king. It must be announced truthfully.',
-        image: 'The lake has risen up to heaven: the image of Breakthrough. Thus the superior man dispenses riches downward and refrains from resting on his virtue.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Mighty in the forward-striding toes. When one goes and is not equal to the task, one makes a mistake.' },
-          { position: 2, name: 'Nine in the second place', text: 'A cry of alarm. Arms at evening and at night. Fear nothing.' },
-          { position: 3, name: 'Nine in the third place', text: 'To be powerful in the cheekbones brings misfortune. The superior man is firmly resolved. He walks alone and is caught in the rain. He is bespattered, and people murmur against him. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'There is no skin on his thighs, and walking comes hard. If a man were to let himself be led like a sheep, remorse would disappear. But if these words are heard, they will not be believed.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'In dealing with weeds, firm resolution is necessary. Walking in the middle remains free of blame.' },
-          { position: 6, name: 'Six at the top', text: 'No cry. In the end misfortune comes.' },
-        ],
-      },
       'en-legge': {
         name: 'Resolution',
         meaning: 'Breaking through with determination and sincerity',
@@ -1158,20 +713,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He has no skin on his thighs, and finds it difficult to walk. If he could act like a sheep led after its companions, occasion for regret would disappear. He hears these words, but does not believe them.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'A bed of purslane, which ought to be uprooted with the utmost determination. Then, keeping the due Mean, there will be no error.' },
           { position: 6, name: 'In the sixth line, divided', text: 'There is no crying out. In the end there will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Resolución',
-        meaning: 'Determinación, decisión, atravesar',
-        judgment: 'Resolución. Uno debe hacer saber resueltamente el asunto en la corte del rey. Debe anunciarse con veracidad.',
-        image: 'El lago se ha elevado al cielo: la imagen de la Resolución. Así el hombre superior dispensa riquezas hacia abajo y se abstiene de descansar en su virtud.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Poderoso en los dedos de los pies que avanzan. Cuando uno va sin estar a la altura de la tarea, comete un error.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Un grito de alarma. Armas al atardecer y en la noche. No temas nada.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Ser poderoso en los pómulos trae desgracia. El hombre superior está firmemente resuelto. Camina solo y es sorprendido por la lluvia. Queda salpicado, y la gente murmura contra él. Sin censura.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'No hay piel en sus muslos, y caminar se hace difícil. Si un hombre se dejara llevar como una oveja, el arrepentimiento desaparecería. Pero si estas palabras se escuchan, no serán creídas.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Al tratar con malas hierbas, es necesaria una firme resolución. Caminar por el camino del medio permanece libre de censura.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Sin grito. Al final llega el infortunio.' },
         ],
       },
       'es-legge': {
@@ -1227,34 +768,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'heaven',
     lowerTrigram: 'wind',
     translations: {
-      en: {
-        name: 'Coming to Meet',
-        meaning: 'Encounter, meeting, temptation',
-        judgment: 'Coming to Meet. The maiden is powerful. One should not marry such a maiden.',
-        image: 'Under heaven, wind: the image of Coming to Meet. Thus does the prince act when disseminating his commands and proclaiming them to the four quarters of heaven.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'It must be checked with a brake of bronze. Perseverance brings good fortune. If one lets it take its course, one experiences misfortune. Even a lean pig has it in him to rage around.' },
-          { position: 2, name: 'Nine in the second place', text: 'There is a fish in the tank. No blame. Does not further guests.' },
-          { position: 3, name: 'Nine in the third place', text: 'There is no skin on his thighs, and walking comes hard. If one is mindful of the danger, no great mistake is made.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'No fish in the tank. This leads to misfortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'A melon covered with willow leaves. Hidden lines. Then it drops down to one from heaven.' },
-          { position: 6, name: 'Nine at the top', text: 'He comes to meet with his horns. Humiliation. No blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Coming to Meet',
-        meaning: 'Encounter, meeting, temptation',
-        judgment: 'Coming to Meet. The maiden is powerful. One should not marry such a maiden.',
-        image: 'Under heaven, wind: the image of Coming to Meet. Thus does the prince act when disseminating his commands and proclaiming them to the four quarters of heaven.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'It must be checked with a brake of bronze. Perseverance brings good fortune. If one lets it take its course, one experiences misfortune. Even a lean pig has it in him to rage around.' },
-          { position: 2, name: 'Nine in the second place', text: 'There is a fish in the tank. No blame. Does not further guests.' },
-          { position: 3, name: 'Nine in the third place', text: 'There is no skin on his thighs, and walking comes hard. If one is mindful of the danger, no great mistake is made.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'No fish in the tank. This leads to misfortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'A melon covered with willow leaves. Hidden lines. Then it drops down to one from heaven.' },
-          { position: 6, name: 'Nine at the top', text: 'He comes to meet with his horns. Humiliation. No blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Encounter',
         meaning: 'Meeting; a female influence becoming predominant',
@@ -1267,20 +780,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He has no fish in his wallet. This will give rise to evil.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'A melon is wrapped in willow leaves. It contains hidden excellence. There is what falls down to him from heaven.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He receives others on his horns. There will be occasion for regret, but there will be no error.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Ir al Encuentro',
-        meaning: 'Encuentro, reunión, tentación',
-        judgment: 'Ir al Encuentro. La doncella es poderosa. No se debe desposar a tal doncella.',
-        image: 'Bajo el cielo, viento: la imagen del Ir al Encuentro. Así actúa el príncipe al diseminar sus mandatos y proclamarlos a los cuatro rincones del cielo.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Debe ser frenado con un freno de bronce. La perseverancia trae buena fortuna. Si se le deja seguir su curso, se experimenta infortunio. Incluso un cerdo flaco tiene en sí la capacidad de enfurecerse.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Hay un pez en el estanque. Sin censura. No propicia a los huéspedes.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'No hay piel en sus muslos, y caminar se hace difícil. Si uno está atento al peligro, no se comete gran error.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'No hay pez en el estanque. Esto conduce al infortunio.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Un melón cubierto de hojas de sauce. Líneas ocultas. Entonces cae sobre uno desde el cielo.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Viene al encuentro con sus cuernos. Humillación. Sin censura.' },
         ],
       },
       'es-legge': {
@@ -1336,34 +835,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'water',
     lowerTrigram: 'thunder',
     translations: {
-      en: {
-        name: 'Difficulty at the Beginning',
-        meaning: 'Initial struggle, birth pangs, difficulty',
-        judgment: 'Difficulty at the Beginning works supreme success, furthering through perseverance. Do not appoint frontmen. Further through the appointment of followers.',
-        image: 'Thunder and rain stir; clouds and thunder roll: the image of Difficulty at the Beginning. Thus the superior man brings order to the confused state of affairs.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Hesitation and hindrance. It furthers one to remain persevering. It furthers one to appoint helpers.' },
-          { position: 2, name: 'Six in the second place', text: 'Difficulties pile up. Horse and wagon part. He is not a robber; he wants to woo when the time comes. The maiden is chaste, she does not pledge herself. Ten years, then she pledges herself.' },
-          { position: 3, name: 'Six in the third place', text: 'Whoever hunts deer without the forester only loses his way in the forest. The superior man understands the signs of the time and prefers to desist. To go on brings humiliation.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Horse and wagon part. Strive for union. To go brings good fortune. Everything acts to further.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Difficulties in blessing. A little perseverance brings good fortune. Great perseverance brings misfortune.' },
-          { position: 6, name: 'Six at the top', text: 'Horse and wagon part. Bloody tears flow.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Difficulty at the Beginning',
-        meaning: 'Initial struggle, birth pangs, difficulty',
-        judgment: 'Difficulty at the Beginning works supreme success, furthering through perseverance. Do not appoint frontmen. Further through the appointment of followers.',
-        image: 'Thunder and rain stir; clouds and thunder roll: the image of Difficulty at the Beginning. Thus the superior man brings order to the confused state of affairs.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Hesitation and hindrance. It furthers one to remain persevering. It furthers one to appoint helpers.' },
-          { position: 2, name: 'Six in the second place', text: 'Difficulties pile up. Horse and wagon part. He is not a robber; he wants to woo when the time comes. The maiden is chaste, she does not pledge herself. Ten years, then she pledges herself.' },
-          { position: 3, name: 'Six in the third place', text: 'Whoever hunts deer without the forester only loses his way in the forest. The superior man understands the signs of the time and prefers to desist. To go on brings humiliation.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Horse and wagon part. Strive for union. To go brings good fortune. Everything acts to further.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Difficulties in blessing. A little perseverance brings good fortune. Great perseverance brings misfortune.' },
-          { position: 6, name: 'Six at the top', text: 'Horse and wagon part. Bloody tears flow.' },
-        ],
-      },
       'en-legge': {
         name: 'Initial Difficulty',
         meaning: 'Difficulty and struggle at the outset',
@@ -1376,20 +847,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'The horse and cart are at a halt. He seeks union with a helper. To advance brings good fortune.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'Difficulties in bestowing his rich favors. With firmness and correctness in small things there will be good fortune; with them in great things there will be evil.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The horse and cart are at a halt. Streams of blood and tears flow.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Dificultad Inicial',
-        meaning: 'Lucha inicial, dolores de parto, dificultad',
-        judgment: 'La Dificultad Inicial obra éxito supremo, propiciando mediante la perseverancia. No se debe emprender nada. Propicia instalar ayudantes.',
-        image: 'Trueno y lluvia se agitan; nubes y trueno ruedan: la imagen de la Dificultad Inicial. Así el hombre superior ordena el estado confuso.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Vacilación y obstáculo. Es propicio permanecer perseverante. Es propicio designar ayudantes.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Las dificultades se acumulan. El caballo y el carro se separan. No es un ladrón; quiere cortejar cuando llegue el momento. La doncella es casta, no se compromete. Diez años, y luego se compromete.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Quien caza el ciervo sin el guardabosque solo se pierde en el bosque. El hombre superior comprende las señales del tiempo y prefiere desistir. Continuar trae humillación.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'El caballo y el carro se separan. Esforzarse por la unión. Ir trae buena fortuna. Todo actúa para propiciar.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Dificultades en las bendiciones. Un poco de perseverancia trae buena fortuna. Gran perseverancia trae desgracia.' },
-          { position: 6, name: 'Seis en lo alto', text: 'El caballo y el carro se separan. Fluyen lágrimas de sangre.' },
         ],
       },
       'es-legge': {
@@ -1445,34 +902,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'mountain',
     lowerTrigram: 'water',
     translations: {
-      en: {
-        name: 'Youthful Folly',
-        meaning: 'Ignorance, youth, inexperience',
-        judgment: 'Youthful Folly has success. It is not I who seeks the young fool; the young fool seeks me. At the first oracle I inform him. If he asks two or three times, it is importunity. If he importunes, I give him no information. Perseverance furthers.',
-        image: 'A spring issuing from the mountain: the image of Youthful Folly. Thus the superior man develops his character by thoroughness in all that he does.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'To make a fool develop, it furthers one to apply discipline. The fetters should be removed. To go on in this way brings humiliation.' },
-          { position: 2, name: 'Nine in the second place', text: 'To bear with fools in kindliness brings good fortune. To know how to take women brings good fortune. The son is capable of taking charge of the household.' },
-          { position: 3, name: 'Six in the third place', text: 'Take not a maiden who, when she sees a man of bronze, loses possession of herself. Nothing furthers.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Entangled folly brings humiliation.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Childlike folly brings good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'In punishing folly, it does not further one to commit transgressions. The only thing that furthers is to prevent transgressions.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Youthful Folly',
-        meaning: 'Ignorance, youth, inexperience',
-        judgment: 'Youthful Folly has success. It is not I who seeks the young fool; the young fool seeks me. At the first oracle I inform him. If he asks two or three times, it is importunity. If he importunes, I give him no information. Perseverance furthers.',
-        image: 'A spring issuing from the mountain: the image of Youthful Folly. Thus the superior man develops his character by thoroughness in all that he does.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'To make a fool develop, it furthers one to apply discipline. The fetters should be removed. To go on in this way brings humiliation.' },
-          { position: 2, name: 'Nine in the second place', text: 'To bear with fools in kindliness brings good fortune. To know how to take women brings good fortune. The son is capable of taking charge of the household.' },
-          { position: 3, name: 'Six in the third place', text: 'Take not a maiden who, when she sees a man of bronze, loses possession of herself. Nothing furthers.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Entangled folly brings humiliation.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Childlike folly brings good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'In punishing folly, it does not further one to commit transgressions. The only thing that furthers is to prevent transgressions.' },
-        ],
-      },
       'en-legge': {
         name: 'Youthful Inexperience',
         meaning: 'Youth and inexperience, seeking guidance',
@@ -1485,20 +914,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'Bound in folly. There will be occasion for regret.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The simple-hearted folly of youth brings good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'In smiting the foolish one, it will not be advantageous to act as an injurer. It is advantageous to resist injury.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Insensatez Juvenil',
-        meaning: 'Ignorancia, juventud, inexperiencia',
-        judgment: 'La Insensatez Juvenil tiene éxito. No soy yo quien busca al joven insensato; el joven insensato me busca. La perseverancia propicia.',
-        image: 'Un manantial que brota de la montaña: la imagen de la Insensatez Juvenil. Así el hombre superior desarrolla su carácter mediante la minuciosidad en todo lo que hace.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Para hacer que el necio se desarrolle, es propicio aplicar la disciplina. Las cadenas deben ser retiradas. Continuar así trae humillación.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Soportar a los necios con benevolencia trae buena fortuna. Saber cómo tratar a las mujeres trae buena fortuna. El hijo es capaz de hacerse cargo del hogar.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'No tomes a una doncella que, cuando ve a un hombre de bronce, pierde el dominio de sí misma. Nada propicia.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'La insensatez enredada trae humillación.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'La insensatez infantil trae buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Al castigar la insensatez, no es propicio cometer transgresiones. Lo único que propicia es prevenir las transgresiones.' },
         ],
       },
       'es-legge': {
@@ -1554,34 +969,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'water',
     lowerTrigram: 'heaven',
     translations: {
-      en: {
-        name: 'Waiting',
-        meaning: 'Nourishment, patience, favorable time',
-        judgment: 'Waiting. If you are sincere, you have light and success. Perseverance brings good fortune. Going to meet the great man brings good fortune.',
-        image: 'Clouds rise up to heaven: the image of Waiting. Thus the superior man eats and drinks, rests and finds recreation.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Waiting in the meadow. It furthers one to abide in what endures. No blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'Waiting on the sand. There is some gossip. The end brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'Waiting in the mud brings about the arrival of the enemy.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Waiting in blood. Get out of the pit.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Waiting at meat and drink. Perseverance brings good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'One falls into the pit. Three uninvited guests arrive. Honor them, and in the end there will be good fortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Waiting',
-        meaning: 'Nourishment, patience, favorable time',
-        judgment: 'Waiting. If you are sincere, you have light and success. Perseverance brings good fortune. Going to meet the great man brings good fortune.',
-        image: 'Clouds rise up to heaven: the image of Waiting. Thus the superior man eats and drinks, rests and finds recreation.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Waiting in the meadow. It furthers one to abide in what endures. No blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'Waiting on the sand. There is some gossip. The end brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'Waiting in the mud brings about the arrival of the enemy.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Waiting in blood. Get out of the pit.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Waiting at meat and drink. Perseverance brings good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'One falls into the pit. Three uninvited guests arrive. Honor them, and in the end there will be good fortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Waiting',
         meaning: 'Peaceful waiting in faith',
@@ -1594,20 +981,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'Waiting in a place of blood. But he will get out of the cavern.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'Waiting amid food and drink. With firm correctness there will be good fortune.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He enters the cavern. There come to him three guests who were not expected. If he treat them with respect, there will be good fortune in the end.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Espera',
-        meaning: 'Nutrición, paciencia, tiempo favorable',
-        judgment: 'Espera. Si eres sincero, tienes luz y éxito. La perseverancia trae buena fortuna. Ir al encuentro del gran hombre trae buena fortuna.',
-        image: 'Las nubes se elevan hacia el cielo: la imagen de la Espera. Así el hombre superior come y bebe, descansa y se divierte.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Espera en el prado. Es propicio mantenerse en lo que perdura. Sin censura.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Espera en la arena. Hay algo de murmuración. El final trae buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Esperar en el barro provoca la llegada del enemigo.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Espera en la sangre. Sal del pozo.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Espera junto a la comida y la bebida. La perseverancia trae buena fortuna.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Uno cae al pozo. Llegan tres huéspedes no invitados. Hónralos, y al final habrá buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -1663,34 +1036,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'heaven',
     lowerTrigram: 'water',
     translations: {
-      en: {
-        name: 'Conflict',
-        meaning: 'Litigation, discord, striving',
-        judgment: 'Conflict. You are sincere and are obstructed. A cautious halt halfway brings good fortune. Going through to the end brings misfortune. It furthers one to see the great man. It does not further one to cross the great water.',
-        image: 'Heaven and water go their opposite ways: the image of Conflict. Thus in all his transactions the superior man carefully considers the beginning.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'If one does not perpetuate the affair, there is a little gossip. In the end, good fortune comes.' },
-          { position: 2, name: 'Nine in the second place', text: 'One cannot engage in conflict; one returns home, gives way. The people of his town, three hundred households, remain free of guilt.' },
-          { position: 3, name: 'Six in the third place', text: 'To nourish oneself on ancient virtue induces perseverance. Danger. In the end, good fortune comes. If by chance you are in the service of a king, seek not works.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'One cannot engage in conflict. One turns back and submits to fate, changes one\'s attitude, and finds peace in perseverance. Good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'To contend before him brings supreme good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'Even if by chance a leather belt is bestowed on one, by the end of a morning it will have been snatched away three times.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Conflict',
-        meaning: 'Litigation, discord, striving',
-        judgment: 'Conflict. You are sincere and are obstructed. A cautious halt halfway brings good fortune. Going through to the end brings misfortune. It furthers one to see the great man. It does not further one to cross the great water.',
-        image: 'Heaven and water go their opposite ways: the image of Conflict. Thus in all his transactions the superior man carefully considers the beginning.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'If one does not perpetuate the affair, there is a little gossip. In the end, good fortune comes.' },
-          { position: 2, name: 'Nine in the second place', text: 'One cannot engage in conflict; one returns home, gives way. The people of his town, three hundred households, remain free of guilt.' },
-          { position: 3, name: 'Six in the third place', text: 'To nourish oneself on ancient virtue induces perseverance. Danger. In the end, good fortune comes. If by chance you are in the service of a king, seek not works.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'One cannot engage in conflict. One turns back and submits to fate, changes one\'s attitude, and finds peace in perseverance. Good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'To contend before him brings supreme good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'Even if by chance a leather belt is bestowed on one, by the end of a morning it will have been snatched away three times.' },
-        ],
-      },
       'en-legge': {
         name: 'Conflict',
         meaning: 'Strife and contention',
@@ -1703,20 +1048,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He is unequal to the contention. He returns to the study of Heaven\'s ordinances, changes his wish to contend, and rests in being firm and correct. There will be good fortune.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'To contend and submit the case to him will lead to great good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'Even if he receive a large belt of leather as the token of his rank, by the end of the morning it will have been thrice torn from him.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Conflicto',
-        meaning: 'Litigio, discordia, contienda',
-        judgment: 'Conflicto. Eres sincero pero estás obstruido. Una parada cautelosa a mitad del camino trae buena fortuna. Ir hasta el final trae desgracia.',
-        image: 'Cielo y agua van en direcciones opuestas: la imagen del Conflicto. Así el hombre superior considera cuidadosamente el comienzo.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Si no se perpetúa el asunto, hay algo de murmuración. Al final, llega la buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'No se puede participar en el conflicto; uno regresa a casa y cede. La gente de su ciudad, trescientas familias, permanece libre de culpa.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Nutrirse de la antigua virtud induce la perseverancia. Peligro. Al final, llega la buena fortuna. Si por azar estás al servicio de un rey, no busques obras propias.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'No se puede participar en el conflicto. Uno da marcha atrás y se somete al destino, cambia su actitud y encuentra la paz en la perseverancia. Buena fortuna.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Contender ante él trae suprema buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Aunque por azar se le otorgue un cinturón de cuero, al final de una mañana le habrá sido arrebatado tres veces.' },
         ],
       },
       'es-legge': {
@@ -1772,34 +1103,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'earth',
     lowerTrigram: 'water',
     translations: {
-      en: {
-        name: 'The Army',
-        meaning: 'Troops, military discipline, legality',
-        judgment: 'The Army. The army needs perseverance and a strong man. Good fortune without blame.',
-        image: 'In the middle of the earth is water: the image of the Army. Thus the superior man increases his masses by generosity toward the people.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'An army must set forth in proper order. If the order is not good, misfortune threatens.' },
-          { position: 2, name: 'Nine in the second place', text: 'In the midst of the army. Good fortune. No blame. The king bestows a triple decoration.' },
-          { position: 3, name: 'Six in the third place', text: 'Perchance the army carries corpses in the wagon. Misfortune.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The army retreats. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'There is game in the field. It furthers one to catch it. Without blame. Let the eldest lead the army. The younger transports corpses; then perseverance brings misfortune.' },
-          { position: 6, name: 'Six at the top', text: 'The great prince issues commands, founds states, vests families with fiefs. Inferior people should not be employed.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Army',
-        meaning: 'Troops, military discipline, legality',
-        judgment: 'The Army. The army needs perseverance and a strong man. Good fortune without blame.',
-        image: 'In the middle of the earth is water: the image of the Army. Thus the superior man increases his masses by generosity toward the people.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'An army must set forth in proper order. If the order is not good, misfortune threatens.' },
-          { position: 2, name: 'Nine in the second place', text: 'In the midst of the army. Good fortune. No blame. The king bestows a triple decoration.' },
-          { position: 3, name: 'Six in the third place', text: 'Perchance the army carries corpses in the wagon. Misfortune.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The army retreats. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'There is game in the field. It furthers one to catch it. Without blame. Let the eldest lead the army. The younger transports corpses; then perseverance brings misfortune.' },
-          { position: 6, name: 'Six at the top', text: 'The great prince issues commands, founds states, vests families with fiefs. Inferior people should not be employed.' },
-        ],
-      },
       'en-legge': {
         name: 'The Army',
         meaning: 'An organized force, discipline and order',
@@ -1812,20 +1115,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'The host is in retreat. No error.' },
           { position: 5, name: 'In the fifth line, divided', text: 'There is game in the field. It will be advantageous to seize it. There will be no error. If the oldest son leads the host, and younger men idly occupy offices assigned to them, there will be evil.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The great ruler issues his commands, appoints some to be rulers of states, and others to be chiefs of clans. Small men should not be employed.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Ejército',
-        meaning: 'Tropas, disciplina militar, legalidad',
-        judgment: 'El Ejército. El ejército necesita perseverancia y un hombre fuerte. Buena fortuna sin culpa.',
-        image: 'En medio de la tierra hay agua: la imagen del Ejército. Así el hombre superior aumenta sus masas con generosidad hacia el pueblo.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Un ejército debe salir en el orden adecuado. Si el orden no es bueno, amenaza el infortunio.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'En medio del ejército. Buena fortuna. Sin censura. El rey otorga una triple condecoración.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Quizás el ejército lleva cadáveres en el carro. Desgracia.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'El ejército se retira. Sin censura.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Hay caza en el campo. Es propicio atraparla. Sin censura. Que el hijo mayor dirija el ejército. El menor transporta cadáveres; entonces la perseverancia trae desgracia.' },
-          { position: 6, name: 'Seis en lo alto', text: 'El gran príncipe emite mandatos, funda estados, inviste a las familias con feudos. No se deben emplear personas inferiores.' },
         ],
       },
       'es-legge': {
@@ -1881,34 +1170,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'water',
     lowerTrigram: 'earth',
     translations: {
-      en: {
-        name: 'Holding Together',
-        meaning: 'Union, alliance, loyalty',
-        judgment: 'Holding Together brings good fortune. But if the wrong man holds the gathering, nothing serves to further. If some are uncertain, repeatedly calling them brings good fortune.',
-        image: 'Over the earth is water: the image of Holding Together. Thus the kings of antiquity bestowed fiefs on the princes of the blood and made all of them members of the family.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Hold to him in truth and loyalty; this is without blame. Truth, like a full earthen bowl: thus in the end good fortune comes from without.' },
-          { position: 2, name: 'Six in the second place', text: 'Hold to him inwardly. Perseverance brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'You hold together with the wrong people.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Hold to him outwardly also. Perseverance brings good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Manifestation of holding together. In the hunt the king uses beaters on three sides only and foregoes game that runs off in front. The citizens need no warning. Good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'He finds no head for holding together. Misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Holding Together',
-        meaning: 'Union, alliance, loyalty',
-        judgment: 'Holding Together brings good fortune. But if the wrong man holds the gathering, nothing serves to further. If some are uncertain, repeatedly calling them brings good fortune.',
-        image: 'Over the earth is water: the image of Holding Together. Thus the kings of antiquity bestowed fiefs on the princes of the blood and made all of them members of the family.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Hold to him in truth and loyalty; this is without blame. Truth, like a full earthen bowl: thus in the end good fortune comes from without.' },
-          { position: 2, name: 'Six in the second place', text: 'Hold to him inwardly. Perseverance brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'You hold together with the wrong people.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Hold to him outwardly also. Perseverance brings good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Manifestation of holding together. In the hunt the king uses beaters on three sides only and foregoes game that runs off in front. The citizens need no warning. Good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'He finds no head for holding together. Misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Union',
         meaning: 'Binding together for common purpose',
@@ -1921,20 +1182,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'In the external sphere also he holds together with the worthy man. With firm correctness there will be good fortune.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The king pursues the game only on three sides and lets the game in front escape. The people of the towns are not warned. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He seeks to hold together with others without having a head to the movement. There will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Unión',
-        meaning: 'Unión, alianza, lealtad',
-        judgment: 'Unión trae buena fortuna. Pero si el hombre equivocado sostiene la reunión, nada sirve para avanzar.',
-        image: 'Sobre la tierra hay agua: la imagen de la Unión. Así los reyes de la antigüedad otorgaban feudos a los príncipes.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Únete a él en verdad y lealtad; esto está sin censura. La verdad, como un cuenco de barro lleno: así al final la buena fortuna llega desde fuera.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Únete a él interiormente. La perseverancia trae buena fortuna.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Te unes con la gente equivocada.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Únete a él también exteriormente. La perseverancia trae buena fortuna.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Manifestación de la unión. En la cacería, el rey usa batidores solo en tres lados y renuncia a la caza que huye por delante. Los ciudadanos no necesitan advertencia. Buena fortuna.' },
-          { position: 6, name: 'Seis en lo alto', text: 'No encuentra cabeza para la unión. Desgracia.' },
         ],
       },
       'es-legge': {
@@ -1990,34 +1237,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'wind',
     lowerTrigram: 'heaven',
     translations: {
-      en: {
-        name: 'The Taming Power of the Small',
-        meaning: 'Restraint, accumulation, subtle influence',
-        judgment: 'The Taming Power of the Small has success. Dense clouds, no rain from our western region.',
-        image: 'Wind blows over heaven: the image of the Taming Power of the Small. Thus the superior man refines the outward aspect of his nature.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Return to the way. How could there be blame in this? Good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'He allows himself to be drawn into returning. Good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The spokes burst out of the wagon wheels. Man and wife roll their eyes.' },
-          { position: 4, name: 'Six in the fourth place', text: 'If you are sincere, blood vanishes and fear gives way. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'If you are sincere and loyally attached, you are rich in your neighbor.' },
-          { position: 6, name: 'Nine at the top', text: 'The rain comes, there is rest. This is due to the lasting effect of character. Perseverance brings the woman into danger. The moon is nearly full. If the superior man persists, misfortune comes.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Taming Power of the Small',
-        meaning: 'Restraint, accumulation, subtle influence',
-        judgment: 'The Taming Power of the Small has success. Dense clouds, no rain from our western region.',
-        image: 'Wind blows over heaven: the image of the Taming Power of the Small. Thus the superior man refines the outward aspect of his nature.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Return to the way. How could there be blame in this? Good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'He allows himself to be drawn into returning. Good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The spokes burst out of the wagon wheels. Man and wife roll their eyes.' },
-          { position: 4, name: 'Six in the fourth place', text: 'If you are sincere, blood vanishes and fear gives way. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'If you are sincere and loyally attached, you are rich in your neighbor.' },
-          { position: 6, name: 'Nine at the top', text: 'The rain comes, there is rest. This is due to the lasting effect of character. Perseverance brings the woman into danger. The moon is nearly full. If the superior man persists, misfortune comes.' },
-        ],
-      },
       'en-legge': {
         name: 'Small Restraint',
         meaning: 'The restraining power of small things',
@@ -2030,20 +1249,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'If there be sincerity in the attitude shown, the blood and fear caused by one\'s adversary will disappear. There will be no error.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'If there be sincerity in him and a rich adherence to his neighbor, he will be wealthy in proportion.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'The rain comes and rest follows. This is the result of the full development of character. Even the wife may be in peril. The moon is almost full. If the superior man persists, there will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Poder Domesticador de lo Pequeño',
-        meaning: 'Restricción, acumulación, influencia sutil',
-        judgment: 'El Poder Domesticador de lo Pequeño tiene éxito. Nubes densas, sin lluvia de nuestra región occidental.',
-        image: 'El viento sopla sobre el cielo: la imagen del Poder Domesticador de lo Pequeño. Así el hombre superior refina el aspecto exterior de su naturaleza.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Regresar al camino. ¿Cómo podría haber censura en esto? Buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Se deja llevar a regresar. Buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Los rayos saltan de las ruedas del carro. Marido y mujer ponen los ojos en blanco.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Si eres sincero, la sangre desaparece y el miedo cede. Sin censura.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Si eres sincero y estás lealmente unido, eres rico en tu vecino.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Llega la lluvia, hay reposo. Esto se debe al efecto duradero del carácter. La perseverancia pone a la mujer en peligro. La luna está casi llena. Si el hombre superior persiste, viene el infortunio.' },
         ],
       },
       'es-legge': {
@@ -2099,34 +1304,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'heaven',
     lowerTrigram: 'lake',
     translations: {
-      en: {
-        name: 'Treading',
-        meaning: 'Walking, conduct, propriety',
-        judgment: 'Treading. Treading upon the tail of the tiger. It does not bite the man. Success.',
-        image: 'Heaven above, the lake below: the image of Treading. Thus the superior man discriminates between high and low, and thereby fortifies the thinking of the people.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Simple conduct. Progress without blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'Treading a smooth, level course. The perseverance of a dark man brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'A one-eyed man is able to see, a lame man is able to tread. He treads on the tail of the tiger. The tiger bites the man. Misfortune. Thus does a warrior act on behalf of his great prince.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He treads on the tail of the tiger. Caution and circumspection lead ultimately to good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Resolute conduct. Perseverance with awareness of danger.' },
-          { position: 6, name: 'Nine at the top', text: 'Look to your conduct and weigh the favorable signs. When everything is fulfilled, supreme good fortune comes.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Treading',
-        meaning: 'Walking, conduct, propriety',
-        judgment: 'Treading. Treading upon the tail of the tiger. It does not bite the man. Success.',
-        image: 'Heaven above, the lake below: the image of Treading. Thus the superior man discriminates between high and low, and thereby fortifies the thinking of the people.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Simple conduct. Progress without blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'Treading a smooth, level course. The perseverance of a dark man brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'A one-eyed man is able to see, a lame man is able to tread. He treads on the tail of the tiger. The tiger bites the man. Misfortune. Thus does a warrior act on behalf of his great prince.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He treads on the tail of the tiger. Caution and circumspection lead ultimately to good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Resolute conduct. Perseverance with awareness of danger.' },
-          { position: 6, name: 'Nine at the top', text: 'Look to your conduct and weigh the favorable signs. When everything is fulfilled, supreme good fortune comes.' },
-        ],
-      },
       'en-legge': {
         name: 'Treading Respectfully',
         meaning: 'Proper conduct and humility',
@@ -2139,20 +1316,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He treads on the tail of a tiger. Apprehensive caution will in the end lead to good fortune.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'He treads resolutely. Though he be firm and correct, there will be peril.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'We may look at the whole course that is trodden, and examine the presage which that gives. If it be complete and without failure, there will be great good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Paso Firme',
-        meaning: 'Caminar, conducta, propiedad',
-        judgment: 'Paso Firme. Pisar la cola del tigre. No muerde al hombre. Éxito.',
-        image: 'Cielo arriba, lago abajo: la imagen del Paso Firme. Así el hombre superior discrimina entre alto y bajo.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Conducta sencilla. Avance sin censura.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Pisar un camino suave y llano. La perseverancia de un hombre retirado trae buena fortuna.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Un hombre tuerto es capaz de ver, un cojo es capaz de caminar. Pisa la cola del tigre. El tigre muerde al hombre. Desgracia. Así actúa un guerrero en nombre de su gran príncipe.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Pisa la cola del tigre. La cautela y la circunspección conducen finalmente a la buena fortuna.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Conducta resuelta. Perseverancia con conciencia del peligro.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Examina tu conducta y sopesa las señales favorables. Cuando todo se cumple, llega la suprema buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -2208,34 +1371,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'heaven',
     lowerTrigram: 'fire',
     translations: {
-      en: {
-        name: 'Fellowship with Men',
-        meaning: 'Community, unity, brotherhood',
-        judgment: 'Fellowship with Men in the open. Success. It furthers one to cross the great water. The perseverance of the superior man furthers.',
-        image: 'Heaven together with fire: the image of Fellowship with Men. Thus the superior man organizes the clans and makes distinctions between things.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Fellowship with men at the gate. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Fellowship with men in the clan. Humiliation.' },
-          { position: 3, name: 'Nine in the third place', text: 'He hides weapons in the thicket; he climbs the high hill in front of it. For three years he does not rise.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He climbs up on his wall; he cannot attack. Good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Men bound in fellowship first weep and lament, but afterward they laugh. After great struggles they succeed in meeting.' },
-          { position: 6, name: 'Nine at the top', text: 'Fellowship with men in the meadow. No remorse.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Fellowship with Men',
-        meaning: 'Community, unity, brotherhood',
-        judgment: 'Fellowship with Men in the open. Success. It furthers one to cross the great water. The perseverance of the superior man furthers.',
-        image: 'Heaven together with fire: the image of Fellowship with Men. Thus the superior man organizes the clans and makes distinctions between things.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Fellowship with men at the gate. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Fellowship with men in the clan. Humiliation.' },
-          { position: 3, name: 'Nine in the third place', text: 'He hides weapons in the thicket; he climbs the high hill in front of it. For three years he does not rise.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He climbs up on his wall; he cannot attack. Good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Men bound in fellowship first weep and lament, but afterward they laugh. After great struggles they succeed in meeting.' },
-          { position: 6, name: 'Nine at the top', text: 'Fellowship with men in the meadow. No remorse.' },
-        ],
-      },
       'en-legge': {
         name: 'Fellowship with Men',
         meaning: 'Association with men in the open',
@@ -2248,20 +1383,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He ascends the city wall; but he does not proceed to make the attack he contemplates. There will be good fortune.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The men in fellowship first wail and cry and then afterward laugh. The great commander conquers and they come to meet.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He seeks fellowship with men in the meadow. There will be no occasion for repentance.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Comunidad con los Hombres',
-        meaning: 'Comunidad, unidad, hermandad',
-        judgment: 'Comunidad con los Hombres en lo abierto. Éxito. Propicia cruzar la gran agua.',
-        image: 'Cielo junto con fuego: la imagen de Comunidad con los Hombres. Así el hombre superior organiza los clanes.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Comunidad con los hombres en la puerta. Sin censura.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Comunidad con los hombres en el clan. Humillación.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Esconde armas en el matorral; sube al alto cerro frente a él. Durante tres años no se levanta.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Sube a su muralla; no puede atacar. Buena fortuna.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Los hombres unidos en comunidad primero lloran y se lamentan, pero después ríen. Después de grandes luchas logran encontrarse.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Comunidad con los hombres en la pradera. Sin arrepentimiento.' },
         ],
       },
       'es-legge': {
@@ -2317,34 +1438,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'fire',
     lowerTrigram: 'heaven',
     translations: {
-      en: {
-        name: 'Possession in Great Measure',
-        meaning: 'Great abundance, wealth, confidence',
-        judgment: 'Possession in Great Measure. Supreme success.',
-        image: 'Fire in heaven above: the image of Possession in Great Measure. Thus the superior man curbs evil and furthers good, and thereby obeys heaven.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'No relationship with what is harmful; there is no blame in this. If one remains conscious of difficulty, one remains without blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'A big wagon for loading. One may undertake something. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'A prince offers it to the Son of Heaven. A petty man cannot do this.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He makes a difference between himself and his neighbor. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'He whose truth is accessible, yet dignified, has good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'He is blessed by heaven. Good fortune. Nothing that does not further.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Possession in Great Measure',
-        meaning: 'Great abundance, wealth, confidence',
-        judgment: 'Possession in Great Measure. Supreme success.',
-        image: 'Fire in heaven above: the image of Possession in Great Measure. Thus the superior man curbs evil and furthers good, and thereby obeys heaven.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'No relationship with what is harmful; there is no blame in this. If one remains conscious of difficulty, one remains without blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'A big wagon for loading. One may undertake something. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'A prince offers it to the Son of Heaven. A petty man cannot do this.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He makes a difference between himself and his neighbor. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'He whose truth is accessible, yet dignified, has good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'He is blessed by heaven. Good fortune. Nothing that does not further.' },
-        ],
-      },
       'en-legge': {
         name: 'Great Possession',
         meaning: 'Great possessions and high station',
@@ -2357,20 +1450,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He keeps his great resources under restraint. There will be no error.' },
           { position: 5, name: 'In the fifth line, divided', text: 'His sincerity is reciprocated by all. Let him display a proper majesty, and there will be good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He is helped by heaven. There will be good fortune, advantage in every respect.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Posesión en Gran Medida',
-        meaning: 'Gran abundancia, riqueza, confianza',
-        judgment: 'Posesión en Gran Medida. Éxito supremo.',
-        image: 'Fuego en el cielo arriba: la imagen de Posesión en Gran Medida. Así el hombre superior frena el mal y propicia el bien.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Sin relación con lo perjudicial; en esto no hay censura. Si uno permanece consciente de la dificultad, permanece sin censura.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Un gran carro para cargar. Uno puede emprender algo. Sin censura.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Un príncipe lo ofrece al Hijo del Cielo. Un hombre mezquino no puede hacer esto.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Establece una diferencia entre sí mismo y su vecino. Sin censura.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Aquel cuya verdad es accesible, aunque digna, tiene buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Está bendecido por el cielo. Buena fortuna. Nada que no propicie.' },
         ],
       },
       'es-legge': {
@@ -2426,34 +1505,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'earth',
     lowerTrigram: 'mountain',
     translations: {
-      en: {
-        name: 'Modesty',
-        meaning: 'Humility, restraint, yielding',
-        judgment: 'Modesty creates success. The superior man carries things to conclusion.',
-        image: 'Within the earth, a mountain: the image of Modesty. Thus the superior man reduces that which is too much and augments that which is too little.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'A superior man modest about his modesty may cross the great water. Good fortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Modesty that comes to expression. Perseverance brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'A superior man of modesty and merit carries things to conclusion. Good fortune.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Nothing that would not further modesty in movement.' },
-          { position: 5, name: 'Six in the fifth place', text: 'No boasting of wealth before one\'s neighbor. It is favorable to attack with force. Nothing that would not further.' },
-          { position: 6, name: 'Six at the top', text: 'Modesty that comes to expression. It is favorable to set armies marching to chastise one\'s own city and one\'s country.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Modesty',
-        meaning: 'Humility, restraint, yielding',
-        judgment: 'Modesty creates success. The superior man carries things to conclusion.',
-        image: 'Within the earth, a mountain: the image of Modesty. Thus the superior man reduces that which is too much and augments that which is too little.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'A superior man modest about his modesty may cross the great water. Good fortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Modesty that comes to expression. Perseverance brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'A superior man of modesty and merit carries things to conclusion. Good fortune.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Nothing that would not further modesty in movement.' },
-          { position: 5, name: 'Six in the fifth place', text: 'No boasting of wealth before one\'s neighbor. It is favorable to attack with force. Nothing that would not further.' },
-          { position: 6, name: 'Six at the top', text: 'Modesty that comes to expression. It is favorable to set armies marching to chastise one\'s own city and one\'s country.' },
-        ],
-      },
       'en-legge': {
         name: 'Modesty',
         meaning: 'Modest self-restraint and yielding',
@@ -2466,20 +1517,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'There is nothing that would not be advantageous in the exercise of modesty in movement.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He is not rich; but he uses his neighbors. It is advantageous to use force. Nothing that would not be advantageous.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The modesty has made itself known. It is advantageous to put armies in motion, to correct one\'s own city and country.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Modestia',
-        meaning: 'Humildad, restricción, cedencia',
-        judgment: 'Modestia crea éxito. El hombre superior lleva las cosas a conclusión.',
-        image: 'Dentro de la tierra, una montaña: la imagen de la Modestia. Así el hombre superior reduce lo excesivo y aumenta lo insuficiente.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Un hombre superior modesto en su modestia puede cruzar la gran agua. Buena fortuna.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Modestia que llega a expresarse. La perseverancia trae buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Un hombre superior de modestia y mérito lleva las cosas a conclusión. Buena fortuna.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Nada que no propicie la modestia en el movimiento.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'No alardear de riqueza ante el vecino. Es favorable atacar con fuerza. Nada que no propicie.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Modestia que llega a expresarse. Es favorable poner ejércitos en marcha para castigar la propia ciudad y el propio país.' },
         ],
       },
       'es-legge': {
@@ -2535,34 +1572,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'thunder',
     lowerTrigram: 'earth',
     translations: {
-      en: {
-        name: 'Enthusiasm',
-        meaning: 'Joy, readiness, harmony',
-        judgment: 'Enthusiasm. It furthers one to install feudal princes and set the army marching.',
-        image: 'Thunder in the earth: the image of Enthusiasm. Thus the ancient kings made music to promote harmony and offered it with reverence to the Supreme Being.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Enthusiasm that expresses itself brings misfortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Firm as a rock. Not a whole day. Perseverance brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'Enthusiasm that looks upward creates remorse. Hesitation brings remorse.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The source of enthusiasm. He achieves great things. Doubt not. You gather friends around you as a hair clasp gathers the hair.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Persistently ill, and still does not die.' },
-          { position: 6, name: 'Six at the top', text: 'Deluded enthusiasm. But since after completion one changes, there is no blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Enthusiasm',
-        meaning: 'Joy, readiness, harmony',
-        judgment: 'Enthusiasm. It furthers one to install feudal princes and set the army marching.',
-        image: 'Thunder in the earth: the image of Enthusiasm. Thus the ancient kings made music to promote harmony and offered it with reverence to the Supreme Being.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Enthusiasm that expresses itself brings misfortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Firm as a rock. Not a whole day. Perseverance brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'Enthusiasm that looks upward creates remorse. Hesitation brings remorse.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The source of enthusiasm. He achieves great things. Doubt not. You gather friends around you as a hair clasp gathers the hair.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Persistently ill, and still does not die.' },
-          { position: 6, name: 'Six at the top', text: 'Deluded enthusiasm. But since after completion one changes, there is no blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Enthusiasm',
         meaning: 'Harmony and pleasure in accord',
@@ -2575,20 +1584,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'The source of harmony. What is desired is obtained on a great scale. Let not doubts be entertained. Friends will gather round him.' },
           { position: 5, name: 'In the fifth line, divided', text: 'Persistently ill, yet does not die.' },
           { position: 6, name: 'In the sixth line, divided', text: 'With darkened enthusiasm. But if after completion there is a change, there will be no error.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Entusiasmo',
-        meaning: 'Alegría, disposición, armonía',
-        judgment: 'Entusiasmo. Propicia instalar príncipes feudales y poner el ejército en marcha.',
-        image: 'Trueno en la tierra: la imagen del Entusiasmo. Así los reyes antiguos hicieron música para promover la armonía.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'El entusiasmo que se expresa trae desgracia.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Firme como una roca. No un día entero. La perseverancia trae buena fortuna.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'El entusiasmo que mira hacia arriba crea arrepentimiento. La vacilación trae arrepentimiento.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La fuente del entusiasmo. Logra grandes cosas. No dudes. Reúnes amigos a tu alrededor como un pasador de cabello recoge el cabello.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Persistentemente enfermo, y aún no muere.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Entusiasmo ilusorio. Pero si después de la conclusión uno cambia, no hay censura.' },
         ],
       },
       'es-legge': {
@@ -2644,34 +1639,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'lake',
     lowerTrigram: 'thunder',
     translations: {
-      en: {
-        name: 'Following',
-        meaning: 'Following, obedience, flexibility',
-        judgment: 'Following creates supreme success. Furthering perseverance brings reward. No blame.',
-        image: 'Thunder follows lightning: the image of Following. Thus the superior man enters the realm of rest when the sun has set.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'The standard is changing. Perseverance brings good fortune. To go out of the door in company produces deeds.' },
-          { position: 2, name: 'Six in the second place', text: 'If one clings to the little boy, one loses the strong man.' },
-          { position: 3, name: 'Six in the third place', text: 'If one clings to the strong man, one loses the little boy. Through following one finds what one seeks. It furthers one to remain persevering.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Following creates success. Perseverance brings misfortune. To go one\'s way with sincerity brings clarity. How could there be blame in this?' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Sincere in the good. Good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'He meets with firm allegiance and is still further bound. The king introduces him to the Western Mountain.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Following',
-        meaning: 'Following, obedience, flexibility',
-        judgment: 'Following creates supreme success. Furthering perseverance brings reward. No blame.',
-        image: 'Thunder follows lightning: the image of Following. Thus the superior man enters the realm of rest when the sun has set.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'The standard is changing. Perseverance brings good fortune. To go out of the door in company produces deeds.' },
-          { position: 2, name: 'Six in the second place', text: 'If one clings to the little boy, one loses the strong man.' },
-          { position: 3, name: 'Six in the third place', text: 'If one clings to the strong man, one loses the little boy. Through following one finds what one seeks. It furthers one to remain persevering.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Following creates success. Perseverance brings misfortune. To go one\'s way with sincerity brings clarity. How could there be blame in this?' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Sincere in the good. Good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'He meets with firm allegiance and is still further bound. The king introduces him to the Western Mountain.' },
-        ],
-      },
       'en-legge': {
         name: 'Following',
         meaning: 'Giving and receiving in sequence',
@@ -2684,20 +1651,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'Following brings success. With firm correctness there will be evil. But if one goes his way with sincerity, what error can there be?' },
           { position: 5, name: 'In the fifth line, undivided', text: 'Sincere in his attachment to what is good. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He secures firm attachment and is still further bound. The king sacrifices on the Western Mountain.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Seguimiento',
-        meaning: 'Seguir, obediencia, flexibilidad',
-        judgment: 'Seguimiento crea éxito supremo. La perseverancia que propicia trae recompensa.',
-        image: 'El trueno sigue al relámpago: la imagen de Seguimiento. Así el hombre superior entra en el reino del descanso.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'El estándar está cambiando. La perseverancia trae buena fortuna. Salir por la puerta en compañía produce obras.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Si uno se aferra al niño pequeño, pierde al hombre fuerte.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Si uno se aferra al hombre fuerte, pierde al niño pequeño. Siguiendo, uno halla lo que busca. Es propicio permanecer perseverante.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Seguir crea éxito. La perseverancia trae desgracia. Ir por el propio camino con sinceridad trae claridad. ¿Cómo podría haber censura en esto?' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Sincero en el bien. Buena fortuna.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Se encuentra con firme lealtad y queda aún más ligado. El rey lo presenta en la Montaña Occidental.' },
         ],
       },
       'es-legge': {
@@ -2753,34 +1706,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'mountain',
     lowerTrigram: 'wind',
     translations: {
-      en: {
-        name: 'Work on What Has Been Spoiled',
-        meaning: 'Decay, restoration, elimination of rot',
-        judgment: 'Work on What Has Been Spoiled creates supreme success. It furthers one to cross the great water. Before the starting point, three days. After the starting point, three days.',
-        image: 'Wind blowing over the mountain: the image of Work on What Has Been Spoiled. Thus the superior man stirs up the people and strengthens their spirit.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Setting right what has been spoiled by the father. If there is a son, no blame rests upon the departed father. Danger. In the end, good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'Setting right what has been spoiled by the mother. One must not be too persevering.' },
-          { position: 3, name: 'Nine in the third place', text: 'Setting right what has been spoiled by the father. There will be a little remorse. No great blame.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Tolerating what has been spoiled by the father. In continuing one sees humiliation.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Setting right what has been spoiled by the father. One meets with praise.' },
-          { position: 6, name: 'Nine at the top', text: 'He does not serve kings and princes, sets himself higher goals.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Work on What Has Been Spoiled',
-        meaning: 'Decay, restoration, elimination of rot',
-        judgment: 'Work on What Has Been Spoiled creates supreme success. It furthers one to cross the great water. Before the starting point, three days. After the starting point, three days.',
-        image: 'Wind blowing over the mountain: the image of Work on What Has Been Spoiled. Thus the superior man stirs up the people and strengthens their spirit.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Setting right what has been spoiled by the father. If there is a son, no blame rests upon the departed father. Danger. In the end, good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'Setting right what has been spoiled by the mother. One must not be too persevering.' },
-          { position: 3, name: 'Nine in the third place', text: 'Setting right what has been spoiled by the father. There will be a little remorse. No great blame.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Tolerating what has been spoiled by the father. In continuing one sees humiliation.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Setting right what has been spoiled by the father. One meets with praise.' },
-          { position: 6, name: 'Nine at the top', text: 'He does not serve kings and princes, sets himself higher goals.' },
-        ],
-      },
       'en-legge': {
         name: 'Corruption',
         meaning: 'Decay and remedy; setting right what is spoiled',
@@ -2793,20 +1718,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He indulgently regards what was spoiled by his father. Going forward he will see cause for regret.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He deals with what was spoiled by his father, and obtains praise and fame.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He does not serve kings or feudal lords, but in a lofty spirit prefers to attend to his own affairs.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Trabajo en lo Que Ha Sido Arruinado',
-        meaning: 'Decadencia, restauración, eliminación de podredumbre',
-        judgment: 'Trabajo en lo Que Ha Sido Arruinado crea éxito supremo. Propicia cruzar la gran agua.',
-        image: 'El viento soplando bajo la montaña: la imagen de Trabajo en lo Que Ha Sido Arruinado. Así el hombre superior incita al pueblo y fortalece su virtud.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Enmendar lo que ha sido arruinado por el padre. Si hay un hijo, ninguna culpa recae sobre el padre fallecido. Peligro. Al final, buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Enmendar lo que ha sido arruinado por la madre. No se debe ser demasiado perseverante.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Enmendar lo que ha sido arruinado por el padre. Habrá un poco de arrepentimiento. Sin gran censura.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Tolerar lo que ha sido arruinado por el padre. En continuar así se ve humillación.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Enmendar lo que ha sido arruinado por el padre. Uno se encuentra con elogio.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'No sirve a reyes ni príncipes; se fija metas más elevadas.' },
         ],
       },
       'es-legge': {
@@ -2862,34 +1773,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'fire',
     lowerTrigram: 'thunder',
     translations: {
-      en: {
-        name: 'Biting Through',
-        meaning: 'Determination, removing obstacles, decisiveness',
-        judgment: 'Biting Through creates success. It is favorable to impose penalties.',
-        image: 'Thunder and lightning: the image of Biting Through. Thus the kings of former times made firm the laws through clearly defined penalties.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'His feet are fastened in the stocks, so that his toes disappear. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Bites through tender meat, so that his nose disappears. No blame.' },
-          { position: 3, name: 'Six in the third place', text: 'Bites on old dried meat and strikes on something poisonous. Slight humiliation. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Bites on dried gristly meat. Receives metal arrows. It furthers one to be mindful of difficulties and to be persevering. Good fortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Bites on dried lean meat. Receives yellow gold. Perseveringly aware of danger. No blame.' },
-          { position: 6, name: 'Nine at the top', text: 'His neck is fastened in the wooden cangue, so that his ears disappear. Misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Biting Through',
-        meaning: 'Determination, removing obstacles, decisiveness',
-        judgment: 'Biting Through creates success. It is favorable to impose penalties.',
-        image: 'Thunder and lightning: the image of Biting Through. Thus the kings of former times made firm the laws through clearly defined penalties.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'His feet are fastened in the stocks, so that his toes disappear. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Bites through tender meat, so that his nose disappears. No blame.' },
-          { position: 3, name: 'Six in the third place', text: 'Bites on old dried meat and strikes on something poisonous. Slight humiliation. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Bites on dried gristly meat. Receives metal arrows. It furthers one to be mindful of difficulties and to be persevering. Good fortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Bites on dried lean meat. Receives yellow gold. Perseveringly aware of danger. No blame.' },
-          { position: 6, name: 'Nine at the top', text: 'His neck is fastened in the wooden cangue, so that his ears disappear. Misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Biting Through',
         meaning: 'Chewing and biting through obstacles',
@@ -2902,20 +1785,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He bites on dried, bony meat. He gets the metal arrows. It will be advantageous to him to realize the difficulty of his task and be firm. There will be good fortune.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He bites on dried lean meat, and gets the yellow gold. If he be firm and correct, realizing the peril of his position, there will be no error.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'His neck is fastened in the cangue, and his ears are destroyed. There will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Mordedura a Través',
-        meaning: 'Determinación, eliminación de obstáculos, decisión',
-        judgment: 'Mordedura a Través crea éxito. Es favorable imponer penas.',
-        image: 'Trueno y relámpago: la imagen de Mordedura a Través. Así los reyes de tiempos anteriores hicieron firme las leyes.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Sus pies están sujetos en el cepo, de modo que los dedos desaparecen. Sin censura.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Muerde carne tierna, de modo que su nariz desaparece. Sin censura.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Muerde carne vieja y seca y golpea algo venenoso. Ligera humillación. Sin censura.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Muerde carne seca y fibrosa. Recibe flechas de metal. Es propicio estar atento a las dificultades y ser perseverante. Buena fortuna.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Muerde carne seca y magra. Recibe oro amarillo. Con perseverante conciencia del peligro. Sin censura.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Su cuello está sujeto en el cangue de madera, de modo que sus oídos desaparecen. Desgracia.' },
         ],
       },
       'es-legge': {
@@ -2971,34 +1840,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'mountain',
     lowerTrigram: 'fire',
     translations: {
-      en: {
-        name: 'Grace',
-        meaning: 'Beauty, decoration, adorning',
-        judgment: 'Grace has success. In small matters it is favorable to have somewhere to go.',
-        image: 'Fire clings to the mountain: the image of Grace. Thus the superior man throws light upon the affairs of the world, but does not dare to act from his own will.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'He lends grace to his toes, leaves the carriage, and walks.' },
-          { position: 2, name: 'Six in the second place', text: 'Lends grace to the beard on his chin.' },
-          { position: 3, name: 'Nine in the third place', text: 'Graceful and moist. Constant perseverance brings good fortune.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Grace or simplicity? A white horse comes as if on wings. He is not a robber; he will woo at the right time.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Grace in hills and gardens. The roll of silk is meager and small. Humiliation, but in the end good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'Simple grace. No blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Grace',
-        meaning: 'Beauty, decoration, adorning',
-        judgment: 'Grace has success. In small matters it is favorable to have somewhere to go.',
-        image: 'Fire clings to the mountain: the image of Grace. Thus the superior man throws light upon the affairs of the world, but does not dare to act from his own will.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'He lends grace to his toes, leaves the carriage, and walks.' },
-          { position: 2, name: 'Six in the second place', text: 'Lends grace to the beard on his chin.' },
-          { position: 3, name: 'Nine in the third place', text: 'Graceful and moist. Constant perseverance brings good fortune.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Grace or simplicity? A white horse comes as if on wings. He is not a robber; he will woo at the right time.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Grace in hills and gardens. The roll of silk is meager and small. Humiliation, but in the end good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'Simple grace. No blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Ornamentation',
         meaning: 'Elegance and embellishment',
@@ -3011,20 +1852,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'Adorned, but only in white. As if mounted on a white horse, and furnished with wings. He is not a robber; he will make his suit at the proper time.' },
           { position: 5, name: 'In the fifth line, divided', text: 'Adorned amid the heights and gardens. He presents his roll of silk, small and slight. There may be shame, but there will be good fortune in the end.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He is adorned in simple white. There will be no error.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Gracia',
-        meaning: 'Belleza, decoración, adorno',
-        judgment: 'Gracia tiene éxito. En pequeños asuntos es favorable tener adónde ir.',
-        image: 'Fuego se adhiere a la montaña: la imagen de la Gracia. Así el hombre superior ilumina los asuntos del mundo.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Otorga gracia a sus pies, abandona el carruaje y camina.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Otorga gracia a la barba de su mentón.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Gracioso y húmedo. La perseverancia constante trae buena fortuna.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: '¿Gracia o sencillez? Un caballo blanco llega como si tuviera alas. No es un ladrón; cortejará en el momento oportuno.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Gracia en colinas y jardines. El rollo de seda es escaso y pequeño. Humillación, pero al final buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Gracia simple. Sin censura.' },
         ],
       },
       'es-legge': {
@@ -3080,34 +1907,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'heaven',
     lowerTrigram: 'thunder',
     translations: {
-      en: {
-        name: 'Innocence',
-        meaning: 'Guilelessness, integrity, spontaneity',
-        judgment: 'Innocence. Supreme success. Perseverance furthers. If someone is not as he should be, he has misfortune, and it does not further him to undertake anything.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Innocent behavior brings good fortune.' },
-          { position: 2, name: 'Six in the second place', text: 'If one does not count on the harvest while plowing, nor on the use of the ground while clearing it, it furthers one to undertake something.' },
-          { position: 3, name: 'Six in the third place', text: 'Undeserved misfortune. The cow that was tethered by someone is the wanderer\'s gain, the citizen\'s loss.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He who can be persevering remains without blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Use no medicine in an illness incurred through no fault of your own. It will pass of itself.' },
-          { position: 6, name: 'Nine at the top', text: 'Innocent action brings misfortune. Nothing furthers.' },
-        ],
-        image: 'Thunder rolls under heaven: the image of Innocence. Thus the kings of old, rich in virtue, cultivated the good and rewarded the worthy.',
-      },
-      'en-wilhelm': {
-        name: 'Innocence',
-        meaning: 'Guilelessness, integrity, spontaneity',
-        judgment: 'Innocence. Supreme success. Perseverance furthers. If someone is not as he should be, he has misfortune, and it does not further him to undertake anything.',
-        image: 'Thunder rolls under heaven: the image of Innocence. Thus the kings of old, rich in virtue, cultivated the good and rewarded the worthy.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Innocent behavior brings good fortune.' },
-          { position: 2, name: 'Six in the second place', text: 'If one does not count on the harvest while plowing, nor on the use of the ground while clearing it, it furthers one to undertake something.' },
-          { position: 3, name: 'Six in the third place', text: 'Undeserved misfortune. The cow that was tethered by someone is the wanderer\'s gain, the citizen\'s loss.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He who can be persevering remains without blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Use no medicine in an illness incurred through no fault of your own. It will pass of itself.' },
-          { position: 6, name: 'Nine at the top', text: 'Innocent action brings misfortune. Nothing furthers.' },
-        ],
-      },
       'en-legge': {
         name: 'Unexpected Good Fortune',
         meaning: 'Innocent intention and natural rightness',
@@ -3120,20 +1919,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'If he be firm and correct, there will be no error.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'For a sickness that is not his own, let him not use medicine. There will be occasion for joy.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'Action in the state of innocence will lead to injury. There will be no advantage in any way.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Inocencia',
-        meaning: 'Ingenuidad, integridad, espontaneidad',
-        judgment: 'Inocencia. Éxito supremo. La perseverancia propicia.',
-        image: 'El trueno rueda bajo el cielo: la imagen de la Inocencia. Así los reyes de antaño, ricos en virtud, cultivaban el bien.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'El comportamiento inocente trae buena fortuna.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Si no se cuenta con la cosecha mientras se ara, ni con el uso del suelo mientras se despeja, es propicio emprender algo.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Infortunio inmerecido. La vaca que fue atada por alguien es la ganancia del caminante, la pérdida del ciudadano.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'El que puede ser perseverante permanece sin censura.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'No uses medicina en una enfermedad contraída sin culpa propia. Pasará por sí sola.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'La acción inocente trae desgracia. Nada propicia.' },
         ],
       },
       'es-legge': {
@@ -3189,34 +1974,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'mountain',
     lowerTrigram: 'heaven',
     translations: {
-      en: {
-        name: 'The Taming Power of the Great',
-        meaning: 'Accumulation of power, discipline, restraint',
-        judgment: 'The Taming Power of the Great. Perseverance furthers. It does not eat at home. Good fortune. It furthers one to cross the great water.',
-        image: 'Heaven within the mountain: the image of the Taming Power of the Great. Thus the superior man stores up a wealth of goodness in order to support the people.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Danger is at hand. It furthers one to desist.' },
-          { position: 2, name: 'Nine in the second place', text: 'The axletrees are taken from the wagon.' },
-          { position: 3, name: 'Nine in the third place', text: 'A good horse that follows others. Awareness of danger, with perseverance, furthers. Practice chariot driving and armed defense daily. It furthers one to have somewhere to go.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The headboard of a young bull. Great good fortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'The tusk of a gelded boar. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'One attains the way of heaven. Success.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Taming Power of the Great',
-        meaning: 'Accumulation of power, discipline, restraint',
-        judgment: 'The Taming Power of the Great. Perseverance furthers. It does not eat at home. Good fortune. It furthers one to cross the great water.',
-        image: 'Heaven within the mountain: the image of the Taming Power of the Great. Thus the superior man stores up a wealth of goodness in order to support the people.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Danger is at hand. It furthers one to desist.' },
-          { position: 2, name: 'Nine in the second place', text: 'The axletrees are taken from the wagon.' },
-          { position: 3, name: 'Nine in the third place', text: 'A good horse that follows others. Awareness of danger, with perseverance, furthers. Practice chariot driving and armed defense daily. It furthers one to have somewhere to go.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The headboard of a young bull. Great good fortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'The tusk of a gelded boar. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'One attains the way of heaven. Success.' },
-        ],
-      },
       'en-legge': {
         name: 'Great Accumulation',
         meaning: 'Accumulating the strength to hold back',
@@ -3229,20 +1986,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'The horn-piece on the head of a young bull. Great good fortune.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The tusk of a castrated hog. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'How great is the command that heaven opens the way! There will be progress.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Poder Domesticador de lo Grande',
-        meaning: 'Acumulación de poder, disciplina, restricción',
-        judgment: 'El Poder Domesticador de lo Grande. La perseverancia propicia. No come en casa. Buena fortuna.',
-        image: 'Cielo dentro de la montaña: la imagen del Poder Domesticador de lo Grande. Así el hombre superior acumula muchos dichos y hechos del pasado para fortalecer su carácter.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'El peligro está cerca. Es propicio desistir.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Se retiran los ejes del carro.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Un buen caballo que sigue a otros. La conciencia del peligro, con perseverancia, propicia. Practica a diario la conducción del carro y la defensa armada. Es propicio tener adónde ir.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'La placa frontal de un toro joven. Gran buena fortuna.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'El colmillo de un jabalí castrado. Buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Uno alcanza el camino del cielo. Éxito.' },
         ],
       },
       'es-legge': {
@@ -3298,34 +2041,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'mountain',
     lowerTrigram: 'thunder',
     translations: {
-      en: {
-        name: 'The Corners of the Mouth',
-        meaning: 'Nourishment, provision, sustenance',
-        judgment: 'The Corners of the Mouth. Perseverance brings good fortune. Pay heed to the providing of nourishment and to what a man seeks to fill his own mouth with.',
-        image: 'Thunder below, mountain above: the image of Providing Nourishment. Thus the superior man is careful of his words and temperate in eating and drinking.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'You let your magic tortoise go, and look at me with the corners of your mouth drooping. Misfortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Turning to the summit for nourishment, deviating from the path to seek nourishment from the hill. Continuing to do this brings misfortune.' },
-          { position: 3, name: 'Six in the third place', text: 'Turning away from nourishment. Perseverance brings misfortune. Do not act thus for ten years. Nothing serves to further.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Turning to the summit for provision of nourishment brings good fortune. Spying about with sharp eyes like a tiger with insatiable craving. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Turning away from the path. To remain persevering brings good fortune. One should not cross the great water.' },
-          { position: 6, name: 'Nine at the top', text: 'The source of nourishment. Awareness of danger brings good fortune. It furthers one to cross the great water.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Corners of the Mouth',
-        meaning: 'Nourishment, provision, sustenance',
-        judgment: 'The Corners of the Mouth. Perseverance brings good fortune. Pay heed to the providing of nourishment and to what a man seeks to fill his own mouth with.',
-        image: 'Thunder below, mountain above: the image of Providing Nourishment. Thus the superior man is careful of his words and temperate in eating and drinking.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'You let your magic tortoise go, and look at me with the corners of your mouth drooping. Misfortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Turning to the summit for nourishment, deviating from the path to seek nourishment from the hill. Continuing to do this brings misfortune.' },
-          { position: 3, name: 'Six in the third place', text: 'Turning away from nourishment. Perseverance brings misfortune. Do not act thus for ten years. Nothing serves to further.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Turning to the summit for provision of nourishment brings good fortune. Spying about with sharp eyes like a tiger with insatiable craving. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Turning away from the path. To remain persevering brings good fortune. One should not cross the great water.' },
-          { position: 6, name: 'Nine at the top', text: 'The source of nourishment. Awareness of danger brings good fortune. It furthers one to cross the great water.' },
-        ],
-      },
       'en-legge': {
         name: 'Providing Nourishment',
         meaning: 'Attending to sustenance and nourishment',
@@ -3338,20 +2053,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'Looking downward for the power to nourish. There will be good fortune. Looking with a tiger\'s downward unwavering gaze, and with his desire that impels him to spring after spring. There will be no error.' },
           { position: 5, name: 'In the fifth line, divided', text: 'Acting contrary to what is regular and proper; but if he abide in firmness, there will be good fortune. He should not try to cross the great stream.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He is the source of nourishment. His position is perilous, but there will be good fortune. It will be advantageous to cross the great stream.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Las Esquinas de la Boca',
-        meaning: 'Nutrición, provisión, sustento',
-        judgment: 'Las Esquinas de la Boca. La perseverancia trae buena fortuna. Presta atención a la provisión de nutrición.',
-        image: 'Trueno debajo, montaña arriba: la imagen de Provisión de Nutrición. Así el hombre superior es cuidadoso con sus palabras y moderado en el comer y beber.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Sueltas tu tortuga mágica y me miras con las comisuras de la boca caídas. Desgracia.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Volverte hacia la cima en busca de nutrición, desviarte del camino para buscar nutrición de la colina. Continuar así trae desgracia.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Apartarse de la nutrición. La perseverancia trae desgracia. No actúes así por diez años. Nada sirve para propiciar.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Volverte hacia la cima en busca de provisión de nutrición trae buena fortuna. Espiando alrededor con ojos agudos como un tigre de anhelo insaciable. Sin censura.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Apartarse del camino. Permanecer perseverante trae buena fortuna. No se debe cruzar la gran agua.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'La fuente de nutrición. La conciencia del peligro trae buena fortuna. Es propicio cruzar la gran agua.' },
         ],
       },
       'es-legge': {
@@ -3407,34 +2108,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'lake',
     lowerTrigram: 'wind',
     translations: {
-      en: {
-        name: 'Preponderance of the Great',
-        meaning: 'Excess, extremity, imbalance',
-        judgment: 'Preponderance of the Great. The ridgepole sags to the breaking point. It furthers one to have somewhere to go. Success.',
-        image: 'Wind blows over the lake: the image of Preponderance of the Great. Thus the superior man, when he stands alone, is unafraid, and if he has to renounce the world, he is undismayed.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'To spread white rushes underneath. No blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'A dry poplar sprouts at the root. An older man takes a young wife. Everything furthers.' },
-          { position: 3, name: 'Nine in the third place', text: 'The ridgepole sags to the breaking point. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The ridgepole is braced. Good fortune. If there are ulterior motives, it is humiliating.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'A withered poplar puts forth flowers. An older woman takes a husband. No blame. No praise.' },
-          { position: 6, name: 'Six at the top', text: 'One must go through the water. It goes over one\'s head. Misfortune. No blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Preponderance of the Great',
-        meaning: 'Excess, extremity, imbalance',
-        judgment: 'Preponderance of the Great. The ridgepole sags to the breaking point. It furthers one to have somewhere to go. Success.',
-        image: 'Wind blows over the lake: the image of Preponderance of the Great. Thus the superior man, when he stands alone, is unafraid, and if he has to renounce the world, he is undismayed.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'To spread white rushes underneath. No blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'A dry poplar sprouts at the root. An older man takes a young wife. Everything furthers.' },
-          { position: 3, name: 'Nine in the third place', text: 'The ridgepole sags to the breaking point. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The ridgepole is braced. Good fortune. If there are ulterior motives, it is humiliating.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'A withered poplar puts forth flowers. An older woman takes a husband. No blame. No praise.' },
-          { position: 6, name: 'Six at the top', text: 'One must go through the water. It goes over one\'s head. Misfortune. No blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Great Excessiveness',
         meaning: 'Going too far; exceeding the mean',
@@ -3447,20 +2120,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'The ridgepole is braced. There will be good fortune. If the subject of the line has other aims, he will be put to shame.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'A decayed willow produces flowers, or an old wife gets a young husband. There will be no ground for blame or for praise.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He has to wade through the stream, till the water hides the crown of his head. There will be evil, but no ground for blame.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Preponderancia de lo Grande',
-        meaning: 'Exceso, extremidad, desequilibrio',
-        judgment: 'Preponderancia de lo Grande. La viga se cede al punto de ruptura. Propicia tener adónde ir.',
-        image: 'El lago desborda la madera: la imagen de Preponderancia de lo Grande. Así el hombre superior se mantiene solo sin temor y se retira del mundo sin pena.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Extender juncos blancos por debajo. Sin censura.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Un álamo seco brota en la raíz. Un hombre mayor toma una mujer joven. Todo propicia.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'La viga se cede al punto de ruptura. Desgracia.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La viga está apuntalada. Buena fortuna. Si hay motivos ulteriores, es humillante.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Un álamo marchito produce flores. Una mujer mayor toma marido. Sin censura. Sin elogio.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Uno debe cruzar el agua. Le llega hasta la cabeza. Desgracia. Sin censura.' },
         ],
       },
       'es-legge': {
@@ -3516,34 +2175,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'water',
     lowerTrigram: 'water',
     translations: {
-      en: {
-        name: 'The Abysmal',
-        meaning: 'Danger, flowing water, depth',
-        judgment: 'The Abysmal repeated. If you are sincere, you have success in your heart, and whatever you do succeeds.',
-        image: 'Water flows on continually and reaches its goal: the image of the Abysmal repeated. Thus the superior man walks in lasting virtue and carries on the work of teaching.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Repetition of the Abysmal. In the abyss one falls into a pit. Misfortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'The abyss is dangerous. One should strive to attain small things only.' },
-          { position: 3, name: 'Six in the third place', text: 'Forward and backward, abyss on abyss. In danger like this, pause at first and wait. Otherwise you will fall into a pit in the abyss. Do not act this way.' },
-          { position: 4, name: 'Six in the fourth place', text: 'A jug of wine, a bowl of rice with it; earthen vessels simply handed in through the window. There is certainly no blame in this.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The abyss is not filled to overflowing, it is filled only to the rim. No blame.' },
-          { position: 6, name: 'Six at the top', text: 'Bound with cords and ropes, shut in between thorn-hedged prison walls: for three years one does not find the way. Misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Abysmal',
-        meaning: 'Danger, flowing water, depth',
-        judgment: 'The Abysmal repeated. If you are sincere, you have success in your heart, and whatever you do succeeds.',
-        image: 'Water flows on continually and reaches its goal: the image of the Abysmal repeated. Thus the superior man walks in lasting virtue and carries on the work of teaching.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Repetition of the Abysmal. In the abyss one falls into a pit. Misfortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'The abyss is dangerous. One should strive to attain small things only.' },
-          { position: 3, name: 'Six in the third place', text: 'Forward and backward, abyss on abyss. In danger like this, pause at first and wait. Otherwise you will fall into a pit in the abyss. Do not act this way.' },
-          { position: 4, name: 'Six in the fourth place', text: 'A jug of wine, a bowl of rice with it; earthen vessels simply handed in through the window. There is certainly no blame in this.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The abyss is not filled to overflowing, it is filled only to the rim. No blame.' },
-          { position: 6, name: 'Six at the top', text: 'Bound with cords and ropes, shut in between thorn-hedged prison walls: for three years one does not find the way. Misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'The Pit',
         meaning: 'Repeated danger; flowing through difficulties',
@@ -3556,20 +2187,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'A flagon of spirits, a dish of grain, and earthen vessels simply passed through the window. There is indeed no error in this.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The water in the pit does not rise so as to overflow; it has been filled only to the level of the edge. There will be no error.' },
           { position: 6, name: 'In the sixth line, divided', text: 'Bound with cords of three strands and placed in a thicket of thorns; for three years he fails to obtain freedom. There will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Abismo',
-        meaning: 'Peligro, agua que fluye, profundidad',
-        judgment: 'El Abismo repetido. Si eres sincero, tienes éxito en tu corazón.',
-        image: 'El agua fluye continuamente y alcanza su meta: la imagen del Abismo repetido. Así el hombre superior camina en virtud duradera y prosigue la obra de enseñar.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Repetición del Abismo. En el abismo uno cae en un pozo. Desgracia.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'El abismo es peligroso. Solo se debe esforzar por alcanzar cosas pequeñas.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Hacia adelante y hacia atrás, abismo sobre abismo. En un peligro así, haz una pausa al principio y espera. De lo contrario caerás en un pozo en el abismo. No actúes de esta manera.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Un cántaro de vino, un cuenco de arroz junto con él; vasijas de barro simplemente entregadas a través de la ventana. Ciertamente no hay censura en esto.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'El abismo no está lleno hasta desbordarse, está lleno solo hasta el borde. Sin censura.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Atado con cuerdas y sogas, encerrado entre muros de prisión cercados de espinos: durante tres años no se encuentra el camino. Desgracia.' },
         ],
       },
       'es-legge': {
@@ -3625,34 +2242,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'fire',
     lowerTrigram: 'fire',
     translations: {
-      en: {
-        name: 'The Clinging',
-        meaning: 'Fire, illumination, clarity',
-        judgment: 'The Clinging. Perseverance furthers. It brings success. Care of the cow brings good fortune.',
-        image: 'That which is bright rises twice: the image of the Clinging. Thus the great man, by perpetually reinforcing his luminosity, illuminates the world.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'The footprints run crisscross. If one is serious about it, no blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Yellow light. Supreme good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'In the light of the setting sun, men either beat the pot and sing or loudly bewail the approach of old age. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Its coming is sudden; it flames up, dies down, is thrown away.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Tears in floods, sighing and lamenting. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'The king uses him to march forth and chastise. Then it is best to kill the leaders and take captive the followers. No blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Clinging',
-        meaning: 'Fire, illumination, clarity',
-        judgment: 'The Clinging. Perseverance furthers. It brings success. Care of the cow brings good fortune.',
-        image: 'That which is bright rises twice: the image of the Clinging. Thus the great man, by perpetually reinforcing his luminosity, illuminates the world.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'The footprints run crisscross. If one is serious about it, no blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Yellow light. Supreme good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'In the light of the setting sun, men either beat the pot and sing or loudly bewail the approach of old age. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Its coming is sudden; it flames up, dies down, is thrown away.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Tears in floods, sighing and lamenting. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'The king uses him to march forth and chastise. Then it is best to kill the leaders and take captive the followers. No blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Fire',
         meaning: 'Brightness and illumination',
@@ -3665,20 +2254,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'How sudden is its coming! It burns up, dies, is cast out.' },
           { position: 5, name: 'In the fifth line, divided', text: 'Tears flow in torrents with sighs and sorrows. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'The king employs him in his punitive expeditions. Achieving admirable merit, he breaks only the chiefs; where his prisoners are not their associates, he does not punish. There will be no error.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Lo que se Adhiere',
-        meaning: 'Fuego, iluminación, claridad',
-        judgment: 'Lo que se Adhiere. La perseverancia propicia. Trae éxito. El cuidado de la vaca trae buena fortuna.',
-        image: 'Lo que es brillante se alza dos veces: la imagen de Lo que se Adhiere. Así el gran hombre, reforzando perpetuamente su luminosidad, ilumina el mundo.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Las huellas corren entrecruzadas. Si uno es serio al respecto, sin censura.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Luz amarilla. Suprema buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'A la luz del sol poniente, los hombres o golpean la olla y cantan o lamentan en voz alta la proximidad de la vejez. Desgracia.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Su llegada es repentina; se inflama, se extingue, es descartado.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Lágrimas a raudales, suspiros y lamentos. Buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'El rey lo usa para marchar y castigar. Lo mejor es matar a los cabecillas y capturar a los seguidores. Sin censura.' },
         ],
       },
       'es-legge': {
@@ -3734,34 +2309,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'lake',
     lowerTrigram: 'mountain',
     translations: {
-      en: {
-        name: 'Influence',
-        meaning: 'Attraction, courtship, reciprocal action',
-        judgment: 'Influence. Success. Perseverance furthers. It furthers one to take a maiden to wife.',
-        image: 'A lake on the mountain: the image of Influence. Thus the superior man encourages people to approach him by his readiness to receive them.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'The influence shows itself in the big toe.' },
-          { position: 2, name: 'Six in the second place', text: 'The influence shows itself in the calves of the legs. Misfortune. Tarrying brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The influence shows itself in the thighs. Holds to that which follows it. To continue is humiliating.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Perseverance brings good fortune. Remorse disappears. If a man is agitated in mind, and his thoughts go hither and thither, only those friends on whom he fixes his conscious thoughts will follow.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The influence shows itself in the back of the neck. No remorse.' },
-          { position: 6, name: 'Six at the top', text: 'The influence shows itself in the jaws, cheeks, and tongue.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Influence',
-        meaning: 'Attraction, courtship, reciprocal action',
-        judgment: 'Influence. Success. Perseverance furthers. It furthers one to take a maiden to wife.',
-        image: 'A lake on the mountain: the image of Influence. Thus the superior man encourages people to approach him by his readiness to receive them.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'The influence shows itself in the big toe.' },
-          { position: 2, name: 'Six in the second place', text: 'The influence shows itself in the calves of the legs. Misfortune. Tarrying brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The influence shows itself in the thighs. Holds to that which follows it. To continue is humiliating.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Perseverance brings good fortune. Remorse disappears. If a man is agitated in mind, and his thoughts go hither and thither, only those friends on whom he fixes his conscious thoughts will follow.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The influence shows itself in the back of the neck. No remorse.' },
-          { position: 6, name: 'Six at the top', text: 'The influence shows itself in the jaws, cheeks, and tongue.' },
-        ],
-      },
       'en-legge': {
         name: 'Mutual Influence',
         meaning: 'Influencing by attraction and natural response',
@@ -3774,20 +2321,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'Firm correctness will lead to good fortune, and prevent all occasion for repentance. If one be unsettled in his movements, only his friends will follow his purpose.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'He moves the flesh along the spine above the heart. There will be no occasion for repentance.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He moves his jaws and cheeks and tongue.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Influencia',
-        meaning: 'Atracción, cortejo, acción recíproca',
-        judgment: 'Influencia. Éxito. La perseverancia propicia. Propicia tomar una doncella como esposa.',
-        image: 'Un lago en la montaña: la imagen de la Influencia. Así el hombre superior anima a la gente a acercarse.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'La influencia se manifiesta en el dedo gordo del pie.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'La influencia se manifiesta en las pantorrillas. Desgracia. Detenerse trae buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'La influencia se manifiesta en los muslos. Se aferra a lo que le sigue. Continuar es humillante.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La perseverancia trae buena fortuna. El arrepentimiento desaparece. Si un hombre está agitado en su mente y sus pensamientos van de acá para allá, solo aquellos amigos en quienes fija sus pensamientos conscientes le seguirán.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'La influencia se manifiesta en la nuca. Sin arrepentimiento.' },
-          { position: 6, name: 'Seis en lo alto', text: 'La influencia se manifiesta en las mandíbulas, mejillas y lengua.' },
         ],
       },
       'es-legge': {
@@ -3843,34 +2376,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'thunder',
     lowerTrigram: 'wind',
     translations: {
-      en: {
-        name: 'Duration',
-        meaning: 'Constancy, persistence, continuity',
-        judgment: 'Duration. Success. No blame. Perseverance furthers. It furthers one to have somewhere to go.',
-        image: 'Thunder and wind: the image of Duration. Thus the superior man stands firm and does not change his direction.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Seeking duration too hastily brings misfortune persistently. Nothing that would further.' },
-          { position: 2, name: 'Nine in the second place', text: 'Remorse disappears.' },
-          { position: 3, name: 'Nine in the third place', text: 'He who does not give duration to his character meets with disgrace. Persistent humiliation.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'No game in the field.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Giving duration to one\'s character through perseverance. This is good fortune for a woman, misfortune for a man.' },
-          { position: 6, name: 'Six at the top', text: 'Restlessness as an enduring condition brings misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Duration',
-        meaning: 'Constancy, persistence, continuity',
-        judgment: 'Duration. Success. No blame. Perseverance furthers. It furthers one to have somewhere to go.',
-        image: 'Thunder and wind: the image of Duration. Thus the superior man stands firm and does not change his direction.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Seeking duration too hastily brings misfortune persistently. Nothing that would further.' },
-          { position: 2, name: 'Nine in the second place', text: 'Remorse disappears.' },
-          { position: 3, name: 'Nine in the third place', text: 'He who does not give duration to his character meets with disgrace. Persistent humiliation.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'No game in the field.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Giving duration to one\'s character through perseverance. This is good fortune for a woman, misfortune for a man.' },
-          { position: 6, name: 'Six at the top', text: 'Restlessness as an enduring condition brings misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Permanence',
         meaning: 'Enduring unchanged with good result',
@@ -3883,20 +2388,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'There is no game in the field.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He continuously maintains the virtue indicated by his position. In a wife this will be fortunate; in a husband, evil.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He is agitated in his movements. There will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Duración',
-        meaning: 'Constancia, persistencia, continuidad',
-        judgment: 'Duración. Éxito. Sin culpa. La perseverancia propicia.',
-        image: 'Trueno y viento: la imagen de la Duración. Así el hombre superior se mantiene firme.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Buscar la duración con demasiada prisa trae desgracia persistentemente. Nada que sea propicio.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'El arrepentimiento desaparece.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'El que no da duración a su carácter se encuentra con la deshonra. Humillación persistente.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Sin caza en el campo.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Dar duración al carácter mediante la perseverancia. Esto es buena fortuna para una mujer, desgracia para un hombre.' },
-          { position: 6, name: 'Seis en lo alto', text: 'La inquietud como condición permanente trae desgracia.' },
         ],
       },
       'es-legge': {
@@ -3952,34 +2443,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'fire',
     lowerTrigram: 'earth',
     translations: {
-      en: {
-        name: 'Progress',
-        meaning: 'Advancement, promotion, moving upward',
-        judgment: 'Progress. The powerful horse is emulous. It is advantageous to further movement in any direction. It furthers one to present offerings.',
-        image: 'The sun rising over the earth: the image of Progress. Thus the superior man himself brightens his bright virtue.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Progressing, but turned back. Perseverance brings good fortune. If one meets with no confidence, one should remain calm. No mistake.' },
-          { position: 2, name: 'Six in the second place', text: 'Progressing, but in sorrow. Perseverance brings good fortune. Then one obtains great happiness from one\'s ancestress.' },
-          { position: 3, name: 'Six in the third place', text: 'All are in accord. Remorse disappears.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Progress like a hamster. Perseverance brings danger.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Remorse disappears. Take not gain and loss to heart. Undertakings bring good fortune. Everything serves to further.' },
-          { position: 6, name: 'Nine at the top', text: 'Making progress with the horns is permissible only for the purpose of punishing one\'s own city. To be conscious of danger brings good fortune. No blame. Perseverance brings humiliation.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Progress',
-        meaning: 'Advancement, promotion, moving upward',
-        judgment: 'Progress. The powerful horse is emulous. It is advantageous to further movement in any direction. It furthers one to present offerings.',
-        image: 'The sun rising over the earth: the image of Progress. Thus the superior man himself brightens his bright virtue.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Progressing, but turned back. Perseverance brings good fortune. If one meets with no confidence, one should remain calm. No mistake.' },
-          { position: 2, name: 'Six in the second place', text: 'Progressing, but in sorrow. Perseverance brings good fortune. Then one obtains great happiness from one\'s ancestress.' },
-          { position: 3, name: 'Six in the third place', text: 'All are in accord. Remorse disappears.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Progress like a hamster. Perseverance brings danger.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Remorse disappears. Take not gain and loss to heart. Undertakings bring good fortune. Everything serves to further.' },
-          { position: 6, name: 'Nine at the top', text: 'Making progress with the horns is permissible only for the purpose of punishing one\'s own city. To be conscious of danger brings good fortune. No blame. Perseverance brings humiliation.' },
-        ],
-      },
       'en-legge': {
         name: 'Advance',
         meaning: 'Promotion and forward movement',
@@ -3992,20 +2455,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He advances like a marmot. However firm and correct he may be, his position is one of peril.' },
           { position: 5, name: 'In the fifth line, divided', text: 'All occasion for repentance disappears. Let him not concern himself whether he shall fail or succeed. To advance will be fortunate, and in every way advantageous.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He advances his horns. But only to punish the rebellious people of his own city. The position is perilous, but there will be good fortune. Yet however firm and correct, there will be occasion for regret.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Progreso',
-        meaning: 'Avance, promoción, movimiento hacia arriba',
-        judgment: 'Progreso. El caballo poderoso es émulo. Propicia avanzar en cualquier dirección.',
-        image: 'El sol se eleva sobre la tierra: la imagen del Progreso. Así el hombre superior ilumina su virtud luminosa.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Progresando, pero rechazado. La perseverancia trae buena fortuna. Si uno no encuentra confianza, debe permanecer sereno. Sin error.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Progresando, pero con aflicción. La perseverancia trae buena fortuna. Entonces uno obtiene gran dicha de su abuela.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Todos están de acuerdo. El arrepentimiento desaparece.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Progreso como un hámster. La perseverancia trae peligro.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'El arrepentimiento desaparece. No tomes a pecho pérdida ni ganancia. Las empresas traen buena fortuna. Todo sirve para propiciar.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Progresar con los cuernos solo es permisible para castigar la propia ciudad. Ser consciente del peligro trae buena fortuna. Sin censura. La perseverancia trae humillación.' },
         ],
       },
       'es-legge': {
@@ -4061,34 +2510,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'earth',
     lowerTrigram: 'fire',
     translations: {
-      en: {
-        name: 'Darkening of the Light',
-        meaning: 'Obscuration, adversity, hidden virtue',
-        judgment: 'Darkening of the Light. In adversity it furthers one to be persevering.',
-        image: 'The light has sunk into the earth: the image of Darkening of the Light. Thus does the superior man live with the great mass: he veils his light yet still shines.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Darkening of the light during flight. He lowers his wings. The superior man does not eat for three days on his wanderings. But he has somewhere to go. The host has occasion to gossip about him.' },
-          { position: 2, name: 'Six in the second place', text: 'Darkening of the light injures him in the left thigh. He gives aid with the strength of a horse. Good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'Darkening of the light during the hunt in the south. Their great leader is captured. One must not expect perseverance too soon.' },
-          { position: 4, name: 'Six in the fourth place', text: 'He penetrates the left side of the belly. One gets at the very heart of the darkening of the light, and leaves gate and courtyard.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Darkening of the light as with Prince Chi. Perseverance furthers.' },
-          { position: 6, name: 'Six at the top', text: 'Not light but darkness. First he climbed up to heaven, then he plunged into the depths of the earth.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Darkening of the Light',
-        meaning: 'Obscuration, adversity, hidden virtue',
-        judgment: 'Darkening of the Light. In adversity it furthers one to be persevering.',
-        image: 'The light has sunk into the earth: the image of Darkening of the Light. Thus does the superior man live with the great mass: he veils his light yet still shines.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Darkening of the light during flight. He lowers his wings. The superior man does not eat for three days on his wanderings. But he has somewhere to go. The host has occasion to gossip about him.' },
-          { position: 2, name: 'Six in the second place', text: 'Darkening of the light injures him in the left thigh. He gives aid with the strength of a horse. Good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'Darkening of the light during the hunt in the south. Their great leader is captured. One must not expect perseverance too soon.' },
-          { position: 4, name: 'Six in the fourth place', text: 'He penetrates the left side of the belly. One gets at the very heart of the darkening of the light, and leaves gate and courtyard.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Darkening of the light as with Prince Chi. Perseverance furthers.' },
-          { position: 6, name: 'Six at the top', text: 'Not light but darkness. First he climbed up to heaven, then he plunged into the depths of the earth.' },
-        ],
-      },
       'en-legge': {
         name: 'Eclipse of the Light',
         meaning: 'Brightness concealed; enduring in darkness',
@@ -4101,20 +2522,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He enters into the left side of the belly of the dark land, and is able to carry out the mind of the darkening of the light, as he goes forth from the gate and court.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The darkening is that of the count of Ji. It will be advantageous to be firm and correct.' },
           { position: 6, name: 'In the sixth line, divided', text: 'There is no light, but there is darkness. He had at first ascended to the top of the sky; his future shall be to go into the earth.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Oscurecimiento de la Luz',
-        meaning: 'Oscurecimiento, adversidad, virtud oculta',
-        judgment: 'Oscurecimiento de la Luz. En la adversidad conviene la perseverancia.',
-        image: 'La luz se ha hundido en la tierra: la imagen del Oscurecimiento de la Luz. Así vive el hombre superior con la gran masa: vela su luz pero aún brilla.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Oscurecimiento de la luz durante el vuelo. Baja sus alas. El hombre superior no come durante tres días en sus andanzas. Pero tiene adónde ir. El anfitrión tiene ocasión de murmurar sobre él.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Oscurecimiento de la luz lo hiere en el muslo izquierdo. Presta ayuda con la fuerza de un caballo. Buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Oscurecimiento de la luz durante la cacería en el sur. Su gran líder es capturado. No se debe esperar perseverancia demasiado pronto.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Penetra el lado izquierdo del vientre. Se llega al corazón mismo del oscurecimiento de la luz, y se abandona puerta y patio.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Oscurecimiento de la luz como con el príncipe Chi. La perseverancia propicia.' },
-          { position: 6, name: 'Seis en lo alto', text: 'No luz sino oscuridad. Primero ascendió al cielo, luego se hundió en las profundidades de la tierra.' },
         ],
       },
       'es-legge': {
@@ -4170,34 +2577,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'wind',
     lowerTrigram: 'fire',
     translations: {
-      en: {
-        name: 'The Family',
-        meaning: 'Household, relationships, foundation',
-        judgment: 'The Family. It is favorable for the woman to be firm and correct.',
-        image: 'Wind rises from fire: the image of the Family. Thus the superior man has substance in his words and preserves unity in his actions.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Firm seclusion within the family. Remorse disappears.' },
-          { position: 2, name: 'Six in the second place', text: 'She should not follow her whims. She must attend within to the food. Perseverance brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'When tempers flare up in the family, too great severity brings remorse. Good fortune nonetheless. When woman and child dally and laugh, it leads in the end to humiliation.' },
-          { position: 4, name: 'Six in the fourth place', text: 'She is the treasure of the house. Great good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'As a king he approaches his family. Fear not. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'His work commands respect. In the end good fortune comes.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Family',
-        meaning: 'Household, relationships, foundation',
-        judgment: 'The Family. It is favorable for the woman to be firm and correct.',
-        image: 'Wind rises from fire: the image of the Family. Thus the superior man has substance in his words and preserves unity in his actions.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Firm seclusion within the family. Remorse disappears.' },
-          { position: 2, name: 'Six in the second place', text: 'She should not follow her whims. She must attend within to the food. Perseverance brings good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'When tempers flare up in the family, too great severity brings remorse. Good fortune nonetheless. When woman and child dally and laugh, it leads in the end to humiliation.' },
-          { position: 4, name: 'Six in the fourth place', text: 'She is the treasure of the house. Great good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'As a king he approaches his family. Fear not. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'His work commands respect. In the end good fortune comes.' },
-        ],
-      },
       'en-legge': {
         name: 'The Family',
         meaning: 'Domestic relations and order',
@@ -4210,20 +2589,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'She is the enricher of the house. There will be great good fortune.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The influence of the king extends to his family. There need be no anxiety; there will be good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'His character commands reverence. In the end there will be good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Familia',
-        meaning: 'Hogar, relaciones, fundamento',
-        judgment: 'La Familia. Es favorable que la mujer sea firme y correcta.',
-        image: 'El viento se alza del fuego: la imagen de la Familia. Así el hombre superior tiene sustancia en sus palabras y constancia en sus acciones.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Firme reclusión dentro de la familia. El arrepentimiento desaparece.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Ella no debe seguir sus caprichos. Debe atender la comida dentro del hogar. La perseverancia trae buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Cuando los ánimos se encienden en la familia, demasiada severidad trae arrepentimiento. Buena fortuna no obstante. Cuando la mujer y el niño juguetean y ríen, al final conduce a humillación.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Ella es el tesoro de la casa. Gran buena fortuna.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Como rey se acerca a su familia. No temas. Buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Su obra inspira respeto. Al final llega la buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -4279,34 +2644,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'fire',
     lowerTrigram: 'lake',
     translations: {
-      en: {
-        name: 'Opposition',
-        meaning: 'Divergence, separation, misunderstanding',
-        judgment: 'Opposition. In small matters, good fortune.',
-        image: 'Fire above, lake below: the image of Opposition. Thus amid all fellowship the superior man retains his individuality.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Remorse disappears. If you lose your horse, do not run after it; it will come back of its own accord. When you see evil people, guard yourself against mistakes.' },
-          { position: 2, name: 'Nine in the second place', text: 'One meets his lord in a narrow street. No blame.' },
-          { position: 3, name: 'Six in the third place', text: 'One sees the wagon dragged back, the oxen halted, a man\'s hair and nose cut off. Not a good beginning, but a good end.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Isolated through opposition, one meets a like-minded man with whom one can associate in good faith. Despite the danger, no blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Remorse disappears. The companion bites his way through the wrappings. If one goes to him, how could it be a mistake?' },
-          { position: 6, name: 'Nine at the top', text: 'Isolated through opposition, one sees one\'s companion as a pig covered with dirt, as a wagon full of devils. First one draws a bow against him, then one lays the bow aside. He is not a robber; he will woo at the right time. As one goes, rain falls; then good fortune comes.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Opposition',
-        meaning: 'Divergence, separation, misunderstanding',
-        judgment: 'Opposition. In small matters, good fortune.',
-        image: 'Fire above, lake below: the image of Opposition. Thus amid all fellowship the superior man retains his individuality.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Remorse disappears. If you lose your horse, do not run after it; it will come back of its own accord. When you see evil people, guard yourself against mistakes.' },
-          { position: 2, name: 'Nine in the second place', text: 'One meets his lord in a narrow street. No blame.' },
-          { position: 3, name: 'Six in the third place', text: 'One sees the wagon dragged back, the oxen halted, a man\'s hair and nose cut off. Not a good beginning, but a good end.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Isolated through opposition, one meets a like-minded man with whom one can associate in good faith. Despite the danger, no blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Remorse disappears. The companion bites his way through the wrappings. If one goes to him, how could it be a mistake?' },
-          { position: 6, name: 'Nine at the top', text: 'Isolated through opposition, one sees one\'s companion as a pig covered with dirt, as a wagon full of devils. First one draws a bow against him, then one lays the bow aside. He is not a robber; he will woo at the right time. As one goes, rain falls; then good fortune comes.' },
-        ],
-      },
       'en-legge': {
         name: 'Separation',
         meaning: 'Being opposed, estrangement',
@@ -4319,20 +2656,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'Isolated through opposition, he meets with the good man, and they blend their sincere desires together. The position is one of peril, but there will be no error.' },
           { position: 5, name: 'In the fifth line, divided', text: 'All occasion for repentance disappears. With his relative he unites closely and readily as if he were biting through a piece of skin. When he goes forward, what error can there be?' },
           { position: 6, name: 'In the sixth line, undivided', text: 'Isolated through opposition, he seems to see a pig bearing on its back a load of mud, or a carriage full of ghosts. He first bends his bow against him, and afterwards unbends it. The subject is not an assailant but a near relative. Going forward, he shall meet with genial rain, and there will be good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Oposición',
-        meaning: 'Divergencia, separación, incomprensión',
-        judgment: 'Oposición. En pequeños asuntos, buena fortuna.',
-        image: 'Fuego arriba, lago abajo: la imagen de la Oposición. Así en toda compañía el hombre superior retiene su individualidad.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'El arrepentimiento desaparece. Si pierdes tu caballo, no corras tras él; volverá por sí mismo. Cuando veas personas malvadas, guárdate de cometer errores.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Uno encuentra a su señor en una calle estrecha. Sin censura.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Uno ve el carro arrastrado hacia atrás, los bueyes detenidos, el cabello y la nariz de un hombre cortados. No un buen comienzo, pero un buen final.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Aislado por la oposición, uno encuentra un hombre afín con quien puede asociarse de buena fe. A pesar del peligro, sin censura.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'El arrepentimiento desaparece. El compañero muerde a través de las envolturas. Si uno va hacia él, ¿cómo podría ser un error?' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Aislado por la oposición, uno ve a su compañero como un cerdo cubierto de lodo, como un carro lleno de diablos. Primero tensa el arco contra él, luego lo depone. No es un ladrón; cortejará en el momento oportuno. Al avanzar, cae la lluvia; entonces llega la buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -4388,34 +2711,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'water',
     lowerTrigram: 'mountain',
     translations: {
-      en: {
-        name: 'Obstruction',
-        meaning: 'Difficulty, halt, standstill',
-        judgment: 'Obstruction. Southwest furthers. Northeast does not further. It furthers one to see the great man. Perseverance brings good fortune.',
-        image: 'Water on the mountain: the image of Obstruction. Thus the superior man turns his attention inward and cultivates his character.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Going leads to obstructions, coming meets with praise.' },
-          { position: 2, name: 'Six in the second place', text: 'The king\'s servant is beset by obstruction upon obstruction, but it is not his own fault.' },
-          { position: 3, name: 'Nine in the third place', text: 'Going leads to obstructions; hence he comes back.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Going leads to obstructions, coming leads to union.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'In the midst of the greatest obstructions, friends come.' },
-          { position: 6, name: 'Six at the top', text: 'Going leads to obstructions, coming leads to great good fortune. It furthers one to see the great man.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Obstruction',
-        meaning: 'Difficulty, halt, standstill',
-        judgment: 'Obstruction. Southwest furthers. Northeast does not further. It furthers one to see the great man. Perseverance brings good fortune.',
-        image: 'Water on the mountain: the image of Obstruction. Thus the superior man turns his attention inward and cultivates his character.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Going leads to obstructions, coming meets with praise.' },
-          { position: 2, name: 'Six in the second place', text: 'The king\'s servant is beset by obstruction upon obstruction, but it is not his own fault.' },
-          { position: 3, name: 'Nine in the third place', text: 'Going leads to obstructions; hence he comes back.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Going leads to obstructions, coming leads to union.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'In the midst of the greatest obstructions, friends come.' },
-          { position: 6, name: 'Six at the top', text: 'Going leads to obstructions, coming leads to great good fortune. It furthers one to see the great man.' },
-        ],
-      },
       'en-legge': {
         name: 'Limping',
         meaning: 'Halting and difficult progress',
@@ -4428,20 +2723,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He advances but only to greater difficulties. He remains stationary and joins with his former associates.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'Struggling with the greatest difficulties, he brings help and friends come.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He advances but only to greater difficulties. He remains stationary, and is grandly fortunate. It will be advantageous to see the great man.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Obstrucción',
-        meaning: 'Dificultad, parada, estancamiento',
-        judgment: 'Obstrucción. El suroeste propicia. El noreste no propicia. Propicia ver al gran hombre.',
-        image: 'Agua en la montaña: la imagen de la Obstrucción. Así el hombre superior vuelve su atención hacia dentro y cultiva su carácter.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Ir conduce a obstrucciones, venir encuentra elogio.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'El servidor del rey es acosado por obstrucción tras obstrucción, pero no es su propia culpa.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Ir conduce a obstrucciones; por eso regresa.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Ir conduce a obstrucciones, venir conduce a unión.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'En medio de las mayores obstrucciones, llegan amigos.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Ir conduce a obstrucciones, venir conduce a gran buena fortuna. Es propicio ver al gran hombre.' },
         ],
       },
       'es-legge': {
@@ -4497,34 +2778,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'thunder',
     lowerTrigram: 'water',
     translations: {
-      en: {
-        name: 'Deliverance',
-        meaning: 'Release, liberation, solution',
-        judgment: 'Deliverance. Southwest furthers. If there is nowhere to go, return brings good fortune. If there is somewhere to go, hastening brings good fortune.',
-        image: 'Thunder and rain set in: the image of Deliverance. Thus the superior man forgives mistakes and deals gently with misdemeanors.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Without blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'One kills three foxes in the field and receives a yellow arrow. Perseverance brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'If a man carries a burden on his back and nonetheless rides in a carriage, he thereby encourages robbers to draw near. Perseverance leads to humiliation.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Deliver yourself from your great toe. Then the companion comes, and him you can trust.' },
-          { position: 5, name: 'Six in the fifth place', text: 'If only the superior man can deliver himself, it brings good fortune. Thus he proves to inferior men that he is in earnest.' },
-          { position: 6, name: 'Six at the top', text: 'The prince shoots at a hawk on a high wall. He kills it. Everything serves to further.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Deliverance',
-        meaning: 'Release, liberation, solution',
-        judgment: 'Deliverance. Southwest furthers. If there is nowhere to go, return brings good fortune. If there is somewhere to go, hastening brings good fortune.',
-        image: 'Thunder and rain set in: the image of Deliverance. Thus the superior man forgives mistakes and deals gently with misdemeanors.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Without blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'One kills three foxes in the field and receives a yellow arrow. Perseverance brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'If a man carries a burden on his back and nonetheless rides in a carriage, he thereby encourages robbers to draw near. Perseverance leads to humiliation.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Deliver yourself from your great toe. Then the companion comes, and him you can trust.' },
-          { position: 5, name: 'Six in the fifth place', text: 'If only the superior man can deliver himself, it brings good fortune. Thus he proves to inferior men that he is in earnest.' },
-          { position: 6, name: 'Six at the top', text: 'The prince shoots at a hawk on a high wall. He kills it. Everything serves to further.' },
-        ],
-      },
       'en-legge': {
         name: 'Loosening',
         meaning: 'Release from restraint and difficulty',
@@ -4537,20 +2790,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'Remove your great toes. Friends will then come, between you and whom there will be mutual confidence.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The superior man executes his function of removing whatever is injurious, and there will be good fortune. Let the small men believe that he is in earnest.' },
           { position: 6, name: 'In the sixth line, divided', text: 'A prince with his bow shoots at a falcon on the top of a high wall, and hits it. The effect of his action will be in every way advantageous.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Liberación',
-        meaning: 'Liberación, emancipación, solución',
-        judgment: 'Liberación. El suroeste propicia. Si no hay adónde ir, el regreso trae buena fortuna.',
-        image: 'Trueno y lluvia se instalan: la imagen de la Liberación. Así el hombre superior perdona errores y trata con gentileza las faltas.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Sin censura.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Uno mata tres zorros en el campo y recibe una flecha amarilla. La perseverancia trae buena fortuna.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Si un hombre lleva una carga sobre su espalda y sin embargo viaja en carruaje, incita a los ladrones a acercarse. La perseverancia conduce a humillación.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Libérate de tu dedo gordo del pie. Entonces llega el compañero, y en él puedes confiar.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Si solo el hombre superior puede liberarse, esto trae buena fortuna. Así demuestra a los hombres inferiores que habla en serio.' },
-          { position: 6, name: 'Seis en lo alto', text: 'El príncipe dispara a un halcón en una alta muralla. Lo mata. Todo sirve para propiciar.' },
         ],
       },
       'es-legge': {
@@ -4606,34 +2845,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'mountain',
     lowerTrigram: 'lake',
     translations: {
-      en: {
-        name: 'Decrease',
-        meaning: 'Reduction, sacrifice, taking away',
-        judgment: 'Decrease combined with sincerity brings about supreme good fortune without blame. One may be persevering in this. It furthers one to undertake something.',
-        image: 'The lake at the foot of the mountain: the image of Decrease. Thus the superior man curbs his anger and restrains his instincts.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Going quickly when one\'s tasks are finished is without blame. But one must reflect on how much one may decrease others.' },
-          { position: 2, name: 'Nine in the second place', text: 'Perseverance furthers. To undertake something brings misfortune. Without decreasing oneself, one is able to bring increase to others.' },
-          { position: 3, name: 'Six in the third place', text: 'When three people journey together, their number decreases by one. When one man journeys alone, he finds a companion.' },
-          { position: 4, name: 'Six in the fourth place', text: 'If a man decreases his faults, it makes the other hasten to come and rejoice. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Someone does indeed increase him. Ten pairs of tortoises cannot oppose it. Supreme good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'If one is increased without depriving others, there is no blame. Perseverance brings good fortune. It furthers one to undertake something. One obtains servants but no longer has a separate home.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Decrease',
-        meaning: 'Reduction, sacrifice, taking away',
-        judgment: 'Decrease combined with sincerity brings about supreme good fortune without blame. One may be persevering in this. It furthers one to undertake something.',
-        image: 'The lake at the foot of the mountain: the image of Decrease. Thus the superior man curbs his anger and restrains his instincts.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Going quickly when one\'s tasks are finished is without blame. But one must reflect on how much one may decrease others.' },
-          { position: 2, name: 'Nine in the second place', text: 'Perseverance furthers. To undertake something brings misfortune. Without decreasing oneself, one is able to bring increase to others.' },
-          { position: 3, name: 'Six in the third place', text: 'When three people journey together, their number decreases by one. When one man journeys alone, he finds a companion.' },
-          { position: 4, name: 'Six in the fourth place', text: 'If a man decreases his faults, it makes the other hasten to come and rejoice. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Someone does indeed increase him. Ten pairs of tortoises cannot oppose it. Supreme good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'If one is increased without depriving others, there is no blame. Perseverance brings good fortune. It furthers one to undertake something. One obtains servants but no longer has a separate home.' },
-        ],
-      },
       'en-legge': {
         name: 'Decrease',
         meaning: 'Diminishing in order to advance',
@@ -4646,20 +2857,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He diminishes the ailment under which he labours by making the subject of the first line hasten to his help and make him glad. There will be no error.' },
           { position: 5, name: 'In the fifth line, divided', text: 'Someone is sure to increase him. He cannot prevent it. Ten pair of tortoise shells cannot deflect this oracle. There will be great good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He gives increase to others without taking from himself. There will be no error. With firm correctness there will be good fortune. It will be advantageous in every way. He obtains servants but has no family.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Disminución',
-        meaning: 'Reducción, sacrificio, eliminación',
-        judgment: 'Disminución combinada con sinceridad trae suprema buena fortuna sin culpa.',
-        image: 'El lago al pie de la montaña: la imagen de la Disminución. Así el hombre superior frena su ira y restringe sus instintos.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Ir rápidamente cuando las tareas están terminadas no tiene censura. Pero uno debe reflexionar sobre cuánto puede disminuir a otros.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'La perseverancia propicia. Emprender algo trae desgracia. Sin disminuirse a sí mismo, uno puede traer aumento a otros.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Cuando tres personas viajan juntas, su número disminuye en una. Cuando un hombre viaja solo, encuentra un compañero.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Si un hombre disminuye sus faltas, esto hace que el otro se apresure a venir y regocijarse. Sin censura.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Alguien ciertamente lo aumenta. Diez pares de tortugas no pueden oponerse. Suprema buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Si uno es aumentado sin privar a otros, no hay censura. La perseverancia trae buena fortuna. Es propicio emprender algo. Uno obtiene servidores pero ya no tiene un hogar separado.' },
         ],
       },
       'es-legge': {
@@ -4715,34 +2912,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'wind',
     lowerTrigram: 'thunder',
     translations: {
-      en: {
-        name: 'Increase',
-        meaning: 'Expansion, growth, advancement',
-        judgment: 'Increase. It furthers one to undertake something. It furthers one to cross the great water.',
-        image: 'Wind and thunder: the image of Increase. Thus the superior man when he sees good in others, lends them aid; when he sees fault in himself, he amends it.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'It furthers one to accomplish great deeds. Supreme good fortune. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Someone does indeed increase him; ten pairs of tortoises cannot oppose it. Constant perseverance brings good fortune. The king presents him before God. Good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'One is enriched through unfortunate events. No blame, if you are sincere and walk in the middle, and report with a seal to the prince.' },
-          { position: 4, name: 'Six in the fourth place', text: 'If you walk in the middle and report to the prince, he will follow. It furthers one to be used in the removal of the capital.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'If in truth you have a kind heart, ask not. Supreme good fortune. Truly, kindness will be recognized as your virtue.' },
-          { position: 6, name: 'Nine at the top', text: 'He brings increase to no one. Indeed, someone even strikes him. He does not keep his heart constantly steady. Misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Increase',
-        meaning: 'Expansion, growth, advancement',
-        judgment: 'Increase. It furthers one to undertake something. It furthers one to cross the great water.',
-        image: 'Wind and thunder: the image of Increase. Thus the superior man when he sees good in others, lends them aid; when he sees fault in himself, he amends it.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'It furthers one to accomplish great deeds. Supreme good fortune. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Someone does indeed increase him; ten pairs of tortoises cannot oppose it. Constant perseverance brings good fortune. The king presents him before God. Good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'One is enriched through unfortunate events. No blame, if you are sincere and walk in the middle, and report with a seal to the prince.' },
-          { position: 4, name: 'Six in the fourth place', text: 'If you walk in the middle and report to the prince, he will follow. It furthers one to be used in the removal of the capital.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'If in truth you have a kind heart, ask not. Supreme good fortune. Truly, kindness will be recognized as your virtue.' },
-          { position: 6, name: 'Nine at the top', text: 'He brings increase to no one. Indeed, someone even strikes him. He does not keep his heart constantly steady. Misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Increase',
         meaning: 'Multiplication and advancement',
@@ -4755,20 +2924,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'If he pursues the due Mean and announces the matter to the prince, his words will be followed. It will be advantageous, being so, to be employed in the removal of the capital.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'If he have a sincere and benevolent heart, do not question about it; it will be greatly fortunate. Sincerity and benevolence will be acknowledged as virtues.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He is increased by none. He is struck by some. He keeps not his heart unchangeably right. There will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Aumento',
-        meaning: 'Expansión, crecimiento, avance',
-        judgment: 'Aumento. Propicia emprender algo. Propicia cruzar la gran agua.',
-        image: 'Viento y trueno: la imagen del Aumento. Así el hombre superior cuando ve bien en otros, les presta ayuda; cuando ve falta en sí mismo, la enmienda.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Es propicio realizar grandes obras. Suprema buena fortuna. Sin censura.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Alguien ciertamente lo aumenta; diez pares de tortugas no pueden oponerse. La perseverancia constante trae buena fortuna. El rey lo presenta ante Dios. Buena fortuna.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Uno se enriquece por eventos desafortunados. Sin censura, si eres sincero y caminas por el medio, e informas con un sello al príncipe.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Si caminas por el medio e informas al príncipe, él seguirá. Es propicio ser empleado en el traslado de la capital.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Si en verdad tienes un corazón bondadoso, no preguntes. Suprema buena fortuna. Verdaderamente, la bondad será reconocida como tu virtud.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'No trae aumento a nadie. En efecto, alguien incluso lo golpea. No mantiene su corazón constantemente firme. Desgracia.' },
         ],
       },
       'es-legge': {
@@ -4824,34 +2979,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'lake',
     lowerTrigram: 'earth',
     translations: {
-      en: {
-        name: 'Gathering Together',
-        meaning: 'Assembly, convocation, collection',
-        judgment: 'Gathering Together. Success. The king approaches his temple. It furthers one to see the great man. Success. It furthers one to undertake something. It furthers one to offer sacrifice.',
-        image: 'Over the earth, the lake: the image of Gathering Together. Thus the superior man sets his weapons in order.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'If you are sincere, but not to the end, there will sometimes be confusion, sometimes gathering together. If you call out, after one grasp of the hand you can laugh again. Regret not. Going is without blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Letting oneself be drawn brings good fortune and remains blameless. If one is sincere, it furthers one to bring even a small offering.' },
-          { position: 3, name: 'Six in the third place', text: 'Gathering together amid sighs. Nothing that would further. Going is without blame. Slight humiliation.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Great good fortune. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'If in gathering together one has position, this brings no blame. If there are some who are not yet sincerely in the work, sublime and enduring perseverance is needed. Then remorse disappears.' },
-          { position: 6, name: 'Six at the top', text: 'Lamenting and sighing, floods of tears. No blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Gathering Together',
-        meaning: 'Assembly, convocation, collection',
-        judgment: 'Gathering Together. Success. The king approaches his temple. It furthers one to see the great man. Success. It furthers one to undertake something. It furthers one to offer sacrifice.',
-        image: 'Over the earth, the lake: the image of Gathering Together. Thus the superior man sets his weapons in order.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'If you are sincere, but not to the end, there will sometimes be confusion, sometimes gathering together. If you call out, after one grasp of the hand you can laugh again. Regret not. Going is without blame.' },
-          { position: 2, name: 'Six in the second place', text: 'Letting oneself be drawn brings good fortune and remains blameless. If one is sincere, it furthers one to bring even a small offering.' },
-          { position: 3, name: 'Six in the third place', text: 'Gathering together amid sighs. Nothing that would further. Going is without blame. Slight humiliation.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Great good fortune. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'If in gathering together one has position, this brings no blame. If there are some who are not yet sincerely in the work, sublime and enduring perseverance is needed. Then remorse disappears.' },
-          { position: 6, name: 'Six at the top', text: 'Lamenting and sighing, floods of tears. No blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Assembly',
         meaning: 'Assembling in union and communion',
@@ -4864,20 +2991,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'There will be great good fortune and no error.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'He occupies his position and there is no error. If any do not have confidence in him, let him see to it that his virtue be great, long-continued, and firmly correct, and all occasion for repentance will disappear.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He sighs and weeps; but there will be no error.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Reunión',
-        meaning: 'Asamblea, convocatoria, colección',
-        judgment: 'Reunión. Éxito. El rey se acerca a su templo. Propicia ver al gran hombre.',
-        image: 'Sobre la tierra, el lago: la imagen de la Reunión. Así el hombre superior ordena sus armas.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Si eres sincero, pero no hasta el final, habrá a veces confusión, a veces reunión. Si clamas, después de un apretón de manos podrás reír de nuevo. No te arrepientas. Ir no tiene censura.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Dejarse llevar trae buena fortuna y permanece sin censura. Si uno es sincero, es propicio traer incluso una pequeña ofrenda.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Reunión entre suspiros. Nada que propiciaría. Ir no tiene censura. Ligera humillación.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Gran buena fortuna. Sin censura.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Si en la reunión uno tiene posición, esto no trae censura. Si hay algunos que aún no son sinceros en el trabajo, se necesita perseverancia sublime y duradera. Entonces el arrepentimiento desaparece.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Lamentándose y suspirando, torrentes de lágrimas. Sin censura.' },
         ],
       },
       'es-legge': {
@@ -4933,34 +3046,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'earth',
     lowerTrigram: 'wind',
     translations: {
-      en: {
-        name: 'Pushing Upward',
-        meaning: 'Rising, ascending, promotion',
-        judgment: 'Pushing Upward has supreme success. One must see the great man. Do not let fear rule. Go south. Good fortune.',
-        image: 'Within the earth, wood grows: the image of Pushing Upward. Thus the superior man of devoted character heaps up small things to achieve something high and great.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Pushing upward that meets with confidence brings great good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'If one is sincere, it furthers one to bring even a small offering. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'One pushes upward into an empty city.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The king offers him Mount Chi. Good fortune. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Perseverance brings good fortune. One pushes upward by steps.' },
-          { position: 6, name: 'Six at the top', text: 'Pushing upward in darkness. It furthers one to be unremittingly persevering.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Pushing Upward',
-        meaning: 'Rising, ascending, promotion',
-        judgment: 'Pushing Upward has supreme success. One must see the great man. Do not let fear rule. Go south. Good fortune.',
-        image: 'Within the earth, wood grows: the image of Pushing Upward. Thus the superior man of devoted character heaps up small things to achieve something high and great.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Pushing upward that meets with confidence brings great good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'If one is sincere, it furthers one to bring even a small offering. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'One pushes upward into an empty city.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The king offers him Mount Chi. Good fortune. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Perseverance brings good fortune. One pushes upward by steps.' },
-          { position: 6, name: 'Six at the top', text: 'Pushing upward in darkness. It furthers one to be unremittingly persevering.' },
-        ],
-      },
       'en-legge': {
         name: 'Ascending',
         meaning: 'Advancing without obstacle',
@@ -4973,20 +3058,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'The king makes his offerings on Mount Chi. There will be good fortune; there will be no error.' },
           { position: 5, name: 'In the fifth line, divided', text: 'With firm correctness there will be good fortune. He ascends by steps.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He advances upward blindly. Advantage will be found in never-relaxing the firm correctness of purpose.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Empuje Hacia Arriba',
-        meaning: 'Ascenso, elevación, promoción',
-        judgment: 'Empuje Hacia Arriba tiene éxito supremo. Se debe ver al gran hombre. No dejes que el miedo gobierne.',
-        image: 'Dentro de la tierra, la madera crece: la imagen del Empuje Hacia Arriba. Así el hombre superior de carácter devoto acumula pequeñas cosas para alcanzar algo alto y grande.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Empuje hacia arriba que encuentra confianza trae gran buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Si uno es sincero, es propicio traer incluso una pequeña ofrenda. Sin censura.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Uno empuja hacia arriba hasta una ciudad vacía.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'El rey le ofrece el Monte Chi. Buena fortuna. Sin censura.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'La perseverancia trae buena fortuna. Uno asciende paso a paso.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Empuje hacia arriba en la oscuridad. Es propicio ser incesantemente perseverante.' },
         ],
       },
       'es-legge': {
@@ -5042,34 +3113,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'lake',
     lowerTrigram: 'water',
     translations: {
-      en: {
-        name: 'Oppression',
-        meaning: 'Exhaustion, difficulty, calamity',
-        judgment: 'Oppression. Success. Perseverance. The great man brings about good fortune. No blame. When one has something to say, it is not believed.',
-        image: 'There is no water in the lake: the image of Oppression. Thus the superior man stakes his life on following his will.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'One sits oppressed under a bare tree and strays into a gloomy valley. For three years one sees nothing.' },
-          { position: 2, name: 'Nine in the second place', text: 'One is oppressed while at meat and drink. The man with the scarlet knee bands is just coming. It furthers one to offer sacrifice. To set forth brings misfortune. No blame.' },
-          { position: 3, name: 'Six in the third place', text: 'A man permits himself to be oppressed by stone, and leans on thorns and thistles. He enters his house and does not see his wife. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He comes very quietly, oppressed in a golden carriage. Humiliation, but the end is reached.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'His nose and feet are cut off. Oppression at the hands of the man with the purple knee bands. Joy comes softly. It furthers one to make offerings and libations.' },
-          { position: 6, name: 'Six at the top', text: 'He is oppressed by creeping vines. He moves uncertainly and says, "Movement brings remorse." If one feels remorse over this and makes a start, good fortune comes.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Oppression',
-        meaning: 'Exhaustion, difficulty, calamity',
-        judgment: 'Oppression. Success. Perseverance. The great man brings about good fortune. No blame. When one has something to say, it is not believed.',
-        image: 'There is no water in the lake: the image of Oppression. Thus the superior man stakes his life on following his will.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'One sits oppressed under a bare tree and strays into a gloomy valley. For three years one sees nothing.' },
-          { position: 2, name: 'Nine in the second place', text: 'One is oppressed while at meat and drink. The man with the scarlet knee bands is just coming. It furthers one to offer sacrifice. To set forth brings misfortune. No blame.' },
-          { position: 3, name: 'Six in the third place', text: 'A man permits himself to be oppressed by stone, and leans on thorns and thistles. He enters his house and does not see his wife. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'He comes very quietly, oppressed in a golden carriage. Humiliation, but the end is reached.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'His nose and feet are cut off. Oppression at the hands of the man with the purple knee bands. Joy comes softly. It furthers one to make offerings and libations.' },
-          { position: 6, name: 'Six at the top', text: 'He is oppressed by creeping vines. He moves uncertainly and says, "Movement brings remorse." If one feels remorse over this and makes a start, good fortune comes.' },
-        ],
-      },
       'en-legge': {
         name: 'Exhaustion',
         meaning: 'Oppression and reduction to straits',
@@ -5082,20 +3125,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He proceeds very slowly to help the subject of the first line, straitened as he is in a carriage. There will be occasion for regret, but the end shall be reached.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'His nose and feet are cut off. He is straitened by the minister in his scarlet knee-covers. He is leisurely in his movements, however, and is satisfied. It will be well for him to be as sincere as in sacrificing to God.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He is straitened by creeping plants. He says, "Any movement will make me feel the danger of my position." If he feel the regret that he ought to do, and go forward, there will be good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Opresión',
-        meaning: 'Agotamiento, dificultad, calamidad',
-        judgment: 'Opresión. Éxito. Perseverancia. El gran hombre trae buena fortuna. Sin culpa.',
-        image: 'No hay agua en el lago: la imagen de la Opresión. Así el hombre superior arriesga su vida siguiendo su voluntad.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Uno se sienta oprimido bajo un árbol desnudo y se extravía en un valle sombrío. Durante tres años no ve nada.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Uno está oprimido mientras come y bebe. El hombre con las rodilleras escarlatas está llegando. Es propicio ofrecer sacrificio. Ponerse en marcha trae desgracia. Sin censura.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Un hombre se permite ser oprimido por la piedra, y se apoya en espinas y cardos. Entra en su casa y no ve a su esposa. Desgracia.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Llega muy lentamente, oprimido en un carruaje dorado. Humillación, pero se alcanza el final.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Le cortan la nariz y los pies. Opresión a manos del hombre con las rodilleras púrpura. La alegría llega suavemente. Es propicio hacer ofrendas y libaciones.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Está oprimido por enredaderas. Se mueve con incertidumbre y dice: "El movimiento trae arrepentimiento." Si uno siente arrepentimiento por esto y da un paso, llega la buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -5151,34 +3180,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'water',
     lowerTrigram: 'wind',
     translations: {
-      en: {
-        name: 'The Well',
-        meaning: 'Water source, renewal, community',
-        judgment: 'The Well. The town may be changed, but the well cannot be changed. It neither decreases nor increases. They come and go drawing from the well. If one gets down almost to the water and the rope does not go all the way, or the jug breaks, it brings misfortune.',
-        image: 'Water over wood: the image of the Well. Thus the superior man encourages the people at their work, and exhorts them to help one another.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'One does not drink the mud of the well. No animals come to an old well.' },
-          { position: 2, name: 'Nine in the second place', text: 'At the wellhole one shoots fishes. The jug is broken and leaks.' },
-          { position: 3, name: 'Nine in the third place', text: 'The well is cleaned, but no one drinks from it. This is my heart\'s sorrow, for one might draw from it. If the king were clear-minded, good fortune might be enjoyed in common.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The well is being lined. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'In the well there is a clear, cold spring from which one can drink.' },
-          { position: 6, name: 'Six at the top', text: 'One draws from the well without hindrance. It is dependable. Supreme good fortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Well',
-        meaning: 'Water source, renewal, community',
-        judgment: 'The Well. The town may be changed, but the well cannot be changed. It neither decreases nor increases. They come and go drawing from the well. If one gets down almost to the water and the rope does not go all the way, or the jug breaks, it brings misfortune.',
-        image: 'Water over wood: the image of the Well. Thus the superior man encourages the people at their work, and exhorts them to help one another.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'One does not drink the mud of the well. No animals come to an old well.' },
-          { position: 2, name: 'Nine in the second place', text: 'At the wellhole one shoots fishes. The jug is broken and leaks.' },
-          { position: 3, name: 'Nine in the third place', text: 'The well is cleaned, but no one drinks from it. This is my heart\'s sorrow, for one might draw from it. If the king were clear-minded, good fortune might be enjoyed in common.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The well is being lined. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'In the well there is a clear, cold spring from which one can drink.' },
-          { position: 6, name: 'Six at the top', text: 'One draws from the well without hindrance. It is dependable. Supreme good fortune.' },
-        ],
-      },
       'en-legge': {
         name: 'The Well',
         meaning: 'Pure water and steady provision',
@@ -5191,20 +3192,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'A well, the lining of which is well laid. There will be no error.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'In the well the water is clear and cool, and its cold spring water may freely be drawn.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The water from the well is freely drawn. It is dependable. There will be great good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Pozo',
-        meaning: 'Fuente de agua, renovación, comunidad',
-        judgment: 'El Pozo. La ciudad puede cambiar, pero el pozo no puede cambiar. Ni disminuye ni aumenta.',
-        image: 'Agua sobre madera: la imagen del Pozo. Así el hombre superior anima al pueblo en su trabajo y los exhorta a ayudarse mutuamente.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'No se bebe el lodo del pozo. Ningún animal viene a un pozo viejo.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'En el agujero del pozo se dispara a los peces. El cántaro está roto y gotea.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'El pozo está limpio, pero nadie bebe de él. Esta es la aflicción de mi corazón, pues se podría sacar agua. Si el rey fuera clarividente, la buena fortuna podría disfrutarse en común.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'El pozo está siendo revestido. Sin censura.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'En el pozo hay un manantial claro y frío del cual se puede beber.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Se saca agua del pozo sin impedimento. Es confiable. Suprema buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -5260,34 +3247,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'lake',
     lowerTrigram: 'fire',
     translations: {
-      en: {
-        name: 'Revolution',
-        meaning: 'Transformation, radical change, renewal',
-        judgment: 'Revolution. On your own day you are believed. Supreme success, furthering perseverance. Remorse disappears.',
-        image: 'Fire in the lake: the image of Revolution. Thus the superior man sets the calendar in order and makes the seasons clear.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Wrapped in the hide of a yellow cow.' },
-          { position: 2, name: 'Six in the second place', text: 'When one\'s own day comes, one may create revolution. Starting brings good fortune. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'Starting brings misfortune. Perseverance brings danger. When talk of revolution has gone the rounds three times, one may commit himself, and men will believe him.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Remorse disappears. Men believe him. Changing the form of government brings good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The great man changes like a tiger. Even before he questions the oracle he is believed.' },
-          { position: 6, name: 'Six at the top', text: 'The superior man changes like a panther. The inferior man molts in the face. Starting brings misfortune. To remain persevering brings good fortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Revolution',
-        meaning: 'Transformation, radical change, renewal',
-        judgment: 'Revolution. On your own day you are believed. Supreme success, furthering perseverance. Remorse disappears.',
-        image: 'Fire in the lake: the image of Revolution. Thus the superior man sets the calendar in order and makes the seasons clear.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Wrapped in the hide of a yellow cow.' },
-          { position: 2, name: 'Six in the second place', text: 'When one\'s own day comes, one may create revolution. Starting brings good fortune. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'Starting brings misfortune. Perseverance brings danger. When talk of revolution has gone the rounds three times, one may commit himself, and men will believe him.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Remorse disappears. Men believe him. Changing the form of government brings good fortune.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The great man changes like a tiger. Even before he questions the oracle he is believed.' },
-          { position: 6, name: 'Six at the top', text: 'The superior man changes like a panther. The inferior man molts in the face. Starting brings misfortune. To remain persevering brings good fortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Revolution',
         meaning: 'Total change and transformation',
@@ -5300,20 +3259,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'Occasion for repentance disappears. He is believed in, and the change of government is fortunate.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The great man produces his changes as the tiger does when he changes his stripes. Before he divines and takes action, faith has been reposed in him.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The superior man produces his changes as the leopard does when he changes his spots. Small men change their faces and show their obedience. To go forward now would lead to evil. But firmness and correctness will lead to good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Revolución',
-        meaning: 'Transformación, cambio radical, renovación',
-        judgment: 'Revolución. En tu propio día te creen. Éxito supremo, la perseverancia propicia. El arrepentimiento desaparece.',
-        image: 'Fuego en el lago: la imagen de la Revolución. Así el hombre superior fija el calendario y aclara las estaciones.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Envuelto en la piel de una vaca amarilla.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Cuando llega el propio día, se puede hacer la revolución. Comenzar trae buena fortuna. Sin censura.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Comenzar trae desgracia. La perseverancia trae peligro. Cuando la conversación sobre la revolución ha dado tres vueltas, uno puede comprometerse, y los hombres le creerán.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'El arrepentimiento desaparece. Los hombres le creen. Cambiar la forma de gobierno trae buena fortuna.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'El gran hombre cambia como un tigre. Incluso antes de consultar el oráculo, le creen.' },
-          { position: 6, name: 'Seis en lo alto', text: 'El hombre superior cambia como una pantera. El hombre inferior muda en el rostro. Comenzar trae desgracia. Permanecer perseverante trae buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -5369,34 +3314,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'fire',
     lowerTrigram: 'wind',
     translations: {
-      en: {
-        name: 'The Cauldron',
-        meaning: 'Vessel, transformation, nourishment',
-        judgment: 'The Cauldron. Supreme good fortune. Success.',
-        image: 'Fire over wood: the image of the Cauldron. Thus the superior man consolidates his fate by the cultivation of himself.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'A ting with legs upturned. Furthers removal of stagnating stuff. One takes a concubine for the sake of her son. No blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'There is food in the ting. My comrades are envious, but they cannot harm me. Good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The handle of the ting is altered. One is impeded in his way of life. The fat of the pheasant is not eaten. Once rain falls, remorse is spent. Good fortune comes in the end.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The legs of the ting are broken. The prince\'s meal is spilled and his person is soiled. Misfortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'The ting has yellow handles, golden carrying rings. Perseverance furthers.' },
-          { position: 6, name: 'Nine at the top', text: 'The ting has rings of jade. Great good fortune. Nothing that would not act to further.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Cauldron',
-        meaning: 'Vessel, transformation, nourishment',
-        judgment: 'The Cauldron. Supreme good fortune. Success.',
-        image: 'Fire over wood: the image of the Cauldron. Thus the superior man consolidates his fate by the cultivation of himself.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'A ting with legs upturned. Furthers removal of stagnating stuff. One takes a concubine for the sake of her son. No blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'There is food in the ting. My comrades are envious, but they cannot harm me. Good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The handle of the ting is altered. One is impeded in his way of life. The fat of the pheasant is not eaten. Once rain falls, remorse is spent. Good fortune comes in the end.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The legs of the ting are broken. The prince\'s meal is spilled and his person is soiled. Misfortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'The ting has yellow handles, golden carrying rings. Perseverance furthers.' },
-          { position: 6, name: 'Nine at the top', text: 'The ting has rings of jade. Great good fortune. Nothing that would not act to further.' },
-        ],
-      },
       'en-legge': {
         name: 'The Caldron',
         meaning: 'Symbol of transformation and sustenance',
@@ -5409,20 +3326,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'The caldron has its feet broken, and the ruler\'s dinner is overturned, and his person is wet with the soup. There will be evil.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The caldron has yellow ears and golden rings. There will be advantage through being firm and correct.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'The caldron has rings of jade. There will be great good fortune, and all action taken will be in every way advantageous.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Caldero',
-        meaning: 'Recipiente, transformación, nutrición',
-        judgment: 'El Caldero. Suprema buena fortuna. Éxito.',
-        image: 'Fuego sobre madera: la imagen del Caldero. Así el hombre superior consolida su destino mediante el cultivo de sí mismo.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Un caldero con las patas volcadas. Es propicio vaciar lo estancado. Se toma una concubina por el bien de su hijo. Sin censura.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Hay comida en el caldero. Mis compañeros están envidiosos, pero no pueden dañarme. Buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'El asa del caldero está alterada. Uno es impedido en su modo de vida. La grasa del faisán no se come. Una vez que cae la lluvia, el arrepentimiento se agota. Al final llega la buena fortuna.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Las patas del caldero se rompen. La comida del príncipe se derrama y su persona queda manchada. Desgracia.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'El caldero tiene asas amarillas, anillos dorados para transportarlo. La perseverancia propicia.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'El caldero tiene anillos de jade. Gran buena fortuna. Nada que no sirva para propiciar.' },
         ],
       },
       'es-legge': {
@@ -5478,39 +3381,11 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'thunder',
     lowerTrigram: 'thunder',
     translations: {
-      en: {
-        name: 'The Arousing',
-        meaning: 'Thunder, awakening, shock',
-        judgment: 'The Arousing. Shock brings success. Shock comes--oh, oh! Laughing words--ha, ha! The shock terrifies for a hundred miles, and he does not let drop the sacrificial spoon and chalice.',
-        image: 'Thunder repeated: the image of the Arousing. Thus in fear and trembling the superior man sets his life in order.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Shock comes--oh, oh! Then follow laughing words--ha, ha! Good fortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Shock comes bringing danger. A hundred thousand times you lose your treasures and must climb the nine hills. Do not go in pursuit of them. After seven days you will get them back again.' },
-          { position: 3, name: 'Six in the third place', text: 'Shock comes and makes one distraught. If shock spurs to action, one remains free of misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Shock is mired.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Shock goes hither and thither. Danger. However, nothing at all is lost. Yet there are things to be done.' },
-          { position: 6, name: 'Six at the top', text: 'Shock brings ruin and terrified gazing around. Going ahead brings misfortune. If it has not yet touched one\'s own body but has reached one\'s neighbor first, there is no blame. One\'s comrades have something to talk about.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Arousing',
-        meaning: 'Thunder, awakening, shock',
-        judgment: 'The Arousing. Shock brings success. Shock comes--oh, oh! Laughing words--ha, ha! The shock terrifies for a hundred miles, and he does not let drop the sacrificial spoon and chalice.',
-        image: 'Thunder repeated: the image of the Arousing. Thus in fear and trembling the superior man sets his life in order.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Shock comes--oh, oh! Then follow laughing words--ha, ha! Good fortune.' },
-          { position: 2, name: 'Six in the second place', text: 'Shock comes bringing danger. A hundred thousand times you lose your treasures and must climb the nine hills. Do not go in pursuit of them. After seven days you will get them back again.' },
-          { position: 3, name: 'Six in the third place', text: 'Shock comes and makes one distraught. If shock spurs to action, one remains free of misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Shock is mired.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Shock goes hither and thither. Danger. However, nothing at all is lost. Yet there are things to be done.' },
-          { position: 6, name: 'Six at the top', text: 'Shock brings ruin and terrified gazing around. Going ahead brings misfortune. If it has not yet touched one\'s own body but has reached one\'s neighbor first, there is no blame. One\'s comrades have something to talk about.' },
-        ],
-      },
       'en-legge': {
         name: 'The Awakening',
         meaning: 'Shock and movement, putting in order',
         judgment: 'Zhen. There is good fortune. Shock comes as a warning. Trembling and fear are followed by joy and laughter.',
-        image: 'Thunder repeated forms the image of the Arousing. The superior man orderly prepares his livelihood.',
+        image: 'Thunder repeated forms the image of Zhen. The superior man orderly prepares his livelihood.',
         lines: [
           { position: 1, name: 'In the first line, undivided', text: 'The shock comes and causes fear. Afterwards there is rejoicing and laughing. Good fortune.' },
           { position: 2, name: 'In the second line, divided', text: 'The shock approaches and brings peril. He loses his cowries and has to ascend the nine hills. Let him not seek them. In seven days he will find them.' },
@@ -5518,20 +3393,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'Amid the shock he sinks into the mud.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The shock goes back and forth amid the perilous conditions. Yet nothing at all is lost. There is something yet to be done.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The shock produces ruin and alarmed gazing about. Going forward will lead to misfortune. If it has not reached his own person, but only to his neighbor, there will be no blame. His companions will have something to talk about.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Despertar',
-        meaning: 'Trueno, despertar, choque',
-        judgment: 'El Despertar. Choque trae éxito. Choque viene--¡oh, oh! Palabras riendo--¡ja, ja! El choque aterroriza a cien millas.',
-        image: 'Trueno repetido: la imagen del Despertar. Así el hombre superior ordena su vida con miedo y temblor.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Choque viene--¡oh, oh! Después siguen palabras riendo--¡ja, ja! Buena fortuna.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Choque viene trayendo peligro. Cien mil veces pierdes tus tesoros y debes escalar las nueve colinas. No vayas en su persecución. Después de siete días los recuperarás.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Choque viene y lo deja aturdido. Si el choque impulsa a la acción, uno permanece libre de desgracia.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'El choque se atasca en el lodo.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Choque va de aquí para allá. Peligro. Sin embargo, nada se pierde en absoluto. Pero hay cosas que hacer.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Choque trae ruina y miradas aterrorizadas alrededor. Avanzar trae desgracia. Si aún no ha tocado el propio cuerpo sino que ha alcanzado primero al vecino, no hay censura. Los compañeros tienen algo de qué hablar.' },
         ],
       },
       'es-legge': {
@@ -5549,10 +3410,10 @@ export const hexagrams: Record<number, Hexagram> = {
         ],
       },
       'es-zhouyi': {
-        name: 'Lo Suscitativo',
-        meaning: 'Lo suscitativo, el trueno, conmocion',
+        name: 'Lo Incitante',
+        meaning: 'Lo incitante, el trueno, conmocion',
         judgment: 'Exito. El trueno llega causando temor, despues palabras y risas. El trueno aterroriza a cien millas, pero no deja caer el caliz del sacrificio.',
-        image: 'Trueno repetido: lo Suscitativo. El hombre superior con temor y temblor cultiva su persona.',
+        image: 'Trueno repetido: lo Incitante. El hombre superior con temor y temblor cultiva su persona.',
         lines: [
           { position: 1, name: '初九', text: 'El trueno llega causando temor. Después, risa y palabras alegres. Propicio.' },
           { position: 2, name: '六二', text: 'El trueno llega con peligro. Pierde sus tesoros y sube a las nueve colinas. No los persigas; en siete días los recuperarás.' },
@@ -5587,34 +3448,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'mountain',
     lowerTrigram: 'mountain',
     translations: {
-      en: {
-        name: 'Keeping Still',
-        meaning: 'Mountain, stillness, non-action',
-        judgment: 'Keeping Still. The mountain. Keeping his back still so that he no longer feels his body. He goes into his courtyard and does not see his people. No blame.',
-        image: 'Mountains standing close together: the image of Keeping Still. Thus the superior man does not permit his thoughts to go beyond his situation.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Keeping his toes still. No blame. Continued perseverance furthers.' },
-          { position: 2, name: 'Six in the second place', text: 'Keeping his calves still. He cannot rescue him whom he follows. His heart is not glad.' },
-          { position: 3, name: 'Nine in the third place', text: 'Keeping his hips still. Making his sacrum stiff. Dangerous. The heart suffocates.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Keeping his trunk still. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Keeping his jaws still. The words have order. Remorse disappears.' },
-          { position: 6, name: 'Nine at the top', text: 'Noble-hearted keeping still. Good fortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Keeping Still',
-        meaning: 'Mountain, stillness, non-action',
-        judgment: 'Keeping Still. The mountain. Keeping his back still so that he no longer feels his body. He goes into his courtyard and does not see his people. No blame.',
-        image: 'Mountains standing close together: the image of Keeping Still. Thus the superior man does not permit his thoughts to go beyond his situation.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'Keeping his toes still. No blame. Continued perseverance furthers.' },
-          { position: 2, name: 'Six in the second place', text: 'Keeping his calves still. He cannot rescue him whom he follows. His heart is not glad.' },
-          { position: 3, name: 'Nine in the third place', text: 'Keeping his hips still. Making his sacrum stiff. Dangerous. The heart suffocates.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Keeping his trunk still. No blame.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Keeping his jaws still. The words have order. Remorse disappears.' },
-          { position: 6, name: 'Nine at the top', text: 'Noble-hearted keeping still. Good fortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Mountain',
         meaning: 'Immobility and keeping still in its place',
@@ -5627,20 +3460,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He keeps his trunk at rest. There will be no error.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He keeps his jaws at rest, so that his words are all orderly. Occasion for repentance will disappear.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He is devoted to keeping still. There will be good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Mantener Inmóvil',
-        meaning: 'Montaña, quietud, no-acción',
-        judgment: 'Mantener Inmóvil. La montaña. Mantiene su espalda inmóvil de modo que ya no siente su cuerpo. Sin culpa.',
-        image: 'Montañas que están juntas: la imagen de Mantener Inmóvil. Así el hombre superior no permite que sus pensamientos vayan más allá de su situación.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Mantiene inmóviles sus dedos de los pies. Sin censura. La perseverancia continuada propicia.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Mantiene inmóviles sus pantorrillas. No puede rescatar a aquel a quien sigue. Su corazón no está contento.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Mantiene inmóviles sus caderas. Endurece su sacro. Peligroso. El corazón se sofoca.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Mantiene inmóvil su tronco. Sin censura.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Mantiene inmóviles sus mandíbulas. Las palabras tienen orden. El arrepentimiento desaparece.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Inmovilidad de noble corazón. Buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -5658,10 +3477,10 @@ export const hexagrams: Record<number, Hexagram> = {
         ],
       },
       'es-zhouyi': {
-        name: 'El Aquietamiento',
-        meaning: 'El aquietamiento, la montana, detenerse',
+        name: 'La Quietud',
+        meaning: 'La quietud, la montana, detenerse',
         judgment: 'Aquietar la espalda de modo que ya no siente el cuerpo. Camina por el patio y no ve a las personas. Sin culpa.',
-        image: 'Montanas sucesivas: el Aquietamiento. El hombre superior no permite que sus pensamientos vayan mas alla de su posicion.',
+        image: 'Montanas sucesivas: la Quietud. El hombre superior no permite que sus pensamientos vayan mas alla de su posicion.',
         lines: [
           { position: 1, name: '初六', text: 'Mantener quietos los pies. Sin censura. Es propicio la perseverancia constante.' },
           { position: 2, name: '六二', text: 'Mantener quietas las pantorrillas. No puede rescatar a quien sigue. Su corazón no está contento.' },
@@ -5696,34 +3515,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'wind',
     lowerTrigram: 'mountain',
     translations: {
-      en: {
-        name: 'Development',
-        meaning: 'Gradual progress, stages, advance',
-        judgment: 'Development. The maiden is given in marriage. Good fortune. It furthers one to undertake something.',
-        image: 'On the mountain, wind: the image of Development. Thus the superior man abides in dignity and virtue, to improve the mores.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'The wild goose gradually draws near the shore. The young son is in danger. There is talk. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'The wild goose gradually draws near the cliff. Eating and drinking in peace and concord. Good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The wild goose gradually draws near the plateau. The man goes forth and does not return. The woman carries a child but does not bring it forth. Misfortune. It furthers one to fight off robbers.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The wild goose gradually draws near the tree. Perhaps it will find a flat branch. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The wild goose gradually draws near the summit. For three years the woman has no child. In the end nothing can hinder her. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'The wild goose gradually draws near the cloud heights. Its feathers can be used for the sacred dance. Good fortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Development',
-        meaning: 'Gradual progress, stages, advance',
-        judgment: 'Development. The maiden is given in marriage. Good fortune. It furthers one to undertake something.',
-        image: 'On the mountain, wind: the image of Development. Thus the superior man abides in dignity and virtue, to improve the mores.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'The wild goose gradually draws near the shore. The young son is in danger. There is talk. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'The wild goose gradually draws near the cliff. Eating and drinking in peace and concord. Good fortune.' },
-          { position: 3, name: 'Nine in the third place', text: 'The wild goose gradually draws near the plateau. The man goes forth and does not return. The woman carries a child but does not bring it forth. Misfortune. It furthers one to fight off robbers.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The wild goose gradually draws near the tree. Perhaps it will find a flat branch. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The wild goose gradually draws near the summit. For three years the woman has no child. In the end nothing can hinder her. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'The wild goose gradually draws near the cloud heights. Its feathers can be used for the sacred dance. Good fortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Gradual Progress',
         meaning: 'Advancing step by step in proper sequence',
@@ -5736,20 +3527,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'The wild geese approach the trees. They may find a flat branch. There will be no error.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The wild geese approach the high mound. For three years the wife does not become pregnant; but in the end the natural issue cannot be prevented. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'The wild geese approach the high ground. Their feathers may be used as ornaments. There will be good fortune.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Desarrollo',
-        meaning: 'Progreso gradual, etapas, avance',
-        judgment: 'Desarrollo. La doncella es entregada en matrimonio. Buena fortuna. Propicia emprender algo.',
-        image: 'En la montaña, viento: la imagen del Desarrollo. Así el hombre superior permanece en dignidad y virtud, para mejorar las costumbres.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'El ganso salvaje se acerca gradualmente a la orilla. El hijo joven está en peligro. Hay habladurías. Sin censura.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'El ganso salvaje se acerca gradualmente al acantilado. Comer y beber en paz y concordia. Buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'El ganso salvaje se acerca gradualmente a la meseta. El hombre sale y no regresa. La mujer lleva un hijo pero no lo da a luz. Desgracia. Es propicio defenderse de los ladrones.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'El ganso salvaje se acerca gradualmente al árbol. Quizás encuentre una rama plana. Sin censura.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'El ganso salvaje se acerca gradualmente a la cumbre. Durante tres años la mujer no tiene hijo. Al final nada puede impedirlo. Buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'El ganso salvaje se acerca gradualmente a las alturas de las nubes. Sus plumas pueden usarse para la danza sagrada. Buena fortuna.' },
         ],
       },
       'es-legge': {
@@ -5805,34 +3582,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'thunder',
     lowerTrigram: 'lake',
     translations: {
-      en: {
-        name: 'The Marrying Maiden',
-        meaning: 'Subordinate position, natural order, transition',
-        judgment: 'The Marrying Maiden. Undertakings bring misfortune. Nothing that would further.',
-        image: 'Thunder over the lake: the image of the Marrying Maiden. Thus the superior man understands the transitory in the light of the eternity of the end.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'The marrying maiden as a concubine. A lame man who is able to tread. Undertakings bring good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'A one-eyed man who is able to see. The perseverance of a solitary man furthers.' },
-          { position: 3, name: 'Six in the third place', text: 'The marrying maiden as a slave. She marries as a concubine.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The marrying maiden draws out the allotted time. A late marriage comes in due course.' },
-          { position: 5, name: 'Six in the fifth place', text: 'The sovereign I gave his daughter in marriage. The embroidered garments of the princess were not as gorgeous as those of the serving maid. The moon that is nearly full brings good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'The woman holds the basket, but there are no fruits in it. The man stabs the sheep, but no blood flows. Nothing that acts to further.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Marrying Maiden',
-        meaning: 'Subordinate position, natural order, transition',
-        judgment: 'The Marrying Maiden. Undertakings bring misfortune. Nothing that would further.',
-        image: 'Thunder over the lake: the image of the Marrying Maiden. Thus the superior man understands the transitory in the light of the eternity of the end.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'The marrying maiden as a concubine. A lame man who is able to tread. Undertakings bring good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'A one-eyed man who is able to see. The perseverance of a solitary man furthers.' },
-          { position: 3, name: 'Six in the third place', text: 'The marrying maiden as a slave. She marries as a concubine.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The marrying maiden draws out the allotted time. A late marriage comes in due course.' },
-          { position: 5, name: 'Six in the fifth place', text: 'The sovereign I gave his daughter in marriage. The embroidered garments of the princess were not as gorgeous as those of the serving maid. The moon that is nearly full brings good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'The woman holds the basket, but there are no fruits in it. The man stabs the sheep, but no blood flows. Nothing that acts to further.' },
-        ],
-      },
       'en-legge': {
         name: 'The Girl giving herself in Marriage',
         meaning: 'Womanly submission and the completion of things',
@@ -5845,20 +3594,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'The younger sister protracts the time. She may be slow in being married, but the time will come.' },
           { position: 5, name: 'In the fifth line, divided', text: 'The sovereign Di Yi gave his younger sister in marriage. The sleeves of the princess were not equal to those of the still younger sister who accompanied her. The moon almost full brings good fortune.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The young lady bears the basket, but without anything in it, and the gentleman slaughters the sheep, but without blood flowing. There will be no advantage in any way.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Doncella Desposada',
-        meaning: 'Posición subordinada, orden natural, transición',
-        judgment: 'La Doncella Desposada. Las empresas traen desgracia. Nada que propiciaría.',
-        image: 'Trueno sobre el lago: la imagen de la Doncella Desposada. Así el hombre superior entiende lo transitorio a la luz de la eternidad del fin.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'La doncella desposada como concubina. Un cojo que puede caminar. Las empresas traen buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Un tuerto que puede ver. La perseverancia de un hombre solitario propicia.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'La doncella desposada como esclava. Se casa como concubina.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La doncella desposada prolonga el tiempo asignado. Un matrimonio tardío llega a su debido curso.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'El soberano I dio a su hija en matrimonio. Los vestidos bordados de la princesa no eran tan espléndidos como los de la doncella. La luna casi llena trae buena fortuna.' },
-          { position: 6, name: 'Seis en lo alto', text: 'La mujer sostiene la cesta, pero no hay frutos en ella. El hombre apuñala al carnero, pero no fluye sangre. Nada que sirva para propiciar.' },
         ],
       },
       'es-legge': {
@@ -5914,34 +3649,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'thunder',
     lowerTrigram: 'fire',
     translations: {
-      en: {
-        name: 'Abundance',
-        meaning: 'Fullness, peak, maximum',
-        judgment: 'Abundance has success. The king attains abundance. Be not sad. Be like the sun at midday.',
-        image: 'Both thunder and lightning come: the image of Abundance. Thus the superior man decides lawsuits and carries out punishments.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'When a man meets his destined ruler, they can be together ten days, and it is not a mistake. Going meets with recognition.' },
-          { position: 2, name: 'Six in the second place', text: 'The curtain is of such fullness that the polestars can be seen at noon. Through going one meets with mistrust and hate. If one rouses him through truth, good fortune comes.' },
-          { position: 3, name: 'Nine in the third place', text: 'The underbrush is of such abundance that the small stars can be seen at noon. He breaks his right arm. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The curtain is of such fullness that the polestars can be seen at noon. He meets his ruler, who is of like kind. Good fortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Lines are coming, blessing and fame draw near. Good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'His house is in a state of abundance. He screens off his family. He peers through the gate and no longer perceives anyone. For three years he sees nothing. Misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Abundance',
-        meaning: 'Fullness, peak, maximum',
-        judgment: 'Abundance has success. The king attains abundance. Be not sad. Be like the sun at midday.',
-        image: 'Both thunder and lightning come: the image of Abundance. Thus the superior man decides lawsuits and carries out punishments.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'When a man meets his destined ruler, they can be together ten days, and it is not a mistake. Going meets with recognition.' },
-          { position: 2, name: 'Six in the second place', text: 'The curtain is of such fullness that the polestars can be seen at noon. Through going one meets with mistrust and hate. If one rouses him through truth, good fortune comes.' },
-          { position: 3, name: 'Nine in the third place', text: 'The underbrush is of such abundance that the small stars can be seen at noon. He breaks his right arm. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The curtain is of such fullness that the polestars can be seen at noon. He meets his ruler, who is of like kind. Good fortune.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Lines are coming, blessing and fame draw near. Good fortune.' },
-          { position: 6, name: 'Six at the top', text: 'His house is in a state of abundance. He screens off his family. He peers through the gate and no longer perceives anyone. For three years he sees nothing. Misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Abundance',
         meaning: 'Plenty and prosperity',
@@ -5954,20 +3661,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He is surrounded by a screen so large and thick that at midday he can see from it the constellation of the Bushel. But he meets with the subject of the line, undivided like himself. There will be good fortune.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He brings around him the men of brilliant ability. There will be occasion for congratulation and praise. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, divided', text: 'His house is large, but he blinds and screens it off. He peeps through the door and it is still and solitary. For three years no one is to be seen. There will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Abundancia',
-        meaning: 'Plenitud, pico, máximo',
-        judgment: 'Abundancia tiene éxito. El rey alcanza abundancia. No estés triste. Sé como el sol al mediodía.',
-        image: 'Trueno y relámpago vienen: la imagen de la Abundancia. Así el hombre superior decide demandas y ejecuta castigos.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Cuando un hombre encuentra a su gobernante destinado, pueden estar juntos diez días, y no es un error. Ir encuentra reconocimiento.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'La cortina es de tal plenitud que las estrellas polares pueden verse al mediodía. Al ir uno encuentra desconfianza y odio. Si uno lo despierta mediante la verdad, llega la buena fortuna.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'La maleza es de tal abundancia que las estrellas pequeñas pueden verse al mediodía. Se rompe el brazo derecho. Sin censura.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La cortina es de tal plenitud que las estrellas polares pueden verse al mediodía. Encuentra a su gobernante, que es de su misma clase. Buena fortuna.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Líneas vienen, bendición y fama se acercan. Buena fortuna.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Su casa está en estado de abundancia. Aísla a su familia. Mira a través del portón y ya no percibe a nadie. Durante tres años no ve nada. Desgracia.' },
         ],
       },
       'es-legge': {
@@ -6023,34 +3716,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'fire',
     lowerTrigram: 'mountain',
     translations: {
-      en: {
-        name: 'The Wanderer',
-        meaning: 'Travel, exile, adaptation',
-        judgment: 'The Wanderer. Success through perseverance. The wanderer finds food and shelter. Good fortune small.',
-        image: 'Fire on the mountain: the image of the Wanderer. Thus the superior man is careful and reserved, and thereby avoids punishments and hardships.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'If the wanderer busies himself with trivial things, he draws down misfortune upon himself.' },
-          { position: 2, name: 'Six in the second place', text: 'The wanderer comes to an inn. He has his property with him. He wins the steadfastness of a young servant.' },
-          { position: 3, name: 'Nine in the third place', text: 'The wanderer\'s inn burns down. He loses the steadfastness of his young servant. Danger.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The wanderer rests in a shelter. He obtains his property and an ax. My heart is not glad.' },
-          { position: 5, name: 'Six in the fifth place', text: 'He shoots a pheasant. It drops with the first arrow. In the end this brings both praise and office.' },
-          { position: 6, name: 'Nine at the top', text: 'The bird\'s nest burns up. The wanderer laughs at first, then must needs lament and weep. Through carelessness he loses his cow. Misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Wanderer',
-        meaning: 'Travel, exile, adaptation',
-        judgment: 'The Wanderer. Success through perseverance. The wanderer finds food and shelter. Good fortune small.',
-        image: 'Fire on the mountain: the image of the Wanderer. Thus the superior man is careful and reserved, and thereby avoids punishments and hardships.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'If the wanderer busies himself with trivial things, he draws down misfortune upon himself.' },
-          { position: 2, name: 'Six in the second place', text: 'The wanderer comes to an inn. He has his property with him. He wins the steadfastness of a young servant.' },
-          { position: 3, name: 'Nine in the third place', text: 'The wanderer\'s inn burns down. He loses the steadfastness of his young servant. Danger.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'The wanderer rests in a shelter. He obtains his property and an ax. My heart is not glad.' },
-          { position: 5, name: 'Six in the fifth place', text: 'He shoots a pheasant. It drops with the first arrow. In the end this brings both praise and office.' },
-          { position: 6, name: 'Nine at the top', text: 'The bird\'s nest burns up. The wanderer laughs at first, then must needs lament and weep. Through carelessness he loses his cow. Misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'The Traveller',
         meaning: 'One who travels and is far from home',
@@ -6063,20 +3728,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'The stranger is in a resting-place. He gets his property and an axe. My mind is not at ease.' },
           { position: 5, name: 'In the fifth line, divided', text: 'He shoots a pheasant, and it falls with one arrow. In the end he will obtain praise and a high charge.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'A bird burns its nest. The stranger first laughs and then cries. He has lost his ox-like docility too easily. There will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'El Viajero',
-        meaning: 'Viaje, exilio, adaptación',
-        judgment: 'El Viajero. Éxito mediante la perseverancia. El viajero encuentra comida y refugio. Buena fortuna pequeña.',
-        image: 'Fuego en la montaña: la imagen del Viajero. Así el hombre superior es cuidadoso y reservado, y así evita castigos y dificultades.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Si el viajero se ocupa de cosas triviales, atrae la desgracia sobre sí mismo.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'El viajero llega a una posada. Tiene su propiedad consigo. Gana la lealtad de un joven servidor.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'La posada del viajero se incendia. Pierde la lealtad de su joven servidor. Peligro.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'El viajero descansa en un refugio. Obtiene su propiedad y un hacha. Mi corazón no está contento.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Dispara a un faisán. Cae con la primera flecha. Al final esto trae tanto elogio como cargo.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'El nido del pájaro se incendia. El viajero ríe al principio, luego debe lamentarse y llorar. Por descuido pierde su vaca. Desgracia.' },
         ],
       },
       'es-legge': {
@@ -6132,34 +3783,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'wind',
     lowerTrigram: 'wind',
     translations: {
-      en: {
-        name: 'The Gentle',
-        meaning: 'Wind, gentleness, flexibility',
-        judgment: 'The Gentle. Success through what is small. It furthers one to have somewhere to go. It furthers one to see the great man.',
-        image: 'Wind following wind: the image of the Gentle. Thus the superior man spreads his commands abroad and carries out his undertakings.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'In advancing and in retreating, the perseverance of a warrior furthers.' },
-          { position: 2, name: 'Nine in the second place', text: 'Penetration under the bed. Priests and magicians are used in great number. Good fortune. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'Repeated penetration. Humiliation.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Remorse vanishes. During the hunt three kinds of game are caught.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Perseverance brings good fortune. Remorse vanishes. Nothing that does not further. No beginning, but an end. Before the change, three days. After the change, three days. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'Penetration under the bed. He loses his property and his ax. Perseverance brings misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Gentle',
-        meaning: 'Wind, gentleness, flexibility',
-        judgment: 'The Gentle. Success through what is small. It furthers one to have somewhere to go. It furthers one to see the great man.',
-        image: 'Wind following wind: the image of the Gentle. Thus the superior man spreads his commands abroad and carries out his undertakings.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'In advancing and in retreating, the perseverance of a warrior furthers.' },
-          { position: 2, name: 'Nine in the second place', text: 'Penetration under the bed. Priests and magicians are used in great number. Good fortune. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'Repeated penetration. Humiliation.' },
-          { position: 4, name: 'Six in the fourth place', text: 'Remorse vanishes. During the hunt three kinds of game are caught.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Perseverance brings good fortune. Remorse vanishes. Nothing that does not further. No beginning, but an end. Before the change, three days. After the change, three days. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'Penetration under the bed. He loses his property and his ax. Perseverance brings misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'The Accommodating',
         meaning: 'Gentleness, penetration, submission',
@@ -6172,20 +3795,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'Occasion for repentance disappears. He takes game for its threefold use in his hunting.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'With firm correctness there will be good fortune. Occasion for repentance disappears. All things are advantageous. There may have been no good beginning, but there will be a good end. Three days before making the change, and three days after. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'Penetration under the bed. He loses his resources and his axe. With firm correctness there will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Lo Suave',
-        meaning: 'Viento, suavidad, flexibilidad',
-        judgment: 'Lo Suave. Éxito a través de lo pequeño. Propicia tener adónde ir. Propicia ver al gran hombre.',
-        image: 'Viento siguiendo viento: la imagen de Lo Suave. Así el hombre superior difunde sus mandatos y lleva a cabo sus empresas.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'En avanzar y en retirarse, la perseverancia de un guerrero propicia.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Penetración bajo la cama. Se emplean sacerdotes y magos en gran número. Buena fortuna. Sin censura.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Penetración repetida. Humillación.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'El arrepentimiento se desvanece. Durante la cacería se capturan tres tipos de presa.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'La perseverancia trae buena fortuna. El arrepentimiento se desvanece. Nada que no propicie. No hay comienzo, pero hay un final. Antes del cambio, tres días. Después del cambio, tres días. Buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Penetración bajo la cama. Pierde su propiedad y su hacha. La perseverancia trae desgracia.' },
         ],
       },
       'es-legge': {
@@ -6241,34 +3850,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'lake',
     lowerTrigram: 'lake',
     translations: {
-      en: {
-        name: 'The Joyous',
-        meaning: 'Lake, pleasure, joy',
-        judgment: 'The Joyous. Success. Perseverance is favorable.',
-        image: 'Lakes joining: the image of the Joyous. Thus the superior man joins with his friends for discussion and practice.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Contented joyousness. Good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'Sincere joyousness. Good fortune. Remorse disappears.' },
-          { position: 3, name: 'Six in the third place', text: 'Coming joyousness. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Joyousness that is weighed is not at peace. After ridding himself of mistakes a man has joy.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Sincerity toward disintegrating influences is dangerous.' },
-          { position: 6, name: 'Six at the top', text: 'Seductive joyousness.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'The Joyous',
-        meaning: 'Lake, pleasure, joy',
-        judgment: 'The Joyous. Success. Perseverance is favorable.',
-        image: 'Lakes joining: the image of the Joyous. Thus the superior man joins with his friends for discussion and practice.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Contented joyousness. Good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'Sincere joyousness. Good fortune. Remorse disappears.' },
-          { position: 3, name: 'Six in the third place', text: 'Coming joyousness. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Joyousness that is weighed is not at peace. After ridding himself of mistakes a man has joy.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'Sincerity toward disintegrating influences is dangerous.' },
-          { position: 6, name: 'Six at the top', text: 'Seductive joyousness.' },
-        ],
-      },
       'en-legge': {
         name: 'The Open',
         meaning: 'Joy, satisfaction, mutual support',
@@ -6281,20 +3862,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He deliberates about what he can find his pleasure in, and there is not yet any peace. He borders on what would be injurious, but there will be cause for joy.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'He trusts in one who would injure him. The situation is perilous.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He is led and drawn into joyousness.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Lo Alegre',
-        meaning: 'Lago, placer, alegría',
-        judgment: 'Lo Alegre. Éxito. La perseverancia es favorable.',
-        image: 'Lagos que se unen: la imagen de Lo Alegre. Así el hombre superior se une con sus amigos para discusión y práctica.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Alegría contenta. Buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Alegría sincera. Buena fortuna. El arrepentimiento desaparece.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Alegría que viene. Desgracia.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La alegría que se sopesa no está en paz. Después de librarse de los errores, un hombre tiene alegría.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Sinceridad hacia influencias desintegradoras es peligrosa.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Alegría seductora.' },
         ],
       },
       'es-legge': {
@@ -6312,10 +3879,10 @@ export const hexagrams: Record<number, Hexagram> = {
         ],
       },
       'es-zhouyi': {
-        name: 'Lo Sereno',
-        meaning: 'Lo sereno, el lago, alegria',
+        name: 'Lo Alegre',
+        meaning: 'Lo alegre, el lago, alegria',
         judgment: 'Exito. Propicio mediante la perseverancia.',
-        image: 'Lagos conectados: lo Sereno. El hombre superior con amigos discute y practica.',
+        image: 'Lagos conectados: lo Alegre. El hombre superior con amigos discute y practica.',
         lines: [
           { position: 1, name: '初九', text: 'Alegría armoniosa. Propicio.' },
           { position: 2, name: '九二', text: 'Alegría sincera. Propicio, el arrepentimiento se desvanece.' },
@@ -6350,34 +3917,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'wind',
     lowerTrigram: 'water',
     translations: {
-      en: {
-        name: 'Dispersion',
-        meaning: 'Separation, dissolution, scattering',
-        judgment: 'Dispersion. Success. The king approaches his temple. It furthers one to cross the great water. Perseverance furthers.',
-        image: 'Wind blowing over water: the image of Dispersion. Thus the kings of old made offerings to the Lord and built temples.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'He brings help with the strength of a horse. Good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'At the dissolution he hurries to that which supports him. Remorse disappears.' },
-          { position: 3, name: 'Six in the third place', text: 'He dissolves his self. No remorse.' },
-          { position: 4, name: 'Six in the fourth place', text: 'He dissolves his bond with his group. Supreme good fortune. Dispersion leads in turn to accumulation. This is something that ordinary men do not think of.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'His loud cries are as dissolving as sweat. Dissolution! A king abides without blame.' },
-          { position: 6, name: 'Nine at the top', text: 'He dissolves his blood. Departing, keeping at a distance, going out, is without blame.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Dispersion',
-        meaning: 'Separation, dissolution, scattering',
-        judgment: 'Dispersion. Success. The king approaches his temple. It furthers one to cross the great water. Perseverance furthers.',
-        image: 'Wind blowing over water: the image of Dispersion. Thus the kings of old made offerings to the Lord and built temples.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'He brings help with the strength of a horse. Good fortune.' },
-          { position: 2, name: 'Nine in the second place', text: 'At the dissolution he hurries to that which supports him. Remorse disappears.' },
-          { position: 3, name: 'Six in the third place', text: 'He dissolves his self. No remorse.' },
-          { position: 4, name: 'Six in the fourth place', text: 'He dissolves his bond with his group. Supreme good fortune. Dispersion leads in turn to accumulation. This is something that ordinary men do not think of.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'His loud cries are as dissolving as sweat. Dissolution! A king abides without blame.' },
-          { position: 6, name: 'Nine at the top', text: 'He dissolves his blood. Departing, keeping at a distance, going out, is without blame.' },
-        ],
-      },
       'en-legge': {
         name: 'Dispersing',
         meaning: 'Union dissolving and dispersing',
@@ -6390,20 +3929,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'He scatters the different parties in the state; which leads to great good fortune. From the dispersion he reunites them in a focus. This is what all ordinary men would not think of.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'His loud cries are as effective as the perspiration that flows from the body. A king dispenses what his stores hold among the people without blame.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He disposes of its injurious effects, withdraws from it, and sends away what would harm. There will be no error.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Dispersión',
-        meaning: 'Separación, disolución, dispersión',
-        judgment: 'Dispersión. Éxito. El rey se acerca a su templo. Propicia cruzar la gran agua. La perseverancia propicia.',
-        image: 'Viento soplando sobre agua: la imagen de la Dispersión. Así los reyes de antaño hacían ofrendas al Señor y construían templos.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Trae ayuda con la fuerza de un caballo. Buena fortuna.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'En la disolución corre hacia lo que lo sostiene. El arrepentimiento desaparece.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Disuelve su yo. Sin arrepentimiento.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Disuelve su vínculo con su grupo. Suprema buena fortuna. La dispersión conduce a su vez a la acumulación. Esto es algo en lo que los hombres comunes no piensan.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Sus grandes clamores son tan disolventes como el sudor. ¡Disolución! Un rey permanece sin censura.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Disuelve su sangre. Partir, mantenerse a distancia, salir, no tiene censura.' },
         ],
       },
       'es-legge': {
@@ -6459,34 +3984,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'water',
     lowerTrigram: 'lake',
     translations: {
-      en: {
-        name: 'Limitation',
-        meaning: 'Restriction, boundaries, self-control',
-        judgment: 'Limitation. Success. Galling limitation must not be persevered in.',
-        image: 'Water over a lake: the image of Limitation. Thus the superior man creates number and measure, and examines the nature of his actions.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Not going out of the door and the courtyard is without blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'Not going out of the gate and the courtyard brings misfortune.' },
-          { position: 3, name: 'Six in the third place', text: 'He who knows no limitation will have cause to lament. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Contented limitation. Success.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Sweet limitation brings good fortune. Going brings esteem.' },
-          { position: 6, name: 'Six at the top', text: 'Galling limitation. Perseverance brings misfortune. Remorse disappears.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Limitation',
-        meaning: 'Restriction, boundaries, self-control',
-        judgment: 'Limitation. Success. Galling limitation must not be persevered in.',
-        image: 'Water over a lake: the image of Limitation. Thus the superior man creates number and measure, and examines the nature of his actions.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Not going out of the door and the courtyard is without blame.' },
-          { position: 2, name: 'Nine in the second place', text: 'Not going out of the gate and the courtyard brings misfortune.' },
-          { position: 3, name: 'Six in the third place', text: 'He who knows no limitation will have cause to lament. No blame.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Contented limitation. Success.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Sweet limitation brings good fortune. Going brings esteem.' },
-          { position: 6, name: 'Six at the top', text: 'Galling limitation. Perseverance brings misfortune. Remorse disappears.' },
-        ],
-      },
       'en-legge': {
         name: 'Regulation',
         meaning: 'Restraint and regulation within limits',
@@ -6499,20 +3996,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'He is quietly and naturally attentive to all forms of propriety. There will be progress and success.' },
           { position: 5, name: 'In the fifth line, divided', text: 'Sweet is the practice of limitation. There will be good fortune. Going forward will afford ground for admiration.' },
           { position: 6, name: 'In the sixth line, divided', text: 'The regulations are severe and difficult. Even with firm correctness there will be evil. But though there be cause for repentance, it will by and by disappear.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Limitación',
-        meaning: 'Restricción, límites, autocontrol',
-        judgment: 'Limitación. Éxito. La limitación penosa no debe persistir.',
-        image: 'Agua sobre un lago: la imagen de la Limitación. Así el hombre superior crea número y medida, y examina la naturaleza de sus acciones.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'No salir de la puerta y el patio no tiene censura.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'No salir del portón y el patio trae desgracia.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Quien no conoce limitación tendrá motivo para lamentarse. Sin censura.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Limitación contenta. Éxito.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'La limitación dulce trae buena fortuna. Ir trae estima.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Limitación penosa. La perseverancia trae desgracia. El arrepentimiento desaparece.' },
         ],
       },
       'es-legge': {
@@ -6568,34 +4051,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'wind',
     lowerTrigram: 'lake',
     translations: {
-      en: {
-        name: 'Inner Truth',
-        meaning: 'Sincerity, trustworthiness, integrity',
-        judgment: 'Inner Truth. Pigs and fishes. Good fortune. It furthers one to cross the great water. Perseverance furthers.',
-        image: 'Wind over lake: the image of Inner Truth. Thus the superior man discusses criminal cases in order to postpone death sentences.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Being prepared brings good fortune. If there are secret designs, it is disquieting.' },
-          { position: 2, name: 'Nine in the second place', text: 'A crane calling in the shade. Its young answers it. I have a good goblet. I will share it with you.' },
-          { position: 3, name: 'Six in the third place', text: 'He finds a comrade. Now he beats the drum, now he stops. Now he sobs, now he sings.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The moon nearly at the full. The team horse goes astray. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'He possesses truth, which links together. No blame.' },
-          { position: 6, name: 'Nine at the top', text: 'Cockcrow penetrating to heaven. Perseverance brings misfortune.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Inner Truth',
-        meaning: 'Sincerity, trustworthiness, integrity',
-        judgment: 'Inner Truth. Pigs and fishes. Good fortune. It furthers one to cross the great water. Perseverance furthers.',
-        image: 'Wind over lake: the image of Inner Truth. Thus the superior man discusses criminal cases in order to postpone death sentences.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'Being prepared brings good fortune. If there are secret designs, it is disquieting.' },
-          { position: 2, name: 'Nine in the second place', text: 'A crane calling in the shade. Its young answers it. I have a good goblet. I will share it with you.' },
-          { position: 3, name: 'Six in the third place', text: 'He finds a comrade. Now he beats the drum, now he stops. Now he sobs, now he sings.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The moon nearly at the full. The team horse goes astray. No blame.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'He possesses truth, which links together. No blame.' },
-          { position: 6, name: 'Nine at the top', text: 'Cockcrow penetrating to heaven. Perseverance brings misfortune.' },
-        ],
-      },
       'en-legge': {
         name: 'Faithful Confidence',
         meaning: 'Good faith and trust between parties',
@@ -6608,20 +4063,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'The moon is nearly full. The horse in the chariot goes astray. There will be no error.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'He is perfectly sincere, and knits together. There will be no error.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'Chanticleer tries to mount to heaven. Even with firm correctness there will be evil.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'La Verdad Interior',
-        meaning: 'Sinceridad, confiabilidad, integridad',
-        judgment: 'Verdad Interior. Cerdos y peces. Buena fortuna. Propicia cruzar la gran agua. La perseverancia propicia.',
-        image: 'Viento sobre lago: la imagen de la Verdad Interior. Así el hombre superior discute casos criminales para posponer sentencias de muerte.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Estar preparado trae buena fortuna. Si hay designios secretos, es inquietante.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Una grulla que llama en la sombra. Su cría le responde. Tengo una buena copa. La compartiré contigo.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Encuentra un camarada. Ahora toca el tambor, ahora se detiene. Ahora solloza, ahora canta.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'La luna casi llena. El caballo del tiro se extravía. Sin censura.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'Posee verdad, que une. Sin censura.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Canto del gallo que penetra hasta el cielo. La perseverancia trae desgracia.' },
         ],
       },
       'es-legge': {
@@ -6677,34 +4118,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'thunder',
     lowerTrigram: 'mountain',
     translations: {
-      en: {
-        name: 'Preponderance of the Small',
-        meaning: 'Excess of caution, petty details, limitation',
-        judgment: 'Preponderance of the Small. Success. Perseverance furthers. Small things may be done; great things should not be done. The flying bird brings the message: It is not well to strive upward, Well to strive downward. Great good fortune.',
-        image: 'Thunder on the mountain: the image of Preponderance of the Small. Thus in his conduct the superior man stresses what is slight.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'The bird meets with misfortune through flying.' },
-          { position: 2, name: 'Six in the second place', text: 'She passes by her ancestor and meets her ancestress. He does not reach his prince and meets the official. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'If one is not extremely careful, somebody may come up from behind and strike him. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'No blame. He meets him without passing by. Going brings danger. One must be on guard. Do not act. Be constantly persevering.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Dense clouds, no rain from our western territory. The prince shoots and hits him who is in the cave.' },
-          { position: 6, name: 'Six at the top', text: 'He passes him by, not meeting him. The flying bird leaves him. Misfortune. This means bad luck and injury.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Preponderance of the Small',
-        meaning: 'Excess of caution, petty details, limitation',
-        judgment: 'Preponderance of the Small. Success. Perseverance furthers. Small things may be done; great things should not be done. The flying bird brings the message: It is not well to strive upward, Well to strive downward. Great good fortune.',
-        image: 'Thunder on the mountain: the image of Preponderance of the Small. Thus in his conduct the superior man stresses what is slight.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'The bird meets with misfortune through flying.' },
-          { position: 2, name: 'Six in the second place', text: 'She passes by her ancestor and meets her ancestress. He does not reach his prince and meets the official. No blame.' },
-          { position: 3, name: 'Nine in the third place', text: 'If one is not extremely careful, somebody may come up from behind and strike him. Misfortune.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'No blame. He meets him without passing by. Going brings danger. One must be on guard. Do not act. Be constantly persevering.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Dense clouds, no rain from our western territory. The prince shoots and hits him who is in the cave.' },
-          { position: 6, name: 'Six at the top', text: 'He passes him by, not meeting him. The flying bird leaves him. Misfortune. This means bad luck and injury.' },
-        ],
-      },
       'en-legge': {
         name: 'Small Excess',
         meaning: 'Exceeding in small matters',
@@ -6717,20 +4130,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'There will be no error. He does not pass by the difficulty but meets it. Going forward is perilous and must be guarded against. There is no occasion to be using firm persistence.' },
           { position: 5, name: 'In the fifth line, divided', text: 'Dense clouds but no rain from the western borders. The prince shoots his arrow and takes the one in the cave.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He does not meet him, but passes him by. The bird flies away from him. There will be evil. This indicates calamity and injury.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Preponderancia de lo Pequeño',
-        meaning: 'Exceso de cautela, detalles menores, limitación',
-        judgment: 'Preponderancia de lo Pequeño. Éxito. La perseverancia propicia. Lo pequeño se puede hacer; lo grande no se debe hacer.',
-        image: 'Trueno en la montaña: la imagen de Preponderancia de lo Pequeño. Así el hombre superior en su conducta da excesiva importancia al respeto.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'El pájaro encuentra desgracia al volar.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'Ella pasa junto a su ancestro y encuentra a su abuela. Él no alcanza a su príncipe y encuentra al funcionario. Sin censura.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'Si uno no es extremadamente cuidadoso, alguien puede acercarse por detrás y golpearlo. Desgracia.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'Sin censura. Lo encuentra sin pasar de largo. Ir trae peligro. Uno debe estar en guardia. No actúes. Sé constantemente perseverante.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'Nubes densas, sin lluvia de nuestro territorio occidental. El príncipe dispara y alcanza al que está en la cueva.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Pasa junto a él sin encontrarlo. El pájaro volando lo abandona. Desgracia. Esto significa mala suerte y daño.' },
         ],
       },
       'es-legge': {
@@ -6786,34 +4185,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'water',
     lowerTrigram: 'fire',
     translations: {
-      en: {
-        name: 'After Completion',
-        meaning: 'Completion, fulfillment, beyond the crisis',
-        judgment: 'After Completion. Success in small matters. Perseverance furthers. There is advantage in undertaking something. The beginning brings good fortune, the end brings disorder.',
-        image: 'Fire over water: the image of After Completion. Thus the superior man takes thought of danger and arms himself against it beforehand.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'He brakes his wheels. He gets his tail in the water. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'The woman loses the curtain of her carriage. Do not run after it; on the seventh day you will get it.' },
-          { position: 3, name: 'Nine in the third place', text: 'The Illustrious Ancestor disciplines the Devil\'s Country. After three years he conquers it. Inferior people must not be employed.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The finest clothes turn to rags. Be careful all day long.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The neighbor in the east who slaughters an ox does not attain as much real happiness as the neighbor in the west with his small offering.' },
-          { position: 6, name: 'Six at the top', text: 'He gets his head in the water. Danger.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'After Completion',
-        meaning: 'Completion, fulfillment, beyond the crisis',
-        judgment: 'After Completion. Success in small matters. Perseverance furthers. There is advantage in undertaking something. The beginning brings good fortune, the end brings disorder.',
-        image: 'Fire over water: the image of After Completion. Thus the superior man takes thought of danger and arms himself against it beforehand.',
-        lines: [
-          { position: 1, name: 'Nine at the beginning', text: 'He brakes his wheels. He gets his tail in the water. No blame.' },
-          { position: 2, name: 'Six in the second place', text: 'The woman loses the curtain of her carriage. Do not run after it; on the seventh day you will get it.' },
-          { position: 3, name: 'Nine in the third place', text: 'The Illustrious Ancestor disciplines the Devil\'s Country. After three years he conquers it. Inferior people must not be employed.' },
-          { position: 4, name: 'Six in the fourth place', text: 'The finest clothes turn to rags. Be careful all day long.' },
-          { position: 5, name: 'Nine in the fifth place', text: 'The neighbor in the east who slaughters an ox does not attain as much real happiness as the neighbor in the west with his small offering.' },
-          { position: 6, name: 'Six at the top', text: 'He gets his head in the water. Danger.' },
-        ],
-      },
       'en-legge': {
         name: 'After Completion',
         meaning: 'Already completed and the need to remain vigilant',
@@ -6826,20 +4197,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, divided', text: 'Next to his skin he has clothes of fine silk, but over them he puts on rags. He is cautious all the day.' },
           { position: 5, name: 'In the fifth line, undivided', text: 'The neighbor in the east kills an ox for his sacrifice; but this is not equal to the small spring sacrifice of the neighbor in the west, whose sincerity receives the blessing.' },
           { position: 6, name: 'In the sixth line, divided', text: 'He gets his head immersed. The position is perilous.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Después de la Completación',
-        meaning: 'Completación, cumplimiento, más allá de la crisis',
-        judgment: 'Después de la Completación. Éxito en pequeños asuntos. La perseverancia propicia. El comienzo trae buena fortuna, el final trae desorden.',
-        image: 'Fuego sobre agua: la imagen de Después de la Completación. Así el hombre superior prevé el peligro y se arma contra él de antemano.',
-        lines: [
-          { position: 1, name: 'Nueve al comienzo', text: 'Frena sus ruedas. Se moja la cola en el agua. Sin censura.' },
-          { position: 2, name: 'Seis en el segundo puesto', text: 'La mujer pierde la cortina de su carruaje. No corras tras ella; al séptimo día la recuperarás.' },
-          { position: 3, name: 'Nueve en el tercer puesto', text: 'El Ilustre Ancestro disciplina el País de los Demonios. Después de tres años lo conquista. No se debe emplear a personas inferiores.' },
-          { position: 4, name: 'Seis en el cuarto puesto', text: 'Las ropas más finas se convierten en harapos. Sé cuidadoso todo el día.' },
-          { position: 5, name: 'Nueve en el quinto puesto', text: 'El vecino del este que sacrifica un buey no alcanza tanta felicidad real como el vecino del oeste con su pequeña ofrenda.' },
-          { position: 6, name: 'Seis en lo alto', text: 'Se moja la cabeza en el agua. Peligro.' },
         ],
       },
       'es-legge': {
@@ -6895,34 +4252,6 @@ export const hexagrams: Record<number, Hexagram> = {
     upperTrigram: 'fire',
     lowerTrigram: 'water',
     translations: {
-      en: {
-        name: 'Before Completion',
-        meaning: 'Incompletion, transition, work in progress',
-        judgment: 'Before Completion. Success. The small fox, after nearly completing the crossing, gets his tail wet. No advantage in anything.',
-        image: 'Water over fire: the image of Before Completion. Thus the superior man is careful in the differentiation of things.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'He gets his tail in the water. Humiliating.' },
-          { position: 2, name: 'Nine in the second place', text: 'He brakes his wheels. Perseverance brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'Before completion, attack brings misfortune. It furthers one to cross the great water.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Perseverance brings good fortune. Remorse disappears. Shock, thus to discipline the Devil\'s Country. For three years, great realms are awarded.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Perseverance brings good fortune. No remorse. The light of the superior man is true. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'There is drinking of wine in genuine confidence. No blame. But if one wets his head, he loses it, in truth.' },
-        ],
-      },
-      'en-wilhelm': {
-        name: 'Before Completion',
-        meaning: 'Incompletion, transition, work in progress',
-        judgment: 'Before Completion. Success. The small fox, after nearly completing the crossing, gets his tail wet. No advantage in anything.',
-        image: 'Water over fire: the image of Before Completion. Thus the superior man is careful in the differentiation of things.',
-        lines: [
-          { position: 1, name: 'Six at the beginning', text: 'He gets his tail in the water. Humiliating.' },
-          { position: 2, name: 'Nine in the second place', text: 'He brakes his wheels. Perseverance brings good fortune.' },
-          { position: 3, name: 'Six in the third place', text: 'Before completion, attack brings misfortune. It furthers one to cross the great water.' },
-          { position: 4, name: 'Nine in the fourth place', text: 'Perseverance brings good fortune. Remorse disappears. Shock, thus to discipline the Devil\'s Country. For three years, great realms are awarded.' },
-          { position: 5, name: 'Six in the fifth place', text: 'Perseverance brings good fortune. No remorse. The light of the superior man is true. Good fortune.' },
-          { position: 6, name: 'Nine at the top', text: 'There is drinking of wine in genuine confidence. No blame. But if one wets his head, he loses it, in truth.' },
-        ],
-      },
       'en-legge': {
         name: 'Not Yet Completed',
         meaning: 'Work still in progress and approaching completion',
@@ -6935,20 +4264,6 @@ export const hexagrams: Record<number, Hexagram> = {
           { position: 4, name: 'In the fourth line, undivided', text: 'By firm correctness there will be good fortune, and cause for repentance will disappear. Let him stir himself up as if he were invading the Gui Fang. After three years he will be rewarded with a great realm.' },
           { position: 5, name: 'In the fifth line, divided', text: 'With firm correctness there will be good fortune, and no occasion for repentance. We see in him the brightness of a superior man, and the possession of sincerity. There will be good fortune.' },
           { position: 6, name: 'In the sixth line, undivided', text: 'He drinks wine freely and confidently. There will be no error. But if he wet his head, he will fail in what is true and right.' },
-        ],
-      },
-      'es-wilhelm': {
-        name: 'Antes de la Completación',
-        meaning: 'Incompletación, transición, trabajo en progreso',
-        judgment: 'Antes de la Completación. Éxito. El pequeño zorro, después de casi completar el cruce, se moja la cola. Ninguna ventaja.',
-        image: 'Agua sobre fuego: la imagen de Antes de la Completación. Así el hombre superior diferencia cuidadosamente las cosas.',
-        lines: [
-          { position: 1, name: 'Seis al comienzo', text: 'Se moja la cola en el agua. Humillación.' },
-          { position: 2, name: 'Nueve en el segundo puesto', text: 'Frena sus ruedas. La perseverancia trae buena fortuna.' },
-          { position: 3, name: 'Seis en el tercer puesto', text: 'Antes de la completación, atacar trae desgracia. Es propicio cruzar la gran agua.' },
-          { position: 4, name: 'Nueve en el cuarto puesto', text: 'La perseverancia trae buena fortuna. El arrepentimiento desaparece. Conmoción, así se disciplina el País de los Demonios. Durante tres años, se otorgan grandes reinos.' },
-          { position: 5, name: 'Seis en el quinto puesto', text: 'La perseverancia trae buena fortuna. Sin arrepentimiento. La luz del hombre superior es verdadera. Buena fortuna.' },
-          { position: 6, name: 'Nueve en lo alto', text: 'Se bebe vino con genuina confianza. Sin censura. Pero si uno se moja la cabeza, la pierde, en verdad.' },
         ],
       },
       'es-legge': {
@@ -7001,28 +4316,12 @@ export function getHexagram(number: number): Hexagram | undefined {
   return hexagrams[number];
 }
 
-export function getHexagramTranslation(number: number, lang: string): Hexagram['translations'][string] | undefined {
-  const hex = hexagrams[number];
-  if (!hex) return undefined;
-  return hex.translations[lang] || hex.translations.en;
-}
-
-/**
- * Get hexagram translation by language and translation source.
- * Falls back to source-agnostic translation if source-specific not available,
- * then to English, then to any available translation.
- *
- * @param number Hexagram number (1-64)
- * @param lang Language code (e.g., 'en', 'es', 'zh')
- * @param source Translation source ('wilhelm' or 'legge')
- * @returns Translation object or undefined
- */
 /**
  * Default translation sources for each language
  */
-const DEFAULT_SOURCES: Record<string, string> = {
-  en: 'wilhelm',
-  es: 'wilhelm',
+const DEFAULT_SOURCES: Record<string, TranslationSource> = {
+  en: 'legge',
+  es: 'legge',
   zh: 'zhouyi',
 };
 
@@ -7030,12 +4329,23 @@ const DEFAULT_SOURCES: Record<string, string> = {
  * Gets the default source for a language
  */
 export function getDefaultSourceForLanguage(lang: string): TranslationSource {
-  return (DEFAULT_SOURCES[lang] as TranslationSource) || 'wilhelm';
+  return DEFAULT_SOURCES[lang] || 'legge';
 }
 
 /**
- * Gets hexagram translation by language and source
- * If source is not provided, uses default for that language
+ * Gets hexagram translation for a language through its default source,
+ * falling back to English Legge for languages without data.
+ */
+export function getHexagramTranslation(number: number, lang: string): Hexagram['translations'][string] | undefined {
+  const hex = hexagrams[number];
+  if (!hex) return undefined;
+  return hex.translations[`${lang}-${getDefaultSourceForLanguage(lang)}`] || hex.translations['en-legge'];
+}
+
+/**
+ * Gets hexagram translation by language and source.
+ * If source is not provided, or has no data for that language (e.g. a stored
+ * 'wilhelm' preference from before #197), uses the default for that language.
  */
 export function getHexagramTranslationBySource(
   number: number,
@@ -7045,11 +4355,7 @@ export function getHexagramTranslationBySource(
   const hex = hexagrams[number];
   if (!hex) return undefined;
 
-  // Use default source if not provided
-  const translationSource = source || getDefaultSourceForLanguage(lang);
-
-  // Construct translation key (e.g., 'en-wilhelm', 'es-legge', 'zh-zhouyi')
-  const key = `${lang}-${translationSource}`;
-
-  return hex.translations[key];
+  // Construct translation key (e.g., 'en-legge', 'es-zhouyi', 'zh-zhouyi')
+  return (source && hex.translations[`${lang}-${source}`])
+    || hex.translations[`${lang}-${getDefaultSourceForLanguage(lang)}`];
 }

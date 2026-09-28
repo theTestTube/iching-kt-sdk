@@ -4,7 +4,7 @@ The `HexagramCard` component is a miniaturized, reusable hexagram display compon
 
 ### Key Features
 
-1. **Translation Source Awareness**: Automatically uses the user's selected translation source (Wilhelm, Legge, or Zhouyi) to display hexagram names in their preferred language and translation style.
+1. **Translation Source Awareness**: Automatically uses the user's selected translation source (Legge or Zhouyi; a stale `'wilhelm'` preference falls back to Legge, #197) to display hexagram names in their preferred language and translation style.
 
 2. **Consistent with User Preferences**: Uses `getTranslationSourceForLanguage()` to read from `context.translationPreferences`, ensuring that the same translation source used in HexagramDetailView is used across all places displaying hexagrams.
 
@@ -53,28 +53,28 @@ The component determines which translation to use based on:
 
 #### Examples
 
-**English with Wilhelm translation (default)**:
+**English with Legge translation (default)**:
 ```tsx
 <HexagramCard
-  context={{ language: 'en', translationPreferences: { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' }, ... }}
+  context={{ language: 'en', translationPreferences: { en: 'legge', es: 'legge', zh: 'zhouyi' }, ... }}
   hexagramNumber={23}
 />
-// Displays: "Splitting Apart"
+// Displays: "Decay"
 ```
 
-**Spanish with Legge translation**:
+**Spanish with Legge translation (default)**:
 ```tsx
 <HexagramCard
-  context={{ language: 'es', translationPreferences: { en: 'wilhelm', es: 'legge', zh: 'zhouyi' }, ... }}
+  context={{ language: 'es', translationPreferences: { en: 'legge', es: 'legge', zh: 'zhouyi' }, ... }}
   hexagramNumber={23}
 />
-// Displays: "Po" (Legge translation)
+// Displays: "La Decadencia" (Legge-based translation)
 ```
 
 **Chinese with Zhouyi translation**:
 ```tsx
 <HexagramCard
-  context={{ language: 'zh', translationPreferences: { en: 'wilhelm', es: 'wilhelm', zh: 'zhouyi' }, ... }}
+  context={{ language: 'zh', translationPreferences: { en: 'legge', es: 'legge', zh: 'zhouyi' }, ... }}
   hexagramNumber={23}
 />
 // Displays: "剝" (Chinese character with pinyin)

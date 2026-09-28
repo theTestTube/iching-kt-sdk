@@ -96,7 +96,7 @@ export function HexagramView({ context }: Props) {
         <Text style={[styles.number, { color: colors.textTertiary }]}>#{hexagram.number}</Text>
         <Text style={[styles.name, { color: colors.text }]}>{translation.name}</Text>
         <Text style={[styles.translationSource, { color: colors.textTertiary }]}>
-          {translationSource === 'zhouyi' ? '周易 Zhouyi' : translationSource === 'legge' ? 'James Legge (1882)' : 'Wilhelm-Baynes (1950)'}
+          {translationSource === 'zhouyi' ? '周易 Zhouyi' : 'James Legge (1882)'}
         </Text>
       </View>
       {!hideOriginRef && (

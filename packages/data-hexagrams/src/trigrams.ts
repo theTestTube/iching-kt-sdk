@@ -2,8 +2,10 @@
  * Trigram data with multilingual translations.
  *
  * Sources:
- * - Canonical glossary (docs/i18n/glossary.md)
- * - Wilhelm-Baynes (Public Domain)
+ * - Trigram images and attributes: Shuogua 說卦 (classical Chinese, public domain)
+ * - Epithets: project renderings. Where they coincide with the literal rendering
+ *   of Richard Wilhelm's 1924 German (public domain), that is the basis; the
+ *   distinctive Baynes (EN, 1950) and Vogelmann (ES, 1975) choices are avoided (#197).
  * - Zhouyi 周易 (Classical Chinese)
  *
  * No numbering is assigned — no universally accepted trigram numbering
@@ -59,8 +61,8 @@ const TRIGRAMS: Record<TrigramId, TrigramData> = {
     chinese: '震',
     pinyin: 'zhèn',
     translations: {
-      en: { name: 'Thunder / Arousing', description: 'Shock and movement. Initiative that springs from below, the first stirring of yang.' },
-      es: { name: 'Trueno / Lo Suscitativo', description: 'Conmoción y movimiento. Iniciativa que surge desde abajo, la primera agitación del yang.' },
+      en: { name: 'Thunder / Inciting', description: 'Shock and movement. Initiative that springs from below, the first stirring of yang.' },
+      es: { name: 'Trueno / Lo Incitante', description: 'Conmoción y movimiento. Iniciativa que surge desde abajo, la primera agitación del yang.' },
       zh: { name: '雷 / 震動', description: '震動而起。陽氣初動，自下而生之力。' },
     },
   },
@@ -84,7 +86,7 @@ const TRIGRAMS: Record<TrigramId, TrigramData> = {
     pinyin: 'gèn',
     translations: {
       en: { name: 'Mountain / Stillness', description: 'Keeping still, meditation. Yang rests atop yin, marking a natural boundary.' },
-      es: { name: 'Montaña / El Aquietamiento', description: 'Quietud, meditación. El yang descansa sobre el yin, marcando un límite natural.' },
+      es: { name: 'Montaña / La Quietud', description: 'Quietud, meditación. El yang descansa sobre el yin, marcando un límite natural.' },
       zh: { name: '山 / 止靜', description: '止而不動，靜定之象。陽居陰上，界限分明。' },
     },
   },
@@ -119,8 +121,8 @@ const TRIGRAMS: Record<TrigramId, TrigramData> = {
     chinese: '兌',
     pinyin: 'duì',
     translations: {
-      en: { name: 'Lake / Joyous', description: 'Joy and openness. Yin opens above yang, pleasure through expression.' },
-      es: { name: 'Lago / Lo Sereno', description: 'Alegría y apertura. El yin se abre sobre el yang, placer a través de la expresión.' },
+      en: { name: 'Lake / Cheerful', description: 'Joy and openness. Yin opens above yang, pleasure through expression.' },
+      es: { name: 'Lago / Lo Alegre', description: 'Alegría y apertura. El yin se abre sobre el yang, placer a través de la expresión.' },
       zh: { name: '澤 / 兌悅', description: '喜悅開朗之象。陰開於陽上，和悅以達。' },
     },
   },

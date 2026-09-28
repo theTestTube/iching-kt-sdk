@@ -8,34 +8,31 @@ import type { TranslationPreferences, EnglishSource, SpanishSource, ChineseSourc
  * Default translation sources for each language (first-time user experience)
  */
 export const DEFAULT_TRANSLATION_PREFERENCES: TranslationPreferences = {
-  en: 'wilhelm',
-  es: 'wilhelm',
+  en: 'legge',
+  es: 'legge',
   zh: 'zhouyi',
+};
+
+/** Sources with shipped data, per language */
+const AVAILABLE_SOURCES: Record<keyof TranslationPreferences, readonly string[]> = {
+  en: ['legge'] satisfies EnglishSource[],
+  es: ['legge', 'zhouyi'] satisfies SpanishSource[],
+  zh: ['zhouyi'] satisfies ChineseSource[],
 };
 
 /**
  * Gets the translation source for a given language from user preferences.
- * Falls back to defaults if preferences not set.
+ * Falls back to defaults if preferences are not set, or hold a source with no
+ * shipped data (e.g. 'wilhelm', stored before #197 removed it).
  */
 export function getTranslationSourceForLanguage(
   language: string,
   preferences?: TranslationPreferences
 ): string {
-  if (!preferences) {
-    // Use defaults if no preferences provided
-    return DEFAULT_TRANSLATION_PREFERENCES[language as keyof TranslationPreferences] || 'wilhelm';
-  }
-
-  switch (language) {
-    case 'en':
-      return preferences.en || DEFAULT_TRANSLATION_PREFERENCES.en;
-    case 'es':
-      return preferences.es || DEFAULT_TRANSLATION_PREFERENCES.es;
-    case 'zh':
-      return preferences.zh || DEFAULT_TRANSLATION_PREFERENCES.zh;
-    default:
-      return 'wilhelm'; // Fallback for unsupported languages
-  }
+  if (!(language in AVAILABLE_SOURCES)) return 'legge'; // Fallback for unsupported languages
+  const lang = language as keyof TranslationPreferences;
+  const stored: string | undefined = preferences?.[lang];
+  return stored && AVAILABLE_SOURCES[lang].includes(stored) ? stored : DEFAULT_TRANSLATION_PREFERENCES[lang];
 }
 
 /**
@@ -49,7 +46,7 @@ export function isOriginLanguage(language: string): boolean {
 
 /**
  * Constructs the translation key for hexagram data lookup.
- * Format: `${language}-${source}` (e.g., 'en-wilhelm', 'es-legge', 'zh-zhouyi')
+ * Format: `${language}-${source}` (e.g., 'en-legge', 'es-zhouyi', 'zh-zhouyi')
  */
 export function getTranslationKey(
   language: string,

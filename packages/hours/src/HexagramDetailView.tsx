@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { useEffect } from 'react';
 import { BackHandler } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors } from '@iching-kt/core';
-import { getHexagram, getHexagramTranslation } from '@iching-kt/data-hexagrams';
+import { KnowletContext, ActionableElement, getThemeColors, getTranslationSourceForLanguage } from '@iching-kt/core';
+import { getHexagram, getHexagramTranslationBySource, type TranslationSource } from '@iching-kt/data-hexagrams';
 
 interface Props {
   context: KnowletContext;
@@ -32,7 +32,9 @@ export function HexagramDetailView({ context, hexagramNumber }: Props) {
     };
   }, [context]);
   const hexagram = getHexagram(hexagramNumber);
-  const translation = getHexagramTranslation(hexagramNumber, context.language);
+  // Same source as HexagramCard, so the text does not change on the tap through
+  const translationSource = getTranslationSourceForLanguage(context.language, context.translationPreferences);
+  const translation = getHexagramTranslationBySource(hexagramNumber, context.language, translationSource as TranslationSource);
 
   if (!hexagram || !translation) {
     return (

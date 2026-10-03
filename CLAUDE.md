@@ -26,8 +26,10 @@ test on every push and pull request to `develop`.
 ## Conventions
 
 - `develop` is the trunk; pull requests target it.
-- Commit messages are prefix-based and at most 128 characters: `add:`, `upd:`, `rm:`, `fix:`,
-  `wip:`, `merge:`.
+- Commit subjects and PR titles follow Conventional Commits: `type(scope): lowercase sentence`, at
+  most 128 characters; scope optional, `!` marks a breaking change. Types: `feat`, `fix`, `docs`,
+  `refactor`, `perf`, `test`, `build`, `ci`, `chore`. Body optional. No AI attribution; a human
+  `Co-Authored-By:` trailer is allowed.
 - Repository documents are written in English.
 - Domain vocabulary is in [CONTEXT.md](CONTEXT.md). It holds public-domain facts and the project's
   own epithets only.

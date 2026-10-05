@@ -2,9 +2,11 @@
   "name": "@iching-kt/loshu",
   "version": "0.1.0",
   "description": "Lo Shu Square board knowlet for I-Ching KT",
+  "license": "MIT",
   "exports": {
     ".": {
-      "import": "./src/index.ts"
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
     }
   },
   "main": "src/index.ts",

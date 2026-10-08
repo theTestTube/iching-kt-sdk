@@ -35,6 +35,39 @@ describe('shipped hexagram data carries no Baynes-derived text (#197)', () => {
   });
 });
 
+// es-zhouyi is the project's own rendering from the Chinese (iching-kt#291): its
+// 元亨利貞 formula does not follow a third-party structure, and 君子, 大人 and 小人
+// are gender-neutral. es-legge keeps Legge's terms.
+describe('es-zhouyi formula and person terms are the project\'s own (iching-kt#291)', () => {
+  const texts = (source: 'es-zhouyi' | 'es-legge') =>
+    Object.values(hexagrams).map((h) => JSON.stringify(h.translations[source])).join('\n');
+
+  it.each([
+    /sublime/i,
+    /mediante la perseverancia/,
+    /hombre superior/,
+    /gran hombre/,
+    /hombre inferior/,
+  ])('es-zhouyi contains no %s', (pattern) => {
+    expect(texts('es-zhouyi')).not.toMatch(pattern);
+  });
+
+  it.each([
+    ['君子', 'persona noble'],
+    ['大人', 'persona eminente'],
+    ['小人', 'persona ruin'],
+  ])('es-zhouyi renders every %s as "%s"', (term, rendering) => {
+    const count = (text: string, needle: string) => text.split(needle).length - 1;
+    expect(count(texts('es-zhouyi'), rendering)).toBe(
+      count(Object.values(hexagrams).map((h) => JSON.stringify(h.translations['zh-zhouyi'])).join('\n'), term),
+    );
+  });
+
+  it('es-legge keeps Legge\'s "hombre superior"', () => {
+    expect(texts('es-legge')).toMatch(/hombre superior/);
+  });
+});
+
 describe('source resolution defaults to Legge (#197)', () => {
   it('defaults en and es to legge, zh to zhouyi', () => {
     expect(getDefaultSourceForLanguage('en')).toBe('legge');

@@ -1,6 +1,19 @@
 import type { TextStyle } from 'react-native';
 import { ColorScheme } from './types';
 
+/**
+ * Named brand colours that theme tones refer to by name, so a tone is never a
+ * repeated literal. `gold` is for dark grounds only; on light grounds use
+ * `goldOnLight` (4.92:1 on white).
+ */
+export const BRAND = {
+  ink: '#000000',
+  paper: '#ffffff',
+  night: '#1a1a2e',
+  gold: '#ffd700',
+  goldOnLight: '#8a6d00',
+} as const;
+
 export interface ThemeColors {
   // Base colors
   background: string;
@@ -35,6 +48,8 @@ export interface ThemeColors {
 /** Color pair for interactive elements (active and default states) */
 export interface ElementColorPair {
   activeColor: string;
+  /** Ink drawn on `activeColor`: `BRAND.ink` or `BRAND.paper`. */
+  activeInk: string;
   defaultColor: string;
 }
 
@@ -78,7 +93,7 @@ const lightColors: ThemeColors = {
   borderLight: '#f0f0f0',
 
   primary: '#007AFF',
-  accent: '#1a1a2e',
+  accent: BRAND.night,
 
   success: '#22C55E',
   warning: '#F59E0B',
@@ -114,35 +129,35 @@ const darkColors: ThemeColors = {
 
 const lightAbstractColors: AbstractColors = {
   elements: {
-    water: { activeColor: '#1a73e8', defaultColor: '#e3f2fd' },
-    wood: { activeColor: '#34a853', defaultColor: '#e8f5e9' },
-    fire: { activeColor: '#ea4335', defaultColor: '#ffebee' },
-    earth: { activeColor: '#a67c52', defaultColor: '#efebe9' },
-    metal: { activeColor: '#757575', defaultColor: '#f5f5f5' },
+    water: { activeColor: '#1a73e8', activeInk: BRAND.ink, defaultColor: '#e3f2fd' },
+    wood: { activeColor: '#34a853', activeInk: BRAND.ink, defaultColor: '#e8f5e9' },
+    fire: { activeColor: '#ea4335', activeInk: BRAND.ink, defaultColor: '#ffebee' },
+    earth: { activeColor: '#a67c52', activeInk: BRAND.ink, defaultColor: '#efebe9' },
+    metal: { activeColor: '#757575', activeInk: BRAND.paper, defaultColor: '#f5f5f5' },
   },
   yinyang: {
-    yin: { activeColor: '#1a1a1a', defaultColor: '#e0e0e0' },
-    yang: { activeColor: '#ffd700', defaultColor: '#fffde7' },
+    yin: { activeColor: '#1a1a1a', activeInk: BRAND.paper, defaultColor: '#e0e0e0' },
+    yang: { activeColor: BRAND.goldOnLight, activeInk: BRAND.paper, defaultColor: '#fffde7' },
   },
-  trigram: { activeColor: '#16213e', defaultColor: '#e8f0fe' },
-  hexagram: { activeColor: '#1a1a2e', defaultColor: '#f0f4f8' },
+  trigram: { activeColor: '#16213e', activeInk: BRAND.paper, defaultColor: '#e8f0fe' },
+  hexagram: { activeColor: BRAND.night, activeInk: BRAND.paper, defaultColor: '#f0f4f8' },
   lines: { yang: '#333333', yin: '#333333' },
 };
 
 const darkAbstractColors: AbstractColors = {
   elements: {
-    water: { activeColor: '#64b5f6', defaultColor: '#1a3a5c' },
-    wood: { activeColor: '#81c784', defaultColor: '#1b3d1b' },
-    fire: { activeColor: '#ef5350', defaultColor: '#4a1a1a' },
-    earth: { activeColor: '#bcaaa4', defaultColor: '#3d2e26' },
-    metal: { activeColor: '#b0b0b0', defaultColor: '#2a2a2a' },
+    water: { activeColor: '#64b5f6', activeInk: BRAND.ink, defaultColor: '#1a3a5c' },
+    wood: { activeColor: '#81c784', activeInk: BRAND.ink, defaultColor: '#1b3d1b' },
+    fire: { activeColor: '#ef5350', activeInk: BRAND.ink, defaultColor: '#4a1a1a' },
+    earth: { activeColor: '#bcaaa4', activeInk: BRAND.ink, defaultColor: '#3d2e26' },
+    metal: { activeColor: '#b0b0b0', activeInk: BRAND.ink, defaultColor: '#2a2a2a' },
   },
   yinyang: {
-    yin: { activeColor: '#e0e0e0', defaultColor: '#2a2a2a' },
-    yang: { activeColor: '#ffd700', defaultColor: '#3a3a2e' },
+    yin: { activeColor: '#e0e0e0', activeInk: BRAND.ink, defaultColor: '#2a2a2a' },
+    yang: { activeColor: BRAND.gold, activeInk: BRAND.ink, defaultColor: '#3a3a2e' },
   },
-  trigram: { activeColor: '#a8c0ff', defaultColor: '#1a2a4e' },
-  hexagram: { activeColor: '#5dade2', defaultColor: '#1e2a3e' },
+  trigram: { activeColor: '#a8c0ff', activeInk: BRAND.ink, defaultColor: '#1a2a4e' },
+  hexagram: { activeColor: '#5dade2', activeInk: BRAND.ink, defaultColor: '#1e2a3e' },
   lines: { yang: '#e0e0e0', yin: '#e0e0e0' },
 };
 
@@ -156,6 +171,56 @@ export function useThemeColors(colorScheme: ColorScheme): ThemeColors {
 
 export function getAbstractColors(colorScheme: ColorScheme): AbstractColors {
   return colorScheme === 'dark' ? darkAbstractColors : lightAbstractColors;
+}
+
+/** WCAG 2.1 relative luminance of a `#rrggbb` (or `#rgb`) colour. */
+function luminance(hex: string): number {
+  let s = hex.replace('#', '');
+  if (s.length === 3) s = s.split('').map((c) => c + c).join('');
+  const n = parseInt(s.slice(0, 6), 16);
+  const channel = (c: number) => {
+    const v = c / 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  };
+  return 0.2126 * channel((n >> 16) & 255) + 0.7152 * channel((n >> 8) & 255) + 0.0722 * channel(n & 255);
+}
+
+/**
+ * The ink for a control or glyph drawn on `ground`: `BRAND.ink` or `BRAND.paper`,
+ * whichever contrasts it more (at least 4.5:1 over any opaque `#rrggbb` ground).
+ * Pure, so skins and mods can build on it.
+ */
+export function inkOn(ground: string): string {
+  const l = luminance(ground);
+  const overInk = (l + 0.05) / (luminance(BRAND.ink) + 0.05);
+  const overPaper = (luminance(BRAND.paper) + 0.05) / (l + 0.05);
+  return overInk >= overPaper ? BRAND.ink : BRAND.paper;
+}
+
+/** The theme colours a bubble draws from. */
+export type BubbleColors = Pick<ThemeColors, 'surface' | 'accent' | 'textInverse'>;
+
+export interface BubbleInk {
+  /** The bubble's own background. */
+  ground: string;
+  /** A colour guaranteed to contrast `ground`. */
+  ink: string;
+}
+
+/**
+ * Ink/ground pairing for controls drawn *on* a chat bubble.
+ *
+ * A control drawn on a bubble must contrast that bubble, not the app background.
+ * `accent` flips lightness between themes *and* is itself the user-bubble
+ * background, so no fixed colour contrasts both sides in both themes. Take the
+ * ink from the opposite side and punch cut-outs back to the bubble's own ground:
+ * contrast then holds by construction. Enforced by `themeInk.test.ts`.
+ */
+export function bubbleInk(colors: BubbleColors, isSystem: boolean): BubbleInk {
+  return {
+    ground: isSystem ? colors.surface : colors.accent,
+    ink: isSystem ? colors.accent : colors.textInverse,
+  };
 }
 
 export function useAbstractColors(colorScheme: ColorScheme): AbstractColors {

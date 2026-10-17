@@ -45,6 +45,7 @@ export function ElementsView({ context }: Props) {
 
   const elementData = t.elements[selected];
   const elementColor = abstractColors.elements[selected].activeColor;
+  const elementInk = abstractColors.elements[selected].activeInk;
   const elementDefaultColor = abstractColors.elements[selected].defaultColor;
 
   const handleNodePress = (id: WuXingId) => {
@@ -66,9 +67,9 @@ export function ElementsView({ context }: Props) {
     <ScrollView style={[styles.container, { backgroundColor: colors.background }]}>
       {/* Header */}
       <View style={[styles.header, { backgroundColor: elementColor }]}>
-        <Text style={styles.headerChinese}>{elementData.chinese}</Text>
-        <Text style={styles.headerPinyin}>{elementData.pinyin}</Text>
-        <Text style={styles.headerName}>
+        <Text style={[styles.headerChinese, { color: elementInk }]}>{elementData.chinese}</Text>
+        <Text style={[styles.headerPinyin, { color: elementInk }]}>{elementData.pinyin}</Text>
+        <Text style={[styles.headerName, { color: elementInk }]}>
           {selected.charAt(0).toUpperCase() + selected.slice(1)}
         </Text>
       </View>
@@ -239,7 +240,7 @@ function PentagramDiagram({ selected, abstractColors, onNodePress }: PentagramPr
               },
             ]}
           >
-            <Text style={[styles.nodeChar, { color: isSelected ? '#fff' : aColor }]}>
+            <Text style={[styles.nodeChar, { color: isSelected ? abstractColors.elements[id].activeInk : aColor }]}>
               {chinese}
             </Text>
           </Pressable>
@@ -256,11 +257,10 @@ const styles = StyleSheet.create({
     paddingVertical: 24,
     paddingHorizontal: 16,
   },
-  headerChinese: { fontSize: 56, color: '#fff', fontWeight: 'bold' },
-  headerPinyin: { fontSize: 18, color: 'rgba(255,255,255,0.85)', marginTop: 4 },
+  headerChinese: { fontSize: 56, fontWeight: 'bold' },
+  headerPinyin: { fontSize: 18, marginTop: 4 },
   headerName: {
     fontSize: 20,
-    color: '#fff',
     fontWeight: '600',
     marginTop: 4,
     textTransform: 'capitalize',

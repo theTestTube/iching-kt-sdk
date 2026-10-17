@@ -23,7 +23,7 @@ export function YinYangCardView({ context, compact }: KnowletCardViewProps) {
 
   const info = t.polarities[polarity];
   const aColor = abstractColors.yinyang[polarity].activeColor;
-  const textColor = polarity === 'yang' ? '#1a1a1a' : '#ffffff';
+  const textColor = abstractColors.yinyang[polarity].activeInk;
 
   return (
     <View style={[styles.container, { backgroundColor: colors.surface }]}>

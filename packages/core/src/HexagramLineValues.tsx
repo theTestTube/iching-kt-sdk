@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { ColorScheme } from './types';
-import { getAbstractColors } from './theme';
-import { getThemeColors } from './theme';
+import { getAbstractColors, getThemeColors, inkOn } from './theme';
 
 interface HexagramLineValuesProps {
   /** Array of 6 line values (index 0 = line 1 bottom). Values: 6|7|8|9|null */
@@ -92,8 +91,13 @@ export function HexagramLineValues({
             </View>
             {isChanging && (() => {
               const markerTopOffset = value === 6 ? -7 : -3;
-              const fillColor = colorScheme === 'dark' ? '#fff' : '#000';
-              const outlineColor = colorScheme === 'dark' ? '#000' : '#fff';
+              // '×' sits on the solid changing line (accent); '○' sits in the gap of the
+              // yin line, on the row ground (surface when the row is active).
+              const glyphGround = value === 9
+                ? themeColors.accent
+                : isActive ? themeColors.surface : themeColors.background;
+              const fillColor = inkOn(glyphGround);
+              const outlineColor = inkOn(fillColor);
               const sw = 1.5;
               const offsets: [number, number][] = [
                 [-sw, -sw], [0, -sw], [sw, -sw],

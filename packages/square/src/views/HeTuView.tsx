@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, inkOn } from '@iching-kt/core';
 import { resolveActiveBranch } from '../cards/situationInputs';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
 
@@ -71,6 +71,7 @@ export function HeTuView({ context }: Props) {
     const isActive = elementKey === activeElement;
     const elementColors = abstractColors.elements[elementKey as keyof typeof abstractColors.elements];
     const activeColor = elementColors?.activeColor || colors.surfaceSecondary;
+    const activeInk = elementColors?.activeInk ?? inkOn(activeColor);
 
     return (
       <ActionableElement
@@ -85,15 +86,15 @@ export function HeTuView({ context }: Props) {
         colorScheme={context.colorScheme}
         style={styles.hetuElement}
       >
-        <Text style={[styles.elementName, { color: colors.text }, isActive && styles.activeText]}>
+        <Text style={[styles.elementName, { color: colors.text }, isActive && { color: activeInk }]}>
           {context.language === 'es' ? data.nameEs : data.name}
         </Text>
-        <Text style={[styles.numbers, { color: colors.text }, isActive && styles.activeText]}>
+        <Text style={[styles.numbers, { color: colors.text }, isActive && { color: activeInk }]}>
           {data.inner} · {data.outer}
         </Text>
         <View style={styles.dotsRow}>
           {Array(data.inner).fill(0).map((_, i) => (
-            <View key={i} style={[styles.dot, { backgroundColor: colors.text }, isActive && styles.activeDot]} />
+            <View key={i} style={[styles.dot, { backgroundColor: colors.text }, isActive && { backgroundColor: activeInk }]} />
           ))}
         </View>
       </ActionableElement>
@@ -187,12 +188,6 @@ const styles = StyleSheet.create({
   },
   yangDot: {
     // backgroundColor set dynamically based on theme
-  },
-  activeDot: {
-    backgroundColor: '#fff',
-  },
-  activeText: {
-    color: '#fff',
   },
   legend: {
     marginTop: 24,

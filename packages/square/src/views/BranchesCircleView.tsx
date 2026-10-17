@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
 import { resolveActiveBranch } from '../cards/situationInputs';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
 import { EARTHLY_BRANCHES } from '@iching-kt/provider-time';
@@ -29,6 +29,7 @@ const CIRCLE_RADIUS = 120;
 export function BranchesCircleView({ context }: Props) {
   const currentBranch = resolveActiveBranch(context);
   const colors = getThemeColors(context.colorScheme);
+  const abstractColors = getAbstractColors(context.colorScheme);
 
   const handlePress = (branch: EarthlyBranch) => {
     const sovereign = getSovereignHexagram(branch);
@@ -49,6 +50,7 @@ export function BranchesCircleView({ context }: Props) {
     const sovereign = getSovereignHexagram(branch);
     const hexagram = getHexagram(sovereign.hexagramNumber);
     const isActive = branch === currentBranch;
+    const activeInk = abstractColors.hexagram.activeInk;
 
     return (
       <View
@@ -66,13 +68,13 @@ export function BranchesCircleView({ context }: Props) {
           style={styles.branchItem}
           circular
         >
-          <Text style={[styles.hexagram, { color: isActive ? '#fff' : colors.text }]}>
+          <Text style={[styles.hexagram, { color: isActive ? activeInk : colors.text }]}>
             {hexagram?.unicode}
           </Text>
-          <Text style={[styles.chinese, { color: isActive ? '#fff' : colors.text }]}>
+          <Text style={[styles.chinese, { color: isActive ? activeInk : colors.text }]}>
             {info.chinese}
           </Text>
-          <Text style={[styles.animal, { color: isActive ? '#fff' : colors.textSecondary }]}>
+          <Text style={[styles.animal, { color: isActive ? activeInk : colors.textSecondary }]}>
             {context.language === 'es' ? info.animalEs : info.animal}
           </Text>
         </ActionableElement>

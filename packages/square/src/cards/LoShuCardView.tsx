@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { getThemeColors, getAbstractColors } from '@iching-kt/core';
+import { getThemeColors, getAbstractColors, inkOn } from '@iching-kt/core';
 import type { KnowletCardViewProps } from '@iching-kt/core';
 import { LO_SHU_GRID, LO_SHU_TRIGRAMS, BRANCH_TO_LOSHU } from '../views/LoShuView';
 import { resolveCardHighlight } from './situationInputs';
@@ -31,7 +31,9 @@ export function LoShuCardView({ context, compact }: KnowletCardViewProps) {
             const info = LO_SHU_TRIGRAMS[num];
             const isActive = num === activeNumber;
             const elementKey = info.element.toLowerCase() as keyof ReturnType<typeof getAbstractColors>['elements'];
-            const activeColor = abstractColors.elements[elementKey]?.activeColor ?? colors.surfaceSecondary;
+            const pair = abstractColors.elements[elementKey];
+            const activeColor = pair?.activeColor ?? colors.surfaceSecondary;
+            const activeInk = pair?.activeInk ?? inkOn(activeColor);
 
             return (
               <View
@@ -43,7 +45,7 @@ export function LoShuCardView({ context, compact }: KnowletCardViewProps) {
                   { backgroundColor: isActive ? activeColor : colors.surfaceSecondary },
                 ]}
               >
-                <Text style={[styles.trigram, compact && styles.trigramCompact, { color: isActive ? '#fff' : colors.text }]}>
+                <Text style={[styles.trigram, compact && styles.trigramCompact, { color: isActive ? activeInk : colors.text }]}>
                   {info.trigram}
                 </Text>
               </View>

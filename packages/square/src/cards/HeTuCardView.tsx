@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { getThemeColors, getAbstractColors } from '@iching-kt/core';
+import { getThemeColors, getAbstractColors, inkOn } from '@iching-kt/core';
 import type { KnowletCardViewProps } from '@iching-kt/core';
 import { ELEMENTS, getActiveElement } from '../views/HeTuView';
 import { resolveCardHighlight } from './situationInputs';
@@ -26,6 +26,7 @@ export function HeTuCardView({ context, compact }: KnowletCardViewProps) {
     const isActive = elementKey === activeElement;
     const elementColors = abstractColors.elements[elementKey as keyof typeof abstractColors.elements];
     const activeColor = elementColors?.activeColor ?? colors.surfaceSecondary;
+    const activeInk = elementColors?.activeInk ?? inkOn(activeColor);
 
     return (
       <View
@@ -37,7 +38,7 @@ export function HeTuCardView({ context, compact }: KnowletCardViewProps) {
           { backgroundColor: isActive ? activeColor : colors.surfaceSecondary },
         ]}
       >
-        <Text style={[styles.numbers, compact && styles.numbersCompact, { color: isActive ? '#fff' : colors.text }]}>
+        <Text style={[styles.numbers, compact && styles.numbersCompact, { color: isActive ? activeInk : colors.text }]}>
           {data.inner}·{data.outer}
         </Text>
       </View>

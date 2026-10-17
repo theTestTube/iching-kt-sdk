@@ -23,12 +23,13 @@ export function ElementsCardView({ context, compact }: KnowletCardViewProps) {
 
   const info = t.elements[element];
   const aColor = abstractColors.elements[element].activeColor;
+  const aInk = abstractColors.elements[element].activeInk;
   const dColor = abstractColors.elements[element].defaultColor;
 
   return (
     <View style={[styles.container, { backgroundColor: colors.surface }]}>
       <View style={[styles.badge, { backgroundColor: aColor }]}>
-        <Text style={[styles.chinese, { fontSize: compact ? 22 : 28 }]}>{info.chinese}</Text>
+        <Text style={[styles.chinese, { fontSize: compact ? 22 : 28, color: aInk }]}>{info.chinese}</Text>
       </View>
       <Text style={[styles.name, { color: colors.text }]}>
         {element.charAt(0).toUpperCase() + element.slice(1)}
@@ -57,7 +58,6 @@ const styles = StyleSheet.create({
   },
   // Badge glyph sized to the 52px badge, not the content-text scale.
   chinese: {
-    color: '#fff',
     fontWeight: 'bold',
   },
   label: {

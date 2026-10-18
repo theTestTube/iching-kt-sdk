@@ -139,6 +139,7 @@ export function CompassView({ context }: Props) {
               const cy = center + midR * Math.sin(angleRad);
               const isActive = hasRotation && dir.trigramId === currentDir.trigramId;
               const elementColor = abstractColors.elements[dir.element].activeColor;
+              const activeInk = abstractColors.elements[dir.element].activeInk;
               return (
                 <TouchableWithoutFeedback
                   key={dir.trigramId}
@@ -158,10 +159,10 @@ export function CompassView({ context }: Props) {
                       },
                     ]}
                   >
-                    <Text style={[styles.sectorTrigram, { color: isActive ? '#fff' : colors.text, fontSize: sectorH * 0.44 }]}>
+                    <Text style={[styles.sectorTrigram, { color: isActive ? activeInk : colors.text, fontSize: sectorH * 0.44 }]}>
                       {dir.trigram}
                     </Text>
-                    <Text style={[styles.sectorDir, { color: isActive ? '#fff' : colors.text, fontSize: sectorH * 0.24 }]}>
+                    <Text style={[styles.sectorDir, { color: isActive ? activeInk : colors.text, fontSize: sectorH * 0.24 }]}>
                       {dir.direction}
                     </Text>
                   </View>

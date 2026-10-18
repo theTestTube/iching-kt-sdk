@@ -202,27 +202,7 @@ export function getActionablePresets(colorScheme: ColorScheme) {
  * Preset configurations for common actionable element types (light theme, for backwards compatibility)
  * @deprecated Use getActionablePresets(colorScheme) for theme-aware colors
  */
-export const ActionablePresets = {
-  hexagram: {
-    activeColor: '#1a1a2e',
-    defaultColor: '#f0f4f8',
-  },
-  trigram: {
-    activeColor: '#16213e',
-    defaultColor: '#e8f0fe',
-  },
-  element: {
-    water: { activeColor: '#1a73e8', defaultColor: '#e3f2fd' },
-    wood: { activeColor: '#34a853', defaultColor: '#e8f5e9' },
-    fire: { activeColor: '#ea4335', defaultColor: '#ffebee' },
-    earth: { activeColor: '#a67c52', defaultColor: '#efebe9' },
-    metal: { activeColor: '#757575', defaultColor: '#f5f5f5' },
-  },
-  yinyang: {
-    yin: { activeColor: '#1a1a1a', defaultColor: '#e0e0e0' },
-    yang: { activeColor: '#ffd700', defaultColor: '#fffde7' },
-  },
-} as const;
+export const ActionablePresets = getActionablePresets('light');
 
 const styles = StyleSheet.create({
   container: {

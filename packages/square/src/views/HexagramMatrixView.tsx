@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
 import { getHexagram } from '@iching-kt/data-hexagrams';
 import { resolveActiveBranch } from '../cards/situationInputs';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
@@ -31,6 +31,7 @@ export function HexagramMatrixView({ context }: Props) {
   const currentSovereign = currentBranch ? getSovereignHexagram(currentBranch) : null;
   const activeHexagram = currentSovereign?.hexagramNumber;
   const colors = getThemeColors(context.colorScheme);
+  const abstractColors = getAbstractColors(context.colorScheme);
 
   const handlePress = (hexNum: number) => {
     context.emitOutput('hexagram', hexNum);
@@ -69,6 +70,7 @@ export function HexagramMatrixView({ context }: Props) {
 
           {row.map((hexNum, colIdx) => {
             const isActive = hexNum === activeHexagram;
+            const activeInk = abstractColors.hexagram.activeInk;
             const isSov = isSovereign(hexNum);
 
             // Get Unicode character for the hexagram (all 64)
@@ -100,10 +102,10 @@ export function HexagramMatrixView({ context }: Props) {
                 colorScheme={context.colorScheme}
                 style={[styles.cell, sovereignCellStyle]}
               >
-                <Text style={{ fontSize: 22, textAlign: 'center', color: isActive ? '#fff' : colors.text }}>
+                <Text style={{ fontSize: 22, textAlign: 'center', color: isActive ? activeInk : colors.text }}>
                   {unicodeChar}
                 </Text>
-                <Text style={[styles.hexagramNumber, { color: isActive ? '#fff' : colors.textTertiary }]}>
+                <Text style={[styles.hexagramNumber, { color: isActive ? activeInk : colors.textTertiary }]}>
                   {hexNum}
                 </Text>
               </ActionableElement>

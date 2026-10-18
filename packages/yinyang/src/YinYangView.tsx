@@ -24,7 +24,7 @@ export function YinYangView({ context }: Props) {
   const info = t.polarities[selected];
   const aColor = abstractColors.yinyang[selected].activeColor;
   const dColor = abstractColors.yinyang[selected].defaultColor;
-  const headerTextColor = selected === 'yang' ? '#1a1a1a' : '#ffffff';
+  const headerTextColor = abstractColors.yinyang[selected].activeInk;
 
   const handlePolarityPress = (id: YinYangId) => {
     setSelected(id);
@@ -42,7 +42,7 @@ export function YinYangView({ context }: Props) {
         {YIN_YANG_ORDER.map((id) => {
           const isActive = id === selected;
           const ac = abstractColors.yinyang[id].activeColor;
-          const tc = id === 'yang' ? '#1a1a1a' : '#ffffff';
+          const tc = abstractColors.yinyang[id].activeInk;
           return (
             <Pressable
               key={id}
@@ -66,7 +66,7 @@ export function YinYangView({ context }: Props) {
       {/* Header */}
       <View style={[styles.header, { backgroundColor: aColor }]}>
         <Text style={[styles.headerChinese, { color: headerTextColor }]}>{info.chinese}</Text>
-        <Text style={[styles.headerPinyin, { color: headerTextColor, opacity: 0.85 }]}>
+        <Text style={[styles.headerPinyin, { color: headerTextColor }]}>
           {info.pinyin}
         </Text>
       </View>
@@ -98,7 +98,7 @@ export function YinYangView({ context }: Props) {
                   styles.chipText,
                   {
                     color: i < 3
-                      ? (selected === 'yang' ? '#1a1a1a' : '#ffffff')
+                      ? headerTextColor
                       : aColor,
                   },
                 ]}

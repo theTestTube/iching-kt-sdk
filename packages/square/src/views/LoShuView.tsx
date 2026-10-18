@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, inkOn } from '@iching-kt/core';
 import type { EarthlyBranch } from '@iching-kt/provider-solar-time';
 import { resolveActiveBranch } from '../cards/situationInputs';
 
@@ -84,7 +84,9 @@ export function LoShuView({ context }: Props) {
               const info = LO_SHU_TRIGRAMS[num];
               const isActive = num === activeLoshu;
               const elementKey = ELEMENT_TO_KEY[info.element];
-              const bgColor = elementKey ? abstractColors.elements[elementKey].activeColor : colors.surfaceSecondary;
+              const pair = elementKey ? abstractColors.elements[elementKey] : undefined;
+              const bgColor = pair?.activeColor ?? colors.surfaceSecondary;
+              const activeInk = pair?.activeInk ?? inkOn(bgColor);
 
               return (
                 <ActionableElement
@@ -100,13 +102,13 @@ export function LoShuView({ context }: Props) {
                   disabled={num === 5}
                   style={styles.cell}
                 >
-                  <Text style={[styles.trigram, { color: isActive ? '#fff' : colors.text }]}>
+                  <Text style={[styles.trigram, { color: isActive ? activeInk : colors.text }]}>
                     {info.trigram}
                   </Text>
-                  <Text style={[styles.number, { color: isActive ? '#fff' : colors.text }]}>
+                  <Text style={[styles.number, { color: isActive ? activeInk : colors.text }]}>
                     {num}
                   </Text>
-                  <Text style={[styles.direction, { color: isActive ? '#fff' : colors.textSecondary }]}>
+                  <Text style={[styles.direction, { color: isActive ? activeInk : colors.textSecondary }]}>
                     {info.direction}
                   </Text>
                 </ActionableElement>

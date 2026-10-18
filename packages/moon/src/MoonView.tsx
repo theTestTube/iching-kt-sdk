@@ -225,7 +225,7 @@ export function MoonView({ context }: Props) {
                 activeColor={elementColors!.activeColor}
                 style={styles.badge}
               >
-                <Text style={[styles.badgeText, { color: colors.textInverse }]}>{info.element}</Text>
+                <Text style={[styles.badgeText, { color: elementColors!.activeInk }]}>{info.element}</Text>
               </ActionableElement>
             )}
 
@@ -239,7 +239,7 @@ export function MoonView({ context }: Props) {
               activeColor={info.yinYang === 'yang' ? abstractColors.yinyang.yang.activeColor : abstractColors.yinyang.yin.activeColor}
               style={styles.badge}
             >
-              <Text style={[styles.badgeText, { color: colors.textInverse }]}>
+              <Text style={[styles.badgeText, { color: (info.yinYang === 'yang' ? abstractColors.yinyang.yang : abstractColors.yinyang.yin).activeInk }]}>
                 ☯ {info.yinYangLabel}
               </Text>
             </ActionableElement>

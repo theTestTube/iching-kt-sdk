@@ -130,9 +130,9 @@ const darkColors: ThemeColors = {
 const lightAbstractColors: AbstractColors = {
   elements: {
     water: { activeColor: '#1a73e8', activeInk: BRAND.ink, defaultColor: '#e3f2fd' },
-    wood: { activeColor: '#34a853', activeInk: BRAND.ink, defaultColor: '#e8f5e9' },
-    fire: { activeColor: '#ea4335', activeInk: BRAND.ink, defaultColor: '#ffebee' },
-    earth: { activeColor: '#a67c52', activeInk: BRAND.ink, defaultColor: '#efebe9' },
+    wood: { activeColor: '#309c4d', activeInk: BRAND.ink, defaultColor: '#e8f5e9' },
+    fire: { activeColor: '#e93e2f', activeInk: BRAND.ink, defaultColor: '#ffebee' },
+    earth: { activeColor: '#a0774f', activeInk: BRAND.ink, defaultColor: '#efebe9' },
     metal: { activeColor: '#757575', activeInk: BRAND.paper, defaultColor: '#f5f5f5' },
   },
   yinyang: {

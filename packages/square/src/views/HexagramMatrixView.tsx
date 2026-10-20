@@ -87,7 +87,7 @@ export function HexagramMatrixView({ context }: Props) {
             const sovereignCellStyle = isSov && !isActive ? {
               borderWidth: 1,
               borderColor: context.colorScheme === 'dark' ? '#64b5f6' : '#1a73e8',
-              backgroundColor: context.colorScheme === 'dark' ? colors.surface : '#e8f0fe',
+              backgroundColor: abstractColors.trigram.defaultColor,
             } : {};
 
             return (
@@ -130,7 +130,7 @@ export function HexagramMatrixView({ context }: Props) {
           <View style={[
             styles.legendDot,
             {
-              backgroundColor: context.colorScheme === 'dark' ? colors.surface : '#e8f0fe',
+              backgroundColor: abstractColors.trigram.defaultColor,
               borderWidth: 1,
               borderColor: context.colorScheme === 'dark' ? '#64b5f6' : '#1a73e8',
             }

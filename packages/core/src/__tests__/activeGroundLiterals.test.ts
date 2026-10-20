@@ -27,7 +27,12 @@ const VIEWS = [
   'yinyang/src/YinYangCardView.tsx',
   'core/src/HexagramLineValues.tsx',
   'core/src/ActionableElement.tsx',
+  'hours/src/HoursView.tsx',
+  'moon/src/MoonView.tsx',
 ];
+
+/** Views whose badges sit on an element or yin/yang `activeColor` (#484). */
+const BADGE_VIEWS = ['hours/src/HoursView.tsx', 'moon/src/MoonView.tsx'];
 
 function code(file: string): string {
   return fs
@@ -45,11 +50,14 @@ function code(file: string): string {
 const ALLOWED_LINES: Record<string, string[]> = {
   'square/src/views/HexagramMatrixView.tsx': [
     "borderColor: context.colorScheme === 'dark' ? '#64b5f6' : '#1a73e8',",
-    "backgroundColor: context.colorScheme === 'dark' ? colors.surface : '#e8f0fe',",
     "backgroundColor: context.colorScheme === 'dark' ? '#5dade2' : '#1a1a2e',",
   ],
 };
-/** ActionableElement still draws its shine and indicator overlays as rgba. */
+/**
+ * ActionableElement still draws its shine and indicator overlays as rgba. They are
+ * decorative translucent washes, not text or glyph ink, so the 4.5:1 rule does not
+ * apply and they stay exempt (#484).
+ */
 const OVERLAYS = 'core/src/ActionableElement.tsx';
 
 /** White, black or near-black in any hex spelling and any quote style, or a named white/black. */
@@ -75,6 +83,10 @@ describe('no colour literal over an active ground', () => {
       expect(src.match(ANY_LITERAL) ?? []).toEqual([]);
       expect(src.match(SCHEME_BRANCH) ?? []).toEqual([]);
     }
+  });
+
+  it.each(BADGE_VIEWS)('%s draws no textInverse over an active ground', (file) => {
+    expect(code(file).match(/\btextInverse\b/g) ?? []).toEqual([]);
   });
 
   it('the rules catch the spellings they exist for', () => {

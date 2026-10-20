@@ -253,7 +253,7 @@ export function HoursView({ context }: Props) {
               activeColor={elementColor}
               style={styles.badge}
             >
-              <Text style={[styles.badgeText, { color: colors.textInverse }]}>{info.element}</Text>
+              <Text style={[styles.badgeText, { color: elementColors.activeInk }]}>{info.element}</Text>
             </ActionableElement>
 
             <ActionableElement
@@ -266,7 +266,7 @@ export function HoursView({ context }: Props) {
               activeColor={info.yinYang === 'yang' ? abstractColors.yinyang.yang.activeColor : abstractColors.yinyang.yin.activeColor}
               style={styles.badge}
             >
-              <Text style={[styles.badgeText, { color: colors.textInverse }]}>
+              <Text style={[styles.badgeText, { color: (info.yinYang === 'yang' ? abstractColors.yinyang.yang : abstractColors.yinyang.yin).activeInk }]}>
                 {info.yinYang === 'yang' ? '☯ Yang' : '☯ Yin'}
               </Text>
             </ActionableElement>

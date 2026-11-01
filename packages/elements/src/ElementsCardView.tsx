@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { KnowletCardViewProps, getThemeColors, getAbstractColors, CARD_TYPOGRAPHY, CARD_SPACING } from '@iching-kt/core';
-import { getTranslation, parseElementInput } from './data';
+import { getEmptyElementLabel, getTranslation, parseElementInput } from './data';
 
 export function ElementsCardView({ context, compact }: KnowletCardViewProps) {
   const colors = getThemeColors(context.colorScheme);
@@ -15,7 +15,7 @@ export function ElementsCardView({ context, compact }: KnowletCardViewProps) {
       <View style={[styles.container, { backgroundColor: colors.surface }]}>
         <Text style={[styles.icon]}>☯</Text>
         <Text style={[styles.label, { color: colors.textSecondary }]}>
-          {context.language === 'zh' ? '五行' : context.language === 'es' ? 'Elemento' : 'Element'}
+          {getEmptyElementLabel(context.language)}
         </Text>
       </View>
     );

@@ -334,6 +334,11 @@ export function getElementName(id: WuXingId, language: string): string {
  * throws on `.activeColor`. Anything that is not a known element id yields
  * undefined so the caller can fall back.
  */
+/** Label shown when no element is selected; the card and the board share it. */
+export function getEmptyElementLabel(language: string): string {
+  return language === 'zh' ? '五行' : language === 'es' ? 'Elemento' : 'Element';
+}
+
 export function parseElementInput(inputData?: { type: string; value: unknown }): WuXingId | undefined {
   if (inputData?.type !== 'element') return undefined;
   const value = inputData.value;

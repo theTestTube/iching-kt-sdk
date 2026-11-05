@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import type { KnowletContext } from '@iching-kt/core';
 import { DEFAULT_TRANSLATION_PREFERENCES } from '@iching-kt/core';
 import { ElementsView } from '../ElementsView';
@@ -47,7 +47,8 @@ describe('ElementsView', () => {
       />,
     );
 
-    expect(container.textContent).toContain(t.elements.wood.description);
+    expect(container.textContent).not.toContain(t.elements.wood.description);
+    expect(container.textContent).toContain('Element');
   });
 
   it('ignores an unknown element id instead of crashing', () => {
@@ -55,6 +56,24 @@ describe('ElementsView', () => {
       <ElementsView context={createMockContext({ inputData: { type: 'element', value: 'aether' } })} />,
     );
 
-    expect(container.textContent).toContain(t.elements.wood.description);
+    expect(container.textContent).not.toContain(t.elements.wood.description);
+  });
+
+  it('shows the same empty state as the card when no element is given', () => {
+    const { container } = render(<ElementsView context={createMockContext()} />);
+
+    expect(container.textContent).toContain('☯');
+    expect(container.textContent).toContain('Element');
+    expect(container.textContent).not.toContain(t.elements.wood.description);
+  });
+
+  it('selecting an element on the empty board emits it and shows its detail', () => {
+    const context = createMockContext();
+    const { container, getByText } = render(<ElementsView context={context} />);
+
+    fireEvent.click(getByText('水'));
+
+    expect(context.emitOutput).toHaveBeenCalledWith('element', 'water');
+    expect(container.textContent).toContain(t.elements.water.description);
   });
 });

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { KnowletContext, getThemeColors, getAbstractColors } from '@iching-kt/core';
-import { WuXingId, WU_XING_ORDER, getTranslation, parseElementInput } from './data';
+import { WuXingId, WU_XING_ORDER, getEmptyElementLabel, getTranslation, parseElementInput } from './data';
 
 // Pentagram node positions (percent of 300x300 canvas, centered at 150,150, r=110)
 // Top=fire, then clockwise: earth, metal, wood, water
@@ -37,21 +37,48 @@ interface Props {
 
 export function ElementsView({ context }: Props) {
   const inputElement = parseElementInput(context.inputData);
-  const [selected, setSelected] = useState<WuXingId>(inputElement ?? 'wood');
+  const [selected, setSelected] = useState<WuXingId | undefined>(inputElement);
+
+  // Follow the element the app carries (back/forward, a re-emitted selection).
+  useEffect(() => {
+    if (inputElement) setSelected(inputElement);
+  }, [inputElement]);
 
   const t = getTranslation(context.language);
   const colors = getThemeColors(context.colorScheme);
   const abstractColors = getAbstractColors(context.colorScheme);
 
-  const elementData = t.elements[selected];
-  const elementColor = abstractColors.elements[selected].activeColor;
-  const elementInk = abstractColors.elements[selected].activeInk;
-  const elementDefaultColor = abstractColors.elements[selected].defaultColor;
-
   const handleNodePress = (id: WuXingId) => {
     setSelected(id);
     context.emitOutput('element', id);
   };
+
+  // No element anywhere: the same empty state as the card, with the pentagram
+  // unselected so any element can be picked.
+  if (!selected) {
+    return (
+      <ScrollView style={[styles.container, { backgroundColor: colors.background }]}>
+        <View style={[styles.section, styles.empty, { backgroundColor: colors.surface }]}>
+          <Text style={styles.emptyIcon}>☯</Text>
+          <Text style={[styles.emptyLabel, { color: colors.textSecondary }]}>
+            {getEmptyElementLabel(context.language)}
+          </Text>
+        </View>
+        <View style={[styles.section, { backgroundColor: colors.surface }]}>
+          <PentagramDiagram
+            selected={undefined}
+            abstractColors={abstractColors}
+            onNodePress={handleNodePress}
+          />
+        </View>
+      </ScrollView>
+    );
+  }
+
+  const elementData = t.elements[selected];
+  const elementColor = abstractColors.elements[selected].activeColor;
+  const elementInk = abstractColors.elements[selected].activeInk;
+  const elementDefaultColor = abstractColors.elements[selected].defaultColor;
 
   const handleTrigramPress = () => {
     context.emitOutput('trigram', elementData.primaryTrigram);
@@ -200,7 +227,7 @@ const NODE_R = 28;
 const CANVAS = 300;
 
 interface PentagramProps {
-  selected: WuXingId;
+  selected: WuXingId | undefined;
   abstractColors: ReturnType<typeof getAbstractColors>;
   onNodePress: (id: WuXingId) => void;
 }
@@ -300,6 +327,9 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
   },
   emitButtonText: { fontSize: 14, fontWeight: '600' },
+  empty: { alignItems: 'center', paddingVertical: 24 },
+  emptyIcon: { fontSize: 48 },
+  emptyLabel: { fontSize: 16, marginTop: 4 },
   pentagram: { position: 'relative', alignSelf: 'center' },
   node: {
     position: 'absolute',

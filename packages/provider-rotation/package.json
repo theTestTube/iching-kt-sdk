@@ -21,6 +21,6 @@
     }
   },
   "devDependencies": {
-    "vitest": "^1.0.0"
+    "expo-sensors": "57.0.3"
   }
 }

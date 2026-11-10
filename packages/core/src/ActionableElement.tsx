@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(0,0,0,0.2)',
   },
   shineOverlay: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
     borderRadius: 12,
   },
   actionIndicator: {

@@ -1,7 +1,10 @@
 import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { useEffect } from 'react';
 import { BackHandler } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getTranslationSourceForLanguage } from '@iching-kt/core';
+import type { KnowletContext } from './types';
+import { ActionableElement } from './ActionableElement';
+import { getThemeColors } from './theme';
+import { getTranslationSourceForLanguage } from './translations';
 import { getHexagram, getHexagramTranslationBySource, type TranslationSource } from '@iching-kt/data-hexagrams';
 
 interface Props {

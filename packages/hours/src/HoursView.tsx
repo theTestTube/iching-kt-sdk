@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { View, Text, Pressable, Animated, StyleSheet, ScrollView } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, TemporalNavigator, AnimatedProgressBar, isOriginLanguage } from '@iching-kt/core';
+import { KnowletContext, ActionableElement, getThemeColors, getAbstractColors, TemporalNavigator, AnimatedProgressBar, isOriginLanguage, HexagramCard } from '@iching-kt/core';
 import type { TemporalNavigationState } from '@iching-kt/core';
 import type { SolarTimeData } from '@iching-kt/provider-solar-time';
 import type { EarthlyBranch } from '@iching-kt/provider-time';
 import { getSovereignHexagram } from '@iching-kt/data-hexagrams';
 import { getTranslation } from './data';
-import { HexagramCard } from './HexagramCard';
 import { SlidingHourHeader } from './SlidingHourHeader';
 
 interface Props {

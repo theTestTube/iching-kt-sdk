@@ -1,7 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { KnowletContext, ActionableElement, getThemeColors, isOriginLanguage } from '@iching-kt/core';
+import type { KnowletContext } from './types';
+import { ActionableElement } from './ActionableElement';
+import { getThemeColors } from './theme';
+import { isOriginLanguage, getTranslationSourceForLanguage } from './translations';
 import { getHexagram, getHexagramTranslationBySource } from '@iching-kt/data-hexagrams';
-import { getTranslationSourceForLanguage } from '@iching-kt/core';
 
 interface Props {
   context: KnowletContext;

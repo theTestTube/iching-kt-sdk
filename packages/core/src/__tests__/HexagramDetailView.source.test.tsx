@@ -5,8 +5,8 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import type { KnowletContext, TranslationPreferences } from '@iching-kt/core';
-import { DEFAULT_TRANSLATION_PREFERENCES } from '@iching-kt/core';
+import type { KnowletContext, TranslationPreferences } from '../types';
+import { DEFAULT_TRANSLATION_PREFERENCES } from '../translations';
 import { HexagramDetailView } from '../HexagramDetailView';
 
 const createMockContext = (overrides: Partial<KnowletContext> = {}): KnowletContext => ({

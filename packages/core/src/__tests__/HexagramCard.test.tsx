@@ -11,8 +11,8 @@
  */
 
 import { getHexagram, getHexagramTranslationBySource } from '@iching-kt/data-hexagrams';
-import { getTranslationSourceForLanguage } from '@iching-kt/core';
-import type { TranslationPreferences } from '@iching-kt/core';
+import { getTranslationSourceForLanguage } from '../translations';
+import type { TranslationPreferences } from '../types';
 
 describe('HexagramCard - Translation Source Behavior', () => {
   describe('Hexagram Translation Source Preference', () => {

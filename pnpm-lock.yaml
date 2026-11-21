@@ -77,6 +77,9 @@ importers:
 
   packages/core:
     dependencies:
+      '@iching-kt/data-hexagrams':
+        specifier: '*'
+        version: link:../data-hexagrams
       react:
         specifier: '>=18.0.0'
         version: 19.2.3
@@ -191,9 +194,6 @@ importers:
       '@iching-kt/data-hexagrams':
         specifier: '*'
         version: link:../data-hexagrams
-      '@iching-kt/hours':
-        specifier: '*'
-        version: link:../hours
       '@iching-kt/provider-moon-phase':
         specifier: '*'
         version: link:../provider-moon-phase

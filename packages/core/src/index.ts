@@ -10,3 +10,5 @@ export * from './HexagramLines';
 export * from './HexagramLineValues';
 export * from './TemporalNavigator';
 export * from './AnimatedProgressBar';
+export * from './HexagramCard';
+export * from './HexagramDetailView';

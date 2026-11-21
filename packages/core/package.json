@@ -7,6 +7,9 @@
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@iching-kt/data-hexagrams": "*"
+  },
   "peerDependencies": {
     "react": ">=18.0.0"
   }

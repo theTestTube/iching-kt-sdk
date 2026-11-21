@@ -1,5 +1,4 @@
-import { Knowlet, KnowletContext } from '@iching-kt/core';
-import { HexagramDetailView } from '@iching-kt/hours';
+import { Knowlet, KnowletContext, HexagramDetailView } from '@iching-kt/core';
 import { MoonView } from './MoonView';
 import { MoonCardView } from './MoonCardView';
 
